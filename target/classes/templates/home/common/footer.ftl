@@ -8,10 +8,10 @@
     <div class="wrapper">
         <a rel="nofollow" target="_blank" href="h/about.html">Liên hệ chúng tôi</a>
         <a target="_blank" href="h/af/zhaopin.html">Dẫn đường công ty Internet</a>
-        <a rel="nofollow" target="_blank" href="http://e.weibo.com/lagou720">Weibo</a>
-        <a rel="nofollow" href="javascript:void(0)" class="footer_qr">WeChat<i></i></a>
+        <a rel="nofollow" target="_blank" href="https://www.facebook.com/Danh293">Facebook</a>
+        <#--  <a rel="nofollow" href="javascript:void(0)" class="footer_qr">Youtube<i></i></a>
         <div class="copyright">&copy;
-            <a href="http://www.miitbeian.gov.cn/state/outPortal/loginPortal.action" target="_blank"></a>
-        </div>
+            <a href="https://www.facebook.com/Danh293" target="_blank"></a>
+        </div>  -->
     </div>
 </div>

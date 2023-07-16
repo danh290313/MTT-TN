@@ -14,11 +14,7 @@ import com.yjq.lagou.bean.CodeMsg;
 import com.yjq.lagou.bean.Page;
 import com.yjq.lagou.bean.Result;
 import com.yjq.lagou.service.admin.OperaterLogService;
-/**
- * 日志管理控制类
- *
- *
- */
+
 @RequestMapping("/admin/operater_log")
 @Controller
 public class OperaterLogController {
@@ -26,22 +22,14 @@ public class OperaterLogController {
 	@Autowired 
 	private OperaterLogService operaterLogService;
 	
-	/**
-	 * 日志管理页面
-	 * @param model
-	 * @return
-	 */
+
 	@RequestMapping(value="/list",method=RequestMethod.GET)
 	public String operaterLog(Model model){
 		return "admin/operater_log/list";
 	}
 	
 	
-	/**
-	 * 获取日志管理列表
-	 * @param model
-	 * @return
-	 */
+	
 	@RequestMapping(value="/list",method=RequestMethod.POST)
 	@ResponseBody
 	public  Map<String, Object> operaterLogList(Page page){
@@ -51,11 +39,7 @@ public class OperaterLogController {
 		return ret; 
 	}
 	
-	/**
-	 * 删除日志管理列表数据
-	 * @param model
-	 * @return
-	 */
+
 	@RequestMapping(value="/delete",method=RequestMethod.POST)
 	@ResponseBody
 	public Result<Boolean> deleteOperaterLogs(String ids){

@@ -254,7 +254,7 @@ var youdao_conv_id = 271546;
 	
 	//删除简历
 	function deleteResume(i){
-		if(confirm("是否确定要删除改简历？")){
+		if(confirm("Bạn có chắc bạn muốn xóa sơ yếu lý lịch không？")){
 			$.ajax({
 				url:'/home/resume/delete',
 				dataType:'json',

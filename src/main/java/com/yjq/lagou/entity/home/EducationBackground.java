@@ -27,7 +27,7 @@ public class EducationBackground extends BaseEntity{
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private static final String DEFAULT_DEGREE = "其他"; //默认学历
+	private static final String DEFAULT_DEGREE = "khác"; //默认学历
 	
 	@ManyToOne
 	@JoinColumn(name="user_id")

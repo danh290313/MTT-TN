@@ -79,7 +79,7 @@ public class HomeCompanyController {
 	public Result<Boolean> applyConfirm(@RequestParam(name="id",required=true)Long id)
 	{
 		Company findCompany = companyService.find(id);
-		findCompany.setState("待审核");
+		findCompany.setState("Để được xem xét");
 		if(companyService.save(findCompany) == null) {
 			return Result.error(CodeMsg.COMPANY_APPLY_SAVE_ERROR);
 		}
@@ -133,7 +133,7 @@ public class HomeCompanyController {
 			if(checkCompanyName(company,findCompany.getId())){
 				return Result.error(CodeMsg.COMPANY_NAME_ALREADY_EXIST);
 			}
-			company.setState("待审核");
+			company.setState("Để được xem xét");
 			BeanUtils.copyProperties(company, findCompany, "id","createTime","updateTime","user","tags","productPhoto","productTitle","productContent","introduction","locale","territory","scale","url","finance","founderName","founderPosition","founderPhoto");
 			if(companyService.save(findCompany) == null){
 				return Result.error(CodeMsg.COMPANY_NAME_AND_VALUE_SAVE_ERROR);
@@ -166,7 +166,7 @@ public class HomeCompanyController {
 			return Result.error(CodeMsg.COMPANY_NAME_AND_VALUE_PRIORITY);
 		}else {
 			//进行修改操作
-			company.setState("待审核");
+			company.setState("Để được xem xét");
 			BeanUtils.copyProperties(company, findCompany, "id","createTime","updateTime","user","name","value","photo","productPhoto","productTitle","productContent","introduction","locale","territory","scale","url","finance","founderName","founderPosition","founderPhoto");
 			if(companyService.save(findCompany) == null){
 				return Result.error(CodeMsg.COMPANY_TAGS_SAVE_ERROR);
@@ -205,7 +205,7 @@ public class HomeCompanyController {
 			if("".equals(company.getProductContent())) {
 				company.setProductContent(null);
 			}
-			company.setState("待审核");
+			company.setState("Để được xem xét");
 			BeanUtils.copyProperties(company, findCompany, "id","createTime","updateTime","tags","user","name","value","photo","introduction","locale","territory","scale","url","finance","founderName","founderPosition","founderPhoto");
 			if(companyService.save(findCompany) == null){
 				return Result.error(CodeMsg.COMPANY_PRODUCT_SAVE_ERROR);
@@ -237,7 +237,7 @@ public class HomeCompanyController {
 			if("".equals(company.getIntroduction())){
 				company.setIntroduction(null);
 			}
-			company.setState("待审核");
+			company.setState("Để được xem xét");
 			BeanUtils.copyProperties(company, findCompany, "id","createTime","updateTime","tags","user","name","value","photo","productPhoto","productTitle","productContent","locale","territory","scale","url","finance","founderName","founderPosition","founderPhoto");
 			if(companyService.save(findCompany) == null){
 				return Result.error(CodeMsg.COMPANY_INTRODUCTION_SAVE_ERROR);
@@ -283,7 +283,7 @@ public class HomeCompanyController {
 			return Result.error(CodeMsg.COMPANY_NAME_AND_VALUE_PRIORITY);
 		}else {
 			//进行修改操作
-			company.setState("待审核");
+			company.setState("Để được xem xét");
 			BeanUtils.copyProperties(company, findCompany, "id","createTime","updateTime","user","name","tags","value","photo","productPhoto","productTitle","productContent","introduction","finance","founderName","founderPosition","founderPhoto");
 			if(companyService.save(findCompany) == null){
 				return Result.error(CodeMsg.COMPANY_BASIC_SAVE_ERROR);
@@ -315,7 +315,7 @@ public class HomeCompanyController {
 			return Result.error(CodeMsg.COMPANY_NAME_AND_VALUE_PRIORITY);
 		}else {
 			//进行修改操作
-			company.setState("待审核");
+			company.setState("Để được xem xét");
 			BeanUtils.copyProperties(company, findCompany, "id","createTime","updateTime","user","name","tags","value","photo","productPhoto","productTitle","productContent","introduction","locale","territory","scale","url","founderName","founderPosition","founderPhoto");
 			if(companyService.save(findCompany) == null){
 				return Result.error(CodeMsg.COMPANY_FINANCE_SAVE_ERROR);
@@ -358,7 +358,7 @@ public class HomeCompanyController {
 			return Result.error(CodeMsg.COMPANY_NAME_AND_VALUE_PRIORITY);
 		}else {
 			//进行修改操作
-			company.setState("待审核");
+			company.setState("Để được xem xét");
 			BeanUtils.copyProperties(company, findCompany, "id","createTime","updateTime","user","name","tags","value","photo","productPhoto","productTitle","productContent","introduction","locale","territory","scale","url","finance");
 			if(companyService.save(findCompany) == null){
 				return Result.error(CodeMsg.COMPANY_FOUNDER_SAVE_ERROR);

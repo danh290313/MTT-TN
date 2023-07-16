@@ -26,8 +26,8 @@ public class Company extends BaseEntity{
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private static final String DEDAULT_STATE = "未认证"; //默认公司申请状态
-	private static final String DEDAULT_FINANCE = "未融资"; //默认公司融资阶段
+	private static final String DEDAULT_STATE = "không công nhận, không chứng nhận"; //默认公司申请状态
+	private static final String DEDAULT_FINANCE = "Không thể tài trợ"; //默认公司融资阶段
 	private static final String DEDAULT_PHOTO = "common/logo_default.png"; //默认公司图片
 	private static final String DEDAULT_PRODUCT_PHOTO = "common/product_default.png"; //默认公司产品图片
 	private static final String DEFAULT_FOUNDER_PHOTO = "common/default_headpic.png";  //默认创始人头像

@@ -1,7 +1,5 @@
 package com.yjq.lagou.config.common;
-/**
- * 用来配置拦截器的配置类
- */
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -23,7 +21,6 @@ public class WebConfig implements WebMvcConfigurer {
 	
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
-		//搜寻/**所有链接除了RuntimeConstant.loginExcludePathPatterns中的链接
 	    registry.addInterceptor(userLoginInterceptor).addPathPatterns("/**").excludePathPatterns(RuntimeConstant.userLoginExcludePathPatterns);
 	    registry.addInterceptor(adminLoginInterceptor).addPathPatterns("/**").excludePathPatterns(RuntimeConstant.adminLoginExcludePathPatterns);
 	}

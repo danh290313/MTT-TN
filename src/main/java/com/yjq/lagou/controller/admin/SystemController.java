@@ -17,11 +17,7 @@ import com.yjq.lagou.entity.admin.OperaterLog;
 import com.yjq.lagou.service.admin.AdminService;
 import com.yjq.lagou.service.admin.OperaterLogService;
 import com.yjq.lagou.util.ValidateEntityUtil;
-/**
- * 后台管理控制类
- *
- *
- */
+
 @RequestMapping("/admin/system")
 @Controller
 public class SystemController {
@@ -33,31 +29,19 @@ public class SystemController {
 	private OperaterLogService  operaterLogService; 
 	
 	
-	/**
-	 * Quản lý nền Trang chủ
-	 * @param model
-	 * @return
-	 */
+	
 	@RequestMapping(value="/index",method=RequestMethod.GET)
 	public String list(Model model){
 		return "admin/system/index";
 	}
 	
-	/**
-	 * Trang đăng nhập quản lý nền
-	 * @param model
-	 * @return
-	 */
+	
 	@RequestMapping(value="/login",method=RequestMethod.GET)
 	public String login(Model model){
 		return "admin/system/login";
 	}
 	
-	/**
-	 * Quản trị viên rút khỏi đăng nhậpị viên rút khỏi đăng nhập
-	 * @param model
-	 * @return
-	 */
+	
 	@RequestMapping(value="/logout")
 	public String loginout(HttpServletRequest request){
 		request.getSession().setAttribute(SessionConstant.SESSION_ADMIN_LOGIN_KEY , null);
@@ -65,13 +49,7 @@ public class SystemController {
 	}
 	
 	
-	/**
-	 * Xử lý hình thức đăng nhập
-	 * @param admin
-	 * @param cpacha
-	 * @param request
-	 * @return
-	 */
+	
 	@RequestMapping(value="/login",method=RequestMethod.POST)
 	@ResponseBody
 	public Result<Boolean> login(Admin admin,String cpacha,HttpServletRequest request)
@@ -99,14 +77,14 @@ public class SystemController {
 		{
 			return Result.error(CodeMsg.USER_NO_EXIST);
 		}
-		//如果存在，判断字段是否符合要求， 用统一验证实体方法验证是否合法
+		
 		findByAdminName.setPassword(admin.getPassword());
 		CodeMsg validate = ValidateEntityUtil.validate(findByAdminName);
 		// if(validate.getCode() != CodeMsg.SUCCESS.getCode()){
 		// 	return Result.error(validate);
 		// }
 		
-		//以上判断都通过后，进行判断密码是否正确
+		
 		if(!findByAdminName.getPassword().equals(admin.getPassword()))
 		{
 			return Result.error(CodeMsg.USER_PASSWORD_ERROR);

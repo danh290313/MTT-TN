@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="copyright" content="All Rights Reserved, Copyright (C) 2020, 杨杨吖, Ltd." />
-<title>后台管理主页</title>
+<title>Quản lý nền Trang chủ</title>
 <link rel="stylesheet" type="text/css" href="/admin/easyui/easyui/1.3.4/themes/default/easyui.css" />
 <link rel="stylesheet" type="text/css" href="/admin/easyui/css/wu.css" />
 <link rel="stylesheet" type="text/css" href="/admin/easyui/css/icon.css" />
@@ -20,10 +20,10 @@
     <!-- Begin of toolbar -->
     <div id="wu-toolbar">
         <div class="wu-toolbar-button">
-		    <a href="javascript:void(0);"  class="easyui-linkbutton" iconCls="icon-add"  onclick="openAdd();" plain="true">增加一级和二级职业类别</a>
-		    <a href="javascript:void(0);"  class="easyui-linkbutton" iconCls="icon-add"  onclick="openThirdAdd();" plain="true">增加三级职业类别</a>
-		    <a href="javascript:void(0);"  class="easyui-linkbutton" iconCls="icon-edit" onclick="openEdit();" plain="true">修改</a>
-		    <a href="javascript:void(0);"  class="easyui-linkbutton" iconCls="icon-cross" onclick="remove();" plain="true">删除</a>
+		    <a href="javascript:void(0);"  class="easyui-linkbutton" iconCls="icon-add"  onclick="openAdd();" plain="true">Thêm các loại nghề nghiệp đầu tiên và phụ</a>
+		    <a href="javascript:void(0);"  class="easyui-linkbutton" iconCls="icon-add"  onclick="openThirdAdd();" plain="true">Tăng danh mục chuyên nghiệp thứ ba</a>
+		    <a href="javascript:void(0);"  class="easyui-linkbutton" iconCls="icon-edit" onclick="openEdit();" plain="true">Ôn lại</a>
+		    <a href="javascript:void(0);"  class="easyui-linkbutton" iconCls="icon-cross" onclick="remove();" plain="true">xóa bỏ</a>
         </div>
     </div>
     <!-- End of toolbar -->
@@ -35,10 +35,10 @@
 	<form id="add-form" method="post">
         <table>
             <tr>
-                <td align="right">上级菜单:</td>
+                <td align="right">Menu vượt trội:</td>
                 <td>
                 	<select name="parent_id" class="easyui-combobox" panelHeight="auto" style="width:268px">
-                		 <option value="0">顶级分类</option>
+                		 <option value="0">Phân loại hàng đầu</option>
 		                <#if topPositionCategoryList?size gt 0>
 							 <#list topPositionCategoryList as topPositionCategory>
 		               			 <option value="${topPositionCategory.id!""}">${topPositionCategory.name!""}</option>
@@ -48,11 +48,11 @@
                 </td>
             </tr>
             <tr>
-                <td width="100" align="right">职位类别名称:</td>
-                <td><input type="text" name="name" class="wu-text easyui-validatebox" data-options="required:true, missingMessage:'请填写一级或二级职位类别名称'" /></td>
+                <td width="100" align="right">Tên loại công việc:</td>
+                <td><input type="text" name="name" class="wu-text easyui-validatebox" data-options="required:true, missingMessage:'Vui lòng điền vào tên của danh mục vị trí thứ nhất hoặc thứ hai'" /></td>
             </tr>
             <tr>
-                <td  width="100" align="right">职位类别URL:</td>
+                <td  width="100" align="right">URL loại công việc:</td>
                 <td><input type="text" name="url" class="wu-text" /></td>
             </tr>
         </table>
@@ -64,17 +64,17 @@
         <input type="hidden" name="id" id="edit-id">
         <table>
              <tr>
-                <td width="100" align="right">上级菜单:</td>
+                <td width="100" align="right">Menu vượt trội:</td>
                 <td>
                 	<input type="text" readonly="readonly" id="edit-parent" class="wu-text easyui-validatebox" />
                 </td>
             </tr>
             <tr>
-                <td width="100" align="right">职位类别名称:</td>
+                <td width="100" align="right">Tên loại công việc:</td>
                 <td><input type="text" name="name" id="edit-name" class="wu-text easyui-validatebox" data-options="required:true, missingMessage:'请填写职位类别名称'" /></td>
             </tr>
             <tr>
-                <td width="100" align="right">职位类别URL:</td>
+                <td width="100" align="right">URL loại công việc:</td>
                 <td><input type="text" name="url" id="edit-url" class="wu-text" /></td>
             </tr>
         </table>
@@ -85,18 +85,18 @@
 	<form id="add-third-form" method="post">
         <table>
         	<tr>
-                <td width="100" align="right">上级菜单:</td>
+                <td width="100" align="right">Menu vượt trội:</td>
                 <td>
                 	<input type="hidden" name="parent_id" id="add-third-parent-id">
                 	<input type="text" readonly="readonly" id="parent-third" class="wu-text easyui-validatebox" />
                 </td>
             </tr>
             <tr>
-                <td width="100" align="right">职位类别名称:</td>
+                <td width="100" align="right">Tên loại công việc:</td>
                 <td><input type="text" name="name" class="wu-text easyui-validatebox" data-options="required:true, missingMessage:'请填写三级职位类别名称'" /></td>
             </tr>
             <tr>
-                <td width="100" align="right">职位类别URL:</td>
+                <td width="100" align="right">URL loại công việc:</td>
                 <td><input type="text" name="url" class="wu-text" /></td>
             </tr>
            
@@ -112,10 +112,10 @@
 	function remove(){
 		var item = $('#data-datagrid').treegrid('getSelections');
 		if(item == null || item.length != 1){
-			$.messager.alert('信息提示','请选择一条您要删除的职业类别数据！','info');
+			$.messager.alert('Thông báo tin nhắn','Vui lòng chọn dữ liệu danh mục chuyên nghiệp mà bạn muốn xóa！','info');
 			return;
 		}
-		$.messager.confirm('信息提示','确定要删除该记录？', function(result){
+		$.messager.confirm('Thông báo tin nhắn','Xác định xóa bản ghi？', function(result){
 			if(result){
 				$.ajax({
 					url:'/admin/position_category/delete',
@@ -124,10 +124,10 @@
 					data:{id:item[0].id},
 					success:function(data){
 						if(data.code == 0){
-							$.messager.alert('信息提示','删除成功！','info');
+							$.messager.alert('Thông báo tin nhắn','đã xóa thành công！','info');
 							$('#data-datagrid').treegrid('reload');
 						}else{
-							$.messager.alert('信息提示',data.msg,'warning');
+							$.messager.alert('Thông báo tin nhắn',data.msg,'warning');
 						}
 						$("#data-datagrid").treegrid('clearSelections');
 					}
@@ -143,13 +143,13 @@
 		$('#add-dialog').dialog({
 			closed: false,
 			modal:true,
-            title: "添加一级和二级职位类别信息",
+            title: "Thêm thông tin danh mục công việc thứ nhất và thứ hai",
             buttons: [{
-                text: '确定',
+                text: 'Chắc chắn',
                 iconCls: 'icon-ok',
                 handler: add
             }, {
-                text: '取消',
+                text: 'Hủy bỏ',
                 iconCls: 'icon-cancel',
                 handler: function () {
                     $('#add-dialog').dialog('close');                    
@@ -162,7 +162,7 @@
 	function add(){
 		var validate = $("#add-form").form("validate");
 		if(!validate){
-			$.messager.alert("消息提醒","请检查你输入的数据!","warning");
+			$.messager.alert("Thông báo tin nhắn","Vui lòng kiểm tra dữ liệu bạn nhập!","warning");
 			return;
 		}
 		var data = $("#add-form").serialize();
@@ -173,15 +173,15 @@
 			data:data,
 			success:function(data){
 				if(data.code == 0){
-					$.messager.alert('信息提示','添加成功！','info');
+					$.messager.alert('Thông báo tin nhắn','Thêm thành công！','info');
 					$('#add-dialog').dialog('close');
 					$('#data-datagrid').treegrid('reload');
 				}else{
-					$.messager.alert('信息提示',data.msg,'warning');
+					$.messager.alert('Thông báo tin nhắn',data.msg,'warning');
 				}
 			},
 			error:function(data){
-				 $.messager.alert("消息提醒", '网络错误！', "error");
+				 $.messager.alert("Thông báo tin nhắn", 'Lỗi mạng！', "error");
 			}
 		});
 	}
@@ -193,7 +193,7 @@
 	function edit(){
 		var validate = $("#edit-form").form("validate");
 		if(!validate){
-			$.messager.alert("消息提醒","请检查你输入的数据!","warning");
+			$.messager.alert("Thông báo tin nhắn","Vui lòng kiểm tra dữ liệu bạn nhập!","warning");
 			return;
 		}
 		var data = $("#edit-form").serialize();
@@ -204,11 +204,11 @@
 			data:data,
 			success:function(data){
 				if(data.code == 0){
-					$.messager.alert('信息提示','修改成功！','info');
+					$.messager.alert('Thông báo tin nhắn','Sửa đổi thành công！','info');
 					$('#edit-dialog').dialog('close');
 					$('#data-datagrid').treegrid('reload');
 				}else{
-					$.messager.alert('信息提示',data.msg,'warning');
+					$.messager.alert('Thông báo tin nhắn',data.msg,'warning');
 				}
 				$("#data-datagrid").treegrid('clearSelections');
 			}
@@ -221,29 +221,29 @@
 	function openThirdAdd(){
 		var item = $('#data-datagrid').treegrid('getSelections');
 		if(item == null || item.length != 1){
-			$.messager.alert('信息提示','请选择一条二级的职业类别数据！','info');
+			$.messager.alert('Thông báo tin nhắn','Vui lòng chọn một dữ liệu danh mục chuyên nghiệp thứ cấp!','info');
 			return;
 		}
 		if(item[0]._parentId == null){
-			$.messager.alert('信息提示','请选择二级菜单！','info');
+			$.messager.alert('Thông báo tin nhắn','Vui lòng chọn menu phụ!','info');
 			return;
 		}
 		var parent = $('#data-datagrid').treegrid('getParent',item[0].id);
 		if(parent._parentId != null){
-			$.messager.alert('信息提示','请选择二级菜单！','info');
+			$.messager.alert('Thông báo tin nhắn','Vui lòng chọn menu phụ!','info');
 			return;
 		}
 		$('#add-third-dialog').dialog({
 			closed: false,
 			modal:true,
-            title: "添加三级职位类别信息",
+            title: "Thêm thông tin danh mục công việc thứ ba",
             buttons: [{
-                text: '确定',
+                text: 'Chắc chắn',
                 iconCls: 'icon-ok',
                 handler: function(){
                 	var validate = $("#add-third-form").form("validate");
             		if(!validate){
-            			$.messager.alert("消息提醒","请检查你输入的数据!","warning");
+            			$.messager.alert("Thông báo tin nhắn","Vui lòng kiểm tra dữ liệu bạn nhập!","warning");
             			return;
             		}
             		var data = $("#add-third-form").serialize();
@@ -254,17 +254,17 @@
             			data:data,
             			success:function(data){
             				if(data.code == 0){
-            					$.messager.alert('信息提示','添加成功！','info');
+            					$.messager.alert('Thông báo tin nhắn','Thêm thành công!','info');
             					$('#add-third-dialog').dialog('close');
             					$('#data-datagrid').treegrid('reload');
             				}else{
-            					$.messager.alert('信息提示',data.msg,'warning');
+            					$.messager.alert('Thông báo tin nhắn',data.msg,'warning');
             				}
             			}
             		});
                 }
             }, {
-                text: '取消',
+                text: 'Hủy bỏ',
                 iconCls: 'icon-cancel',
                 handler: function () {
                     $('#add-third-dialog').dialog('close');                    
@@ -285,11 +285,11 @@
 	function openEdit(){
 		var item = $('#data-datagrid').datagrid('getSelections');
 		if(item == null || item.length == 0){
-			$.messager.alert('信息提示','请选择要修改的数据！','info');
+			$.messager.alert('Thông báo tin nhắn','Vui lòng chọn dữ liệu sẽ được sửa đổi！','info');
 			return;
 		}
 		if(item.length > 1){
-			$.messager.alert('信息提示','请选择一条数据进行修改！','info');
+			$.messager.alert('Thông báo tin nhắn','Vui lòng chọn dữ liệu để sửa đổi！','info');
 			return;
 		}
 		item = item[0];
@@ -297,20 +297,20 @@
 		var parent = item;
 		if(item._parentId == null)
 		{
-			parent.name = "顶级分类";
+			parent.name = "Phân loại hàng đầu";
 		}else{
 		 	parent = $('#data-datagrid').treegrid('getParent',item.id);
 		}
 		$('#edit-dialog').dialog({
 			closed: false,
 			modal:true,
-            title: "修改职位类别信息",
+            title: "Sửa đổi thông tin danh mục công việc",
             buttons: [{
-                text: '确定',
+                text: 'Chắc chắn',
                 iconCls: 'icon-ok',
                 handler: edit
             }, {
-                text: '取消',
+                text: 'Hủy bỏ',
                 iconCls: 'icon-cancel',
                 handler: function () {
                     $('#edit-dialog').dialog('close');                    
@@ -339,8 +339,8 @@
 	    treeField:'name',  //是指定那列要展示成树形
 		fit:true,
 		columns:[[
-			{ field:'name',title:'职位类别名称',width:100},
-			{ field:'url',title:'职位类别URL',width:100}
+			{ field:'name',title:'Tên loại công việc',width:100},
+			{ field:'url',title:'URL loại công việc',width:100}
 		]]
 	});
 </script>

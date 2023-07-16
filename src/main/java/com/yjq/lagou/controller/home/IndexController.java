@@ -193,8 +193,8 @@ public class IndexController {
 		
 		User user = (User) request.getSession().getAttribute(SessionConstant.SESSION_USER_LOGIN_KEY);
 		Company findCompanyByUserId = companyService.findByUserId(user.getId());
-		if(findCompanyByUserId == null || !"已认证".equals(findCompanyByUserId.getState())) {
-			model.addAttribute("errorMsg", "您的公司还没认证通过，请填写公司信息或者等待认证通过！3s后为您跳转我的公司页面！");
+		if(findCompanyByUserId == null || !"đã xác minh".equals(findCompanyByUserId.getState())) {
+			model.addAttribute("errorMsg", "Công ty của bạn chưa thông qua nó, vui lòng điền thông tin của công ty hoặc chờ chứng nhận!Chuyển sang trang công ty của tôi sau 3s!");
 		}
 		
 		//判断是不是编辑操作

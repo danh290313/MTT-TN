@@ -54,35 +54,35 @@ var youdao_conv_id = 271546;
         	<form id="loginForm">
         		<ul class="register_radio clearfix">
 		            <li>
-		            	找工作
+		            	ứng viên
 		              	<input type="radio" value="0" id="type0" name="type" /> 
 		            </li>
 		            <li>
-		           	           招人
+		           	   tuyển dụng
 		              	<input type="radio" value="1" id="type1" name="type" /> 
 		            </li>
 		        </ul> 
-		        <span for="type" generated="true" class="error" id="error_type" style="display:none">请勾选注册目的</span>
-            	<input type="text" id="Email" name="Email" tabindex="1" class="require" placeholder="请输入常用邮箱地址"  tips="邮箱地址不能为空！"  attributes="error_email" />
-            	<span for="email" generated="true" class="error" id="error_email" style="display:none">请输入邮箱地址</span>
+		        <span for="type" generated="true" class="error" id="error_type" style="display:none">Vui lòng kiểm tra mục đích đăng ký</span>
+            	<input type="text" id="Email" name="Email" tabindex="1" class="require" placeholder="Vui lòng nhập địa chỉ hộp thư thường được sử dụng"  tips="Địa chỉ hộp thư không thể trống！"  attributes="error_email" />
+            	<span for="email" generated="true" class="error" id="error_email" style="display:none">Vui lòng nhập địa chỉ email</span>
             	
-                <input type="password" id="Password" name="Password" class="require" tabindex="2" placeholder="请输入密码"  tips="密码不能为空！" attributes="error_password"  />
-                <span for="password" generated="true" class="error" id="error_password" style="display:none">请输入密码</span>
+                <input type="password" id="Password" name="Password" class="require" tabindex="2" placeholder="Xin vui lòng nhập mật khẩu"  tips="Mật khẩu không thể trống！" attributes="error_password"  />
+                <span for="password" generated="true" class="error" id="error_password" style="display:none">Xin vui lòng nhập mật khẩu</span>
                 
-                <input type="text" id="username" name="username" class="require" tabindex="3" placeholder="请输入昵称"   tips="昵称不能为空！" attributes="error_username" />
-                <span for="username" generated="true" class="error" id="error_username" style="display:none">请输入昵称</span>
+                <input type="text" id="username" name="username" class="require" tabindex="3" placeholder="Hãy nhập một nickname"   tips="Biệt danh nên được điền！" attributes="error_username" />
+                <span for="username" generated="true" class="error" id="error_username" style="display:none">Hãy nhập một nickname</span>
                 
-            	<input type="text" id="cpacha" name="cpacha" class="require" tabindex="4" placeholder="请输入验证码" /  tips="验证码不能为空！" attributes="error_cpacha" >
-            	&nbsp;&nbsp;<a onclick="sendMailCpacha();" href="javascript:void(0);">发送邮箱验证码 </a>
-            	<span for="cpacha" generated="true" class="error" id="error_cpacha" style="display:none">请输入验证码</span>
+            	<input type="text" id="cpacha" name="cpacha" class="require" tabindex="4" placeholder="vui lòng nhập mã xác nhận" /  tips="Mã xác minh phải được điền！" attributes="error_cpacha" >
+            	&nbsp;&nbsp;<a onclick="sendMailCpacha();" href="javascript:void(0);">Gửi mã xác minh</a>
+            	<span for="cpacha" generated="true" class="error" id="error_cpacha" style="display:none">nhập mã xác nhận</span>
             	
             	
-                <input type="button" id="submitLogin" value="注 &nbsp; &nbsp; 册" />
+                <input type="button" id="submitLogin" value="Đăng ký" />
               
             </form>
             <div class="login_right">
-            	<div>已有帐号</div>
-            	<a  href="/home/system/login"  class="registor_now">直接登录</a>
+            	<div>Tài khoản hiện có</div>
+            	<a  href="/home/system/login"  class="registor_now">Đăng nhập trực tiếp</a>
             </div>
         </div>
         <div class="login_box_btm"></div>
@@ -108,7 +108,7 @@ var youdao_conv_id = 271546;
         if(!reg.test(document.getElementById("Email").value))
         { 
        		//如果邮箱格式不正确
-        	$("#errorMsg").html("发送失败，邮箱格式不正确！!!!");
+        	$("#errorMsg").html("Việc gửi không thành công, định dạng của hộp thư không chính xác !!!");
             $.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
         }
         else{
@@ -121,10 +121,10 @@ var youdao_conv_id = 271546;
 				data:{receiver:email,type:type},
 				success:function(data){
 					if(data.code == 0){
-						$("#successMsg").html("邮件发送成功！└(^o^)┘");
+						$("#successMsg").html("Thư đã được gửi thành công!");
 						$.colorbox({inline:true, href:$("#successTip"),title:"Thông báo"});
 					}else{
-						$("#errorMsg").html("发送失败，"+data.msg+"!!!");
+						$("#errorMsg").html("Gửi thất bại，"+data.msg+"!!!");
             			$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
 					}
 				}
@@ -155,37 +155,37 @@ var youdao_conv_id = 271546;
 				data:data,
 				success:function(data){
 					if(data.code == 0){
-						$("#successMsg").html("注册成功！快去登录体验叭！└(^o^)┘");
+						$("#successMsg").html("Đăng ký thành công!");
 						$.colorbox({inline:true, href:$("#successTip"),title:"Thông báo"});
 					}else{
 						switch(data.code){
 							case -1010:
 								$('#error_type').css('display','block');
-								$("#errorMsg").html("注册失败，"+data.msg+"!!!");
+								$("#errorMsg").html("Đăng ký không thành công，"+data.msg+"!!!");
             					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
             					break;
             				case -3:
             					$('#error_cpacha').css('display','block');
-            					$("#errorMsg").html("注册失败，"+data.msg+"!!!");
+            					$("#errorMsg").html("Đăng ký không thành công，"+data.msg+"!!!");
             					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
             					break;
             				case -1000:
             					$('#error_username').css('display','block');
-            					$("#errorMsg").html("注册失败，"+data.msg+"!!!");
+            					$("#errorMsg").html("Đăng ký không thành công，"+data.msg+"!!!");
             					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
             					break;
             				case -1001:
             					$('#error_password').css('display','block');
-            					$("#errorMsg").html("注册失败，"+data.msg+"!!!");
+            					$("#errorMsg").html("Đăng ký không thành công，"+data.msg+"!!!");
             					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
             					break;
             				case -1006:
             					$('#error_email').css('display','block');
-            					$("#errorMsg").html("注册失败，"+data.msg+"!!!");
+            					$("#errorMsg").html("Đăng ký không thành công，"+data.msg+"!!!");
             					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
             					break;
             				default:
-            					$("#errorMsg").html("注册失败，"+data.msg+"!!!");
+            					$("#errorMsg").html("Đăng ký không thành công,"+data.msg+"!!!");
             					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
             					break;
 						}

@@ -40,7 +40,7 @@ var youdao_conv_id = 271546;
 	                	<div style="background-color:#fff;" class="c_logo">
 		                	<a title="上传公司LOGO" id="logoShow" href="javascript:void(0);" onclick="uploadPhoto();">
                 			<img width="190" id="preview_company_photo" height="190" alt="公司logo" src="/home/style/images/logo_default.png">
-                        	<span>更换公司图片<br>点公司名称旁边铅笔保存</span>
+                        	<span>Thay thế hình ảnh của công ty<br>Chỉ tên công ty bên cạnh bút chì để lưu</span>
 	                        </a>
 		                </div>
 		                <input type="file" id="company_photo_file" style="display:none;" onchange="uploadCompanyPhoto()">
@@ -52,17 +52,17 @@ var youdao_conv_id = 271546;
                     			<h2 title="${Company.name}">${Company.name}</h2>
 		                    	
 		                		
-		                    	<#if Company.state == "未认证">
+		                    	<#if Company.state == "không công nhận, không chứng nhận">
 		                    		<em class="unvalid"></em>
 		                			<span class="va dn">Không thể phát hiện được</span>
 		                    		<a  class="applyC" href="javascript:void(0);" onclick="applyConfirm('${Company.id}')">Áp dụng cho chứng nhận</a>
 		                    	</#if>
-	                    		<#if Company.state == "待审核">
+	                    		<#if Company.state == "Để được xem xét">
 	                    			<em class="unvalid"></em>
 		                			<span class="va dn">Không thể phát hiện được</span>
 		                    		<a  class="applyC" href="javascript:void(0);">xem xét</a>
 		                    	</#if>
-		                    	<#if Company.state == "已认证">
+		                    	<#if Company.state == "đã xác minh">
 		                    		<img src="/home/style/images/valid.png" width="15" height="19" style="margin-bottom:-4px;" title="Doanh nghiệp chứng nhận" />
 		                    		<a  class="applyC" href="javascript:void(0);">đã xác minh</a>
 		                    	</#if>
@@ -134,7 +134,7 @@ var youdao_conv_id = 271546;
 					            	<!--产品编辑-->
 					                <dl id="newProduct" class="newProduct dn">
 					                	<dt>
-					                    	<h2><em></em>公司产品</h2>
+					                    	<h2><em></em>sản phẩm của công ty</h2>
 					                    </dt>
 					                    <dd id="company_product_edit">
 					                       
@@ -142,20 +142,20 @@ var youdao_conv_id = 271546;
 					                            	
 						                            <div class="product_upload productShow" >
 						                            	<img width="380" height="220" id="edit_preview_product_photo" src="/photo/view?filename=common/product_default.png">
-							                        	<span>更换产品图片<br>380*220px 小于1M</span>
+							                        	<span>Thay thế hình ảnh sản phẩm<br>380*220px Dưới 1m</span>
 							                        	<input type="file" style="display:none;" onchange="uploadCompanyProductPhoto()">
 							                        </div>
 							                        <input type="hidden" value="common/product_default.png" id="product_photo"> 
-							                        <input type="file"  id="product_photo_file" title="支持jpg、jpeg、gif、png格式，文件小于1M" onchange="uploadCompanyProductPhoto();">
+							                        <input type="file"  id="product_photo_file" title="Hỗ trợ JPG, JPEG, GIF, định dạng PNG, tệp nhỏ hơn 1M" onchange="uploadCompanyProductPhoto();">
 							                    	<input type="hidden" value="3" name="type" class="type"> 
 							                    </div>
 					                            
 					                            <div class="cp_intro">
-					                               	<input type="text" placeholder="请输入产品名称"  name="product" id="company_product_name">	
-					                                <textarea placeholder="请简短描述该产品定位、产品特色、用户群体等" maxlength="500"  class="s_textarea" name="productProfile" id="company_product_description"></textarea>	
+					                               	<input type="text" placeholder="Vui lòng nhập tên sản phẩm"  name="product" id="company_product_name">	
+					                                <textarea placeholder="Vui lòng mô tả ngắn gọn định vị sản phẩm, đặc điểm sản phẩm, nhóm người dùng, v.v." maxlength="500"  class="s_textarea" name="productProfile" id="company_product_description"></textarea>	
 					                                <div class="clear"></div>
-					                                <input type="button" value="保存" class="btn_small" onclick="saveCompanyProduct();">
-					                                <a class="btn_cancel_s product_delete" href="javascript:void(0)">取消</a>
+					                                <input type="button" value="" class="btn_small" onclick="saveCompanyProduct();">
+					                                <a class="btn_cancel_s product_delete" href="javascript:void(0)">Hủy bỏ</a>
 					                        		<input type="hidden" value="11867" class="product_id">
 					                            </div>
 											
@@ -164,7 +164,7 @@ var youdao_conv_id = 271546;
 					                <!--有产品-->
 					                <dl class="c_product" id="company_product_show">
 					                	<dt>
-					                    	<h2><em></em>公司产品</h2>
+					                    	<h2><em></em>sản phẩm của công ty</h2>
 					                    </dt>
 					                    <dd >
 					                    	<img width="380" height="220" id="preview_product_photo" alt="" src="/photo/view?filename=common/product_default.png">
@@ -173,29 +173,29 @@ var youdao_conv_id = 271546;
 				                        		<#if Company.productTitle??>
 				                        			<h3><a target="_blank" href="http://www.weimob.com">${Company.productTitle!""}</a></h3>
 				                        		<#else>
-				                        			<h3><a target="_blank" href="http://www.weimob.com">快来填写产品标题吧</a></h3>
+				                        			<h3><a target="_blank" href="http://www.weimob.com">Hãy đến và điền vào tiêu đề sản phẩm</a></h3>
 				                        		</#if>
 						                            <div class="scroll-pane" style="overflow: hidden; padding: 0px; width: 260px;">
 						                            <div class="jspContainer" style="width: 260px; height: 140px;"><div class="jspPane" style="padding: 0px; top: 0px; width: 260px;"><div>
 						                         <#if Company.productContent??>
 				                        			${Company.productContent!""}
 				                        		<#else>
-				                        				酒香不怕巷子深已经过时啦！<br>
-													把自己优秀的产品展示出来吸引人才围观吧！<br>
+				                        				Jiu Xiang không sợ rằng con hẻm đã lỗi thời!<br>
+													Hiển thị các sản phẩm tuyệt vời của bạn để thu hút tài năng để xem！<br>
 				                        		</#if>
 				                        	   	
 						                            </div></div></div></div>
 						                    <#else>       
-						                            <h3><a target="_blank" href="http://www.weimob.com">快来填写产品标题吧</a></h3>
+						                            <h3><a target="_blank" href="http://www.weimob.com">Hãy đến và điền vào tiêu đề sản phẩm</a></h3>
 						                       		<div class="scroll-pane" style="overflow: hidden; padding: 0px; width: 260px;">
 						                            <div class="jspContainer" style="width: 260px; height: 140px;"><div class="jspPane" style="padding: 0px; top: 0px; width: 260px;"><div>
-				                        			酒香不怕巷子深已经过时啦！<br>
-													把自己优秀的产品展示出来吸引人才围观吧！<br>
+				                        			Jiu Xiang không sợ rằng con hẻm đã lỗi thời!<br>
+													Hiển thị các sản phẩm tuyệt vời của bạn để thu hút tài năng để xem!<br>
 													 </div></div></div></div>
 				                        	</#if>
 				                        		
 					                        </div>
-					                        <a title="编辑公司产品" class="c_edit product_edit" href="javascript:void(0)"></a>
+					                        <a title="Chỉnh sửa sản phẩm của công ty" class="c_edit product_edit" href="javascript:void(0)"></a>
 					                    </dd>
 					                </dl>
 	            
@@ -207,27 +207,27 @@ var youdao_conv_id = 271546;
 					             <!--无介绍 -->
 									<dl class="c_section dn">
 					                	<dt>
-					                    	<h2><em></em>公司介绍</h2>
+					                    	<h2><em></em>Hồ sơ công ty</h2>
 					                    </dt>
 					                    <dd>
 					                    	<div class="addnew">
-					                        	详细公司的发展历程、让求职者更加了解你!<br>
-					                            <a id="addIntro" href="javascript:void(0)">+添加公司介绍</a>
+					                        	Lịch sử phát triển của công ty để làm cho người tìm việc hiểu bạn tốt hơn!<br>
+					                            <a id="addIntro" href="javascript:void(0)">+Thêm phần giới thiệu của công ty</a>
 					                        </div>
 					                    </dd>
 					                </dl>
 					            <!--编辑介绍-->
 					                <dl class="c_section newIntro dn">
 					                    <dt>
-					                        <h2><em></em>公司介绍</h2>
+					                        <h2><em></em>Hồ sơ công ty</h2>
 					                    </dt>
 					                    <dd>
 						                    <form id="companyDesForm">
-						                        <textarea placeholder="请分段详细描述公司简介、企业文化等" name="companyProfile" id="companyProfile"></textarea>		                                        
-						                        <div class="word_count fr">你还可以输入 <span>1000</span> 字</div>
+						                        <textarea placeholder="Vui lòng mô tả hồ sơ của công ty, văn hóa doanh nghiệp, v.v." name="companyProfile" id="companyProfile"></textarea>		                                        
+						                        <div class="word_count fr">Bạn cũng có thể nhập <span>1000</span> 字</div>
 						                        <div class="clear"></div>
-						                        <input type="button" value="保存" id="submitProfile" class="btn_small" onclick="saveCompanyIntroducation();">
-						                        <a id="delProfile" class="btn_cancel_s" href="javascript:void(0)">取消</a>
+						                        <input type="button" value="Lưu" id="submitProfile" class="btn_small" onclick="saveCompanyIntroducation();">
+						                        <a id="delProfile" class="btn_cancel_s" href="javascript:void(0)">Hủy bỏ</a>
 						                    </form>
 					                    </dd>
 					                </dl>
@@ -235,23 +235,23 @@ var youdao_conv_id = 271546;
 					            <!--有介绍-->
 					               <dl class="c_section">
 					               		<dt>
-					                   		<h2><em></em>公司介绍</h2>
+					                   		<h2><em></em>Hồ sơ công ty</h2>
 					                   	</dt>
 					                   	<dd>
 					                   		<#if Company??>
 					                   			<#if Company.introduction??>
 					                   				<div class="c_intro">${Company.introduction!""}</div>
-					                   				<a title="编辑公司介绍" id="editIntro" class="c_edit" href="javascript:void(0)"></a>
+					                   				<a title="Chỉnh sửa giới thiệu công ty" id="editIntro" class="c_edit" href="javascript:void(0)"></a>
 					                   			<#else>
 					                   				<div class="addnew">
-							                        	详细公司的发展历程、让求职者更加了解你!<br>
-							                            <a id="addIntro" href="javascript:void(0)">+添加公司介绍</a>
+							                        	Quá trình phát triển của công ty để làm cho người tìm việc biết bạn tốt hơn!<br>
+							                            <a id="addIntro" href="javascript:void(0)">+Thêm phần giới thiệu của công ty</a>
 							                        </div>
 					                   			</#if>
 					                   		<#else>
 					                   			<div class="addnew">
-						                        	详细公司的发展历程、让求职者更加了解你!<br>
-						                            <a id="addIntro" href="javascript:void(0)">+添加公司介绍</a>
+						                        	Lịch sử phát triển của công ty để làm cho người tìm việc hiểu bạn tốt hơn!<br>
+						                            <a id="addIntro" href="javascript:void(0)">+Thêm phần giới thiệu của công ty</a>
 						                        </div>
 					                   		</#if>
 					                   		
@@ -266,7 +266,7 @@ var youdao_conv_id = 271546;
 	        			<!--无招聘职位-->
 						<dl id="noJobs" class="c_section">
 		                	<dt>
-		                    	<h2><em></em>招聘职位</h2>
+		                    	<h2><em></em>Vị trí tuyển dụng</h2>
 		                    </dt>
 		                    <#if PositionList??>
 		                    	 <dd>
@@ -279,8 +279,8 @@ var youdao_conv_id = 271546;
 		                    <#else>
 		                    	<dd>
 			                    	<div class="addnew">
-			                        	发布需要的人才信息，让伯乐和千里马尽快相遇……<br>
-			                            <a href="/home/index/publish_position">+添加招聘职位</a>
+			                        	Xuất bản thông tin tài năng bạn cần, hãy để Bo le và Qianlima gặp nhau càng sớm càng tốt ...…<br>
+			                            <a href="/home/index/publish_position">+Thêm vị trí tuyển dụng</a>
 			                        </div>
 			                    </dd>
 		                    </#if>
@@ -448,7 +448,7 @@ var youdao_conv_id = 271546;
 	       		<!--有创始团队-->
 		                <dl class="c_section c_member">
 		                	<dt>
-		                    	<h2><em></em>创始团队</h2>
+		                    	<h2><em></em>Đội ngũ sáng lập</h2>
 		                    </dt>
 		                    <dd> 
 	       						<div class="member_wrap">
@@ -458,11 +458,11 @@ var youdao_conv_id = 271546;
 			                        			<input type="hidden" value="common/default_headpic.png" id="founder_photo">
 					                            <div class="new_portrait">
 						                            <div class="portrait_upload dn portraitNo">
-						                                <span>上传创始人头像</span>
+						                                <span>Tải lên Avatar người sáng lập</span>
 						                            </div>
 						                            <div class="portraitShow">
 						                            	<img width="120" height="120" id="edit_preview_founder_photo" src="/home/style/images/leader_default.png">
-							                        	<span>更换头像</span>
+							                        	<span>Thay đổi hình đại diện</span>
 							                        </div>
 							                        <input type="file" title="支持jpg、jpeg、gif、png格式，文件小于1M" onchange="uploadCompanyFounderPhoto();" id="founder_photo_file">
 							                    	<input type="hidden" value="7" name="type" class="type">
@@ -472,25 +472,25 @@ var youdao_conv_id = 271546;
 												                                大小：小于1M
 						                            </em>
 						                        </div>
-						                        <input type="text" placeholder="请输入创始人姓名"  class="require" id="company_founder_name" name="name" tips="公司创始人姓名不能为空！"  attributes="error_company_founder_name">	
-						                        <span for="company_founder_name" generated="true" class="error" id="error_company_founder_name" style="display:none">公司创始人姓名不能为空！</span>
+						                        <input type="text" placeholder="Vui lòng nhập tên của người sáng lập"  class="require" id="company_founder_name" name="name" tips="Tên người sáng lập của công ty không thể trống!"  attributes="error_company_founder_name">	
+						                        <span for="company_founder_name" generated="true" class="error" id="error_company_founder_name" style="display:none">Tên người sáng lập của công ty không thể trống!</span>
 					                            
-					                            <input type="text" placeholder="请输入创始人当前职位" value="ceo" class="require" id="company_founder_position" name="position" tips="公司创始人职位不能为空！"  attributes="error_company_founder_position">
-					                            <span for="company_founder_position" generated="true" class="error" id="error_company_founder_position" style="display:none">公司创始人职位不能为空！</span>
+					                            <input type="text" placeholder="Vui lòng nhập vị trí hiện tại của người sáng lập" value="ceo" class="require" id="company_founder_position" name="position" tips="Vị trí của người sáng lập công ty không thể trống!"  attributes="error_company_founder_position">
+					                            <span for="company_founder_position" generated="true" class="error" id="error_company_founder_position" style="display:none">Vị trí của người sáng lập công ty không thể trống!</span>
 					                           
 					                            <div class="clear"></div>
-					                            <input type="button" value="保存" class="btn_small" onclick="saveCompanyFounder();">
-				                                <a class="btn_cancel_s member_delete" href="javascript:void(0)">取消</a>
+					                            <input type="button" value="Lưu" class="btn_small" onclick="saveCompanyFounder();">
+				                                <a class="btn_cancel_s member_delete" href="javascript:void(0)">Hủy bỏ</a>
 				                        		<input type="hidden" value="11493" class="leader_id">
 				                        	</form>
 				                        </div>
 				                        
 				                        <!-- 显示创始人 -->
 				                    	<div class="member_info" id="show_company_founder">
-	                    					<a title="编辑创始人" class="c_edit member_edit" href="javascript:void(0)"></a>
+	                    					<a title="Biên tập viên -người sáng lập" class="c_edit member_edit" href="javascript:void(0)"></a>
 				                        	<div class="m_portrait">
 				                            	<div></div>
-				                            	<img width="120" height="120" id="preview_founder_photo" alt="孙泰英" src="/home/style/images/leader_default.png">
+				                            	<img width="120" height="120" id="preview_founder_photo" alt="Mặt trời taiying" src="/home/style/images/leader_default.png">
 					                        </div>
 					                        
 				                            <div class="m_name">
@@ -498,20 +498,20 @@ var youdao_conv_id = 271546;
 					                            	<#if Company.founderName??>
 					                            		${Company.founderName!""}
 					                            	<#else>
-					                            		创始人:空
+					                            		Người sáng lập: trống rỗng
 					                            	</#if>
 					                            <#else>
-					                            	创始人:空
+					                            	Người sáng lập: trống rỗng
 					                            </#if>
 				                            </div>
 				                             <#if Company??>
 					                            	<#if Company.founderPosition??>
 					                            		 <div class="m_position">${Company.founderPosition!""}</div>
 					                            	<#else>
-					                            		<div class="m_position">创始人职位：空</div>
+					                            		<div class="m_position">Vị trí người sáng lập: trống rỗng</div>
 					                            	</#if>
 					                            <#else>
-					                            	<div class="m_position">创始人职位：空</div>
+					                            	<div class="m_position">Vị trí người sáng lập: trống rỗng</div>
 				                            </#if>
 				                           
 				                    		<div class="m_intro"></div>
@@ -627,18 +627,18 @@ function uploadCompanyFounderPhoto(){
 			processData:false,
 			success:function(data){
 				if(data.code == 0){
-					$("#successMsg").html("上传成功！└(^o^)┘");
+					$("#successMsg").html("Tải lên thành công!");
 					$.colorbox({inline:true, href:$("#successTip"),title:"Thông báo"});
 					$("#edit_preview_founder_photo").attr('src','/photo/view?filename=' + data.data);
 					$("#preview_founder_photo").attr('src','/photo/view?filename=' + data.data);
 					$("#founder_photo").val(data.data);
 				}else{
-					$("#errorMsg").html("上传失败，"+data.msg+"!!!");
+					$("#errorMsg").html("Tải lên thất bại,"+data.msg+"!!!");
 					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
 				}
 			},
 			error:function(data){
-				$("#errorMsg").html("上传失败，请上传正确格式或者大小的文件！!!!");
+				$("#errorMsg").html("Tải lên không thành công, vui lòng tải lên đúng định dạng hoặc tệp kích thước！!!!");
 				$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
 			}
 		});
@@ -658,18 +658,18 @@ function uploadCompanyProductPhoto(){
 			processData:false,
 			success:function(data){
 				if(data.code == 0){
-					$("#successMsg").html("上传成功！└(^o^)┘");
+					$("#successMsg").html("Tải lên thành công!");
 					$.colorbox({inline:true, href:$("#successTip"),title:"Thông báo"});
 					$("#edit_preview_product_photo").attr('src','/photo/view?filename=' + data.data);
 					$("#preview_product_photo").attr('src','/photo/view?filename=' + data.data);
 					$("#product_photo").val(data.data);
 				}else{
-					$("#errorMsg").html("上传失败，"+data.msg+"!!!");
+					$("#errorMsg").html("Tải lên thất bại,"+data.msg+"!!!");
 					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
 				}
 			},
 			error:function(data){
-				$("#errorMsg").html("上传失败，请上传正确格式或者大小的文件！!!!");
+				$("#errorMsg").html("Tải lên thất bại, vui lòng tải lên đúng định dạng hoặc tệp kích thước!!!!");
 				$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
 			}
 		});
@@ -689,17 +689,17 @@ function uploadCompanyPhoto(){
 			processData:false,
 			success:function(data){
 				if(data.code == 0){
-					$("#successMsg").html("上传成功！└(^o^)┘");
+					$("#successMsg").html("Tải lên thành công!");
 					$.colorbox({inline:true, href:$("#successTip"),title:"Thông báo"});
 					$("#preview_company_photo").attr('src','/photo/view?filename=' + data.data);
 					$("#company_photo").val(data.data);
 				}else{
-					$("#errorMsg").html("上传失败，"+data.msg+"!!!");
+					$("#errorMsg").html("Tải lên thất bại,"+data.msg+"!!!");
 					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
 				}
 			},
 			error:function(data){
-				$("#errorMsg").html("上传失败，请上传正确格式或者大小的文件！!!!");
+				$("#errorMsg").html("Tải lên thất bại, vui lòng tải lên đúng định dạng hoặc tệp kích thước!!!!");
 				$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
 			}
 		});
@@ -742,11 +742,11 @@ function saveCompanyDetailForm()
     					break;
 					case -5001:
     					$('#error_company_value').css('display','block');
-    					$("#errorMsg").html("保存失败，"+data.msg+"!!!");
+    					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
     					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
     					break;
     				default:
-    					$("#errorMsg").html("保存失败，"+data.msg+"!!!");
+    					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
     					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
     					break;
 					}
@@ -858,26 +858,26 @@ function saveCompanyBasic(){
 					switch(data.code){
 					case -5012:
     					$('#error_company_locale').css('display','block');
-    					$("#errorMsg").html("保存失败，"+data.msg+"!!!");
+    					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
     					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
     					break;
 					case -5013:
     					$('#error_company_territory').css('display','block');
-    					$("#errorMsg").html("保存失败，"+data.msg+"!!!");
+    					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
     					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
     					break;
     				case -5014:
     					$('#error_company_url').css('display','block');
-    					$("#errorMsg").html("保存失败，"+data.msg+"!!!");
+    					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
     					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
     					break;
     				case -5016:
     					$('#error_company_scale').css('display','block');
-    					$("#errorMsg").html("保存失败，"+data.msg+"!!!");
+    					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
     					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
     					break;
     				default:
-    					$("#errorMsg").html("保存失败，"+data.msg+"!!!");
+    					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
     					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
     					break;
 					}
@@ -903,7 +903,7 @@ function saveCompanyFinance()
 						window.location.reload();//页面刷新
 						},3000);
 			}else{
-					$("#errorMsg").html("保存失败，"+data.msg+"!!!");
+					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
 					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
 				}
 		}
@@ -939,16 +939,16 @@ function saveCompanyFounder(){
 					switch(data.code){
 					case -5020:
     					$('#error_company_founder_position').css('display','block');
-    					$("#errorMsg").html("保存失败，"+data.msg+"!!!");
+    					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
     					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
     					break;
 					case -5019:
     					$('#error_company_founder_name').css('display','block');
-    					$("#errorMsg").html("保存失败，"+data.msg+"!!!");
+    					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
     					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
     					break;
     				default:
-    					$("#errorMsg").html("保存失败，"+data.msg+"!!!");
+    					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
     					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
     					break;
 					}
@@ -972,7 +972,7 @@ function applyConfirm(i){
 						window.location.reload();//页面刷新
 						},3000);
 			}else{
-					$("#errorMsg").html("公司认证申请提交失败，"+data.msg+"!!!");
+					$("#errorMsg").html("Đệ trình ứng dụng chứng nhận công ty không thành công,"+data.msg+"!!!");
 					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
 				}
 		}
@@ -983,7 +983,7 @@ function applyConfirm(i){
 //提示
 function tips(){
 
-		$("#errorMsg").html("申请公司认证失败，请先填写基本公司信息!!!");
+		$("#errorMsg").html("Nếu bạn không đăng ký chứng nhận của công ty, vui lòng điền thông tin cơ bản của công ty trước tiên!!!");
 		$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
 
 }

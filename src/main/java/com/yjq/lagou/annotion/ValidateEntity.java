@@ -5,24 +5,19 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-/**
- * 实体检验自定义注解类，根据我们自定义的注解去检查实体各个字段是否在规定的值内
- * @author Administrator
- *
- */
 @Target(ElementType.FIELD)
-@Retention(RetentionPolicy.RUNTIME)  //runtime运行时一直持续
+@Retention(RetentionPolicy.RUNTIME) 
 public @interface ValidateEntity {
 	
-	public boolean required() default false;//是否检验null
+	public boolean required() default false;
 	
-	public boolean requiredMaxLength() default false;//是否检验检验长度最大值
+	public boolean requiredMaxLength() default false;
 	
-	public boolean requiredMinLength() default false;//是否检验检验长度最小值
+	public boolean requiredMinLength() default false;
 	
-	public boolean requiredMaxValue() default false;//是否检验最大值
+	public boolean requiredMaxValue() default false;
 	
-	public boolean requiredMinValue() default false;//是否检验最小值
+	public boolean requiredMinValue() default false;
 	
 	
 	

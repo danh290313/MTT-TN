@@ -59,8 +59,8 @@
                 <#elseif user.type == 1>
                     <dd><a href="/home/position/my_publish_position">Tuyển dụng đã đăng</a></dd>
                     <dd><a href="/home/resume/my_receive_resume">Hồ sơ đã nhận</a></dd>
-                    <dd><a href="/home/index/publish_position">Tôi muốn tuyển dụng</a></dd>
-                    <dd class="btm"><a href="/home/company/my_company">Trang chủ công ty của tôi</a></dd>
+                    <dd><a href="/home/index/publish_position">Đăng tuyển dụng</a></dd>
+                    <dd class="btm"><a href="/home/company/my_company">Thông tin công ty</a></dd>
                 </#if>
                 <dd><a href="/home/system/update_password">Thay đổi mật khẩu</a></dd>
                 <dd class="logout"><a rel="nofollow" href="/home/system/logout">Đăng xuất</a></dd>

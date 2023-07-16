@@ -20,7 +20,7 @@
     <!-- Begin of toolbar -->
     <div id="wu-toolbar">
         <div class="wu-toolbar-button">
-		   <a href="javascript:void(0);"  class="easyui-linkbutton" iconCls="icon-edit" onclick="openEdit();" plain="true">修改</a>
+		   <a href="javascript:void(0);"  class="easyui-linkbutton" iconCls="icon-edit" onclick="openEdit();" plain="true">Chỉnh sửa</a>
         </div>
     </div>
     <!-- End of toolbar -->
@@ -35,30 +35,30 @@
 
 
             <tr>
-                <td width="60" align="right">用户名:</td>
+                <td width="60" align="right">tên tài khoản:</td>
                 <td><input type="text" id="edit-adminName" name="adminName" class="wu-text easyui-validatebox" data-options="required:true, missingMessage:'请填写用户名'" /></td>
             </tr>
               <tr>
-                <td width="60" align="right">密码:</td>
+                <td width="60" align="right">mật khẩu:</td>
                 <td><input type="text" id="edit-password" name="password" class="wu-text easyui-validatebox" data-options="required:true, missingMessage:'请填写密码'" /></td>
             </tr>
            
             <tr>
-                <td width="60" align="right">性别:</td>
+                <td width="60" align="right">giới tính:</td>
                 <td>
                 	<select id="edit-sex" name="sex" class="easyui-combobox" panelHeight="auto" style="width:268px" data-options="editable:false">
-		                <option value="0">未知</option>
-            			<option value="1">男</option>
-            			<option value="2">女</option>
+		                <option value="0">LGBT</option>
+            			<option value="1">nam</option>
+            			<option value="2">nữ</option>
 		            </select>
                 </td>
             </tr>
             <tr>
-                <td width="60" align="right">手机号:</td>
+                <td width="60" align="right">Số điện thoại:</td>
                 <td><input type="text" id="edit-mobile" name="mobile" class="wu-text easyui-validatebox" /></td>
             </tr>
             <tr>
-                <td width="60" align="right">邮箱:</td>
+                <td width="60" align="right">Thư:</td>
                 <td><input type="text" id="edit-email" name="email" class="wu-text easyui-validatebox" /></td>
             </tr>
         </table>
@@ -109,13 +109,13 @@
 					$("#edit-preview-photo").attr('src','/photo/view?filename=' + data.data);
 					$("#edit-photo").val(data.data);
 				}else{
-					$.messager.alert("消息提醒",data.msg,"warning");
+					$.messager.alert("Thông báo tin nhắn",data.msg,"warning");
 				}
 			},
 			error:function(data){
 				clearInterval(interval);
 				$("#process-dialog").dialog('close');
-				$.messager.alert("消息提醒","上传失败!请上传正确格式或者大小的文件！","warning");
+				$.messager.alert("Thông báo tin nhắn","Tải lên không thành công! Vui lòng tải lên đúng định dạng hoặc tệp kích thước！","warning");
 			}
 		});
 	}
@@ -131,7 +131,7 @@
 	function edit(){
 		var validate = $("#edit-form").form("validate");
 		if(!validate){
-			$.messager.alert("消息提醒","请检查你输入的数据!","warning");
+			$.messager.alert("Thông báo nhắc nhở "," Vui lòng kiểm tra dữ liệu bạn đã nhập!","warning");
 			return;
 		}
 		var data = $("#edit-form").serialize();
@@ -142,11 +142,11 @@
 			data:data,
 			success:function(data){
 				if(data.code == 0){
-					$.messager.alert('信息提示','修改成功！','info');
+					$.messager.alert('Thông tin nhắc nhở ',' Sửa đổi thành công!','info');
 					$('#edit-dialog').dialog('close');
 					$('#data-datagrid').datagrid('reload');
 				}else{
-					$.messager.alert('信息提示',data.msg,'warning');
+					$.messager.alert('Thông báo tin nhắn',data.msg,'warning');
 				}
 			}
 		});
@@ -167,20 +167,20 @@
 			return;
 		}
 		if(item.length > 1){
-			$.messager.alert('信息提示','请选择一条数据进行修改！','info');
+			$.messager.alert('Thông tin nhắc nhở ',' Vui lòng chọn một dữ liệu để sửa đổi!','info');
 			return;
 		}
 		item = item[0];
 		$('#edit-dialog').dialog({
 			closed: false,
 			modal:true,
-            title: "修改管理员信息",
+            title: "Sửa đổi thông tin quản trị viên",
             buttons: [{
-                text: '确定',
+                text: 'Chắc chắn',
                 iconCls: 'icon-ok',
                 handler: edit
             }, {
-                text: '取消',
+                text: 'Hủy bỏ',
                 iconCls: 'icon-cancel',
                 handler: function () {
                     $('#edit-dialog').dialog('close');                    
@@ -216,24 +216,24 @@
 		columns:[[
 			{ field:'chk',checkbox:true},
 
-			{ field:'adminName',title:'用户名',width:100,sortable:true},
-			{ field:'password',title:'密码',width:100},
-			{ field:'sex',title:'性别',width:100,formatter:function(value,row,index){
+			{ field:'adminName',title:'tên tài khoản',width:100,sortable:true},
+			{ field:'password',title:'mật khẩu',width:100},
+			{ field:'sex',title:'giới tính',width:100,formatter:function(value,row,index){
 				switch(value){
 					case 0:{
-						return '未知';
+						return 'LGBT';
 					}
 					case 1:{
-						return '男';
+						return 'nam';
 					}
 					case 2:{
-						return '女';
+						return 'nữ';
 					}
 				}
 				return value;
 			}},
-			{ field:'mobile',title:'手机号',width:100},
-			{ field:'email',title:'邮箱',width:100}
+			{ field:'mobile',title:'Số điện thoại',width:100},
+			{ field:'email',title:'Thư',width:100}
 		]]
 	});
 </script>

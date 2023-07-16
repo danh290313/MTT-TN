@@ -100,22 +100,22 @@ var youdao_conv_id = 271546;
 						switch(data.code){
             				case -3:
             					$('#error_cpacha').css('display','block');
-            					$("#errorMsg").html("登陆失败，"+data.msg+"!!!");
+            					$("#errorMsg").html("Đăng nhập thất bại，"+data.msg+"!!!");
             					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
             					break;
             				case -1001:
             					$('#error_password').css('display','block');
-            					$("#errorMsg").html("登陆失败，"+data.msg+"!!!");
+            					$("#errorMsg").html("Đăng nhập thất bại，"+data.msg+"!!!");
             					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
             					break;
             				case -1006:
             					$('#error_email').css('display','block');
-            					$("#errorMsg").html("登陆失败，"+data.msg+"!!!");
+            					$("#errorMsg").html("Đăng nhập thất bại，"+data.msg+"!!!");
             					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
             					break;
             				default:
             					changeCpacha()
-            					$("#errorMsg").html("登陆失败，"+data.msg+"!!!");
+            					$("#errorMsg").html("Đăng nhập thất bại，"+data.msg+"!!!");
             					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
             					break;
 						}

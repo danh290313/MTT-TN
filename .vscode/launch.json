@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-App<lagou>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.yjq.lagou.App",
+      "projectName": "lagou",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}

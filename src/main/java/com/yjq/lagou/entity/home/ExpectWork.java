@@ -26,7 +26,7 @@ public class ExpectWork extends BaseEntity{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private static final String DEFAULT_TYPE = "全职"; //默认期望工作的性质
+	private static final String DEFAULT_TYPE = "full"; //默认期望工作的性质
 	
 	@ManyToOne
 	@JoinColumn(name="user_id")

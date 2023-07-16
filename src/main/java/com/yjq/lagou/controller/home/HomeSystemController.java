@@ -120,15 +120,15 @@ public class HomeSystemController {
 		if(StringUtil.isEmpty(password)){
 			return Result.error(CodeMsg.USER_PASSWORD_EMPTY);
 		}
-		if(StringUtil.isEmpty(cpacha)){
-			return Result.error(CodeMsg.CPACHA_EMPTY);
-		}
+		// if(StringUtil.isEmpty(cpacha)){
+		// 	return Result.error(CodeMsg.CPACHA_EMPTY);
+		// }
 		//获取系统生成的验证码
-		String correct_cpacha = (String) request.getSession().getAttribute("user_login");
-		//验证验证码是否正确
-		if(!cpacha.toUpperCase().equals(correct_cpacha.toUpperCase())) {
-			return Result.error(CodeMsg.CPACHA_ERROR);
-		}
+		// String correct_cpacha = (String) request.getSession().getAttribute("user_login");
+		// //验证验证码是否正确
+		// if(!cpacha.toUpperCase().equals(correct_cpacha.toUpperCase())) {
+		// 	return Result.error(CodeMsg.CPACHA_ERROR);
+		// }
 		User user = userService.findByEmail(email);
 		//判断该邮箱地址是否存在
 		if(user == null){

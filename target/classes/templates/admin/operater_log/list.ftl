@@ -20,7 +20,7 @@
     <!-- Begin of toolbar -->
     <div id="wu-toolbar">
         <div class="wu-toolbar-button">
-		    <a href="javascript:void(0);"  class="easyui-linkbutton" iconCls="icon-cross" onclick="remove();" plain="true">删除</a>
+		    <a href="javascript:void(0);"  class="easyui-linkbutton" iconCls="icon-cross" onclick="remove();" plain="true">xóa bỏ</a>
         </div>
     </div>
     <!-- End of toolbar -->
@@ -85,9 +85,9 @@
 	    fit:true,
 		columns:[[
 			{ field:'chk',checkbox:true},
-			{ field:'operator',title:'操作者',width:100},
-			{ field:'content',title:'操作内容',width:300},
-			{ field:'createTime',title:'操作时间',width:100}
+			{ field:'operator',title:'nhà điều hành',width:100},
+			{ field:'content',title:'Nội dung hoạt động',width:300},
+			{ field:'createTime',title:'Thời gian hoạt động',width:100}
 		]]
 	});
 </script>

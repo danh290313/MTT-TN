@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="copyright" content="All Rights Reserved, Copyright (C) 2020, 杨杨吖, Ltd." />
-<title>后台管理主页</title>
+<title>Quản lý nền Trang chủ</title>
 <link rel="stylesheet" type="text/css" href="/admin/easyui/easyui/1.3.4/themes/default/easyui.css" />
 <link rel="stylesheet" type="text/css" href="/admin/easyui/css/wu.css" />
 <link rel="stylesheet" type="text/css" href="/admin/easyui/css/icon.css" />
@@ -20,7 +20,7 @@
     <!-- Begin of toolbar -->
     <div id="wu-toolbar">
         <div class="wu-toolbar-button">
-	       <a href="javascript:void(0);"  class="easyui-linkbutton" iconCls="icon-cross" onclick="remove();" plain="true">删除</a>
+	       <a href="javascript:void(0);"  class="easyui-linkbutton" iconCls="icon-cross" onclick="remove();" plain="true">xóa bỏ</a>
         </div>
     </div>
     <!-- End of toolbar -->
@@ -37,10 +37,10 @@
 	function remove(){
 		var item = $('#data-datagrid').datagrid('getSelections');
 		if(item == null || item.length != 1){
-			$.messager.alert('信息提示','请选择一条您要删除的用户数据！','info');
+			$.messager.alert('Lời nhắc thông tin ',' Vui lòng chọn dữ liệu người dùng bạn muốn xóa！','info');
 			return;
 		}
-		$.messager.confirm('信息提示','确定要删除该用户吗？如果删除，有关该用户所有信息将被删除！', function(result){
+		$.messager.confirm('Thông báo tin nhắn','Bạn có chắc là bạn muốn xóa người dùng?Nếu bị xóa, tất cả thông tin về người dùng sẽ bị xóa!', function(result){
 			if(result){
 				$.ajax({
 					url:'/admin/user/delete',
@@ -49,10 +49,10 @@
 					data:{id:item[0].id},
 					success:function(data){
 						if(data.code == 0){
-							$.messager.alert('信息提示','删除成功！','info');
+							$.messager.alert('Thông báo tin nhắn','đã xóa thành công！','info');
 							$('#data-datagrid').datagrid('reload');
 						}else{
-							$.messager.alert('信息提示',data.msg,'warning');
+							$.messager.alert('Thông báo tin nhắn',data.msg,'warning');
 						}
 						$("#data-datagrid").datagrid('clearSelections');
 					}
@@ -78,37 +78,37 @@
 		columns:[[
 			{ field:'chk',checkbox:true},
 
-			{ field:'username',title:'用户名',width:100,sortable:true},
-			{ field:'email',title:'邮箱',width:100},
-			{ field:'password',title:'密码',width:100},
-			{ field:'sex',title:'性别',width:100,formatter:function(value,row,index){
+			{ field:'username',title:'tên tài khoản',width:100,sortable:true},
+			{ field:'email',title:'Thư',width:100},
+			{ field:'password',title:'mật khẩu',width:100},
+			{ field:'sex',title:'giới tính',width:100,formatter:function(value,row,index){
 				switch(value){
 					case 0:{
-						return '未知';
+						return 'LGBT';
 					}
 					case 1:{
-						return '男';
+						return 'nam';
 					}
 					case 2:{
-						return '女';
+						return 'nữ';
 					}
 				}
 				return value;
 			}},
-			{ field:'type',title:'用户身份',width:100,formatter:function(value,row,index){
+			{ field:'type',title:'Tên người dùng',width:100,formatter:function(value,row,index){
 				switch(value){
 					case 0:{
-						return '应聘者';
+						return 'Người nộp đơn';
 					}
 					case 1:{
-						return '招聘者';
+						return 'Nhà tuyển dụng';
 					}
 				
 				}
 				return value;
 			}},
-			{ field:'mobile',title:'手机号',width:100},
-			{ field:'updateTime',title:'上一次用户更新时间',width:100}
+			{ field:'mobile',title:'Số điện thoại',width:100},
+			{ field:'updateTime',title:'Thời gian cập nhật lần cuối cùng của người dùng',width:100}
 		]]
 	});
 </script>

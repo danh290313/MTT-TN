@@ -28,7 +28,7 @@ public class Position extends BaseEntity{
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private static final String DEFAULT_WORK_TYPE = "全职"; //默认职位工作的性质
+	private static final String DEFAULT_WORK_TYPE = "full"; //默认职位工作的性质
 	
 	private static final String DEFAULT_POSITION_STATE = "wait"; //默认职位的状态 wait:待审核  out:已下线   effective:有效
 	

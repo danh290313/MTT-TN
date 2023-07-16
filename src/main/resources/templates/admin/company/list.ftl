@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="copyright" content="All Rights Reserved, Copyright (C) 2020, 杨杨吖, Ltd." />
-<title>后台管理主页</title>
+<title>Quản lý nền Trang chủ</title>
 <link rel="stylesheet" type="text/css" href="/admin/easyui/easyui/1.3.4/themes/default/easyui.css" />
 <link rel="stylesheet" type="text/css" href="/admin/easyui/css/wu.css" />
 <link rel="stylesheet" type="text/css" href="/admin/easyui/css/icon.css" />
@@ -20,16 +20,16 @@
     <!-- Begin of toolbar -->
     <div id="wu-toolbar">
         <div class="wu-toolbar-button">
-        	公司状态查询：
+        	Truy vấn trạng thái công ty:
 	  		<select id="search-state" name="search-state" class="easyui-combobox" panelHeight="auto" data-options="editable:false" style="width:150px">
-	                <option value="0">请选择</option>
-	    			<option value="1">已认证</option>
-	    			<option value="2">待审核</option>
-	    			<option value="3">未认证</option>
+	                <option value="0">xin vui lòng chọn</option>
+	    			<option value="1">đã xác minh</option>
+	    			<option value="2">Để được xem xét</option>
+	    			<option value="3">không công nhận, không chứng nhận</option>
 	        </select>
-	         <a href="javascript:void(0);" id="search-btn" class="easyui-linkbutton" iconCls="icon-search" plain="true">搜索</a>&nbsp;&nbsp;
-	         <a href="javascript:void(0);" id="update-state-btn" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="changeState();">更改职位状态</a>&nbsp;&nbsp;
-	         <a href="javascript:void(0);"  class="easyui-linkbutton" iconCls="icon-cross" onclick="remove();" plain="true">删除</a>
+	         <a href="javascript:void(0);" id="search-btn" class="easyui-linkbutton" iconCls="icon-search" plain="true">tìm kiếm</a>&nbsp;&nbsp;
+	         <a href="javascript:void(0);" id="update-state-btn" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="changeState();">Thay đổi trạng thái vị trí</a>&nbsp;&nbsp;
+	         <a href="javascript:void(0);"  class="easyui-linkbutton" iconCls="icon-cross" onclick="remove();" plain="true">xóa bỏ</a>
         </div>
     </div>
     <!-- End of toolbar -->
@@ -41,16 +41,16 @@
         <input type="hidden" name="id" id="edit-id">
         <table>
             <tr>
-                <td width="60" align="right">公司名称:</td>
+                <td width="60" align="right">Tên công ty:</td>
                 <td><input type="text" id="edit-name" name="name"  readonly="readonly" class="wu-text " /></td>
             </tr>
             <tr>
-                <td width="60" align="right">公司状态:</td>
+                <td width="60" align="right">Tình trạng công ty:</td>
                 <td>
                 	<select id="edit-state" name="state" class="easyui-combobox" data-options="editable:false" panelHeight="auto" style="width:268px">
-			    		  <option value="已认证">已认证</option>
-			    		  <option value="待审核">待审核</option>
-			    		  <option value="未认证">未认证</option>
+			    		  <option value="đã xác minh">đã xác minh</option>
+			    		  <option value="Để được xem xét">Để được xem xét</option>
+			    		  <option value="không công nhận, không chứng nhận">không công nhận, không chứng nhận</option>
 		            </select>
                 </td>
             </tr>
@@ -65,24 +65,24 @@
 	function changeState(){
 		var item = $('#data-datagrid').datagrid('getSelections');
 		if(item == null || item.length == 0){
-			$.messager.alert('信息提示','请选择要修改的数据！','info');
+			$.messager.alert('Thông báo tin nhắn','Vui lòng chọn dữ liệu sẽ được sửa đổi!','info');
 			return;
 		}
 		if(item.length > 1){
-			$.messager.alert('信息提示','请选择一条数据进行修改！','info');
+			$.messager.alert('Thông báo tin nhắn','Vui lòng chọn một dữ liệu để sửa đổi!','info');
 			return;
 		}
 		item = item[0];
 		$('#edit-dialog').dialog({
 			closed: false,
 			modal:true,
-            title: "改变职位状态",
+            title: "Thay đổi trạng thái vị trí",
             buttons: [{
-                text: '确定',
+                text: 'Chắc chắn',
                 iconCls: 'icon-ok',
                 handler: change
             }, {
-                text: '取消',
+                text: 'Hủy bỏ',
                 iconCls: 'icon-cancel',
                 handler: function () {
                     $('#edit-dialog').dialog('close');                    
@@ -101,10 +101,10 @@
 	function remove(){
 		var item = $('#data-datagrid').datagrid('getSelections');
 		if(item == null || item.length != 1){
-			$.messager.alert('信息提示','请选择一条您要删除的公司数据！','info');
+			$.messager.alert('Thông báo tin nhắn','Vui lòng chọn một dữ liệu công ty bạn muốn xóa!','info');
 			return;
 		}
-		$.messager.confirm('信息提示','确定要删除该公司吗？如果删除，有关该公司所有信息将被删除！', function(result){
+		$.messager.confirm('Thông báo tin nhắn','Bạn có chắc là bạn muốn xóa công ty?Nếu bị xóa, tất cả thông tin về công ty sẽ bị xóa!', function(result){
 			if(result){
 				$.ajax({
 					url:'/admin/company/delete',
@@ -113,10 +113,10 @@
 					data:{id:item[0].id},
 					success:function(data){
 						if(data.code == 0){
-							$.messager.alert('信息提示','删除成功！','info');
+							$.messager.alert('Thông báo tin nhắn','đã xóa thành công!','info');
 							$('#data-datagrid').datagrid('reload');
 						}else{
-							$.messager.alert('信息提示',data.msg,'warning');
+							$.messager.alert('Thông báo tin nhắn',data.msg,'warning');
 						}
 						$("#data-datagrid").datagrid('clearSelections');
 					}
@@ -137,11 +137,11 @@
 			data:data,
 			success:function(data){
 				if(data.code == 0){
-					$.messager.alert('信息提示','改变公司状态成功！','info');
+					$.messager.alert('Thông báo tin nhắn','Thay đổi thành công của công ty!','info');
 					$('#edit-dialog').dialog('close');
 					$('#data-datagrid').datagrid('reload');
 				}else{
-					$.messager.alert('信息提示',data.msg,'warning');
+					$.messager.alert('Thông báo tin nhắn',data.msg,'warning');
 				}
 			}
 		});
@@ -153,13 +153,13 @@
 	    var search_value = $('#search-state').combobox('getValues');
 	    var state = "";
 	    if(search_value == "1"){
-			state = "已认证";
+			state = "đã xác minh";
 		}
 		if(search_value == "2"){
-			state = "待审核";
+			state = "Để được xem xét";
 		}
 		if(search_value == "3"){
-			state = "未认证";
+			state = "không công nhận, không chứng nhận";
 		}
 		$('#data-datagrid').datagrid('reload',{
 			state:state

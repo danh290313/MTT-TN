@@ -39,7 +39,7 @@ var youdao_conv_id = 271546;
             <div class="content_l">
             	<div class="fl" id="resume_name">
 	            	<div class="nameShow fl">
-	            		<h1 title="${user.username!""}Bản tóm tắt">${user.username!""}Bản tóm tắt</h1>
+	            		<h1 title="${user.username!" "} Thông tin hồ sơ">${user.username!" "} Thông tin hồ sơ</h1>
 	            		<a target="_blank" href="/home/resume/preview">Xem trước</a>
             		</div>
             	</div><!--end #resume_name-->
@@ -47,7 +47,7 @@ var youdao_conv_id = 271546;
             	<div id="resumeScore">
             		<div class="score fl">
             			<canvas height="120" width="120" id="doughnutChartCanvas" style="width: 120px; height: 120px;"></canvas>
-           				<div style="" class="scoreVal"><span>${scores!""}</span>điểm</div>
+           				<div style="" class="scoreVal"><span>${scores!""}</span> điểm</div>
             		</div>	
             		
             		<div class="which fl">
@@ -63,7 +63,7 @@ var youdao_conv_id = 271546;
             		<h2>Thông tin cơ bản  <span> （Phải được lấp đầy khi phân phối sơ yếu lý lịch）</span></h2>
             		<span class="c_edit"></span>
             		<div class="basicShow">
-        				<span>Tên: ${user.username!""} |  giới tính: <#if user.sex == 0>không xác định<#elseif user.sex == 1>nam<#else>nữ</#if> |Giáo dục: ${user.degree!""}  |  
+        				<span>Tên: ${user.username!""} |  giới tính: <#if user.sex == 0>LGBT<#elseif user.sex == 1>nam<#else>nữ</#if> |Giáo dục: ${user.degree!""}  |  
 								kinh nghiệm: ${user.workExperience!""}<br>
             				Điện thoại: ${user.mobile!"Không có gì cho thời điểm hiện tại"}  |  Thư: ${user.email!"Không có gì cho thời điểm hiện tại"} <br>
             			</span>
@@ -83,16 +83,16 @@ var youdao_conv_id = 271546;
 						      <td>
 						          <ul class="profile_radio clearfix reset">
 						            <li class="current">
-						           	  	 男<em></em>
-						              	<input type="radio" name="gender"  value="男"> 
+						           	  	 nam<em></em>
+						              	<input type="radio" name="gender"  value="nam"> 
 						            </li>
 						            <li>
-						            	  女<em></em>
-						              	<input type="radio" name="gender"  value="女"> 
+						            	  nữ<em></em>
+						              	<input type="radio" name="gender"  value="nữ"> 
 						            </li>
 						             <li>
-						            	  未知<em></em>
-						              	<input type="radio" name="gender" checked="checked" value="未知"> 
+						            	  LGBT<em></em>
+						              	<input type="radio" name="gender" checked="checked" value="LGBT"> 
 						            </li>
 						          </ul>  
 						      </td>
@@ -106,7 +106,7 @@ var youdao_conv_id = 271546;
 						        <input type="button" value="${user.degree!""}"  id="select_topDegree" class="profile_select_190 profile_select_normal">
 								<div class="boxUpDown boxUpDown_190 dn" id="box_topDegree" style="display: none;">
 						        	<ul>
-					        			<li>Trường cao đẳng</li>
+					        			<li>Cao đẳng</li>
 					        			<li>Đại học</li>
 					        			<li>bậc thầy</li>
 					        			<li>Bằng tiến sĩ</li>
@@ -165,19 +165,19 @@ var youdao_conv_id = 271546;
 						</div><!--end .new_portrait-->
             		</div><!--end .basicEdit-->
             		<input type="hidden" id="nameVal" value="${user.username!""}">
-            		<#if user.sex == 0><input type="hidden" id="genderVal" value="未知">
-            		<#elseif user.sex == 1><input type="hidden" id="genderVal" value="男">	
-            		<#else><input type="hidden" id="genderVal" value="女">
+            		<#if user.sex == 0><input type="hidden" id="genderVal" value="LGBT">
+            		<#elseif user.sex == 1><input type="hidden" id="genderVal" value="nam">	
+            		<#else><input type="hidden" id="genderVal" value="nữ">
             		</#if>	
             		<input type="hidden" id="topDegreeVal" value="${user.degree!""}">
-            		<input type="hidden" id="workyearVal" value="${user.workExperience!"应届毕业生"}">
+            		<input type="hidden" id="workyearVal" value="${user.workExperience!"Tốt nghiệp"}">
             		<input type="hidden" id="telVal" value="${user.mobile!""}">
             		<input type="hidden" id="pageType" value="1"> 
             	</div><!--end #basicInfo-->
 
 <!-----------------------------------------------------期望工作--------------------------------------------------->
             	<div class="profile_box" id="expectJob">
-            		<h2>期望工作</h2>
+            		<h2>Công việc mong đợi</h2>
             		<span class="c_edit dn"></span>
             		<div class="expectShow dn">
         				<span></span>
@@ -188,22 +188,22 @@ var youdao_conv_id = 271546;
 	            				<tbody><tr>
 	            					<td>
 	            						<input type="hidden" id="expectCity" value="" name="expectCity">
-						        		<input  type="button" value="北京" id="select_expectCity" class="profile_select_287 profile_select_normal">
+						        		<input  type="button" value="Hồ Chí Minh" id="select_expectCity" class="profile_select_287 profile_select_normal">
 										<div class="boxUpDown boxUpDown_596 dn" id="box_expectCity" style="display: none;">
 							        		<dl>
-						        				<dt>热门城市</dt>
+						        				<dt>Thành phố</dt>
 								        			<dd>
-								        				<span>北京</span>
-								        				<span>上海</span>
-								        				<span>广州</span>
-								        				<span>深圳</span>
-								        				<span>成都</span>
-								        				<span>杭州</span>
-								        				<span>无要求</span>
+								        				<span>Hồ Chí Minh</span>
+								        				<span>Vũng Tàu</span>
+								        				<span>Hà Nội</span>
+								        				<span>Nha Trang</span>
+								        				<span>Đà Nẵng</span>
+								        				<span>Quy Nhơn</span>
+								        				<span>Cần Thơ</span>
 								        			</dd>
 							        	  	</dl>
 							        		<dl>
-							        			<dt>ABCDEF</dt>
+							        			<#--  <dt>ABCDEF</dt>
 								        			<dd>
 								        				<span>北京</span>
 								        				<span>长春</span>
@@ -278,51 +278,51 @@ var youdao_conv_id = 271546;
 								        				<span>中山</span>
 								        				<span>郑州</span>
 								        			</dd>
-							        	  	</dl>
+							        	  	</dl>  -->
 							        </div>  
             					</td>
             					<td>
             						<ul class="profile_radio clearfix reset">
-            							<input type="hidden" value="全职" id="work_type">
+            							<input type="hidden" value="toàn thời gian" id="work_type">
         								<li class="current">
-							             	 全职<em></em>
-							              	<input type="radio" id="ew_type1"  name="type" value="全职"> 
+							             	 FULL<em></em>
+							              	<input type="radio" id="ew_type1"  name="type" value="full"> 
 							            </li>
 							            <li>
-							              	兼职<em></em>
-							              	<input type="radio" id="ew_type2" name="type" value="兼职"> 
+							              	PART<em></em>
+							              	<input type="radio" id="ew_type2" name="type" value="part"> 
 							            </li>
 							            <li>
-						            		  实习<em></em>
-						              		<input type="radio" id="ew_type3" name="type" value="实习"> 
+						            		  REMOTE<em></em>
+						              		<input type="radio" id="ew_type3" name="type" value="remote"> 
 							            </li>
 							        </ul> 
             					</td>
 	            				</tr>
 	            				<tr>
 	            					<td>
-							        	<input type="text" placeholder="期望职位，如：产品经理"  value="" name="expectPosition" id="expectPosition">
+							        	<input type="text" placeholder="Mong đợi các vị trí"  value="" name="expectPosition" id="expectPosition">
 									</td>
 	            					<td>
 	            						<input type="hidden" id="expectSalary" value="" name="expectSalary">
-	            						<input type="button" value="2k以下" id="select_expectSalary" class="profile_select_287 profile_select_normal">
+	            						<input type="button" value="2k" id="select_expectSalary" class="profile_select_287 profile_select_normal">
 							        	<div class="boxUpDown boxUpDown_287 dn" id="box_expectSalary" style="display: none;">
 				          	  				<ul>
-							        			<li>2k以下</li>
+							        			<li>2k</li>
 							        			<li>2k-5k</li>
 							        			<li>5k-10k</li>
 							        			<li>10k-15k</li>
 							        			<li>15k-25k</li>
 							        			<li>25k-50k</li>
-							        			<li>50k以上</li>
+							        			<li>50k</li>
 						        	 	   </ul>
 								         </div>  
 	            					</td>
 	            				</tr>
 	            				<tr>
 	            					<td colspan="2">
-										<input type="button" onclick="saveExpectWork();" value="保 存" class="btn_profile_save">
-						          		<a class="btn_profile_cancel" href="javascript:;">取 消</a>
+										<input type="button" onclick="saveExpectWork();" value="Lưu" class="btn_profile_save">
+						          		<a class="btn_profile_cancel" href="javascript:;">Hủy bỏ</a>
 	            					</td>
 	            				</tr>
 	            			</tbody></table>
@@ -330,15 +330,15 @@ var youdao_conv_id = 271546;
             		</div><!--end .expectEdit-->
             		<div class="expectAdd pAdd">
             			<#if ExpectWork??>
-            					期望城市：${ExpectWork.city!"空"}   |  工作性质：${ExpectWork.type!"全职"}  |  期望职位：${ExpectWork.position!"空"}  |  期望月薪：${ExpectWork.money!"空"}
+            					Thành phố mong đợi：${ExpectWork.city!"vô giá trị"}   |  Tính chất công việc:${ExpectWork.type!"toàn thời gian"}  |  Vị trí mơ ước:${ExpectWork.position!"空"}  |  Hy vọng tiền lương hàng tháng:${ExpectWork.money!"空"}
 						<#else>
-							填写准确的期望工作能大大提高求职成功率哦…<br>
-							快来添加期望工作吧！
+							Điền vào những kỳ vọng chính xác có thể cải thiện đáng kể tỷ lệ săn bắn thành công ...<br>
+							Hãy đến và thêm kỳ vọng của bạn!
 						</#if>
 						<#if ExpectWork??>
-							<span>修改期望工作</span>
+							<span>Sửa đổi công việc dự kiến</span>
 						<#else>
-							<span>添加期望工作</span>
+							<span>Thêm công việc mong đợi</span>
 						</#if>
             		</div><!--end .expectAdd-->
             		
@@ -347,7 +347,7 @@ var youdao_conv_id = 271546;
             	
 <!-----------------------------------------------------工作经验--------------------------------------------------->
             	<div class="profile_box" id="workExperience">
-            		<h2>工作经历  <span> （投递简历时必填）</span></h2>
+            		<h2>kinh nghiệm làm việc  <span> （Phải được lấp đầy khi phân phối sơ yếu lý lịch）</span></h2>
             		<span class="c_add dn"></span>
             		
             		<div class="experienceEdit dn">
@@ -358,15 +358,15 @@ var youdao_conv_id = 271546;
 							        	<span class="redstar">*</span>
 							      	</td> 
 							      	<td>
-							        	<input type="text"  placeholder="公司名称"  name="companyName" id="we_company_name" class="require" tips="公司名称不能为空！"  attributes="error_company_name">
-							        	<span for="company_name" generated="true" class="error" id="error_company_name" style="display:none">公司名称不能为空！</span>
+							        	<input type="text"  placeholder="Tên công ty"  name="companyName" id="we_company_name" class="require" tips="Tên công ty không thể trống!"  attributes="error_company_name">
+							        	<span for="company_name" generated="true" class="error" id="error_company_name" style="display:none">Tên công ty không thể trống!</span>
 							      	</td>
 							      	<td valign="top">
 							        	<span class="redstar">*</span>
 							      	</td> 
 							      	<td>
-							          	<input type="text" placeholder="职位名称，如：产品经理" name="positionName" class="require" id="we_position_name" tips="职位名称不能为空！"  attributes="error_position_name"> 
-							          	<span for="position_name" generated="true" class="error" id="error_position_name" style="display:none">职位名称不能为空！</span>
+							          	<input type="text" placeholder="Tên công việc, chẳng hạn như: Quản lý sản phẩm" name="positionName" class="require" id="we_position_name" tips="Tên của vị trí không thể trống!"  attributes="error_position_name"> 
+							          	<span for="position_name" generated="true" class="error" id="error_position_name" style="display:none">Tên của vị trí không thể trống!</span>
 							      	</td>
 							    </tr>
 	            				<tr>
@@ -376,8 +376,8 @@ var youdao_conv_id = 271546;
 	            					<td>
 		            					<div class="fl">
 		            						<input type="hidden" class="companyYearStart" value="" name="companyYearStart">
-								        	<input type="button" value="开始年份"  class="profile_select_139 profile_select_normal select_companyYearStart" id="we_start_year">
-								        	<span for="startTime" generated="true" class="error" id="error_startTime" style="display:none">开始时间不能为空！</span>
+								        	<input type="button" value="Năm bắt đầu"  class="profile_select_139 profile_select_normal select_companyYearStart" id="we_start_year">
+								        	<span for="startTime" generated="true" class="error" id="error_startTime" style="display:none">Thời gian bắt đầu không thể trống!</span>
 											<div class="box_companyYearStart boxUpDown boxUpDown_139 dn" style="display: none;">
 									            <ul>
 									            	<li>2025</li>
@@ -441,7 +441,7 @@ var youdao_conv_id = 271546;
 										</div>
 										<div class="fl">
 									        <input type="hidden" class="companyMonthStart" value="" name="companyMonthStart">
-								        	<input type="button" value="开始月份" class="profile_select_139 profile_select_normal select_companyMonthStart" id="we_start_month">
+								        	<input type="button" value="Bắt đầu tháng" class="profile_select_139 profile_select_normal select_companyMonthStart" id="we_start_month">
 											<div style="display: none;" class="box_companyMonthStart boxUpDown boxUpDown_139 dn">
 									            <ul>
 									        		<li>01</li><li>02</li><li>03</li><li>04</li><li>05</li><li>06</li><li>07</li><li>08</li><li>09</li><li>10</li><li>11</li><li>12</li>
@@ -456,8 +456,8 @@ var youdao_conv_id = 271546;
 	            					<td>
 		            					<div class="fl">
 		            						<input type="hidden" class="companyYearEnd" value="" name="companyYearEnd">
-								        	<input type="button" value="结束年份" class="profile_select_139 profile_select_normal select_companyYearEnd" id="we_end_year">
-											<span for="endTime" generated="true" class="error" id="error_endTime" style="display:none">结束时间不能为空！</span>
+								        	<input type="button" value="Kết thúc" class="profile_select_139 profile_select_normal select_companyYearEnd" id="we_end_year">
+											<span for="endTime" generated="true" class="error" id="error_endTime" style="display:none">Thời gian kết thúc không thể trống!</span>
 											<div class="box_companyYearEnd  boxUpDown boxUpDown_139 dn" style="display: none;">
 									            <ul>
 									            	<li>2025</li>
@@ -521,7 +521,7 @@ var youdao_conv_id = 271546;
 										</div>
 										<div class="fl">
 									        <input type="hidden" class="companyMonthEnd" value="" name="companyMonthEnd">
-								        	<input type="button" value="结束月份" class="profile_select_139 profile_select_normal select_companyMonthEnd" id="we_end_month">
+								        	<input type="button" value="Tháng kết thúc" class="profile_select_139 profile_select_normal select_companyMonthEnd" id="we_end_month">
 											<div style="display: none;" class="box_companyMonthEnd boxUpDown boxUpDown_139 dn">
 									            <ul>
 									        		<li>01</li><li>02</li><li>03</li><li>04</li><li>05</li><li>06</li><li>07</li><li>08</li><li>09</li><li>10</li><li>11</li><li>12</li>
@@ -534,8 +534,8 @@ var youdao_conv_id = 271546;
 	            				<tr>
 	            					<td></td>
 	            					<td colspan="3">
-										<input type="button" onclick="saveWorkExperience();" value="保 存" class="btn_profile_save">
-						          		<a class="btn_profile_cancel" href="javascript:;">取 消</a>
+										<input type="button" onclick="saveWorkExperience();" value="Lưu" class="btn_profile_save">
+						          		<a class="btn_profile_cancel" href="javascript:;">Hủy bỏ</a>
 	            					</td>
 	            				</tr>
 	            			</tbody></table>
@@ -544,16 +544,16 @@ var youdao_conv_id = 271546;
             		</div><!--end .experienceEdit-->
             		<div class="experienceAdd pAdd">
             			<#if WorkExperience??>
-            				公司名称： ${WorkExperience.name!""} | 职位名称： ${WorkExperience.position!""} | 开始时间： ${WorkExperience.startYear!""}年 ${WorkExperience.startMonth!""}月 | 结束时间：  ${WorkExperience.endYear!""}年 ${WorkExperience.endMonth!""}月
+            				Tên công ty: ${WorkExperience.name!""} | Tiêu đề công việc: ${WorkExperience.position!""} | Thời gian bắt đầu: ${WorkExperience.startYear!""}Năm ${WorkExperience.startMonth!""}Tháng | Thời gian kết thúc:  ${WorkExperience.endYear!""}Năm ${WorkExperience.endMonth!""}Tháng
             			<#else>
-            				工作经历最能体现自己的工作能力！<br>
-							且完善后才可投递简历哦！
+            				Kinh nghiệm làm việc phản ánh tốt nhất khả năng làm việc của bạn!<br>
+							Sau khi nó là hoàn hảo, bạn có thể gửi sơ yếu lý lịch của bạn!
             			</#if>
             		      
             		    <#if WorkExperience??>
-            				<span>修改工作经历</span>
+            				<span>Sửa đổi kinh nghiệm làm việc</span>
             			<#else>
-            				<span>添加工作经历</span>
+            				<span>Thêm kinh nghiệm làm việc</span>
             			</#if>      			
 						
             		</div><!--end .experienceAdd-->
@@ -566,7 +566,7 @@ var youdao_conv_id = 271546;
 
 
             	<div class="profile_box" id="projectExperience">
-            		<h2>项目经验<span> （投递简历时必填）</span></h2>
+            		<h2>Kinh nghiệm dự án<span> （Phải được lấp đầy khi phân phối sơ yếu lý lịch）</span></h2>
             		            		<span class="c_add dn"></span>
             		<div class="projectShow dn">
     				<ul class="plist clearfix"></ul>
@@ -580,15 +580,15 @@ var youdao_conv_id = 271546;
 							        	<span class="redstar">*</span>
 							      	</td> 
 							      	<td>
-							        	<input type="text" placeholder="项目名称"   class="require" id="pw_project_name" tips="项目名称不能为空！"  attributes="error_pw_project_name">
-							        	<span for="projectName" generated="true" class="error" id="error_pw_project_name" style="display:none">项目名称不能为空！</span>
+							        	<input type="text" placeholder="Tên dự án"   class="require" id="pw_project_name" tips="Tên dự án không thể trống!"  attributes="error_pw_project_name">
+							        	<span for="projectName" generated="true" class="error" id="error_pw_project_name" style="display:none">Tên dự án không thể trống!</span>
 							      	</td>
 	            					<td valign="top">
 							        	<span class="redstar">*</span>
 							      	</td> 
 							      	<td>
-							          	<input type="text" placeholder="担任职务，如：产品负责人" name="thePost" class="require" id="pw_position_name" tips="担任职务名称不能为空！"  attributes="error_pw_position_name">
-							      		<span for="positionName" generated="true" class="error" id="error_pw_position_name" style="display:none">担任职务名称不能为空！</span>
+							          	<input type="text" placeholder="Là một công việc" name="thePost" class="require" id="pw_position_name" tips="Tên của công việc không thể trống！"  attributes="error_pw_position_name">
+							      		<span for="positionName" generated="true" class="error" id="error_pw_position_name" style="display:none">Tên của công việc không thể trống！</span>
 							      	</td>
 							    </tr>
 	            				<tr>
@@ -598,8 +598,8 @@ var youdao_conv_id = 271546;
 	            					<td>
 		            					<div class="fl">
 		            						<input type="hidden" class="projectYearStart" value="" name="projectYearStart">
-								        	<input type="button" value="开始年份" class="profile_select_139 profile_select_normal select_projectYearStart" id="pw_start_year">
-								        	<span for="startTime" generated="true" class="error" id="error_pw_startTime" style="display:none">开始时间不能为空！</span>
+								        	<input type="button" value="Năm bắt đầu" class="profile_select_139 profile_select_normal select_projectYearStart" id="pw_start_year">
+								        	<span for="startTime" generated="true" class="error" id="error_pw_startTime" style="display:none">Thời gian bắt đầu không thể trống！</span>
 											<div class="box_projectYearStart  boxUpDown boxUpDown_139 dn" style="display: none;">
 									            <ul>
 									            	<li>2025</li>
@@ -663,7 +663,7 @@ var youdao_conv_id = 271546;
 										</div>
 										<div class="fl">
 									        <input type="hidden" class="projectMonthStart" value="" name="projectMonthStart">
-								        	<input type="button" value="开始月份" class="profile_select_139 profile_select_normal select_projectMonthStart" id="pw_start_month">
+								        	<input type="button" value="Bắt đầu tháng" class="profile_select_139 profile_select_normal select_projectMonthStart" id="pw_start_month">
 											<div style="display: none;" class="box_projectMonthStart boxUpDown boxUpDown_139 dn">
 									            <ul>
 									        		<li>01</li><li>02</li><li>03</li><li>04</li><li>05</li><li>06</li><li>07</li><li>08</li><li>09</li><li>10</li><li>11</li><li>12</li>
@@ -678,8 +678,8 @@ var youdao_conv_id = 271546;
 	            					<td>
 	            						<div class="fl">
 		            						<input type="hidden" class="projectYearEnd" value="" name="projectYearEnd">
-								        	<input type="button" value="结束年份" class="profile_select_139 profile_select_normal select_projectYearEnd" id="pw_end_year">
-											<span for="endTime" generated="true" class="error" id="error_pw_endTime" style="display:none">结束时间不能为空！</span>
+								        	<input type="button" value="Kết thúc" class="profile_select_139 profile_select_normal select_projectYearEnd" id="pw_end_year">
+											<span for="endTime" generated="true" class="error" id="error_pw_endTime" style="display:none">Thời gian kết thúc không thể trống！</span>
 											<div class="box_projectYearEnd  boxUpDown boxUpDown_139 dn" style="display: none;">
 									            <ul>
 									            	<li>2025</li>
@@ -743,7 +743,7 @@ var youdao_conv_id = 271546;
 										</div>
 										<div class="fl">
 									        <input type="hidden" class="projectMonthEnd" value="" name="projectMonthEnd">
-								        	<input type="button" value="结束月份" class="profile_select_139 profile_select_normal select_projectMonthEnd" id="pw_end_month">
+								        	<input type="button" value="Tháng kết thúc" class="profile_select_139 profile_select_normal select_projectMonthEnd" id="pw_end_month">
 											<div style="display: none;" class="box_projectMonthEnd boxUpDown boxUpDown_139 dn">
 									            <ul>
 									        		<li>01</li><li>02</li><li>03</li><li>04</li><li>05</li><li>06</li><li>07</li><li>08</li><li>09</li><li>10</li><li>11</li><li>12</li>
@@ -756,15 +756,15 @@ var youdao_conv_id = 271546;
 	            				<tr>
 	            					<td valign="top"></td> 
 									<td colspan="3">
-										<textarea class="s_textarea" name="projectDescription" placeholder="项目描述"  id="pw_project_description"></textarea>
-										<div class="word_count">你还可以输入 <span>500</span> 字</div>
+										<textarea class="s_textarea" name="projectDescription" placeholder="mô tả dự án"  id="pw_project_description"></textarea>
+										<div class="word_count">Bạn cũng có thể nhập <span>500</span> 字</div>
 									</td>
 	            				</tr>
 	            				<tr>
 	            					<td valign="top"></td> 
 	            					<td colspan="3">
-										<input type="button" value="保 存" class="btn_profile_save" onclick="saveProjectExperience();">
-						          		<a class="btn_profile_cancel" href="javascript:;">取 消</a>
+										<input type="button" value="Lưu" class="btn_profile_save" onclick="saveProjectExperience();">
+						          		<a class="btn_profile_cancel" href="javascript:;">Hủy bỏ</a>
 	            					</td>
 	            				</tr>
 	            			</tbody></table>
@@ -773,17 +773,17 @@ var youdao_conv_id = 271546;
             		</div><!--end .projectEdit-->
             		<div class="projectAdd pAdd">
             			<#if ProjectExperience??>
-            				项目名称： ${ProjectExperience.name!""} | 担任职务： ${ProjectExperience.position!""} | 开始时间： ${ProjectExperience.startYear!""}年 ${ProjectExperience.startMonth!""}月 | 结束时间：  ${ProjectExperience.endYear!""}年 ${ProjectExperience.endMonth!""}月
-            				 | 项目描述：${ProjectExperience.content!""}
+            				Tên dự án: ${ProjectExperience.name!""} | Nhấn AS: ${ProjectExperience.position!""} | Thời gian bắt đầu: ${ProjectExperience.startYear!""}Năm ${ProjectExperience.startMonth!""}Tháng | Thời gian kết thúc:  ${ProjectExperience.endYear!""}Năm ${ProjectExperience.endMonth!""}Tháng
+            				 | mô tả dự án:${ProjectExperience.content!""}
             			<#else>
-            				项目经验是用人单位衡量人才能力的重要指标哦！<br>
-							来说说让你难忘的项目吧！
+            			Kinh nghiệm dự án là một chỉ số quan trọng <br>
+						Hãy nói về dự án khó quên!
             			</#if>
             			
 						<#if ProjectExperience??>
-            				<span>修改项目经验</span>
+            				<span>Sửa đổi kinh nghiệm dự án</span>
             			<#else>
-            				<span>添加项目经验</span>
+            				<span>Thêm kinh nghiệm dự án</span>
             			</#if>
             		</div><!--end .projectAdd-->
             	</div><!--end #projectExperience-->
@@ -791,7 +791,7 @@ var youdao_conv_id = 271546;
             	
 <!-----------------------------------------------------教育背景--------------------------------------------------->
             	<div class="profile_box" id="educationalBackground">
-            		<h2>教育背景<span>（投递简历时必填）</span></h2>
+            		<h2>Nền giáo dục<span>（Phải được lấp đầy khi phân phối sơ yếu lý lịch）</span></h2>
 					<span class="c_add dn"></span>
             		<div class="educationalEdit dn">
             			<form class="educationalForm" id="educationBackgroundForm">
@@ -801,22 +801,22 @@ var youdao_conv_id = 271546;
 							        	<span class="redstar">*</span>
 							      	</td> 
 							      	<td>
-							        	<input type="text" placeholder="学校名称" name="schoolName" class="require" id="eb_school_name"  tips="学校名称不能为空！"  attributes="error_eb_school_name">
-							        	<span for="schoolName" generated="true" class="error" id="error_eb_school_name" style="display:none">学校名称不能为空！</span>
+							        	<input type="text" placeholder="Tên trường" name="schoolName" class="require" id="eb_school_name"  tips="Tên trường không thể trống！"  attributes="error_eb_school_name">
+							        	<span for="schoolName" generated="true" class="error" id="error_eb_school_name" style="display:none">Tên trường không thể trống！</span>
 							      	</td>
 							      	<td valign="top">
 							        	<span class="redstar">*</span>
 							      	</td> 
 							      	<td>
 							      		<input type="hidden" class="degree" value="" name="degree">
-							        	<input type="button" value="大专" class="profile_select_287 profile_select_normal select_degree" id="eb_degree">
+							        	<input type="button" value="Cao đẳng" class="profile_select_287 profile_select_normal select_degree" id="eb_degree">
 										<div class="box_degree boxUpDown boxUpDown_287 dn" style="display: none;">
 								            <ul>
-							        			<li>大专</li>
-							        			<li>本科</li>
-							        			<li>硕士</li>
-							        			<li>博士</li>
-							        			<li>其他</li>
+							        			<li>Cao đẳng</li>
+							        			<li>Đại học</li>
+							        			<li>bậc thầy</li>
+							        			<li>Bằng tiến sĩ</li>
+							        			<li>khác</li>
 								        	</ul>
 								        </div>
 							        </td>
@@ -826,8 +826,8 @@ var youdao_conv_id = 271546;
 							        	<span class="redstar">*</span>
 							      	</td> 
 	            					<td>
-	            						<input type="text" placeholder="专业名称" name="professionalName" class="require" id="eb_major" tips="专业名称不能为空！"  attributes="error_eb_major">
-	            						<span for="major" generated="true" class="error" id="error_eb_major" style="display:none">专业名称不能为空！</span>
+	            						<input type="text" placeholder="tiêu đề chuyên nghiệp" name="professionalName" class="require" id="eb_major" tips="Tên chuyên nghiệp không thể trống!"  attributes="error_eb_major">
+	            						<span for="major" generated="true" class="error" id="error_eb_major" style="display:none">Tên chuyên nghiệp không thể trống!</span>
 	            					</td>
 	            					<td valign="top">
 							        	<span class="redstar">*</span>
@@ -835,8 +835,8 @@ var youdao_conv_id = 271546;
 	            					<td>
 		            					<div class="fl">
 		            						<input type="hidden" class="schoolYearStart" value="" name="schoolYearStart">
-								        	<input type="button" value="开始年份" class="profile_select_139 profile_select_normal select_schoolYearStart" id="eb_start_year">
-											<span for="startTime" generated="true" class="error" id="error_eb_startTime" style="display:none">开始年份不能为空！</span>
+								        	<input type="button" value="Năm bắt đầu" class="profile_select_139 profile_select_normal select_schoolYearStart" id="eb_start_year">
+											<span for="startTime" generated="true" class="error" id="error_eb_startTime" style="display:none">Không thể trống ngay từ đầu của đầu!</span>
 											<div class="box_schoolYearStart boxUpDown boxUpDown_139 dn" style="display: none;">
 									            <ul>
 									            	<li>2025</li>
@@ -900,8 +900,8 @@ var youdao_conv_id = 271546;
 										</div>
 										<div class="fl">
 		            						<input type="hidden" class="schoolYearEnd" value="" name="schoolYearEnd">
-								        	<input type="button" value="结束年份" class="profile_select_139 profile_select_normal select_schoolYearEnd" id="eb_end_year">
-								        	<span for="endTime" generated="true" class="error" id="error_eb_endTime" style="display:none">结束年份不能为空！</span>
+								        	<input type="button" value="Kết thúc" class="profile_select_139 profile_select_normal select_schoolYearEnd" id="eb_end_year">
+								        	<span for="endTime" generated="true" class="error" id="error_eb_endTime" style="display:none">Cuối cùng không thể trống!</span>
 											<div class="box_schoolYearEnd  boxUpDown boxUpDown_139 dn" style="display: none;">
 									            <ul>
 									            	<li>2025</li>
@@ -969,8 +969,8 @@ var youdao_conv_id = 271546;
 	            				<tr>
 	            					<td></td>
 	            					<td colspan="3">
-										<input type="button" value="保 存" class="btn_profile_save" onclick="saveEducationBackground();">
-						          		<a class="btn_profile_cancel" href="javascript:;">取 消</a>
+										<input type="button" value="Lưu" class="btn_profile_save" onclick="saveEducationBackground();">
+						          		<a class="btn_profile_cancel" href="javascript:;">Hủy bỏ</a>
 	            					</td>
 	            				</tr>
 	            			</tbody></table>
@@ -980,16 +980,16 @@ var youdao_conv_id = 271546;
             		<div class="educationalAdd pAdd">
             			
 						<#if EducationBackground??>
-							学校名称： ${EducationBackground.school_name!""} | 学历： ${EducationBackground.studyRecord!""} | 专业名称： ${EducationBackground.major!""} | 开始时间： ${EducationBackground.startYear!""}年 | 结束时间：  ${EducationBackground.endYear!""}年
+							Tên trường： ${EducationBackground.school_name!""} | Bằng cấp học thuật： ${EducationBackground.studyRecord!""} | tiêu đề chuyên nghiệp： ${EducationBackground.major!""} | Thời gian bắt đầu： ${EducationBackground.startYear!""}Năm | Thời gian kết thúc：  ${EducationBackground.endYear!""}Năm
 						<#else>
-							教育背景可以充分体现你的学习和专业能力！<br>
-								且完善后才可投递简历哦！
+							Nền tảng giáo dục có thể phản ánh đầy đủ khả năng học tập và chuyên nghiệp của bạn！<br>
+								Sau khi nó là hoàn hảo, bạn có thể gửi sơ yếu lý lịch của mình！
 						</#if>
 						
 						<#if EducationBackground??>
-							<span>修改教育经历</span>
+							<span>Sửa đổi kinh nghiệm giáo dục</span>
 						<#else>
-							<span>添加教育经历</span>
+							<span>Thêm kinh nghiệm giáo dục</span>
 						</#if>
 						
             		</div><!--end .educationalAdd-->
@@ -999,7 +999,7 @@ var youdao_conv_id = 271546;
             	
 <!-----------------------------------------------------自我描述--------------------------------------------------->
             	<div class="profile_box" id="selfDescription">
-            		<h2>自我描述</h2>
+            		<h2>Tự mô tả</h2>
             		<span class="c_edit dn"></span>
             		<div class="descriptionShow dn">
             		</div><!--end .descriptionShow-->
@@ -1008,14 +1008,14 @@ var youdao_conv_id = 271546;
 	            			<table>
 	            				<tbody><tr>
 									<td colspan="2">
-										<textarea class="s_textarea" name="selfDescription" placeholder="请输入自我描述" id="user_selfDescription"></textarea>
-										<div class="word_count">你还可以输入 <span>500</span> 字</div>
+										<textarea class="s_textarea" name="selfDescription" placeholder="Vui lòng nhập bản thân" id="user_selfDescription"></textarea>
+										<div class="word_count">Bạn cũng có thể nhập <span>500</span> 字</div>
 									</td>
 	            				</tr>
 	            				<tr>
 	            					<td colspan="2">
-										<input type="button" value="保 存" class="btn_profile_save" onclick="saveSelfDescription();">
-						          		<a class="btn_profile_cancel" href="javascript:;">取 消</a>
+										<input type="button" value="Lưu" class="btn_profile_save" onclick="saveSelfDescription();">
+						          		<a class="btn_profile_cancel" href="javascript:;">Hủy bỏ</a>
 	            					</td>
 	            				</tr>
 	            			</tbody></table>
@@ -1023,22 +1023,22 @@ var youdao_conv_id = 271546;
             		</div><!--end .descriptionEdit-->
 		        		<div class="descriptionAdd pAdd">
 		        			<#if user.content??>
-		        				自我描述： ${user.content!""}
+		        				Tự mô tả： ${user.content!""}
 		        			<#else>
-		        				描述你的性格、爱好以及吸引人的经历等！<br>
-									让企业了解多元化的你！
+		        			Mô tả tính cách, sở thích, trải nghiệm hấp dẫn của bạn, v.v.！<br>
+									Hãy để công ty hiểu bạn!
 		        			</#if>
 	            			
 							<#if user.content??>
-		        				<span>修改自我描述</span>
+		        				<span>Sửa đổi bản thân</span>
 		        			<#else>
-		        				<span>添加自我描述</span>
+		        				<span>Thêm bản thân</span>
 		        			</#if>
 		        		</div><!--end .descriptionAdd-->
             	</div><!--end #selfDescription-->
 <!-----------------------------------------------------作品展示--------------------------------------------------->
             	<div class="profile_box" id="worksShow">
-            		<h2>作品展示</h2>
+            		<h2>Trưng bày</h2>
             		<span class="c_add dn"></span>
             		<div class="workShow dn">
         				<ul class="slist clearfix"></ul>
@@ -1048,19 +1048,19 @@ var youdao_conv_id = 271546;
 	            			<table>
 	            				<tbody><tr>
 							      	<td>
-							        	<input type="text" placeholder="请输入作品链接" name="workLink"  id="ws_href">
+							        	<input type="text" placeholder="Vui lòng nhập liên kết công việc" name="workLink"  id="ws_href">
 							      	</td>
 							    </tr>
 	            				<tr>
 									<td>
-										<textarea maxlength="100" class="s_textarea" name="workDescription" placeholder="请输入说明文字"  id="ws_description"></textarea>
-										<div class="word_count">你还可以输入 <span id="1">100</span> 字</div>
+										<textarea maxlength="100" class="s_textarea" name="workDescription" placeholder="Vui lòng nhập văn bản mô tả"  id="ws_description"></textarea>
+										<div class="word_count">Bạn cũng có thể nhập <span id="1">100</span> Tính cách</div>
 									</td>
 	            				</tr>
 	            				<tr>
 	            					<td>
-										<input type="button" onclick="saveWorkShow();" value="保 存"  class="btn_profile_save">
-						          		<a class="btn_profile_cancel" href="javascript:;">取 消</a>
+										<input type="button" onclick="saveWorkShow();" value="Lưu"  class="btn_profile_save">
+						          		<a class="btn_profile_cancel" href="javascript:;">Hủy bỏ</a>
 	            					</td>
 	            				</tr>
 	            			</tbody></table>
@@ -1069,16 +1069,16 @@ var youdao_conv_id = 271546;
             		</div><!--end .workEdit-->
 		        		<div class="workAdd pAdd">
 		        			<#if WorkShow??>
-		        				作品链接： ${WorkShow.url!""} | 作品说明： ${WorkShow.content!""}
+		        			Liên kết công việc： ${WorkShow.url!""} | Mô tả công việc： ${WorkShow.content!""}
 		        			<#else>
-		        				         好作品会说话！<br>
-								快来秀出你的作品打动企业吧！
+		        				         Làm tốt việc có thể nói！<br>
+							Hãy đến và hiển thị công việc của bạn để chuyển công ty!
 		        			</#if>
 		        			
 		        			<#if WorkShow??>
-		        				<span>修改作品展示</span>
+		        				<span>Sửa đổi màn hình công việc</span>
 		        			<#else>
-		        				<span>添加作品展示</span>
+		        				<span>Thêm Hiển thị công việc</span>
 		        			</#if>
 		        		</div><!--end .workAdd-->
             	</div><!--end #worksShow-->
@@ -1089,7 +1089,7 @@ var youdao_conv_id = 271546;
 
 				
 				<div class="greybg qrcode mt20">
-                	<img width="242" height="242" alt="微信公众号二维码" src="https://hcmussh.edu.vn/img/news/42304545.jpg?t=42304548">
+                	<img width="242" height="242" alt="" src="https://hcmussh.edu.vn/img/news/42304545.jpg?t=42304548">
                     <span class="c7">Tìm một công việc dễ dàng</span>
                 </div>
             </div><!--end .content_r-->
@@ -1125,11 +1125,11 @@ window.onload = function(){
 <!-----------修改时  期望工作部分赋值---------------------->
 	<#if ExpectWork??>
 		document.getElementById("select_expectCity").value='${ExpectWork.city!""}';
-		var type = '${ExpectWork.type!"全职"}';
-		if(type =="兼职"){
+		var type = '${ExpectWork.type!"full"}';
+		if(type =="part"){
 			document.getElementById("ew_type2").click();
 		}
-		if(type =="实习"){
+		if(type =="remote"){
 			document.getElementById("ew_type3").click();
 		}
 		document.getElementById("select_expectSalary").value='${ExpectWork.money!""}';
@@ -1204,14 +1204,14 @@ function upload(){
 		processData:false,
 		success:function(data){
 			if(data.code == 0){
-				$("#successMsg").html("上传成功！└(^o^)┘");
-				$.colorbox({inline:true, href:$("#successTip"),title:"系统提示"});
+				$("#successMsg").html("Tải lên thành công!");
+				$.colorbox({inline:true, href:$("#successTip"),title:"Gợi ý hệ thống"});
 				$("#preview-user-photo").attr('src','/photo/view?filename=' + data.data);
 				$("#edit-preview-user-photo").attr('src','/photo/view?filename=' + data.data);
 				$("#user_headPic").val(data.data);
 			}else{
-				$("#errorMsg").html("上传失败，"+data.msg+"!!!");
-				$.colorbox({inline:true, href:$("#errorTip"),title:"系统提示"});
+				$("#errorMsg").html("Tải lên thất bại,"+data.msg+"!!!");
+				$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
 			}
 		},
 		error:function(data){
@@ -1229,10 +1229,10 @@ function saveBasicInfo()
 	var workExperience = $("#select_workyear").val();
 	var mobile = $("#tel").val();
 	var headPic = $("#user_headPic").val();
-	if(sex_name == "男")
+	if(sex_name == "nam")
 	{
 		var sex = 1;
-	}else if(sex_name == "女")
+	}else if(sex_name == "nữ")
 	{
 		var sex = 2;
 	}else{
@@ -1254,8 +1254,8 @@ function saveBasicInfo()
 		data:{username:username,sex:sex,degree:degree,workExperience:workExperience,mobile:mobile,headPic:headPic},
 		success:function(data){
 			if(data.code == 0){
-				$("#successMsg").html("个人信息保存成功！3s后自动刷新页面更新数据！└(^o^)┘");
-				$.colorbox({inline:true, href:$("#successTip"),title:"系统提示"});
+				$("#successMsg").html("Thông tin cá nhân là thành công!");
+				$.colorbox({inline:true, href:$("#successTip"),title:"Gợi ý hệ thống"});
 				setTimeout(function(){  
 						window.location.reload();//页面刷新
 						},3000);
@@ -1263,17 +1263,17 @@ function saveBasicInfo()
 				switch(data.code){
             				case -1000:
             					$('#error_username').css('display','block');
-            					$("#errorMsg").html("保存失败，"+data.msg+"!!!");
-            					$.colorbox({inline:true, href:$("#errorTip"),title:"系统提示"});
+            					$("#errorMsg").html("Thất bại bảo quản，"+data.msg+"!!!");
+            					$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
             					break;
             				case -1014:
             					$('#error_mobile').css('display','block');
-            					$("#errorMsg").html("保存失败，"+data.msg+"!!!");
-            					$.colorbox({inline:true, href:$("#errorTip"),title:"系统提示"});
+            					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
+            					$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
             					break;
             				default:
-            					$("#errorMsg").html("保存失败，"+data.msg+"!!!");
-            					$.colorbox({inline:true, href:$("#errorTip"),title:"系统提示"});
+            					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
+            					$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
             					break;
 							}
 				}		
@@ -1287,7 +1287,7 @@ function saveExpectWork()
 	var type = $("#work_type").val();
 	var money = $("#select_expectSalary").val();
 	var position = $("#expectPosition").val();
-	if(city == "无要求")
+	if(city == "Không có yêu cầu")
 	{
 		city = "";
 	}
@@ -1298,14 +1298,14 @@ function saveExpectWork()
 		data:{city:city,type:type,money:money,position:position},
 		success:function(data){
 			if(data.code == 0){
-				$("#successMsg").html("期望工作保存成功！3s后自动刷新页面更新数据！└(^o^)┘");
-				$.colorbox({inline:true, href:$("#successTip"),title:"系统提示"});
+				$("#successMsg").html("Dự kiến ​​công việc này là thành công!");
+				$.colorbox({inline:true, href:$("#successTip"),title:"Gợi ý hệ thống"});
 				setTimeout(function(){  
 						window.location.reload();//页面刷新
 						},3000);
 			}else{
-					$("#errorMsg").html("保存失败，"+data.msg+"!!!");
-					$.colorbox({inline:true, href:$("#errorTip"),title:"系统提示"});
+					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
+					$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
 				}
 		}
 	});
@@ -1331,26 +1331,26 @@ function saveWorkExperience()
 		return;
 	}
 	//开始时间非空判断
-	if(startYear=="开始年份" || startMonth == "开始月份")
+	if(startYear=="Năm bắt đầu" || startMonth == "Bắt đầu tháng")
 	{
 		$('#error_startTime').css('display','block');
-		$("#errorMsg").html("开始时间不能为空！!!!");
-		$.colorbox({inline:true, href:$("#errorTip"),title:"系统提示"});
+		$("#errorMsg").html("Thời gian bắt đầu không thể trống!!!!");
+		$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
 		return;
 	}
 	//结束时间非空判断
-	if(endYear=="结束年份" || endMonth == "结束月份")
+	if(endYear=="Kết thúc" || endMonth == "Tháng kết thúc")
 	{
 		$('#error_endTime').css('display','block');
-		$("#errorMsg").html("结束时间不能为空！!!!");
-		$.colorbox({inline:true, href:$("#errorTip"),title:"系统提示"});
+		$("#errorMsg").html("Thời gian kết thúc không thể trống!!!!");
+		$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
 		return;
 	}
 	//时间不符合规范
 	if(endYear < startYear || (endYear == startYear && startMonth > endMonth))
 	{
-		$("#errorMsg").html("开始时间不能大于结束时间！!!!");
-		$.colorbox({inline:true, href:$("#errorTip"),title:"系统提示"});
+		$("#errorMsg").html("Thời gian bắt đầu không thể lớn hơn thời gian kết thúc!!!!");
+		$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
 		return;
 	}
 	
@@ -1361,8 +1361,8 @@ function saveWorkExperience()
 		data:{name:name,position:position,startYear:startYear,startMonth:startMonth,endYear:endYear,endMonth:endMonth},
 		success:function(data){
 			if(data.code == 0){
-				$("#successMsg").html("工作经历保存成功！3s后自动刷新页面更新数据！└(^o^)┘");
-				$.colorbox({inline:true, href:$("#successTip"),title:"系统提示"});
+				$("#successMsg").html("Kinh nghiệm làm việc thành công");
+				$.colorbox({inline:true, href:$("#successTip"),title:"Gợi ý hệ thống"});
 				setTimeout(function(){  
 						window.location.reload();//页面刷新
 						},3000);
@@ -1370,27 +1370,27 @@ function saveWorkExperience()
 				switch(data.code){
             				case -4002:
             					$('#error_company_name').css('display','block');
-            					$("#errorMsg").html("保存失败，"+data.msg+"!!!");
-            					$.colorbox({inline:true, href:$("#errorTip"),title:"系统提示"});
+            					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
+            					$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
             					break;
             				case -4003:
             					$('#error_position_name').css('display','block');
-            					$("#errorMsg").html("保存失败，"+data.msg+"!!!");
-            					$.colorbox({inline:true, href:$("#errorTip"),title:"系统提示"});
+            					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
+            					$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
             					break;
         					case -4004:
             					$('#error_startTime').css('display','block');
-            					$("#errorMsg").html("保存失败，"+data.msg+"!!!");
-            					$.colorbox({inline:true, href:$("#errorTip"),title:"系统提示"});
+            					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
+            					$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
             					break;
         					case -4005:
             					$('#error_endTime').css('display','block');
-            					$("#errorMsg").html("保存失败，"+data.msg+"!!!");
-            					$.colorbox({inline:true, href:$("#errorTip"),title:"系统提示"});
+            					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
+            					$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
             					break;
             				default:
-            					$("#errorMsg").html("保存失败，"+data.msg+"!!!");
-            					$.colorbox({inline:true, href:$("#errorTip"),title:"系统提示"});
+            					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
+            					$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
             					break;
 							}
 				}		
@@ -1421,26 +1421,26 @@ function saveProjectExperience()
 	}
 	
 	//开始时间非空判断
-	if(startYear=="开始年份" || startMonth == "开始月份")
+	if(startYear=="Năm bắt đầu" || startMonth == "Bắt đầu tháng")
 	{
 		$('#error_pw_startTime').css('display','block');
-		$("#errorMsg").html("开始时间不能为空！!!!");
-		$.colorbox({inline:true, href:$("#errorTip"),title:"系统提示"});
+		$("#errorMsg").html("Thời gian bắt đầu không thể trống!!!!");
+		$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
 		return;
 	}
 	//结束时间非空判断
-	if(endYear=="结束年份" || endMonth == "结束月份")
+	if(endYear=="Kết thúc" || endMonth == "Tháng kết thúc")
 	{
 		$('#error_pw_endTime').css('display','block');
-		$("#errorMsg").html("结束时间不能为空！!!!");
-		$.colorbox({inline:true, href:$("#errorTip"),title:"系统提示"});
+		$("#errorMsg").html("Thời gian kết thúc không thể trống!!!!");
+		$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
 		return;
 	}
 	//时间不符合规范
 	if(endYear < startYear || (endYear == startYear && startMonth > endMonth))
 	{
-		$("#errorMsg").html("开始时间不能大于结束时间！!!!");
-		$.colorbox({inline:true, href:$("#errorTip"),title:"系统提示"});
+		$("#errorMsg").html("Thời gian bắt đầu không thể lớn hơn thời gian kết thúc!!!!");
+		$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
 		return;
 	}
 	$.ajax({
@@ -1450,8 +1450,8 @@ function saveProjectExperience()
 		data:{name:project,position:position,startYear:startYear,startMonth:startMonth,endYear:endYear,endMonth:endMonth,content:content},
 		success:function(data){
 			if(data.code == 0){
-				$("#successMsg").html("项目经验保存成功！3s后自动刷新页面更新数据！└(^o^)┘");
-				$.colorbox({inline:true, href:$("#successTip"),title:"系统提示"});
+				$("#successMsg").html("Kinh nghiệm dự án là thành công!");
+				$.colorbox({inline:true, href:$("#successTip"),title:"Gợi ý hệ thống"});
 				setTimeout(function(){  
 						window.location.reload();//页面刷新
 						},3000);
@@ -1459,27 +1459,27 @@ function saveProjectExperience()
 				switch(data.code){
             				case -4010:
             					$('#error_pw_project_name').css('display','block');
-            					$("#errorMsg").html("保存失败，"+data.msg+"!!!");
-            					$.colorbox({inline:true, href:$("#errorTip"),title:"系统提示"});
+            					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
+            					$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
             					break;
             				case -4011:
             					$('#error_pw_position_name').css('display','block');
-            					$("#errorMsg").html("保存失败，"+data.msg+"!!!");
-            					$.colorbox({inline:true, href:$("#errorTip"),title:"系统提示"});
+            					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
+            					$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
             					break;
         					case -4007:
             					$('#error_pw_startTime').css('display','block');
-            					$("#errorMsg").html("保存失败，"+data.msg+"!!!");
-            					$.colorbox({inline:true, href:$("#errorTip"),title:"系统提示"});
+            					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
+            					$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
             					break;
         					case -4008:
             					$('#error_pw_endTime').css('display','block');
-            					$("#errorMsg").html("保存失败，"+data.msg+"!!!");
-            					$.colorbox({inline:true, href:$("#errorTip"),title:"系统提示"});
+            					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
+            					$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
             					break;
             				default:
-            					$("#errorMsg").html("保存失败，"+data.msg+"!!!");
-            					$.colorbox({inline:true, href:$("#errorTip"),title:"系统提示"});
+            					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
+            					$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
             					break;
 							}
 				}		
@@ -1507,26 +1507,26 @@ function saveEducationBackground()
 		return;
 	}
 	//开始年份非空判断
-	if(startYear=="开始年份")
+	if(startYear=="Năm bắt đầu")
 	{
 		$('#error_eb_startTime').css('display','block');
-		$("#errorMsg").html("开始年份不能为空！!!!");
-		$.colorbox({inline:true, href:$("#errorTip"),title:"系统提示"});
+		$("#errorMsg").html("Không thể trống ngay từ đầu của đầu!!!!");
+		$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
 		return;
 	}
 	//结束年份非空判断
-	if(endYear=="结束年份")
+	if(endYear=="Kết thúc")
 	{
 		$('#error_eb_endTime').css('display','block');
-		$("#errorMsg").html("结束年份不能为空！!!!");
-		$.colorbox({inline:true, href:$("#errorTip"),title:"系统提示"});
+		$("#errorMsg").html("Cuối cùng không thể trống!!!!");
+		$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
 		return;
 	}
 	//时间不符合规范
 	if(endYear < startYear)
 	{
-		$("#errorMsg").html("开始年份不能大于结束年份！!!!");
-		$.colorbox({inline:true, href:$("#errorTip"),title:"系统提示"});
+		$("#errorMsg").html("Sự khởi đầu của sự khởi đầu không thể lớn hơn kết thúc!!!!");
+		$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
 		return;
 	}
 	
@@ -1537,8 +1537,8 @@ function saveEducationBackground()
 		data:{school_name:school_name,major:major,startYear:startYear,studyRecord:studyRecord,endYear:endYear},
 		success:function(data){
 			if(data.code == 0){
-				$("#successMsg").html("教育背景保存成功！3s后自动刷新页面更新数据！└(^o^)┘");
-				$.colorbox({inline:true, href:$("#successTip"),title:"系统提示"});
+				$("#successMsg").html("Nền giáo dục thành công！");
+				$.colorbox({inline:true, href:$("#successTip"),title:"Gợi ý hệ thống"});
 				setTimeout(function(){  
 						window.location.reload();//页面刷新
 						},3000);
@@ -1546,27 +1546,27 @@ function saveEducationBackground()
 				switch(data.code){
             				case -4015:
             					$('#error_eb_school_name').css('display','block');
-            					$("#errorMsg").html("保存失败，"+data.msg+"!!!");
-            					$.colorbox({inline:true, href:$("#errorTip"),title:"系统提示"});
+            					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
+            					$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
             					break;
             				case -4016:
             					$('#error_eb_major').css('display','block');
-            					$("#errorMsg").html("保存失败，"+data.msg+"!!!");
-            					$.colorbox({inline:true, href:$("#errorTip"),title:"系统提示"});
+            					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
+            					$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
             					break;
         					case -4013:
             					$('#error_eb_startTime').css('display','block');
-            					$("#errorMsg").html("保存失败，"+data.msg+"!!!");
-            					$.colorbox({inline:true, href:$("#errorTip"),title:"系统提示"});
+            					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
+            					$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
             					break;
         					case -4014:
             					$('#error_eb_endTime').css('display','block');
-            					$("#errorMsg").html("保存失败，"+data.msg+"!!!");
-            					$.colorbox({inline:true, href:$("#errorTip"),title:"系统提示"});
+            					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
+            					$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
             					break;
             				default:
-            					$("#errorMsg").html("保存失败，"+data.msg+"!!!");
-            					$.colorbox({inline:true, href:$("#errorTip"),title:"系统提示"});
+            					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
+            					$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
             					break;
 							}
 				}		
@@ -1585,14 +1585,14 @@ function saveSelfDescription()
 		data:{content:content},
 		success:function(data){
 			if(data.code == 0){
-				$("#successMsg").html("自我描述保存成功！3s后自动刷新页面更新数据！└(^o^)┘");
-				$.colorbox({inline:true, href:$("#successTip"),title:"系统提示"});
+				$("#successMsg").html("Tự mô tả là thành công!");
+				$.colorbox({inline:true, href:$("#successTip"),title:"Gợi ý hệ thống"});
 				setTimeout(function(){  
 						window.location.reload();//页面刷新
 						},3000);
 			}else{
-					$("#errorMsg").html("保存失败，"+data.msg+"!!!");
-					$.colorbox({inline:true, href:$("#errorTip"),title:"系统提示"});
+					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
+					$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
 				}
 		}
 	});
@@ -1611,14 +1611,14 @@ function saveWorkShow()
 		data:{content:content,url:url},
 		success:function(data){
 			if(data.code == 0){
-				$("#successMsg").html("作品展示保存成功！3s后自动刷新页面更新数据！└(^o^)┘");
-				$.colorbox({inline:true, href:$("#successTip"),title:"系统提示"});
+				$("#successMsg").html("Màn hình công việc được bảo tồn thành công！");
+				$.colorbox({inline:true, href:$("#successTip"),title:"Gợi ý hệ thống"});
 				setTimeout(function(){  
 						window.location.reload();//页面刷新
 						},3000);
 			}else{
-					$("#errorMsg").html("保存失败，"+data.msg+"!!!");
-					$.colorbox({inline:true, href:$("#errorTip"),title:"系统提示"});
+					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
+					$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
 				}
 		}
 	});

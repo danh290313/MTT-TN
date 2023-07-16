@@ -32,8 +32,8 @@ public class User extends BaseEntity{
 	
 	private static final int USER_SEX_UNKONW = 0;//性别未知
 	
-	private static final String DEFAULT_WORK_EXPERIENCE = "应届毕业生"; //默认工作经验
-	private static final String DEFAULT_DEGREE = "其他"; //默认学历
+	private static final String DEFAULT_WORK_EXPERIENCE = "Tốt nghiệp"; //默认工作经验
+	private static final String DEFAULT_DEGREE = "khác"; //默认学历
 	private static final String DEFAULT_HEAD_IMAGE = "common/default_img.jpg";  //默认用户头像
 
 	

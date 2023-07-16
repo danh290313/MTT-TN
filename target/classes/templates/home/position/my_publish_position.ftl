@@ -202,14 +202,14 @@
 					data: {id:i},
 					success: function(data) {
 						if (data.code == 0) {
-							$("#successMsg").html("下线成功！3s后自动刷新页面更新数据！└(^o^)┘");
-							$.colorbox({inline:true, href:$("#successTip"),title:"系统提示"});
+							$("#successMsg").html("Việc ngoại tuyến là thành công!");
+							$.colorbox({inline:true, href:$("#successTip"),title:"Gợi ý hệ thống"});
 							setTimeout(function() {
 								window.location.reload(); //页面刷新
 							}, 3000);
 						} else {
-							$("#errorMsg").html("下线失败，" + data.msg + "!!!");
-							$.colorbox({inline:true, href:$("#errorTip"),title:"系统提示"});
+							$("#errorMsg").html("Thất bại ngoại tuyến，" + data.msg + "!!!");
+							$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
 						}
 					}
 				});

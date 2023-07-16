@@ -53,8 +53,8 @@
             </div>
         	<div title="Quản lý công việc" data-options="iconCls:'icon-feed'" style="padding:5px;">  	
     			<ul class="easyui-tree wu-side-tree">
-        			<li iconCls="icon-tag-pink"><a href="javascript:void(0)" data-icon="icon-tag-pink" data-link="/admin/position_category/list" iframe="1">Danh mục Công việc</a></li>
-        			<li iconCls="icon-application-form"><a href="javascript:void(0)" data-icon="icon-application-form" data-link="/admin/position/list" iframe="1">Danh sách công việc</a></li>
+        			<li iconCls="icon-tag-pink"><a href="javascript:void(0)" data-icon="icon-tag-pink" data-link="/admin/position_category/list" iframe="1">Danh mục công việc</a></li>
+        			<li iconCls="icon-application-form"><a href="javascript:void(0)" data-icon="icon-application-form" data-link="/admin/position/list" iframe="1">Danh sách đăng tuyển</a></li>
                 </ul>
             </div>
         	<div title="Quản lý doanh nghiệp" data-options="iconCls:'icon-house'" style="padding:5px;">  	

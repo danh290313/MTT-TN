@@ -2,22 +2,18 @@ package com.yjq.lagou.bean;
 
 import org.springframework.stereotype.Component;
 
-/**
- * 分页基本信息
- * @author llq
- *
- */
+
 @Component
 public class Page {
-	private int page = 1;//当前页码
+	private int page = 1;
 	
-	private int rows;//每页显示数量
+	private int rows;
 	
-	private int totalPage;  //总页数
+	private int totalPage;  
 	
-	private int offset;//对应数据库中的偏移量
+	private int offset;
 	
-	private int totalCount;  //总记录数
+	private int totalCount;  
 
 	public int getPage() {
 		return page;

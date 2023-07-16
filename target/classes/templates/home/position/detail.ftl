@@ -7,7 +7,7 @@
 <link rel="alternate" media="handheld"  />
 <!-- end 云适配 -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>公司介绍-最专业的互联网招聘平台</title>
+<title>Giới thiệu công ty-nền tảng tuyển dụng Internet chuyên nghiệp nhất</title>
 <meta property="qc:admins" content="23635710066417756375" />
 <meta name="baidu-site-verification" content="QIQ6KC1oZ6" />
 
@@ -142,7 +142,7 @@ var youdao_conv_id = 271546;
 			data:{id:i},
 			success:function(data){
 				if(data.code == 0){
-					$("#successMsg").html("Gửi thành công！└(^o^)┘");
+					$("#successMsg").html("Gửi thành công！");
 					$.colorbox({inline:true, href:$("#successTip"),title:"Gợi ý hệ thống"});
 				}else{
 						$("#errorMsg").html("Gửi thất bại,"+data.msg+"!!!");

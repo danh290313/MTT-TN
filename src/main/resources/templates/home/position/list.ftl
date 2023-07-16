@@ -73,13 +73,13 @@ var youdao_conv_id = 271546;
 				                            &nbsp;
 				                            <span class="c9">[${position.city!""}]</span>
 				                        </div>
-				                        <span><em class="c7">月薪： </em>${position.minMoney!""}k-${position.maxMoney!""}k</span>
-				                        <span><em class="c7">经验：</em> ${position.workExperience!""}</span>
-				                        <span><em class="c7">最低学历： </em>${position.degree!""}</span>
+				                        <span><em class="c7">Lương : </em>${position.minMoney!""}k-${position.maxMoney!""}k</span>
+				                        <span><em class="c7">kinh nghiệm:</em> ${position.workExperience!""}</span>
+				                        <span><em class="c7">Giáo dục tối thiểu: </em>${position.degree!""}</span>
 				                        <br />
-				                        <span><em class="c7">职位诱惑：</em>${position.advantage!""}</span>
+				                        <span><em class="c7">Cám dỗ công việc:</em>${position.advantage!""}</span>
 				                        <br />
-					                    <span>发布时间：${position.createTime!""}</span>
+					                    <span>Thời gian:${position.createTime!""}</span>
 				                    </div>
 				                    
 				                    

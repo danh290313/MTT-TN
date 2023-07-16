@@ -91,10 +91,10 @@ var youdao_conv_id = 271546;
                             <table class="btm">
                             	<tbody><tr>
                                 	<td width="25"><span class="redstar">*</span></td>
-                                	<td width="85">Danh mục Công việc</td>
+                                	<td width="85">Công việc</td>
                                 	<td>
                                     	<input type="hidden" id="positionType" value="" name="positionType">
-                                        <input type="button" value="" id="select_category" class="selectr selectr_380 require" tips="职位类别不能为空！"  attributes="error_position_type">
+                                        <input type="button" value="" id="select_category" class="selectr selectr_380 require" tips="Thể loại công việc không thể trống！"  attributes="error_position_type">
                                       	<span for="position_type" generated="true" class="error" id="error_position_type" style="display:none">Thể loại công việc không thể trống!</span>                                     
                                         <div class="dn" id="box_job" style="display: none;">
                                         
@@ -138,7 +138,7 @@ var youdao_conv_id = 271546;
                                 </tr>
                             	<tr>
                                 	<td><span class="redstar">*</span></td>
-                                	<td>Tiêu đề công việc</td>
+                                	<td>Tiêu đề: </td>
                                 		<td>
                                     	<input type="text"  class="require"  placeholder="Vui lòng chọn tên vị trí, chọn danh mục công việc"  name="positionName" id="positionName"  tips="Tên của vị trí không thể trống!"  attributes="error_position_name">
                                     	<span for="position_name" generated="true" class="error" id="error_position_name" style="display:none">Tên của vị trí không thể trống!</span>
@@ -146,7 +146,7 @@ var youdao_conv_id = 271546;
                                 </tr>
                             	<tr>
                                 	<td></td>
-                                	<td>Bộ phận liên kết</td>
+                                	<td>Bộ phận: </td>
                                 	<td>
                                     	<input type="text" placeholder="Vui lòng vào bộ phận của bạn" value="" name="department" id="department" >	
                                     </td>
@@ -156,21 +156,21 @@ var youdao_conv_id = 271546;
                             <table class="btm">
                             	<tbody><tr>
                                 	<td width="25"><span class="redstar">*</span></td>
-                                	<td width="85">Tính chất công việc</td>
+                                	<td width="85">Loại hình: </td>
                                 	<td>
                                     	<ul class="profile_radio clearfix reset">
                                     		
 	                                           <li>
-		                                         	 toàn thời gian<em></em>
-		                                           <input type="radio" value="toàn thời gian" id="work_type1"> 
+		                                         	 Full<em></em>
+		                                           <input type="radio" value="full" id="work_type1"> 
 		                                       </li>
 	                                           <li>
-		                                       		bán thời gian<em></em>
-		                                           <input type="radio" value="bán thời gian" id="work_type2"> 
+		                                       		Part<em></em>
+		                                           <input type="radio" value="part" id="work_type2"> 
 		                                       </li>
 		                                       <li>
-		                                           	luyện tập<em></em>
-		                                           <input type="radio" value="luyện tập" id="work_type3"> 
+		                                          Remote<em></em>
+		                                           <input type="radio" value="remote" id="work_type3"> 
 		                                       </li>
 	                                       
 	                                       
@@ -179,7 +179,7 @@ var youdao_conv_id = 271546;
                                 </tr>
                             	<tr>
                                 	<td><span class="redstar">*</span></td>
-                                	<td>Lương hàng tháng</td>
+                                	<td>Lương: </td>
                                     <!--<h3><span>(最高月薪不能大于最低月薪的2倍)</span></h3> -->
                                 	<td>
                                     	<div class="salary_range">
@@ -191,14 +191,14 @@ var youdao_conv_id = 271546;
                                                 <input type="text" placeholder="Mức lương tối đa hàng tháng"  class="require" id="position_max_money" oninput = "value=value.replace(/[^\d]/g,'')" tips="Mức lương công việc không thể trống!"  attributes="error_position_money"> 
                                                 <span>k</span>
                                             </div>
-                                            <span>Chỉ nhập một số nguyên, chẳng hạn như: 9</span>
+                                            <span>Chỉ nhập số</span>
                                         </div>
                                         <span for="position_money" generated="true" class="error" id="error_position_money" style="display:none">Mức lương công việc không thể trống!</span>
                                     </td>
                                 </tr>
                             	<tr>
                                 	<td><span class="redstar">*</span></td>
-                                	<td>Thành phố công việc</td>
+                                	<td>Thành phố: </td>
                                 	<td>
                                     	<input type="text" id="position_city" placeholder="Vui lòng vào một thành phố làm việc, chẳng hạn như: Bắc Kinh"   class="require" tips="Thành phố nơi vị trí được đặt không thể trống!"  attributes="error_position_city">
                                     	<span for="position_city" generated="true" class="error" id="error_position_city" style="display:none">Thành phố nơi vị trí được đặt không thể trống!</span>
@@ -209,14 +209,14 @@ var youdao_conv_id = 271546;
                             <table class="btm">
                             	<tbody><tr>
                                 	<td width="25"><span class="redstar">*</span></td>
-                                	<td width="85">kinh nghiệm làm việc</td>
+                                	<td width="85">kinh nghiệm: </td>
                                 	<td>
                                     	<input type="hidden" id="experience" value="" name="workYear">
-                                        <input type="button" value="不限" id="select_experience" class="selectr selectr_380">                                      
+                                        <input type="button" value="Không yêu cầu" id="select_experience" class="selectr selectr_380">                                      
                                         <div class="boxUpDown boxUpDown_380 dn" id="box_experience" style="display: none;">
                                             <ul>
                                                     <li>
-                                    					Vô hạn
+                                    					Không yêu cầu
                                                     </li>
                                                     <li>
                                                 		Tốt nghiệp
@@ -252,7 +252,7 @@ var youdao_conv_id = 271546;
                                                        	 Vô hạn
                                                     </li>
                                                     <li>
-                                                       	 Trường cao đẳng
+                                                       	 Cao đẳng
                                                     </li>
                                                     <li>
                                                     	Đại học
@@ -272,7 +272,7 @@ var youdao_conv_id = 271546;
                             <table class="btm">
                             	<tbody><tr>
                                 	<td width="25"><span class="redstar">*</span></td>
-                                	<td width="85">Sự cám dỗ</td>
+                                	<td width="85">Yêu cầu: </td>
                                 	<td>
                                     	<input type="text" placeholder="30 từ mô tả sự hấp dẫn của vị trí này, chẳng hạn như: lợi ích, triển vọng phát triển, v.v."    class="input_520 require" id="position_advantage" tips="Sự cám dỗ của vị trí không thể trống rỗng!"  attributes="error_position_advantage">
                                     	<span for="position_advantage" generated="true" class="error" id="error_position_advantage" style="display:none">Sự cám dỗ của vị trí không thể trống rỗng!</span>
@@ -289,7 +289,7 @@ var youdao_conv_id = 271546;
                                 </tr>
                                 <tr>
                                 	<td><span class="redstar">*</span></td>
-                                	<td>địa chỉ làm việc</td>
+                                	<td>địa chỉ: </td>
                                 	<td>
                                     	<input type="text" placeholder="Vui lòng nhập địa chỉ làm việc chi tiết"   name="positionAddress" class="input_520 require" id="position_address"  attributes="error_position_address" tips="Địa chỉ của vị trí không thể trống!" >	
                                     	<span for="position_address" generated="true" class="error" id="error_position_address" style="display:none">Địa chỉ của vị trí không thể trống!</span>
@@ -304,7 +304,7 @@ var youdao_conv_id = 271546;
                                 <tr>
                                 	<td width="25"></td>
                                 	<td colspan="2">
-                                    	<input type="button" value="giải phóng"  onclick="saveNewPosition();" class="btn_32">
+                                    	<input type="button" value="Đăng tuyển"  onclick="saveNewPosition();" class="btn_32">
                                     </td>
                                 </tr>
                          	</tbody></table>
@@ -365,23 +365,23 @@ window.onload = function(){
 		var description = html.replace(/<br\/>/g, "\n");  //文本框中回车换行处理
 		document.getElementById("position_description").value = description;
 		document.getElementById("position_id").value = '${editPosition.id!""}';
-		<#if editPosition.workType == '全职'>
-			workType = '全职';
+		<#if editPosition.workType == 'full'>
+			workType = 'full';
 			$("#work_type1").click();
 		</#if>
-		<#if editPosition.workType == '兼职'>
-			workType = '兼职';
+		<#if editPosition.workType == 'part'>
+			workType = 'part';
 			$("#work_type2").click();
 		</#if>
-		<#if editPosition.workType == '实习'>
-			workType = '实习';
+		<#if editPosition.workType == 'remote'>
+			workType = 'remote';
 			$("#work_type3").click();
 		</#if>
 		
 	<#else>
 		<!--是新增-->
 		document.getElementById("positionName").value='';
-		workType = "全职";
+		workType = "full";
 		$("#work_type1").click();
 	</#if>
 }

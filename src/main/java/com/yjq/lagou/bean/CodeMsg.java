@@ -38,8 +38,7 @@ public class CodeMsg {
 		this.msg = msg;
 	}
 
-	//通用错误码定义
-	//处理成功消息码
+
 	public static CodeMsg SUCCESS = new CodeMsg(0, "Thành công");
 	// Mã lỗi dữ liệu không hợp lệ
 	public static CodeMsg DATA_ERROR = new CodeMsg(-1, "Dữ liệu không hợp lệ!");

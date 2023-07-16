@@ -51,7 +51,7 @@ var youdao_conv_id = 271546;
 	                	<li class="cli1">
 	                			<p>Hợp tác kinh doanh:</p>
 
-								Địa chỉ: Quận Hải Thành, Thành phố Bắc Kinh
+								Địa chỉ: 97, Man Thiện, Hiệp Phú, Quận 9, TP. HCM
 	                		</li>
 	                	<li class="cli2">
                 			Dịch vụ gia tăng:<br />

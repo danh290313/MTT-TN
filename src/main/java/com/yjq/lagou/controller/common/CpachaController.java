@@ -26,11 +26,7 @@ import com.yjq.lagou.bean.CodeMsg;
 import com.yjq.lagou.bean.Result;
 import com.yjq.lagou.util.CpachaUtil;
 
-/**
- * 系统验证码公用控制器
- * @author Administrator
- *
- */
+
 @Controller
 @RequestMapping("/common/cpacha")
 public class CpachaController {
@@ -38,39 +34,29 @@ public class CpachaController {
 	private Logger log = LoggerFactory.getLogger(CpachaController.class);
 	
 	@Value("${yjq.sender.email.username}")
-	private String username;  //发件人的邮件帐户
+	private String username;  //Tài khoản email của nhà phát hành
 	
 	@Value("${yjq.sender.email.password}")
-	private String password;  //发件人的邮件密码
+	private String password;  //Mật khẩu email của người gửi
 	
 	@Value("${yjq.sender.email.address}")
-	private String senderAddress;  //发件人的邮件地址
+	private String senderAddress;  //Địa chỉ email của người gửi
 
 	
-	/**
-	 * 通用验证码生成器
-	 * @param vcodeLength
-	 * @param fontSize
-	 * @param width
-	 * @param height
-	 * @param method
-	 * @param request
-	 * @param response
-	 */
+	
 	@RequestMapping(value="/generate_cpacha",method=RequestMethod.GET)
 	public void generateCpacha(
-			@RequestParam(name="vl",defaultValue="4")Integer vcodeLength,//vcodeLength,验证码长度
-			@RequestParam(name="fs",defaultValue="21")Integer fontSize,//fontSize,验证码字体大小
-			@RequestParam(name="w",defaultValue="98")Integer width,//width,图片宽度
-			@RequestParam(name="h",defaultValue="33")Integer height,//height,图片高度
-			@RequestParam(name="method")String method,//用来调用此方法的名称，以此名称为键，存入到session中
+			@RequestParam(name="vl",defaultValue="4")Integer vcodeLength,//vcodeLength,Độ dài mã xác minh
+			@RequestParam(name="fs",defaultValue="21")Integer fontSize,//fontSize,Xác minh kích thước phông chữ mã
+			@RequestParam(name="w",defaultValue="98")Integer width,//width,Chiều rộng hình ảnh
+			@RequestParam(name="h",defaultValue="33")Integer height,//height,Chiều cao hình ảnh
+			@RequestParam(name="method")String method,//Được sử dụng để gọi tên của phương thức này, sử dụng tên này làm khóa và lưu trữ nó trong phiên
 			HttpServletRequest request,
 			HttpServletResponse response){
 		CpachaUtil cpachaUtil = new CpachaUtil(vcodeLength,fontSize,width,height);
-		String generatorVCode = cpachaUtil.generatorVCode(); //验证码的值
-		//将生成的验证码放入session，以供放后面程序的验证使用
+		String generatorVCode = cpachaUtil.generatorVCode(); //Giá trị của mã xác minh
 		request.getSession().setAttribute(method, generatorVCode);
-		log.info("验证码成功生成，method=" + method + ",value=" + generatorVCode);
+		log.info("Mã xác minh được tạo thành công，method=" + method + ",value=" + generatorVCode);
 		try {
 			ImageIO.write(cpachaUtil.generatorRotateVCodeImage(generatorVCode, true), "gif", response.getOutputStream());
 		} catch (IOException e) {
@@ -83,58 +69,56 @@ public class CpachaController {
 	@ResponseBody
 	public Result<Boolean> generateEmailCpacha(HttpServletRequest request,String receiver,String type)
 	{
-		//判断接收人邮箱地址是否为空
+		//Xác định xem địa chỉ hộp thư của người nhận có trống không
 		if(receiver == null || "".equals(receiver))
 		{
 			return Result.error(CodeMsg.USER_EMAIL_EMPTY);
 		}
-		//判断邮件类别是否为空
+		//Xác định xem danh mục thư có trống không
 		if(type == null || "".equals(type))
 		{
 			return Result.error(CodeMsg.USER_EMAIL_TYPE_EMPTY);
 		}
-		//定义Properties对象,设置环境信息
+		//Xác định đối tượng thuộc tính và đặt thông tin môi trường
 		Properties props = System.getProperties();
-		//设置邮件服务器的地址
-		props.setProperty("mail.smtp.host", "smtp.163.com"); // 指定的smtp服务器
+		//Đặt địa chỉ của máy chủ thư
+		props.setProperty("mail.smtp.host", "smtp.163.com"); // Chỉ định máy chủ SMTP
 		props.setProperty("mail.smtp.auth", "true");
-		props.setProperty("mail.transport.protocol", "smtp");//设置发送邮件使用的协议
-		//创建Session对象,session对象表示整个邮件的环境信息
+		props.setProperty("mail.transport.protocol", "smtp");//Đặt giao thức để gửi email
 		Session session = Session.getInstance(props);
-		//设置输出调试信息
+		//Đặt thông tin gỡ lỗi đầu ra
 		session.setDebug(true);
 		try {
-			//Message的实例对象表示一封电子邮件
+			//MessageCác đối tượng ví dụ cho biết một email điện tử
 			MimeMessage message = new MimeMessage(session);
-			//设置发件人的地址
+			//Đặt địa chỉ của người gửi
 			message.setFrom(new InternetAddress(senderAddress));
 			
-			//如果邮件类别是用户注册验证
+			//Nếu danh mục thư là xác minh đăng ký người dùng
 			if("user_register".equals(type))
 			{
-				//设置主题
-				message.setSubject("用户注册邮箱验证");
+				//Đặt chủ đề
+				message.setSubject("Xác minh hộp thư đăng ký người dùng");
 				
-				//获取邮箱验证码
+				//Nhận mã xác minh hộp thư
 				CpachaUtil cpachaUtil = new CpachaUtil(4);
-				String generatorVCode = cpachaUtil.generatorVCode(); //验证码的值
+				String generatorVCode = cpachaUtil.generatorVCode(); //Giá trị của mã xác minh
 				request.getSession().setAttribute(type, generatorVCode);
-				log.info("邮箱验证码成功生成，method=" + type + ",value=" + generatorVCode);
-				//设置邮件的文本内容
+				log.info("Mã xác minh hộp thư được tạo thành công，method=" + type + ",value=" + generatorVCode);
 				//message.setText("Welcome to JavaMail World!");
 				message.setContent((generatorVCode),"text/html;charset=utf-8");
 			}else {
 				return Result.error(CodeMsg.USER_EMAIL_TYPE_ERROR);
 			}
 			
-			//设置附件
+			//Đặt phụ lục
 			//message.setDataHandler(dh);
 			
-			//从session的环境中获取发送邮件的对象
+			//Nhận đối tượng gửi email từ môi trường session
 			Transport transport=session.getTransport();
-			//连接邮件服务器
+			//Kết nối máy chủ email
 			transport.connect("smtp.163.com",587 , username, password);
-			//设置收件人地址,并发送消息
+			//Đặt địa chỉ người nhận và gửi tin nhắn
 			transport.sendMessage(message,new Address[]{new InternetAddress(receiver)});
 			transport.close();
 		} catch (MessagingException e) {

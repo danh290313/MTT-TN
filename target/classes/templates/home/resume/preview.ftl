@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html><head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-<title>简历预览-我的简历-最专业的互联网招聘平台</title>
+<title>Tiếp tục xem trước của tôi về sơ yếu lý lịch-nền tảng tuyển dụng internet chuyên nghiệp nhất</title>
 <meta content="23635710066417756375" property="qc:admins">
 <meta name="description" content="">
 <meta name="keywords" content="">
@@ -37,7 +37,7 @@ $(function(){
 <body>
   	<div id="previewWrapper">
         <div class="preview_header">
-            <h1 title="Bản tóm tắt">Bản tóm tắt</h1>
+            <h1 title="Thông tin hồ sơ">Thông tin hồ sơ</h1>
                         	
         </div><!--end .preview_header-->
 
@@ -47,7 +47,7 @@ $(function(){
                 <div class="basicShow">
                    <span>
                    	<#if currentUser??>
-	                 	  Tên: ${currentUser.username!""} | giới tính: <#if currentUser.sex == 0>không xác định<#elseif currentUser.sex == 1>nam<#else>nữ</#if> | Giáo dục: ${currentUser.degree!""} | 
+	                 	  Tên: ${currentUser.username!""} | giới tính: <#if currentUser.sex == 0>LGBT<#elseif currentUser.sex == 1>nam<#else>nữ</#if> | Giáo dục: ${currentUser.degree!""} | 
 	                  	 kinh nghiệm làm việc: ${currentUser.workExperience!""}<br>	
 	                  	 Điện thoại: ${currentUser.mobile!"Không có gì cho thời điểm hiện tại"}  |  Email: ${currentUser.email!"暂无"} <br>		  
 	            		</span>
@@ -144,7 +144,7 @@ $(function(){
 	            </div><!--end #selfDescription-->
 						
 	            <div class="profile_box" id="worksShow">
-	                <h2>phòng trưng bày</h2>
+	                <h2>Trưng bày</h2>
 	                <div class="workShow">
 	                  <ul class="slist clearfix">
         				<li class="noborder">

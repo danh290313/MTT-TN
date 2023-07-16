@@ -20,15 +20,15 @@
     <!-- Begin of toolbar -->
     <div id="wu-toolbar">
         <div class="wu-toolbar-button">
-        	职位状态查询：
+        	Truy vấn trạng thái công việc:
 	  		<select id="search-state" name="search-state" class="easyui-combobox" panelHeight="auto" data-options="editable:false" style="width:150px">
-	                <option value="0">请选择</option>
-	    			<option value="1">有效</option>
-	    			<option value="2">待审核</option>
-	    			<option value="3">已下线</option>
+	                <option value="0">xin vui lòng chọn</option>
+	    			<option value="1">có hiệu quả</option>
+	    			<option value="2">Để được xem xét</option>
+	    			<option value="3">Đã được ngoại tuyến</option>
 	        </select>
-	         <a href="javascript:void(0);" id="search-btn" class="easyui-linkbutton" iconCls="icon-search" plain="true">搜索</a>&nbsp;&nbsp;
-	         <a href="javascript:void(0);" id="update-state-btn" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="changeState();">更改职位状态</a>
+	         <a href="javascript:void(0);" id="search-btn" class="easyui-linkbutton" iconCls="icon-search" plain="true">tìm kiếm</a>&nbsp;&nbsp;
+	         <a href="javascript:void(0);" id="update-state-btn" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="changeState();">Thay đổi trạng thái</a>
         </div>
     </div>
     <!-- End of toolbar -->
@@ -40,20 +40,20 @@
         <input type="hidden" name="id" id="edit-id">
         <table>
          	<tr>
-                <td width="60" align="right">职位类别:</td>
+                <td width="60" align="right">Danh mục Công việc:</td>
                 <td><input type="text" id="edit-type" name="type"  readonly="readonly" class="wu-text " /></td>
             </tr>
             <tr>
-                <td width="60" align="right">职位名称:</td>
+                <td width="60" align="right">Tiêu đề công việc:</td>
                 <td><input type="text" id="edit-name" name="name"  readonly="readonly" class="wu-text " /></td>
             </tr>
             <tr>
-                <td width="60" align="right">职位状态:</td>
+                <td width="60" align="right">Trạng thái vị trí:</td>
                 <td>
                 	<select id="edit-state" name="state" class="easyui-combobox" data-options="editable:false" panelHeight="auto" style="width:268px">
-		    			 <option value="effective">有效</option>
-		    			 <option value="wait">待审核</option>
-		    			 <option value="out">已下线</option>
+		    			 <option value="effective">có hiệu quả</option>
+		    			 <option value="wait">Để được xem xét</option>
+		    			 <option value="out">Đã được ngoại tuyến</option>
 		            </select>
                 </td>
             </tr>
@@ -68,24 +68,24 @@
 	function changeState(){
 		var item = $('#data-datagrid').datagrid('getSelections');
 		if(item == null || item.length == 0){
-			$.messager.alert('信息提示','请选择要修改的数据！','info');
+			$.messager.alert('Thông tin nhắc nhở ',' Vui lòng chọn dữ liệu sẽ được sửa đổi!','info');
 			return;
 		}
 		if(item.length > 1){
-			$.messager.alert('信息提示','请选择一条数据进行修改！','info');
+			$.messager.alert('Thông tin nhắc nhở ',' Vui lòng chọn một dữ liệu để sửa đổi!','info');
 			return;
 		}
 		item = item[0];
 		$('#edit-dialog').dialog({
 			closed: false,
 			modal:true,
-            title: "改变职位状态",
+            title: "Thay đổi trạng thái vị trí",
             buttons: [{
-                text: '确定',
+                text: 'Chắc chắn',
                 iconCls: 'icon-ok',
                 handler: change
             }, {
-                text: '取消',
+                text: 'Hủy bỏ',
                 iconCls: 'icon-cancel',
                 handler: function () {
                     $('#edit-dialog').dialog('close');                    
@@ -111,11 +111,11 @@
 			data:data,
 			success:function(data){
 				if(data.code == 0){
-					$.messager.alert('信息提示','改变职位状态成功！','info');
+					$.messager.alert('Thông báo tin nhắn','Thay đổi vị trí thành công trong công việc!','info');
 					$('#edit-dialog').dialog('close');
 					$('#data-datagrid').datagrid('reload');
 				}else{
-					$.messager.alert('信息提示',data.msg,'warning');
+					$.messager.alert('Thông báo tin nhắn',data.msg,'warning');
 				}
 				$("#data-datagrid").datagrid('clearSelections');
 			}
@@ -158,15 +158,15 @@
 		columns:[[
 			{ field:'chk',checkbox:true},
 
-			{ field:'company.name',title:'公司名称',width:150,formatter:function(value,row,index){
+			{ field:'company.name',title:'Tên công ty',width:150,formatter:function(value,row,index){
 				return row.company.name;
 			}},
-			{ field:'name',title:'职位名称',width:100},
-			{ field:'type',title:'职位类别',width:100},
-			{ field:'workType',title:'工作性质',width:50},
-			{ field:'address',title:'工作地址',width:230},
-			{ field:'degree',title:'学历要求',width:50},
-			{ field:'minMoney',title:'职位薪资',width:60,formatter:function(value,row,index){
+			{ field:'name',title:'Tiêu đề',width:100},
+			{ field:'type',title:'Công việc',width:100},
+			{ field:'workType',title:'Loại hình công việc',width:50},
+			{ field:'address',title:'địa chỉ làm việc',width:230},
+			{ field:'degree',title:'Yêu cầu học tập',width:50},
+			{ field:'minMoney',title:'Mức lương công việc',width:60,formatter:function(value,row,index){
 				var money_range = "";
 				money_range += row.minMoney;
 				money_range += "k-";
@@ -174,19 +174,19 @@
 				money_range += "k";
 				return money_range;
 			}},
-			{ field:'state',title:'职位状态',width:50,formatter:function(value,row,index){
+			{ field:'state',title:'Trạng thái vị trí',width:50,formatter:function(value,row,index){
 				if(value == 'wait'){
-					return '待审核';
+					return 'Để được xem xét';
 				}
 				if(value == 'out'){
-					return '已下线';
+					return 'Đã được ngoại tuyến';
 				}
 				if(value == 'effective'){
-					return '有效';
+					return 'có hiệu quả';
 				}
 				return value;
 			}},
-			{ field:'updateTime',title:'职位上一次更新时间',width:100}
+			{ field:'updateTime',title:'Lần cuối cùng vị trí được cập nhật',width:100}
 		]]
 	});
 </script>

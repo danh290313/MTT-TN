@@ -26,7 +26,7 @@ $(function(){
 		jQuery.validator.addMethod("checkNum",function(value, element) {
 			var reg = /^[0-9]*$/;//只能输入数字
 			return this.optional(element) || !reg.test(value);
-			}, "请输入有效的一句话介绍"); 
+			}, "Vui lòng nhập giới thiệu câu hợp lệ"); 
 	
 	/*** check 必填 url ***********************/ 
 		jQuery.validator.addMethod("checkUrl", function(value, element) {
@@ -39,7 +39,7 @@ $(function(){
 			}else{
 				return false;
 			}
-		}, "请输入有效的公司网址");
+		}, "Vui lòng nhập trang web của công ty hợp lệ");
 	
 	/*** check 不必填 url ***********************/ 
 		jQuery.validator.addMethod("checkUrlNot", function(value, element) {
