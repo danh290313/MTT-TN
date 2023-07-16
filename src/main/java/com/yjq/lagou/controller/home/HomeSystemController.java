@@ -7,11 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-/**
- * 页面系统类控制器
- *
- *
- */
+
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.yjq.lagou.bean.CodeMsg;
@@ -30,21 +26,12 @@ public class HomeSystemController {
 	
 	
 	
-	/**
-	 * 前端注册页面
-	 * @param model
-	 * @return
-	 */
 	@RequestMapping(value="/register",method=RequestMethod.GET)
 	public String register(Model model){
 		return "home/system/register";
 	}
 	
-	/**
-	 * 更改密码页面
-	 * @param model
-	 * @return
-	 */
+	
 	@RequestMapping(value="/update_password",method=RequestMethod.GET)
 	public String updatePwd(Model model){
 		return "home/system/update_password";
@@ -52,32 +39,20 @@ public class HomeSystemController {
 	
 	
 
-	/**
-	 * 前端用户退出登录
-	 * @param model
-	 * @return
-	 */
+	
 	@RequestMapping(value="/logout")
 	public String loginout(HttpServletRequest request){
 		request.getSession().setAttribute(SessionConstant.SESSION_USER_LOGIN_KEY , null);
 		return "redirect:/home/index/index";
 	}
 
-	/**
-	 * 前端登录页面
-	 * @param model
-	 * @return
-	 */
+	
 	@RequestMapping(value="/login",method=RequestMethod.GET)
 	public String login(Model model){
 		return "home/system/login";
 	}
 	
-	/**
-	 * 前端修改密码数据处理
-	 * @param model
-	 * @return
-	 */
+	
 	@RequestMapping(value="/update_password",method=RequestMethod.POST)
 	@ResponseBody
 	public Result<Boolean> updatePwd(String oldPwd,String newPwd,String confirmPwd,HttpServletRequest request)
@@ -104,12 +79,7 @@ public class HomeSystemController {
 	
 	
 	
-	
-	/**
-	 * 前端登录表单处理
-	 * @param model
-	 * @return
-	 */
+
 	@RequestMapping(value="/login",method=RequestMethod.POST)
 	@ResponseBody
 	public Result<Boolean> loginForm(String email,String password,String cpacha,HttpServletRequest request)
@@ -123,18 +93,18 @@ public class HomeSystemController {
 		// if(StringUtil.isEmpty(cpacha)){
 		// 	return Result.error(CodeMsg.CPACHA_EMPTY);
 		// }
-		//获取系统生成的验证码
+		//Nhận mã xác minh do hệ thống tạo ra
 		// String correct_cpacha = (String) request.getSession().getAttribute("user_login");
 		// //验证验证码是否正确
 		// if(!cpacha.toUpperCase().equals(correct_cpacha.toUpperCase())) {
 		// 	return Result.error(CodeMsg.CPACHA_ERROR);
 		// }
 		User user = userService.findByEmail(email);
-		//判断该邮箱地址是否存在
+		//Xác định xem địa chỉ hộp thư có tồn tại không
 		if(user == null){
 			return Result.error(CodeMsg.USER_EMAIL_NOT_EXIST);
 		}
-		//判断用户输入密码是否正确
+		//Xác định xem người dùng có nhập đúng mật khẩu không
 		if(!password.equals(user.getPassword())){
 			return Result.error(CodeMsg.USER_PASSWORD_ERROR);
 		}
@@ -143,69 +113,61 @@ public class HomeSystemController {
 		return Result.success(true);
 	}
 	
-	/**
-	 * 注册表单处理
-	 * @param type
-	 * @param Email
-	 * @param Password
-	 * @param username
-	 * @param cpacha
-	 * @return
-	 */
+	
 	@RequestMapping(value="/register",method=RequestMethod.POST)
 	@ResponseBody
 	public Result<Boolean> registerForm(HttpServletRequest request,User user,String cpacha){
-		//如果勾选目的为空
+		//Nếu mục đích kiểm tra mục đích trống
 		if(user.getType() == null || user.getType() < 0){
 			return Result.error(CodeMsg.USER_REGISTER_TYPE_EMPTY);
 		}
-		//如果邮箱地址为空
+		//Nếu địa chỉ hộp thư trống
 		if(StringUtil.isEmpty(user.getEmail())){
 			return Result.error(CodeMsg.USER_EMAIL_EMPTY);
 		}
-		//如果用户密码为空
+		//Nếu mật khẩu người dùng trống
 		if(StringUtil.isEmpty(user.getPassword())) {
 			return Result.error(CodeMsg.USER_PASSWORD_EMPTY);
 		}
-		//如果用户昵称为空
+		//Nếu có biệt danh người dùng trống
 		if(StringUtil.isEmpty(user.getUsername())) {
 			return Result.error(CodeMsg.USER_NAME_EMPTY);
 		}
-		//如果验证码为空
+		//Nếu mã xác minh trống
 		// if(StringUtil.isEmpty(cpacha)){
 		// 	return Result.error(CodeMsg.CPACHA_EMPTY);
 		// }
-		//用统一验证实体方法验证是否合法
-		user.setMobile("13774559485"); //先随便设置一个，后面恢复
+		//Sử dụng phương pháp xác minh thống nhất để xác minh xem nó có hợp pháp
+		user.setMobile("13774559485"); //Đặt một cái trước và phục hồi sau
 		//CodeMsg validate = ValidateEntityUtil.validate(user);
 		// if(validate.getCode() != CodeMsg.SUCCESS.getCode()){
 		// 	return Result.error(validate);
 		// }
-		user.setMobile(null);//恢复
-		//如果用户没点发送邮件
+		user.setMobile(null);//hồi phục
+		//Nếu người dùng không nhấp vào email
 		// if(request.getSession().getAttribute("user_register") == null)
 		// {
 		// 	return Result.error(CodeMsg.SYSTEM_CPACHA_EMPTY);
 		// }
 		String correct_cpacha = (String) request.getSession().getAttribute("user_register");
-		//如果验证码不正确
+		//Nếu mã xác minh không chính xác
 		// if(!correct_cpacha.toUpperCase().equals(cpacha.toUpperCase())){
 		// 	return Result.error(CodeMsg.CPACHA_ERROR);
 		// }
-		//检查邮箱和用户昵称是否有重复
+		//Kiểm tra xem hộp thư và biệt danh của người dùng có được lặp lại không
 		if(checkEmail(user,0l)){
-			request.getSession().setAttribute("user_register", null); //邮箱输入新的一个，需要重新发验证码确定
+			request.getSession().setAttribute("user_register", null); //Nhập một cái mới vào hộp thư, bạn cần gửi mã xác minh để xác định
 			return Result.error(CodeMsg.USER_EMAIL_ALREADY_EXIST);
 		}
 		if(checkUsername(user,0l)){
 			return Result.error(CodeMsg.USER_NAME_ALREADY_EXIST);
 		}
-		//上面审核都通过后，准备添加数据库
+		//Sau khi đánh giá ở trên được thông qua, hãy chuẩn bị thêm cơ sở dữ liệu
 		if(userService.save(user) == null)
 		{
 			return Result.error(CodeMsg.USER_REGISTER_ERROR);
 		}
-		//把验证码权限销毁
+		//Phá hủy các quyền mã xác minh
 		request.getSession().setAttribute("user_register", null);
 		return Result.success(true);
 	}
@@ -214,24 +176,24 @@ public class HomeSystemController {
 	
 	
 	
-	//检查有没有重复的email
+	//Kiểm tra xem có sự trùng lặp không email
 	public boolean checkEmail(User user,Long id)
 	{
 		User findByEmail = userService.findByEmail(user.getEmail());
 		if(findByEmail == null)
-			return false;  //没有重复
+			return false;  //Không lặp lại
 		if(findByEmail.getId().longValue() == id.longValue())
-			return false;  //没有重复
-		return true;  //有重复
+			return false;  //Không lặp lại
+		return true;  //Nhân bản
 	}
-	//检查有没有重复的username
+	//Kiểm tra xem có sự trùng lặp không username
 	public boolean checkUsername(User user,Long id)
 	{
 		User findByUsername = userService.findByUsername(user.getUsername());
 		if(findByUsername == null)
-			return false;  //没有重复
+			return false;  //Không lặp lại
 		if(findByUsername.getId().longValue() == id.longValue())
-			return false;  //没有重复
-		return true;  //有重复
+			return false;  //Không lặp lại
+		return true;  //Nhân bản
 	}
 }

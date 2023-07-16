@@ -20,13 +20,9 @@ public class PhotoController {
 	private ResourceLoader resourceLoader;
 	
 	@Value("${yjq.upload.photo.path}")
-	private String uploadPhotoPath;//文件保存位置
+	private String uploadPhotoPath;//Vị trí lưu trữ tập tin
 	
-	/**
-	 * 系统统一的图片查看方法
-	 * @param filename
-	 * @return
-	 */
+
 	@RequestMapping(value="/view")
 	@ResponseBody
 	public ResponseEntity<?> viewPhoto(@RequestParam(name="filename",required=true)String filename){

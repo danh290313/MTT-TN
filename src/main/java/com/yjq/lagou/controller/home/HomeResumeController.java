@@ -36,11 +36,7 @@ import com.yjq.lagou.service.home.ResumeService;
 import com.yjq.lagou.service.home.WorkExperienceService;
 import com.yjq.lagou.service.home.WorkShowService;
 import com.yjq.lagou.util.StringUtil;
-/**
- * 前端简历管理控制器
- *
- *
- */
+
 @RequestMapping("/home/resume")
 @Controller
 public class HomeResumeController {
@@ -72,11 +68,7 @@ public class HomeResumeController {
 	@Autowired
 	private CompanyService companyService;
 	
-	/**
-	 * 简历预览页面
-	 * @param model
-	 * @return
-	 */
+
 	@RequestMapping(value="/preview",method=RequestMethod.GET)
 	public String preview(Model model,HttpServletRequest request,Long user_id){
 		if(user_id != null) {
@@ -97,38 +89,28 @@ public class HomeResumeController {
 		}
 		return "home/resume/preview";
 	}
-	
-	/**
-	 * 我投递的简历页面
-	 * @param model
-	 * @return
-	 */
+
 	@RequestMapping(value="/my_delivery_resume",method=RequestMethod.GET)
 	public String my_delivery_resume(Model model,String resumeState,HttpServletRequest request){
 		User user = (User) request.getSession().getAttribute(SessionConstant.SESSION_USER_LOGIN_KEY);
 		if(!StringUtil.isEmpty(resumeState)) {
-			//如果resumeState不为空
+			//Nếu ResumeState không trống
 			model.addAttribute("ResumeList", resumeService.findByUserIdAndState(user.getId(), resumeState));
 			model.addAttribute("resumeState", resumeState);
 		}else {
-			//如果resumeState为空
+			//Nếu ResumeState trống
 			model.addAttribute("ResumeList", resumeService.findByUserId(user.getId()));
 		}
 		
 		return "home/resume/my_delivery_resume";
 	}
 	
-	
-	/**
-	 * 招聘者收到简历页面
-	 * @param model
-	 * @return
-	 */
+
 	@RequestMapping(value="/my_receive_resume",method=RequestMethod.GET)
 	public String my_receive_resume(Model model,String resumeState,HttpServletRequest request){
 		User user = (User) request.getSession().getAttribute(SessionConstant.SESSION_USER_LOGIN_KEY);
 		if(!StringUtil.isEmpty(resumeState)) {
-			//如果resumeState不为空
+			//Nếu ResumeState không trống
 			Company findCompanyByUserId = companyService.findByUserId(user.getId());
 			List<Resume> findByCompanyIdAndState = resumeService.findByCompanyIdAndState(findCompanyByUserId.getId(), resumeState);
 			model.addAttribute("ResumeList", findByCompanyIdAndState);
@@ -148,11 +130,7 @@ public class HomeResumeController {
 	}
 	
 	
-	/**
-	 * 简历通知面试
-	 * @param request
-	 * @return
-	 */
+
 	@RequestMapping(value="/interview",method=RequestMethod.POST)
 	@ResponseBody
 	public Result<Boolean> interview(HttpServletRequest request,@RequestParam(name="id",required=true)Long id)
@@ -165,11 +143,7 @@ public class HomeResumeController {
 		return Result.success(true);
 	}
 	
-	/**
-	 * 简历设置为不合适
-	 * @param request
-	 * @return
-	 */
+
 	@RequestMapping(value="/unsuitable",method=RequestMethod.POST)
 	@ResponseBody
 	public Result<Boolean> unsuitable(HttpServletRequest request,@RequestParam(name="id",required=true)Long id)
@@ -182,11 +156,7 @@ public class HomeResumeController {
 		return Result.success(true);
 	}
 	
-	/**
-	 * 删除简历
-	 * @param request
-	 * @return
-	 */
+
 	@RequestMapping(value="/delete",method=RequestMethod.POST)
 	@ResponseBody
 	public Result<Boolean> delete(HttpServletRequest request,@RequestParam(name="id",required=true)Long id)
@@ -200,11 +170,7 @@ public class HomeResumeController {
 	}
 	
 	
-	/**
-	 * 投递简历
-	 * @param request
-	 * @return
-	 */
+
 	@RequestMapping(value="/submit_resume",method=RequestMethod.POST)
 	@ResponseBody
 	public Result<Boolean> submitResume(HttpServletRequest request,@RequestParam(name="id",required=true)Long id)
@@ -213,7 +179,7 @@ public class HomeResumeController {
 		WorkExperience workExperience = workExperienceService.findWorkExperienceByUserId(user.getId());
 		ProjectExperience projectExperience = projectExperienceService.findProjectExperienceByUserId(user.getId());
 		EducationBackground educationBackground = educationBackgroundService.findEducationBackgroundByUserId(user.getId());
-		//判断简历必填部分是否填写了
+		//Xác định xem sơ yếu lý lịch phải được điền vào
 		if(workExperience != null && projectExperience != null && educationBackground != null) {
 			Position findById = positionService.findById(id);
 			Resume resume = new Resume();
@@ -235,12 +201,7 @@ public class HomeResumeController {
 		return Result.success(true);
 	}
 	
-	/**
-	 * 保存期望工作信息
-	 * @param expectWork
-	 * @param request
-	 * @return
-	 */
+
 	@RequestMapping(value="/save_expect_work",method=RequestMethod.POST)
 	@ResponseBody
 	public Result<Boolean> saveExpectWorkForm(ExpectWork expectWork,HttpServletRequest request)
@@ -250,37 +211,32 @@ public class HomeResumeController {
 		}
 		User session_user = (User) request.getSession().getAttribute("user");
 		expectWork.setUser(session_user);
-		//检查有没有添加过期望工作
+		//Kiểm tra xem có một công việc dự kiến
 		ExpectWork findExpectWork = expectWorkService.findExpectWorkByUserId(session_user.getId());
 		if(findExpectWork != null){
-			//进行修改操作
+			//Sửa đổi hoạt động
 			BeanUtils.copyProperties(expectWork, findExpectWork, "id","createTime","updateTime");
 			if(expectWorkService.save(findExpectWork) == null){
 				return Result.error(CodeMsg.RESUME_EXPECT_WORK_ERROR);
 			}
 		}else {
-			//进行添加操作
+			//Thêm hoạt động
 			if(expectWorkService.save(expectWork) == null){
 				return Result.error(CodeMsg.RESUME_EXPECT_WORK_ERROR);
 			}
 		}
-		//更新最后一次修改时间
+		//Cập nhật thời gian sửa đổi cuối cùng
 		session_user.setUpdateTime(new Date());
 		if(userService.save(session_user) == null){
 			return Result.error(CodeMsg.USER_UPDATE_TIME_ERROR);
 		}
-		//把用户权限更新
+		//Cập nhật quyền của người dùng
 		User new_session_user = userService.find(session_user.getId());
 		request.getSession().setAttribute(SessionConstant.SESSION_USER_LOGIN_KEY, new_session_user);
 		return Result.success(true);
 	}
 	
-	/**
-	 * 保存工作经历信息
-	 * @param workExperience
-	 * @param request
-	 * @return
-	 */
+
 	@RequestMapping(value="/save_work_experience",method=RequestMethod.POST)
 	@ResponseBody
 	public Result<Boolean> saveWorkExperienceForm(WorkExperience workExperience,HttpServletRequest request)
@@ -288,60 +244,55 @@ public class HomeResumeController {
 		if(workExperience == null){
 			return Result.error(CodeMsg.DATA_ERROR);
 		}
-		//检查公司名称是否为空
+		//Kiểm tra xem tên công ty có trống không
 		if(StringUtil.isEmpty(workExperience.getName())){
 			return Result.error(CodeMsg.RESUME_WORK_EXPERIENCE_COMPANY_NAME_EMPTY);
 		}
-		//检查职位名称是否为空
+		//Kiểm tra xem tên của vị trí có trống không
 		if(StringUtil.isEmpty(workExperience.getPosition())) {
 			return Result.error(CodeMsg.RESUME_WORK_EXPERIENCE_POSITION_NAME_EMPTY);
 		}
-		//检查开始时间是否为空
-		if(workExperience.getStartYear() == null || workExperience.getStartMonth() == null || "开始年份".equals(workExperience.getStartYear()) || "开始月份".equals(workExperience.getStartMonth())) {
+		//Kiểm tra xem thời gian bắt đầu có trống không
+		if(workExperience.getStartYear() == null || workExperience.getStartMonth() == null || "Năm bắt đầu".equals(workExperience.getStartYear()) || "Bắt đầu tháng".equals(workExperience.getStartMonth())) {
 			return Result.error(CodeMsg.RESUME_WORK_EXPERIENCE_START_TIME_EMPTY);
 		}
-		//检查结束时间是否为空
-		if(workExperience.getEndYear() == null || workExperience.getEndMonth() == null || "结束年份".equals(workExperience.getEndYear()) || "结束月份".equals(workExperience.getEndMonth())) {
+		//Kiểm tra xem thời gian kết thúc có trống không
+		if(workExperience.getEndYear() == null || workExperience.getEndMonth() == null || "Kết thúc".equals(workExperience.getEndYear()) || "Tháng kết thúc".equals(workExperience.getEndMonth())) {
 			return Result.error(CodeMsg.RESUME_WORK_EXPERIENCE_END_TIME_EMPTY);
 		}
-		//检查结束时间是否大于开始时间
+		//Kiểm tra xem thời gian kết thúc có lớn hơn thời gian bắt đầu không
 		if(Integer.valueOf(workExperience.getStartYear()) > Integer.valueOf(workExperience.getEndYear()) || (workExperience.getStartYear().equals(workExperience.getEndYear()) && Integer.valueOf(workExperience.getStartMonth()) > Integer.valueOf(workExperience.getEndMonth()))) {
 			return Result.error(CodeMsg.RESUME_WORK_EXPERIENCE_TIME_NOT_CORRECT);
 		}
 		User session_user = (User) request.getSession().getAttribute("user");
 		workExperience.setUser(session_user);
-		//检查有没有添加过工作经历
+		//Kiểm tra xem bạn có thêm kinh nghiệm làm việc không
 		WorkExperience findWorkExperience = workExperienceService.findWorkExperienceByUserId(session_user.getId());
 		if(findWorkExperience != null){
-			//进行修改操作
+			//Sửa đổi hoạt động
 			BeanUtils.copyProperties(workExperience, findWorkExperience, "id","createTime","updateTime");
 			if(workExperienceService.save(findWorkExperience) == null){
 				return Result.error(CodeMsg.RESUME_WORK_EXPERIENCE_ERROR);
 			}
 		}else {
-			//进行添加操作
+			//Thêm hoạt động
 			if(workExperienceService.save(workExperience) == null){
 				return Result.error(CodeMsg.RESUME_WORK_EXPERIENCE_ERROR);
 			}
 		}
-		//更新最后一次修改时间
+		//Cập nhật thời gian sửa đổi cuối cùng
 		session_user.setUpdateTime(new Date());
 		if(userService.save(session_user) == null){
 			return Result.error(CodeMsg.USER_UPDATE_TIME_ERROR);
 		}
-		//把用户权限更新
+		//Cập nhật quyền của người dùng
 		User new_session_user = userService.find(session_user.getId());
 		request.getSession().setAttribute(SessionConstant.SESSION_USER_LOGIN_KEY, new_session_user);
 		
 		return Result.success(true);
 	}
 	
-	/**
-	 * 保存项目经验
-	 * @param projectExperience
-	 * @param request
-	 * @return
-	 */
+
 	@RequestMapping(value="/save_project_experience",method=RequestMethod.POST)
 	@ResponseBody
 	public Result<Boolean> saveProjectExperienceForm(ProjectExperience projectExperience,HttpServletRequest request)
@@ -349,60 +300,55 @@ public class HomeResumeController {
 		if(projectExperience == null){
 			return Result.error(CodeMsg.DATA_ERROR);
 		}
-		//检查项目名称是否为空
+		//Kiểm tra xem tên dự án có trống không
 		if(StringUtil.isEmpty(projectExperience.getName())){
 			return Result.error(CodeMsg.RESUME_PROJECT_EXPERIENCE_PROJECT_NAME_EMPTY);
 		}
-		//检查职位名称是否为空
+		//Kiểm tra xem tên của vị trí có trống không
 		if(StringUtil.isEmpty(projectExperience.getPosition())) {
 			return Result.error(CodeMsg.RESUME_PROJECT_EXPERIENCE_POSITION_NAME_EMPTY);
 		}
-		//检查开始时间是否为空
-		if(projectExperience.getStartYear() == null || projectExperience.getStartMonth() == null || "开始年份".equals(projectExperience.getStartYear()) || "开始月份".equals(projectExperience.getStartMonth())) {
+		//Kiểm tra xem thời gian bắt đầu có trống không
+		if(projectExperience.getStartYear() == null || projectExperience.getStartMonth() == null || "Năm bắt đầu".equals(projectExperience.getStartYear()) || "Bắt đầu tháng".equals(projectExperience.getStartMonth())) {
 			return Result.error(CodeMsg.RESUME_PROJECT_EXPERIENCE_START_TIME_EMPTY);
 		}
-		//检查结束时间是否为空
-		if(projectExperience.getEndYear() == null || projectExperience.getEndMonth() == null || "结束年份".equals(projectExperience.getEndYear()) || "结束月份".equals(projectExperience.getEndMonth())) {
+		//Kiểm tra xem thời gian kết thúc có trống không
+		if(projectExperience.getEndYear() == null || projectExperience.getEndMonth() == null || "Kết thúc".equals(projectExperience.getEndYear()) || "Tháng kết thúc".equals(projectExperience.getEndMonth())) {
 			return Result.error(CodeMsg.RESUME_PROJECT_EXPERIENCE_END_TIME_EMPTY);
 		}
-		//检查结束时间是否大于开始时间
+		//Kiểm tra xem thời gian kết thúc có lớn hơn thời gian bắt đầu không
 		if(Integer.valueOf(projectExperience.getStartYear()) > Integer.valueOf(projectExperience.getEndYear()) || (projectExperience.getStartYear().equals(projectExperience.getEndYear()) && Integer.valueOf(projectExperience.getStartMonth()) > Integer.valueOf(projectExperience.getEndMonth()))) {
 			return Result.error(CodeMsg.RESUME_PROJECT_EXPERIENCE_TIME_NOT_CORRECT);
 		}
 		User session_user = (User) request.getSession().getAttribute("user");
 		projectExperience.setUser(session_user);
-		//检查有没有添加过项目经验
+		//Kiểm tra xem bạn có thêm kinh nghiệm dự án không
 		ProjectExperience findProjectExperience = projectExperienceService.findProjectExperienceByUserId(session_user.getId());
 		if(findProjectExperience != null){
-			//进行修改操作
+			//Sửa đổi hoạt động
 			BeanUtils.copyProperties(projectExperience, findProjectExperience, "id","createTime","updateTime");
 			if(projectExperienceService.save(findProjectExperience) == null){
 				return Result.error(CodeMsg.RESUME_PROJECT_EXPERIENCE_ERROR);
 			}
 		}else {
-			//进行添加操作
+			//Thêm hoạt động
 			if(projectExperienceService.save(projectExperience) == null){
 				return Result.error(CodeMsg.RESUME_PROJECT_EXPERIENCE_ERROR);
 			}
 		}
-		//更新最后一次修改时间
+		//Cập nhật thời gian sửa đổi cuối cùng
 		session_user.setUpdateTime(new Date());
 		if(userService.save(session_user) == null){
 			return Result.error(CodeMsg.USER_UPDATE_TIME_ERROR);
 		}
-		//把用户权限更新
+		//Cập nhật quyền của người dùng
 		User new_session_user = userService.find(session_user.getId());
 		request.getSession().setAttribute(SessionConstant.SESSION_USER_LOGIN_KEY, new_session_user);
 		
 		return Result.success(true);
 	}
 	
-	/**
-	 * 保存教育背景
-	 * @param educationBackground
-	 * @param request
-	 * @return
-	 */
+	
 	@RequestMapping(value="/save_education_background",method=RequestMethod.POST)
 	@ResponseBody
 	public Result<Boolean> saveEducationBackgroundForm(EducationBackground educationBackground,HttpServletRequest request)
@@ -410,62 +356,57 @@ public class HomeResumeController {
 		if(educationBackground == null){
 			return Result.error(CodeMsg.DATA_ERROR);
 		}
-		//检查学校名称是否为空
+		//Kiểm tra xem tên trường có trống không
 		if(StringUtil.isEmpty(educationBackground.getSchool_name())){
 			return Result.error(CodeMsg.RESUME_EDUCATION_BACKGROUND_SCHOOL_NAME_EMPTY);
 		}
-		//检查专业名称是否为空
+		//Kiểm tra xem tên chuyên nghiệp có trống không
 		if(StringUtil.isEmpty(educationBackground.getMajor())) {
 			return Result.error(CodeMsg.RESUME_EDUCATION_BACKGROUND_MAJOR_EMPTY);
 		}
-		//检查开始年份是否为空
-		if(educationBackground.getStartYear() == null || "开始年份".equals(educationBackground.getStartYear())) {
+		//Kiểm tra xem phần đầu của đầu có trống không
+		if(educationBackground.getStartYear() == null || "Năm bắt đầu".equals(educationBackground.getStartYear())) {
 			return Result.error(CodeMsg.RESUME_EDUCATION_BACKGROUND_START_TIME_EMPTY);
 		}
-		//检查结束年份是否为空
-		if(educationBackground.getEndYear() == null || "结束年份".equals(educationBackground.getEndYear())) {
+		//Kiểm tra xem kết thúc kiểm tra có trống không
+		if(educationBackground.getEndYear() == null || "Kết thúc".equals(educationBackground.getEndYear())) {
 			return Result.error(CodeMsg.RESUME_EDUCATION_BACKGROUND_END_TIME_EMPTY);
 		}
-		//检查结束年份是否大于开始年份
+		//Kiểm tra xem phần cuối của kết thúc có lớn hơn đầu của đầu
 		if(Integer.valueOf(educationBackground.getStartYear()) > Integer.valueOf(educationBackground.getEndYear())) {
 			return Result.error(CodeMsg.RESUME_EDUCATION_BACKGROUND_TIME_NOT_CORRECT);
 		}
 		User session_user = (User) request.getSession().getAttribute("user");
 		educationBackground.setUser(session_user);
 		
-		//检查有没有添加过教育背景
+		//Kiểm tra xem bạn có thêm một nền tảng giáo dục không
 		EducationBackground findEducationBackground = educationBackgroundService.findEducationBackgroundByUserId(session_user.getId());
 		if(findEducationBackground != null){
-			//进行修改操作
+			//Sửa đổi hoạt động
 			BeanUtils.copyProperties(educationBackground, findEducationBackground, "id","createTime","updateTime");
 			if(educationBackgroundService.save(findEducationBackground) == null){
 				return Result.error(CodeMsg.RESUME_EDUCATION_BACKGROUND_ERROR);
 			}
 		}else {
-			//进行添加操作
+			//Thêm hoạt động
 			if(educationBackgroundService.save(educationBackground) == null){
 				return Result.error(CodeMsg.RESUME_EDUCATION_BACKGROUND_ERROR);
 			}
 		}
 		
-		//更新最后一次修改时间
+		//Cập nhật thời gian sửa đổi cuối cùng
 		session_user.setUpdateTime(new Date());
 		if(userService.save(session_user) == null){
 			return Result.error(CodeMsg.USER_UPDATE_TIME_ERROR);
 		}
-		//把用户权限更新
+		//Cập nhật quyền của người dùng
 		User new_session_user = userService.find(session_user.getId());
 		request.getSession().setAttribute(SessionConstant.SESSION_USER_LOGIN_KEY, new_session_user);
 		return Result.success(true);
 	}
 	
 	
-	/**
-	 * 保存作品展示信息
-	 * @param workShow
-	 * @param request
-	 * @return
-	 */
+
 	@RequestMapping(value="/save_work_show",method=RequestMethod.POST)
 	@ResponseBody
 	public Result<Boolean> saveWorkShow(WorkShow workShow,HttpServletRequest request)
@@ -476,27 +417,27 @@ public class HomeResumeController {
 		User session_user = (User) request.getSession().getAttribute("user");
 		workShow.setUser(session_user);
 		
-		//检查有没有添加过教育背景
+		//Kiểm tra xem bạn có thêm một nền tảng giáo dục không
 		WorkShow findWorkShow = workShowService.findWorkShowByUserId(session_user.getId());
 		if(findWorkShow != null){
-			//进行修改操作
+			//Sửa đổi hoạt động
 			BeanUtils.copyProperties(workShow, findWorkShow, "id","createTime","updateTime");
 			if(workShowService.save(findWorkShow) == null){
 				return Result.error(CodeMsg.RESUME_WORK_SHOW_SAVE_ERROR);
 			}
 		}else {
-			//进行添加操作
+			//Thêm hoạt động
 			if(workShowService.save(workShow) == null){
 				return Result.error(CodeMsg.RESUME_WORK_SHOW_SAVE_ERROR);
 			}
 		}
 		
-		//更新最后一次修改时间
+		//Cập nhật thời gian sửa đổi cuối cùng
 		session_user.setUpdateTime(new Date());
 		if(userService.save(session_user) == null){
 			return Result.error(CodeMsg.USER_UPDATE_TIME_ERROR);
 		}
-		//把用户权限更新
+		//Cập nhật quyền của người dùng
 		User new_session_user = userService.find(session_user.getId());
 		request.getSession().setAttribute(SessionConstant.SESSION_USER_LOGIN_KEY, new_session_user);
 		

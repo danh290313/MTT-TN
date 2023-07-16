@@ -18,11 +18,7 @@ import com.yjq.lagou.bean.CodeMsg;
 import com.yjq.lagou.bean.Result;
 import com.yjq.lagou.util.StringUtil;
 
-/**
- * 公用的上传类
- * @author Administrator
- *
- */
+
 @RequestMapping("/upload")
 @Controller
 public class UploadController {
@@ -31,49 +27,45 @@ public class UploadController {
 	private String uploadPhotoSufix;
 	
 	@Value("${yjq.upload.photo.maxsize}")
-	private long uploadPhotoMaxSize;   //大小1024KB
+	private long uploadPhotoMaxSize;   //Kích thước 1024kb
 	
 	@Value("${yjq.upload.photo.path}")
-	private String uploadPhotoPath;//文件保存位置
+	private String uploadPhotoPath;//Vị trí lưu trữ tập tin
 	
 	private Logger log = LoggerFactory.getLogger(UploadController.class);
 	
-	/**
-	 * 图片统一上传类
-	 * @param photo
-	 * @return
-	 */
+	
 	@RequestMapping(value="/upload_photo",method=RequestMethod.POST)
 	@ResponseBody
 	public Result<String> uploadPhoto(@RequestParam(name="photo",required=true)MultipartFile photo){
-		//判断文件类型是否是图片
+		//Xác định xem loại tệp có phải là hình ảnh không
 		String originalFilename = photo.getOriginalFilename();
-		//获取文件后缀
+		//Nhận tập tin
 		String suffix = originalFilename.substring(originalFilename.lastIndexOf("."),originalFilename.length());
 		if(!uploadPhotoSufix.contains(suffix.toLowerCase())){
 			return Result.error(CodeMsg.UPLOAD_PHOTO_SUFFIX_ERROR);
 		}
-		//photo.getSize()单位是B
+		//photo.getSize()Đơn vị
 		if(photo.getSize()/1024 > uploadPhotoMaxSize){
 			CodeMsg codeMsg = CodeMsg.UPLOAD_PHOTO_ERROR;
-			codeMsg.setMsg("图片大小不能超过" + (uploadPhotoMaxSize/1024) + "M");
+			codeMsg.setMsg("Kích thước hình ảnh không thể vượt quá" + (uploadPhotoMaxSize/1024) + "M");
 			return Result.error(codeMsg);
 		}
-		//准备保存文件
+		//Chuẩn bị để lưu tệp
 		File filePath = new File(uploadPhotoPath);
 		if(!filePath.exists()){
-			//若不存在文件夹，则创建一个文件夹
+			//Nếu không có thư mục, hãy tạo một thư mục
 			filePath.mkdir();
 		}
 		filePath = new File(uploadPhotoPath + "/" + StringUtil.getFormatterDate(new Date(), "yyyyMMdd"));
-		//判断当天日期的文件夹是否存在，若不存在，则创建
+		//Xác định xem thư mục tồn tại vào ngày trong ngày, nếu nó không tồn tại, hãy tạo ra
 		if(!filePath.exists()){
-			//若不存在文件夹，则创建一个文件夹
+			//Nếu không có thư mục, hãy tạo một thư mục
 			filePath.mkdir();
 		}
 		String filename = StringUtil.getFormatterDate(new Date(), "yyyyMMdd") + "/" + System.currentTimeMillis() + suffix;
 		try {
-			photo.transferTo(new File(uploadPhotoPath+"/"+filename));   //把文件上传
+			photo.transferTo(new File(uploadPhotoPath+"/"+filename));   //Tải lên tệp
 		} catch (IllegalStateException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -81,7 +73,7 @@ public class UploadController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		log.info("图片上传成功，保存位置：" + uploadPhotoPath +filename);
+		log.info("Hình ảnh tải lên thành công, lưu vị trí：" + uploadPhotoPath +filename);
 		return Result.success(filename);
 		
 	}

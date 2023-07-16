@@ -32,11 +32,6 @@ import com.yjq.lagou.service.home.WorkExperienceService;
 import com.yjq.lagou.service.home.WorkShowService;
 import com.yjq.lagou.util.PositionCategoryUtil;
 import com.yjq.lagou.util.StringUtil;
-/**
- * 首页控制器
- *
- *
- */
 
 @RequestMapping("/home/index")
 @Controller
@@ -69,11 +64,7 @@ public class IndexController {
 	@Autowired
 	private ResumeService resumeService;
 	
-	/**
-	 * 首页
-	 * @param model
-	 * @return
-	 */
+
 	@RequestMapping(value="/index",method=RequestMethod.GET)
 	public String index(Model model){
 		List<PositionCategory> topList = PositionCategoryUtil.getTopPositionCategory(positionCategoryService.findAll());
@@ -91,34 +82,30 @@ public class IndexController {
 		return "home/index/index";
 	}
 	
-	/**
-	 * 公司页面
-	 * @param model
-	 * @return
-	 */
+
 	@RequestMapping(value="/company_list",method=RequestMethod.GET)
 	public String companyList(Model model,Page page,String search_value){
-		model.addAttribute("company_list", "company_list"); //top_menu显示
+		model.addAttribute("company_list", "company_list"); //top_menu trình diễn
 		
 		if(StringUtil.isEmpty(search_value)) {
-			//如果search_value为空
-			//分页获取公司列表信息
+			//Nếu search_value trống
+			//Pagling có được thông tin danh sách công ty
 			Page p = new Page();
-			p.setTotalCount(companyService.getCompanyTotal("已认证"));
-			p.setRows(9);//公司列表每页9个
-			model.addAttribute("totalPage",p.getTotalPage());  //总页数
-			model.addAttribute("currentPage",page.getPage()); //当前页
+			p.setTotalCount(companyService.getCompanyTotal("đã xác minh"));
+			p.setRows(9);//Danh sách công ty 9 mỗi trang
+			model.addAttribute("totalPage",p.getTotalPage());  //Tổng số trang
+			model.addAttribute("currentPage",page.getPage()); //trang hiện tại
 			model.addAttribute("PositionList", positionService.findAll());
-			List<Company> findCompanyList = companyService.findCompanyList("已认证", page.getOffset(), 9);
+			List<Company> findCompanyList = companyService.findCompanyList("đã xác minh", page.getOffset(), 9);
 			model.addAttribute("CompanyList", findCompanyList);
 		}else {
-			//如果search_value不为空
+			//Nếu search_value không trống
 			Page p = new Page();
-			p.setTotalCount(companyService.getCompanyTotalBySearchValue("已认证", search_value));
-			p.setRows(9);//公司列表每页9个
-			model.addAttribute("totalPage",p.getTotalPage());  //总页数
-			model.addAttribute("currentPage",page.getPage()); //当前页
-			List<Company> findCompanyList = companyService.findCompanyListBySearchValue("已认证", search_value, page.getOffset(), 9);
+			p.setTotalCount(companyService.getCompanyTotalBySearchValue("đã xác minh", search_value));
+			p.setRows(9);//Danh sách công ty 9 mỗi trang
+			model.addAttribute("totalPage",p.getTotalPage());  //Tổng số trang
+			model.addAttribute("currentPage",page.getPage()); //trang hiện tại
+			List<Company> findCompanyList = companyService.findCompanyListBySearchValue("đã xác minh", search_value, page.getOffset(), 9);
 			model.addAttribute("CompanyList", findCompanyList);
 			model.addAttribute("PositionList", positionService.findAll());
 			model.addAttribute("SearchValue", search_value);
@@ -130,17 +117,12 @@ public class IndexController {
 		return "home/index/company_list";
 	}
 	
-	/**
-	 * 我的简历页面
-	 * @param model
-	 * @param request
-	 * @return
-	 */
+
 	@RequestMapping(value="/my_resume",method=RequestMethod.GET)
 	public String my_resume(Model model,HttpServletRequest request){
 		User user = (User) request.getSession().getAttribute(SessionConstant.SESSION_USER_LOGIN_KEY);
-		int scores = 0; //简历完善度
-		int isOK = 0; //是否可以投递（必填项是否都填了） 0：不可以  1：可以
+		int scores = 0; //Tiếp tục mức độ hoàn hảo
+		int isOK = 0; //Cho dù nó có thể được phân phối (cho dù nó phải được điền vào) 0: Không 1: Có, vâng, vâng
 		ExpectWork expectWork = expectWorkService.findExpectWorkByUserId(user.getId());
 		WorkExperience workExperience = workExperienceService.findWorkExperienceByUserId(user.getId());
 		ProjectExperience projectExperience = projectExperienceService.findProjectExperienceByUserId(user.getId());
@@ -171,17 +153,12 @@ public class IndexController {
 		model.addAttribute("ProjectExperience", projectExperience);
 		model.addAttribute("EducationBackground", educationBackground);
 		model.addAttribute("WorkShow", workShow);
-		model.addAttribute("my_resume", "my_resume"); //top_menu显示
+		model.addAttribute("my_resume", "my_resume"); //top_menu trình diễn
 		return "home/index/my_resume";
 	}
 	
 	
-	/**
-	 * 发布职位页面
-	 * @param model
-	 * @param request
-	 * @return
-	 */
+
 	@RequestMapping(value="/publish_position",method=RequestMethod.GET)
 	public String publishPosition(Model model,HttpServletRequest request,Long id){
 		List<PositionCategory> topList = PositionCategoryUtil.getTopPositionCategory(positionCategoryService.findAll());
@@ -194,29 +171,25 @@ public class IndexController {
 		User user = (User) request.getSession().getAttribute(SessionConstant.SESSION_USER_LOGIN_KEY);
 		Company findCompanyByUserId = companyService.findByUserId(user.getId());
 		if(findCompanyByUserId == null || !"đã xác minh".equals(findCompanyByUserId.getState())) {
-			model.addAttribute("errorMsg", "Công ty của bạn chưa thông qua nó, vui lòng điền thông tin của công ty hoặc chờ chứng nhận!Chuyển sang trang công ty của tôi sau 3s!");
+			model.addAttribute("errorMsg", "Công ty của bạn chưa thông qua nó, vui lòng điền thông tin của công ty hoặc chờ chứng nhận!!!");
 		}
 		
-		//判断是不是编辑操作
+		//Xác định xem đó có phải là hoạt động biên tập hay không
 		if(id != null) {
-			//如果是
+			//trong trường hợp
 			Position findById = positionService.findById(id);
 			model.addAttribute("editPosition", findById);
 		}
 		
-		model.addAttribute("publish_position", "publish_position"); //top_menu显示
+		model.addAttribute("publish_position", "publish_position"); //top_menu trình diễn
 		return "home/index/publish_position";
 	}
 	
 	
-	/**
-	 * 关于我们页面
-	 * @param model
-	 * @return
-	 */
+
 	@RequestMapping(value="/about",method=RequestMethod.GET)
 	public String about(Model model){
-		model.addAttribute("about", "about"); //top_menu显示
+		model.addAttribute("about", "about"); //top_menu trình diễn
 		return "home/index/about";
 	}
 }

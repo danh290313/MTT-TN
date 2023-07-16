@@ -19,11 +19,7 @@ import com.yjq.lagou.entity.common.User;
 import com.yjq.lagou.service.common.CompanyService;
 import com.yjq.lagou.service.common.PositionService;
 import com.yjq.lagou.util.StringUtil;
-/**
- * 前端公司管理控制器
- *
- *
- */
+
 @RequestMapping("/home/company")
 @Controller
 public class HomeCompanyController {
@@ -34,11 +30,7 @@ public class HomeCompanyController {
 	@Autowired
 	private PositionService positionService;
 	
-	/**
-	 * 公司详情页面
-	 * @param model
-	 * @return
-	 */
+
 	@RequestMapping(value="/detail",method=RequestMethod.GET)
 	public String companyDetail(Model model,@RequestParam(name="id",required=true)Long id){
 		Company findCompany = companyService.find(id);
@@ -48,11 +40,6 @@ public class HomeCompanyController {
 	
 	
 	
-	/**
-	 * 我的公司页面
-	 * @param model
-	 * @return
-	 */
 	@RequestMapping(value="/my_company",method=RequestMethod.GET)
 	public String myCompany(Model model,HttpServletRequest request){
 		User session_user = (User) request.getSession().getAttribute(SessionConstant.SESSION_USER_LOGIN_KEY);
@@ -69,11 +56,7 @@ public class HomeCompanyController {
 	}
 	
 	
-	/**
-	 * 申请公司认证
-	 * @param id
-	 * @return
-	 */
+
 	@RequestMapping(value="/apply_confirm",method=RequestMethod.POST)
 	@ResponseBody
 	public Result<Boolean> applyConfirm(@RequestParam(name="id",required=true)Long id)
@@ -86,12 +69,7 @@ public class HomeCompanyController {
 		return Result.success(true);
 	}
 	
-	/**
-	 * 保存公司名称、价值观和图片信息
-	 * @param company
-	 * @param request
-	 * @return
-	 */
+
 	@RequestMapping(value="/save_company_detail",method=RequestMethod.POST)
 	@ResponseBody
 	public Result<Boolean> saveCompanyDetail(Company company,HttpServletRequest request)
@@ -99,27 +77,27 @@ public class HomeCompanyController {
 		if(company == null){
 			return Result.error(CodeMsg.DATA_ERROR);
 		}
-		//检测公司名称是否为空
+		//Tên của công ty kiểm tra trống rỗng
 		if(StringUtil.isEmpty(company.getName())) {
 			return Result.error(CodeMsg.COMPANY_NAME_EMPTY);
 		}
-		//检测公司价值观是否为空
+		//Kiểm tra xem giá trị của công ty có trống không
 		if(StringUtil.isEmpty(company.getValue())) {
 			return Result.error(CodeMsg.COMPANY_VALUE_EMPTY);
 		}
-		//检测公司名称长度
+		//Kiểm tra độ dài tên của công ty
 		if(company.getName().length() > 30) {
 			return Result.error(CodeMsg.COMPANY_NAME_WORD_OVER);
 		}
-		//检测公司名称长度
+		//Kiểm tra độ dài tên của công ty
 		if(company.getValue().length() > 50) {
 			return Result.error(CodeMsg.COMPANY_VALUE_WORD_OVER);
 		}
 		User session_user = (User) request.getSession().getAttribute(SessionConstant.SESSION_USER_LOGIN_KEY);
 		Company findCompany = companyService.findByUserId(session_user.getId());
 		if(findCompany == null) {
-			//进行添加操作
-			//检测公司名称是否重名
+			//Thêm hoạt động
+			//Phát hiện xem tên công ty có tên nặng không
 			if(checkCompanyName(company,0l)){
 				return Result.error(CodeMsg.COMPANY_NAME_ALREADY_EXIST);
 			}
@@ -128,8 +106,8 @@ public class HomeCompanyController {
 				return Result.error(CodeMsg.COMPANY_NAME_AND_VALUE_SAVE_ERROR);
 			}
 		}else {
-			//进行修改操作
-			//检测公司名称是否重名
+			//Sửa đổi hoạt động
+			//Phát hiện xem tên công ty có tên nặng không
 			if(checkCompanyName(company,findCompany.getId())){
 				return Result.error(CodeMsg.COMPANY_NAME_ALREADY_EXIST);
 			}
@@ -142,12 +120,7 @@ public class HomeCompanyController {
 		return Result.success(true);
 	}
 	
-	/**
-	 * 保存公司标签
-	 * @param company
-	 * @param request
-	 * @return
-	 */
+
 	@RequestMapping(value="/save_company_tags",method=RequestMethod.POST)
 	@ResponseBody
 	public Result<Boolean> saveCompanyTags(Company company,HttpServletRequest request)
@@ -155,17 +128,17 @@ public class HomeCompanyController {
 		if(company == null){
 			return Result.error(CodeMsg.DATA_ERROR);
 		}
-		//检测公司标签长度
+		//Chiều dài nhãn công ty kiểm tra
 		if(company.getTags().length() > 30) {
 			return Result.error(CodeMsg.COMPANY_TAGS_WORD_OVER);
 		}
 		User session_user = (User) request.getSession().getAttribute(SessionConstant.SESSION_USER_LOGIN_KEY);
 		Company findCompany = companyService.findByUserId(session_user.getId());
 		if(findCompany == null) {
-			//先让用户填写名称和价值观基本信息
+			//Để người dùng điền vào thông tin cơ bản của tên và giá trị trước tiên
 			return Result.error(CodeMsg.COMPANY_NAME_AND_VALUE_PRIORITY);
 		}else {
-			//进行修改操作
+			//Sửa đổi hoạt động
 			company.setState("Để được xem xét");
 			BeanUtils.copyProperties(company, findCompany, "id","createTime","updateTime","user","name","value","photo","productPhoto","productTitle","productContent","introduction","locale","territory","scale","url","finance","founderName","founderPosition","founderPhoto");
 			if(companyService.save(findCompany) == null){
@@ -175,12 +148,7 @@ public class HomeCompanyController {
 		return Result.success(true);
 	}
 	
-	/**
-	 * 保存公司产品
-	 * @param company
-	 * @param request
-	 * @return
-	 */
+
 	@RequestMapping(value="/save_company_product",method=RequestMethod.POST)
 	@ResponseBody
 	public Result<Boolean> saveCompanyProduct(Company company,HttpServletRequest request)
@@ -188,17 +156,17 @@ public class HomeCompanyController {
 		if(company == null){
 			return Result.error(CodeMsg.DATA_ERROR);
 		}
-		//检测公司产品标题长度
+		//Kiểm tra độ dài tiêu đề sản phẩm của công ty
 		if(company.getProductTitle().length() > 11) {
 			return Result.error(CodeMsg.COMPANY_PRODUCT_NAME_WORD_OVER);
 		}
 		User session_user = (User) request.getSession().getAttribute(SessionConstant.SESSION_USER_LOGIN_KEY);
 		Company findCompany = companyService.findByUserId(session_user.getId());
 		if(findCompany == null) {
-			//先让用户填写名称和价值观基本信息
+			//Để người dùng điền vào thông tin cơ bản của tên và giá trị trước tiên
 			return Result.error(CodeMsg.COMPANY_NAME_AND_VALUE_PRIORITY);
 		}else {
-			//进行修改操作
+			//Sửa đổi hoạt động
 			if("".equals(company.getProductTitle())) {
 				company.setProductTitle(null);
 			}
@@ -214,12 +182,7 @@ public class HomeCompanyController {
 		return Result.success(true);
 	}
 	
-	/**
-	 * 保存公司介绍
-	 * @param company
-	 * @param request
-	 * @return
-	 */
+
 	@RequestMapping(value="/save_company_introduction",method=RequestMethod.POST)
 	@ResponseBody
 	public Result<Boolean> saveCompanyIntroduction(Company company,HttpServletRequest request)
@@ -230,10 +193,10 @@ public class HomeCompanyController {
 		User session_user = (User) request.getSession().getAttribute(SessionConstant.SESSION_USER_LOGIN_KEY);
 		Company findCompany = companyService.findByUserId(session_user.getId());
 		if(findCompany == null) {
-			//先让用户填写名称和价值观基本信息
+			//Để người dùng điền vào thông tin cơ bản của tên và giá trị trước tiên
 			return Result.error(CodeMsg.COMPANY_NAME_AND_VALUE_PRIORITY);
 		}else {
-			//进行修改操作
+			//Sửa đổi hoạt động
 			if("".equals(company.getIntroduction())){
 				company.setIntroduction(null);
 			}
@@ -246,12 +209,7 @@ public class HomeCompanyController {
 		return Result.success(true);
 	}
 	
-	/**
-	 * 保存公司地点、领域、规模和网页信息
-	 * @param company
-	 * @param request
-	 * @return
-	 */
+	
 	@RequestMapping(value="/save_company_basic",method=RequestMethod.POST)
 	@ResponseBody
 	public Result<Boolean> saveCompanyBasic(Company company,HttpServletRequest request)
@@ -259,19 +217,19 @@ public class HomeCompanyController {
 		if(company == null){
 			return Result.error(CodeMsg.DATA_ERROR);
 		}
-		//检测公司地点是否为空
+		//Vị trí của công ty kiểm tra trống rỗng
 		if(StringUtil.isEmpty(company.getLocale())) {
 			return Result.error(CodeMsg.COMPANY_LOCALE_EMPTY);
 		}
-		//检测公司领域是否为空
+		//Là lĩnh vực kiểm tra lĩnh vực của công ty trống
 		if(StringUtil.isEmpty(company.getTerritory())) {
 			return Result.error(CodeMsg.COMPANY_TERRITORY_EMPTY);
 		}
-		//检测公司规模是否为空
+		//Quy mô của công ty kiểm tra trống
 		if(StringUtil.isEmpty(company.getScale())) {
 			return Result.error(CodeMsg.COMPANY_SCALE_EMPTY);
 		}
-		//检测公司网址是否为空
+		//Trang web của công ty thử nghiệm có trống không?
 		if(StringUtil.isEmpty(company.getUrl())) {
 			return Result.error(CodeMsg.COMPANY_URL_EMPTY);
 		}
@@ -279,10 +237,10 @@ public class HomeCompanyController {
 		User session_user = (User) request.getSession().getAttribute(SessionConstant.SESSION_USER_LOGIN_KEY);
 		Company findCompany = companyService.findByUserId(session_user.getId());
 		if(findCompany == null) {
-			//先让用户填写名称和价值观基本信息
+			//Để người dùng điền vào thông tin cơ bản của tên và giá trị trước tiên
 			return Result.error(CodeMsg.COMPANY_NAME_AND_VALUE_PRIORITY);
 		}else {
-			//进行修改操作
+			//Sửa đổi hoạt động
 			company.setState("Để được xem xét");
 			BeanUtils.copyProperties(company, findCompany, "id","createTime","updateTime","user","name","tags","value","photo","productPhoto","productTitle","productContent","introduction","finance","founderName","founderPosition","founderPhoto");
 			if(companyService.save(findCompany) == null){
@@ -294,13 +252,7 @@ public class HomeCompanyController {
 	
 	
 
-	
-	/**
-	 * 保存公司融资阶段
-	 * @param company
-	 * @param request
-	 * @return
-	 */
+
 	@RequestMapping(value="/save_company_finance",method=RequestMethod.POST)
 	@ResponseBody
 	public Result<Boolean> saveCompanyFinance(Company company,HttpServletRequest request)
@@ -311,10 +263,10 @@ public class HomeCompanyController {
 		User session_user = (User) request.getSession().getAttribute(SessionConstant.SESSION_USER_LOGIN_KEY);
 		Company findCompany = companyService.findByUserId(session_user.getId());
 		if(findCompany == null) {
-			//先让用户填写名称和价值观基本信息
+			//Để người dùng điền vào thông tin cơ bản của tên và giá trị trước tiên
 			return Result.error(CodeMsg.COMPANY_NAME_AND_VALUE_PRIORITY);
 		}else {
-			//进行修改操作
+			//Sửa đổi hoạt động
 			company.setState("Để được xem xét");
 			BeanUtils.copyProperties(company, findCompany, "id","createTime","updateTime","user","name","tags","value","photo","productPhoto","productTitle","productContent","introduction","locale","territory","scale","url","founderName","founderPosition","founderPhoto");
 			if(companyService.save(findCompany) == null){
@@ -324,12 +276,7 @@ public class HomeCompanyController {
 		return Result.success(true);
 	}
 
-	/**
-	 * 保存公司创始人信息
-	 * @param company
-	 * @param request
-	 * @return
-	 */
+	
 	@RequestMapping(value="/save_company_founder",method=RequestMethod.POST)
 	@ResponseBody
 	public Result<Boolean> saveCompanyFounder(Company company,HttpServletRequest request)
@@ -337,11 +284,11 @@ public class HomeCompanyController {
 		if(company == null){
 			return Result.error(CodeMsg.DATA_ERROR);
 		}
-		//检测公司创始人姓名是否为空
+		//Tên của người sáng lập công ty kiểm tra trống rỗng
 		if(StringUtil.isEmpty(company.getFounderName())){
 			return Result.error(CodeMsg.COMPANY_FOUNDER_NAME_EMPTY);
 		}
-		//检测公司创始人职位是否为空
+		//Vị trí của người sáng lập công ty kiểm tra trống rỗng
 		if(StringUtil.isEmpty(company.getFounderPosition())){
 			return Result.error(CodeMsg.COMPANY_FOUNDER_POSITION_EMPTY);
 		}
@@ -354,10 +301,10 @@ public class HomeCompanyController {
 		User session_user = (User) request.getSession().getAttribute(SessionConstant.SESSION_USER_LOGIN_KEY);
 		Company findCompany = companyService.findByUserId(session_user.getId());
 		if(findCompany == null) {
-			//先让用户填写名称和价值观基本信息
+			//Để người dùng điền vào thông tin cơ bản của tên và giá trị trước tiên
 			return Result.error(CodeMsg.COMPANY_NAME_AND_VALUE_PRIORITY);
 		}else {
-			//进行修改操作
+			//Sửa đổi hoạt động
 			company.setState("Để được xem xét");
 			BeanUtils.copyProperties(company, findCompany, "id","createTime","updateTime","user","name","tags","value","photo","productPhoto","productTitle","productContent","introduction","locale","territory","scale","url","finance");
 			if(companyService.save(findCompany) == null){
@@ -368,14 +315,14 @@ public class HomeCompanyController {
 	}
 	
 	
-	//检查有没有重复的companyName
+	//Kiểm tra xem có sự trùng lặp không companyName
 	public boolean checkCompanyName(Company company,Long id)
 	{
 		Company findByCompanyName = companyService.findByCompanyName(company.getName());
 		if(findByCompanyName == null)
-			return false;  //没有重复
+			return false;  //Không lặp lại
 		if(findByCompanyName.getId().longValue() == id.longValue())
-			return false;  //没有重复
-		return true;  //有重复
+			return false;  //Không lặp lại
+		return true;  //Nhân bản
 	}
 }
