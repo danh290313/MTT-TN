@@ -1,10 +1,10 @@
-<!--我的公司ftl-->
+<!--công ty của tôiftl-->
 <!DOCTYPE HTML>
 <html xmlns:wb="http://open.weibo.com/wb"><head>
 </script><script type="text/javascript" async="" src="style/js/conversion.js"></script><script src="style/js/allmobilize.min.js" charset="utf-8" id="allmobilize"></script><style type="text/css"></style>
 <meta content="no-siteapp" http-equiv="Cache-Control">
 <link  media="handheld" rel="alternate">
-<!-- end 云适配 -->
+<!-- end Nhiều mây -->
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 <title>Công ty của tôi-nền tảng tuyển dụng Internet chuyên nghiệp nhất</title>
 <meta content="23635710066417756375" property="qc:admins">
@@ -131,7 +131,7 @@ var youdao_conv_id = 271546;
         					        				
 	        					<div class="product_wrap">
 	                
-					            	<!--产品编辑-->
+					            	<!--Biên tập sản phẩm-->
 					                <dl id="newProduct" class="newProduct dn">
 					                	<dt>
 					                    	<h2><em></em>sản phẩm của công ty</h2>
@@ -161,7 +161,7 @@ var youdao_conv_id = 271546;
 											
 					                    </dd>
 					                </dl>
-					                <!--有产品-->
+					                <!--Sản phẩm-->
 					                <dl class="c_product" id="company_product_show">
 					                	<dt>
 					                    	<h2><em></em>sản phẩm của công ty</h2>
@@ -204,7 +204,7 @@ var youdao_conv_id = 271546;
        	
        				<div id="Profile">
 				        	<div class="profile_wrap">
-					             <!--无介绍 -->
+					             <!--Không giới thiệu -->
 									<dl class="c_section dn">
 					                	<dt>
 					                    	<h2><em></em>Hồ sơ công ty</h2>
@@ -216,7 +216,7 @@ var youdao_conv_id = 271546;
 					                        </div>
 					                    </dd>
 					                </dl>
-					            <!--编辑介绍-->
+					            <!--Biên tập giới thiệu-->
 					                <dl class="c_section newIntro dn">
 					                    <dt>
 					                        <h2><em></em>Hồ sơ công ty</h2>
@@ -232,7 +232,7 @@ var youdao_conv_id = 271546;
 					                    </dd>
 					                </dl>
 					            
-					            <!--有介绍-->
+					            <!--Giới thiệu-->
 					               <dl class="c_section">
 					               		<dt>
 					                   		<h2><em></em>Hồ sơ công ty</h2>
@@ -263,7 +263,7 @@ var youdao_conv_id = 271546;
       	
       
 	    
-	        			<!--无招聘职位-->
+	        			<!--Không có vị trí tuyển dụng-->
 						<dl id="noJobs" class="c_section">
 		                	<dt>
 		                    	<h2><em></em>Vị trí tuyển dụng</h2>
@@ -424,9 +424,6 @@ var youdao_conv_id = 271546;
 		                        				<li>niêm yết </li>
 		                           			<li>tư nhân</li>
 		                           			<li>nhà nước</li>
-		                           			<li>B轮</li>
-		                           			<li>C轮</li>
-		                           			<li>D轮及以上</li>
 		                           			<li>niêm yết</li>
 				                        </ul>
 				                    </div>
@@ -445,7 +442,7 @@ var youdao_conv_id = 271546;
        				
 	      
 	       		<div id="Member">		
-	       		<!--有创始团队-->
+	       		<!--Có một đội ngũ sáng lập-->
 		                <dl class="c_section c_member">
 		                	<dt>
 		                    	<h2><em></em>Đội ngũ sáng lập</h2>
@@ -464,12 +461,12 @@ var youdao_conv_id = 271546;
 						                            	<img width="120" height="120" id="edit_preview_founder_photo" src="/home/style/images/leader_default.png">
 							                        	<span>Thay đổi hình đại diện</span>
 							                        </div>
-							                        <input type="file" title="支持jpg、jpeg、gif、png格式，文件小于1M" onchange="uploadCompanyFounderPhoto();" id="founder_photo_file">
+							                        <input type="file" title="ủng hộ jpg、jpeg、gif、png Định dạng，Tệp nhỏ hơn 1M" onchange="uploadCompanyFounderPhoto();" id="founder_photo_file">
 							                    	<input type="hidden" value="7" name="type" class="type">
 							                    	<input type="hidden" value="images/leader_default.png" name="photo" class="leaderInfos">
 						                            <em>
-												                                尺寸：120*120px <br> 	
-												                                大小：小于1M
+												                                Kích thước: 120*120px<br> 	
+												                               Kích thước: Dưới 1m
 						                            </em>
 						                        </div>
 						                        <input type="text" placeholder="Vui lòng nhập tên của người sáng lập"  class="require" id="company_founder_name" name="name" tips="Tên người sáng lập của công ty không thể trống!"  attributes="error_company_founder_name">	
@@ -608,17 +605,17 @@ window.onload = function(){
 		document.getElementById("company_founder_position").value='';
 	</#if>
 }
-//打开上传公司图片窗口
+//Mở cửa sổ hình ảnh của công ty tải lên
 function uploadPhoto(){
 	$("#company_photo_file").click();
 }
-//上传公司创始人图片
+//Tải lên hình ảnh người sáng lập công ty
 function uploadCompanyFounderPhoto(){
 		if($("#founder_photo_file").val() == '')return;
 		var formData = new FormData();
-		//取出所选图片中的第一张
+		//Lấy ra cái đầu tiên trong hình ảnh đã chọn
 		formData.append('photo',document.getElementById('founder_photo_file').files[0]);
-		//进度条会话框打开
+		//Hộp Phiên nhập tiến độ mở ra
 		$.ajax({
 			url:'/upload/upload_photo',
 			type:'post',
@@ -643,13 +640,13 @@ function uploadCompanyFounderPhoto(){
 			}
 		});
 }
-//上传公司产品图片
+//Tải lên hình ảnh sản phẩm của công ty
 function uploadCompanyProductPhoto(){
 	if($("#product_photo_file").val() == '')return;
 		var formData = new FormData();
-		//取出所选图片中的第一张
+		//Lấy ra cái đầu tiên trong hình ảnh đã chọn
 		formData.append('photo',document.getElementById('product_photo_file').files[0]);
-		//进度条会话框打开
+		//Hộp Phiên nhập tiến độ mở ra
 		$.ajax({
 			url:'/upload/upload_photo',
 			type:'post',
@@ -674,13 +671,13 @@ function uploadCompanyProductPhoto(){
 			}
 		});
 }
-//上传公司图片
+//Tải lên hình ảnh của công ty
 function uploadCompanyPhoto(){
 		if($("#company_photo_file").val() == '')return;
 		var formData = new FormData();
-		//取出所选图片中的第一张
+		//Lấy ra cái đầu tiên trong hình ảnh đã chọn
 		formData.append('photo',document.getElementById('company_photo_file').files[0]);
-		//进度条会话框打开
+		//Hộp Phiên nhập tiến độ mở ra
 		$.ajax({
 			url:'/upload/upload_photo',
 			type:'post',
@@ -707,7 +704,7 @@ function uploadCompanyPhoto(){
 
 
 
-//保存公司标题简介图片信息
+//Lưu thông tin hình ảnh giới thiệu tiêu đề công ty
 function saveCompanyDetailForm()
 {
 	var name = $("#companyShortName").val();
@@ -716,7 +713,7 @@ function saveCompanyDetailForm()
 	
 	$('#error_company_name').css('display','none');
 	$('#error_company_value').css('display','none');
-	//进行统一表单非空验证
+	//Một biểu mẫu thống nhất không phải là xác minh trống
 	if(!checkForm('editDetailForm'))
 	{
 		return;
@@ -731,7 +728,7 @@ function saveCompanyDetailForm()
 				$("#successMsg").html("Tiêu đề và hồ sơ của công ty được lưu thành công!");
 				$.colorbox({inline:true, href:$("#successTip"),title:"Gợi ý hệ thống"});
 				setTimeout(function(){  
-						window.location.reload();//页面刷新
+						window.location.reload();//Trang làm mới
 						},3000);
 			}else{
 					switch(data.code){
@@ -755,7 +752,7 @@ function saveCompanyDetailForm()
 	});
 	
 }
-//保存公司标签信息
+//Lưu thông tin nhãn của công ty
 function saveCompanyTags()
 {
 	var tags = $("#label").val();
@@ -769,7 +766,7 @@ function saveCompanyTags()
 				$("#successMsg").html("Nhãn công ty được lưu thành công!");
 				$.colorbox({inline:true, href:$("#successTip"),title:"Thông báo"});
 				setTimeout(function(){  
-						window.location.reload();//页面刷新
+						window.location.reload();//Trang làm mới
 						},3000);
 			}else{
 					$("#errorMsg").html("Lưu không thành công,"+data.msg);
@@ -778,7 +775,7 @@ function saveCompanyTags()
 		}
 	});
 }
-//保存公司介绍信息
+//Lưu thông tin giới thiệu của công ty
 function saveCompanyIntroducation(){
 	var introduction = $("#companyProfile").val();
 	$.ajax({
@@ -791,7 +788,7 @@ function saveCompanyIntroducation(){
 				$("#successMsg").html("Công ty giới thiệu thành công bảo tồn!");
 				$.colorbox({inline:true, href:$("#successTip"),title:"Gợi ý hệ thống"});
 				setTimeout(function(){  
-						window.location.reload();//页面刷新
+						window.location.reload();//Trang làm mới
 						},3000);
 			}else{
 					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
@@ -801,7 +798,7 @@ function saveCompanyIntroducation(){
 	});
 }
 
-//保存公司产品信息
+//Lưu thông tin sản phẩm của công ty
 function saveCompanyProduct(){
 
 	var productTitle = $("#company_product_name").val();
@@ -817,7 +814,7 @@ function saveCompanyProduct(){
 				$("#successMsg").html("Các sản phẩm của công ty được lưu trữ thành công!");
 				$.colorbox({inline:true, href:$("#successTip"),title:"Gợi ý hệ thống"});
 				setTimeout(function(){  
-						window.location.reload();//页面刷新
+						window.location.reload();//Trang làm mới
 						},3000);
 			}else{
 					$("#errorMsg").html("Thất bại lưu，"+data.msg);
@@ -827,7 +824,7 @@ function saveCompanyProduct(){
 	});
 	
 }
-//保存公司地点、领域、规模和网页信息
+//Lưu thông tin về vị trí, trường, quy mô và trang web của công ty
 function saveCompanyBasic(){
 	var locale = $("#company_locale").val();
 	var territory = $("#company_territory").val();
@@ -837,7 +834,7 @@ function saveCompanyBasic(){
 	$('#error_company_scale').css('display','none');
 	$('#error_company_territory').css('display','none');
 	$('#error_company_url').css('display','none');
-	//进行统一表单非空验证
+	//Một biểu mẫu thống nhất không phải là xác minh trống
 	if(!checkForm('tagForms'))
 	{
 		return;
@@ -852,7 +849,7 @@ function saveCompanyBasic(){
 				$("#successMsg").html("Thông tin vị trí, trường, quy mô và trang web của công ty được bảo tồn thành công!");
 				$.colorbox({inline:true, href:$("#successTip"),title:"Gợi ý hệ thống"});
 				setTimeout(function(){  
-						window.location.reload();//页面刷新
+						window.location.reload();//Trang làm mới
 						},3000);
 			}else{
 					switch(data.code){
@@ -886,7 +883,7 @@ function saveCompanyBasic(){
 	});
 	
 }
-//保存公司融资阶段信息
+//Lưu thông tin giai đoạn tài chính của công ty
 function saveCompanyFinance()
 {
 	var finance = $("#company_finance").val();
@@ -900,7 +897,7 @@ function saveCompanyFinance()
 				$("#successMsg").html("Thông tin giai đoạn tài chính của công ty được lưu thành công!");
 				$.colorbox({inline:true, href:$("#successTip"),title:"Thông báo"});
 				setTimeout(function(){  
-						window.location.reload();//页面刷新
+						window.location.reload();//Trang làm mới
 						},3000);
 			}else{
 					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
@@ -910,7 +907,7 @@ function saveCompanyFinance()
 	});
 }
 
-//保存公司创始人信息
+//Lưu thông tin người sáng lập của công ty
 function saveCompanyFounder(){
 	var founderName = $("#company_founder_name").val();
 	var founderPosition = $("#company_founder_position").val();
@@ -918,7 +915,7 @@ function saveCompanyFounder(){
 	
 	$('#error_company_founder_position').css('display','none');
 	$('#error_company_founder_name').css('display','none');
-	//进行统一表单非空验证
+	//Một biểu mẫu thống nhất không phải là xác minh trống
 	if(!checkForm('founderForm'))
 	{
 		return;
@@ -933,7 +930,7 @@ function saveCompanyFounder(){
 				$("#successMsg").html("Thông tin của người sáng lập công ty đã được bảo tồn thành công!");
 				$.colorbox({inline:true, href:$("#successTip"),title:"Thông báo"});
 				setTimeout(function(){  
-						window.location.reload();//页面刷新
+						window.location.reload();//Trang làm mới
 						},3000);
 			}else{
 					switch(data.code){
@@ -957,7 +954,7 @@ function saveCompanyFounder(){
 	});
 }
 
-//申请公司认证
+//Đăng ký chứng nhận công ty
 function applyConfirm(i){
 	$.ajax({
 		url:'/home/company/apply_confirm',
@@ -969,7 +966,7 @@ function applyConfirm(i){
 				$("#successMsg").html("Ứng dụng chứng nhận của công ty được nộp thành công!");
 				$.colorbox({inline:true, href:$("#successTip"),title:"Thông báo"});
 				setTimeout(function(){  
-						window.location.reload();//页面刷新
+						window.location.reload();//Trang làm mới
 						},3000);
 			}else{
 					$("#errorMsg").html("Đệ trình ứng dụng chứng nhận công ty không thành công,"+data.msg+"!!!");
@@ -980,7 +977,7 @@ function applyConfirm(i){
 
 }
 
-//提示
+//gợi ý
 function tips(){
 
 		$("#errorMsg").html("Nếu bạn không đăng ký chứng nhận của công ty, vui lòng điền thông tin cơ bản của công ty trước tiên!!!");
