@@ -58,7 +58,7 @@ var youdao_conv_id = 271546;
             		</div>
             	</div><!--end #resumeScore-->
             	
-<!-----------------------------------------------------基本信息--------------------------------------------------->
+<!-----------------------------------------------------Thông tin cơ bản--------------------------------------------------->
      			<div class="profile_box" id="basicInfo">     <!--start basicinfo--> 
             		<h2>Thông tin cơ bản  <span> （Phải được lấp đầy khi phân phối sơ yếu lý lịch）</span></h2>
             		<span class="c_edit"></span>

@@ -449,7 +449,7 @@ var youdao_conv_id = 271546;
 		                    </dt>
 		                    <dd> 
 	       						<div class="member_wrap">
-				                        <!-- 编辑创始人 -->
+				                        <!-- Biên tập viên -người sáng lập -->
 		                        		<div class="member_info newMember dn" id="edit_company_founder">
 			                        		<form class="memberForm" id="founderForm">
 			                        			<input type="hidden" value="common/default_headpic.png" id="founder_photo">
