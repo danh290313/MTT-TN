@@ -101,7 +101,7 @@ $(function(){
 		        						mô tả dự án:${ProjectExperience.content!""}
 		        					</div>
 	    						<#else>
-	    							<div class="f16 mb10">Tên dự án: | Nhấn AS:  | <span class="c9">&#160;年&#160;月——&#160;年 &#160;月</span>
+	    							<div class="f16 mb10">Tên dự án: | Nhấn AS:  | <span class="c9">&#160;Năm&#160;tháng——&#160;Năm &#160;tháng</span>
 		        					</div>
 		        					<div class="dl1">
 		        						mô tả dự án:
@@ -119,7 +119,7 @@ $(function(){
 	                  <ul class="elist clearfix">
         				<li class="clear">
         					<#if EducationBackground??>
-        						<span class="c9">&#160;${EducationBackground.startYear!""}年 ——${EducationBackground.endYear!""}年</span>
+        						<span class="c9">&#160;${EducationBackground.startYear!""}Năm ——${EducationBackground.endYear!""}Năm</span>
 						 		<div>
 		    						<h3>Tên trường: ${EducationBackground.school_name!""}</h3>
 		    						<h4>${EducationBackground.major!""} · ${EducationBackground.studyRecord!""}</h4>

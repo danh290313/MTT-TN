@@ -62,17 +62,22 @@ var youdao_conv_id = 271546;
 		<a href="/home/position/my_publish_position?positionState=out">Có vị trí ngoại tuyến</a>
 	</dd>
 </dl>
-                <div class="subscribe_side mt20">
-   <div class="f14">Bạn muốn nhận được nhiều hơn và tiếp tục tốt hơn?</div>
-   <div class="f18 mb10">Chỉ cần sử dụng tuyển dụng để tăng tốc trợ lý </div>
-   <div>Tham khảo:<a class="f16" href="mailto:jessica@lagou.com">jessica@lagou.com</a></div>
-   <div class="f18 ti2em">010-57286512</div>
-</div>
 <div class="subscribe_side mt20">
+   <div class="f14">Bạn muốn nhận được nhiều hơn và tiếp tục tốt hơn?</div>
+   <div class="f18 mb10">Thông tin cần </div>
+   <div>LH:
+	 </br>
+	 <a class="f16" href="mailto:danh290313@gmail.com">danh290313@gmail.com</a></div>
+   <div class="f18 ti2em">SDT: 0961144072</div>
+</div>
+
+<#--  <div class="subscribe_side mt20">
    <div class="f14">Tham gia nhóm trao đổi nhân sự Internet</div>
    <div class="f18 mb10">Nói chuyện với đồng nghiệp của họ</div>
    <div class="f24">338167634</div>
-</div>            </div><!-- end .sidebar -->
+</div>             -->
+
+ </div><!-- end .sidebar -->
             <div class="content">
             	<dl class="company_center_content">
                     <dt>

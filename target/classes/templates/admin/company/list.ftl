@@ -130,6 +130,7 @@
 	//执行改变职位状态操作
 	function change(){
 		var data = $("#edit-form").serialize();
+		console.log('data', data);
 		$.ajax({
 			url:'/admin/company/change_state',
 			dataType:'json',

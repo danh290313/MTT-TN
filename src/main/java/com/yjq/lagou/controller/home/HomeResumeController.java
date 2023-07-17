@@ -1,5 +1,9 @@
 package com.yjq.lagou.controller.home;
 
+import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -137,11 +141,50 @@ public class HomeResumeController {
 	{
 		Resume findByResumeId = resumeService.findByResumeId(id);
 		findByResumeId.setState("effective");
-		if(resumeService.save(findByResumeId) == null) {
+		if (resumeService.save(findByResumeId) == null) {
 			return Result.error(CodeMsg.RESUME_STATE_SAVE_ERROR);
 		}
 		return Result.success(true);
 	}
+	
+	@RequestMapping(value="/interview2",method=RequestMethod.POST)
+	@ResponseBody
+	public Result<Boolean> interview2(@RequestParam(name = "id", required = true) Long id,
+	@RequestParam(name="interview",required=true)String interview)
+	{
+
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
+		Date interviewDate = null;
+		try {
+				interviewDate = dateFormat.parse(interview);
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}
+			System.out.println("interview=" + interviewDate);
+		
+		Resume findByResumeId = resumeService.findByResumeId(id);
+		findByResumeId.setState("effective");
+		findByResumeId.setInterview(interviewDate);
+		if (resumeService.save(findByResumeId) == null) {
+			return Result.error(CodeMsg.RESUME_STATE_SAVE_ERROR);
+		}
+		return Result.success(true);
+		
+	}
+	
+	// @RequestMapping(value="/change_state",method=RequestMethod.POST)
+	// @ResponseBody
+	// public  Result<Boolean> changeState(Company company){
+	// 	if(company == null) {
+	// 		return Result.error(CodeMsg.DATA_ERROR);
+	// 	}
+	// 	Company findCompany = companyService.find(company.getId());
+	// 	findCompany.setState(company.getState());
+	// 	if(companyService.save(findCompany) == null) {
+	// 		return Result.error(CodeMsg.COMPANY_CHANGE_STATE_ERROR);
+	// 	}
+	// 	return Result.success(true); 
+	// }
 	
 
 	@RequestMapping(value="/unsuitable",method=RequestMethod.POST)

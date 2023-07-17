@@ -124,16 +124,16 @@ var youdao_conv_id = 271546;
 						          	 <ul>
 					        			<li>Tốt nghiệp</li>
 					        			<li>1 năm</li>
-					        			<li>2年</li>
-					        			<li>3年</li>
-					        			<li>4年</li>
-					        			<li>5年</li>
-					        			<li>6年</li>
-					        			<li>7年</li>
-					        			<li>8年</li>
-					        			<li>9年</li>
-					        			<li>10年</li>
-					        			<li>10年以上</li>
+					        			<li>2 năm</li>
+					        			<li>3 năm</li>
+					        			<li>4 năm</li>
+					        			<li>5 năm</li>
+					        			<li>6 năm</li>
+					        			<li>7 năm</li>
+					        			<li>8 năm</li>
+					        			<li>9 năm</li>
+					        			<li>10 năm</li>
+					        	
 						        	 </ul>
 						          </div>  
 						      </td>

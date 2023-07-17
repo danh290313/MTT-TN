@@ -103,22 +103,37 @@ var youdao_conv_id = 271546;
 		                             	<li>
 		                             		<div class="d_item">
 		 	                                    <h2 title="${resume.position.name!""}">
+																							Công việc: 
 			                                        <a href="/home/position/detail?id=${resume.position.id!""}">
 			                                        	<em>${resume.position.name!""}</em> 
 			                                        	<span>（${resume.position.minMoney!""}k-${resume.position.maxMoney!""}k）</span>
 			                                    	</a>
 			                                    </h2>
-		                            			<div class="clear"></div>
+		                            			<div class="clear">Tên Công ty: </div>
 			                                   	<a title="${resume.company.name!""}" class="d_jobname" href="/home/company/detail?id=${resume.company.id!""}">
 			                                   		${resume.company.name!""}<span>[${resume.position.city!""}]</span> 
 			                                    </a>
-			                                    <span class="d_time">${resume.createTime!""}</span>
-			                                    <div class="d_resume">
-			                                    	Sử dụng sơ yếu lý lịch của bạn:
-			                                    	<span>
-		                                        		Sơ yếu lý lịch trực tuyến
-			                                    	</span>
+
+			                                    <span class="d_time">Ngày Nộp: ${resume.createTime!""}</span>
+																					</br>
+																					
+																					<#if resume.interview?? && resume.state == "effective" >
+																						
+																						<div class="d_resume">
+																						Lịch phỏng vấn: 
+																						<span> ${resume.interview!""} </span>
+																						</div>
+																						<div class="d_resume">
+			                                    	Mô tả:
+			                                    	<p>Chúc mừng! Bạn đã được nhận phỏng vấn!</p>
 			                                    </div>
+																					<#else>
+
+																					</#if>
+																					
+																				
+
+			                                  
 			                             
 		                            	</li>
 		                            	

@@ -1129,7 +1129,8 @@ ul.my_delivery{margin:20px 48px;}
 .d_jobname span{color:#999;}
 .d_time{*width:150px;float:right;color:#999999;margin:5px 0;*margin:10px -30px 0 0;}
 .d_resume{clear:both;float:left;color:#999999;margin:5px 0;*width:300px;}
-.d_resume span{color:#333;}
+.d_resume span{color:blue;}
+.d_resume  p{color:red; font-size: larger;font-style: italic}
 .btn_showprogress{float:right;color:#019875;font-size:16px;margin:5px 0;position:relative;padding-right:15px;}
 .btn_showprogress i{position: absolute;top: 10px;right: 0px;height:0;width:0;overflow: hidden;font-size: 0;line-height: 0; border-width:6px 6px 0; border-style:solid dashed; border-color:#019875 transparent transparent;-webkit-transition:all 0.4s ease 0s;-moz-transition:all 0.4s ease 0s;-ms-transition:all 0.4s ease 0s;transition:all 0.4s ease 0s;}
 .btn_showprogress i.transform{-webkit-transform: rotate(180deg);-moz-transform: rotate(180deg);transform: rotate(180deg);-webkit-transition:all 0.4s ease 0s;-moz-transition:all 0.4s ease 0s;-ms-transition:all 0.4s ease 0s;transition:all 0.4s ease 0s;}
@@ -1559,13 +1560,13 @@ i.speed1{width: 22px;height: 16px;position:absolute;background:url(img/job_122_1
 #box_level3 li:hover{ background:#c8e6de; color:#fff;}
 
 /* receiveResume.html */
-/* 
+
 .noResumeReceived{font-size:18px;height:200px;line-height:32px;	background:url(img/noResumeReceived.png) 30px 30px no-repeat;	padding:40px 0 0 150px;	margin:20px 0 0 0;}
 .noResumeReceived a{color:#019875;}
 ul.resumeLists{	margin:20px 0;}
-ul.resumeLists li.onlineResume{height:138px;margin-bottom:27px;}
+ul.resumeLists li.onlineResume{height:188px;margin-bottom:27px;}
 ul.resumeLists li.onlineResume .resumeShow{padding:10px;background:#fff;}
-ul.resumeLists .resumeShow img{width:90px;height:90px;position:absolute;float:left;}
+ul.resumeLists .resumeShow img{width:70px;height:70px;position:absolute;float:left;}
 ul.resumeLists li.onlineResume .resumeIntro{margin-left:100px;}
 .resumeIntro h3{margin:0;font-weight:normal;}
 .resumeIntro h3 a{color:#019875;font-size:18px;}
@@ -1576,7 +1577,7 @@ ul.resumeLists li.fileResume{height:48px;padding:10px; 	margin-bottom:27px;	back
 ul.resumeLists li.fileResume .resumeIntro{margin-left:60px;}
 ul.resumeLists li.fileResume .resumeIntro h3{margin-bottom:6px;}
 ul.resumeLists li.fileResume .resumeIntro span{	margin-top:-30px;}
-*/
+
  
 #deliverResumeConfirm div{line-height:28px;margin-bottom:10px;}
 #deliverResumeConfirm a{margin-right:20px;}
@@ -1669,9 +1670,9 @@ ul.resumeLists li.borderHighlight{width:100%;height:120px;padding:0;border:2px s
 ul.resumeLists li.onlineResume .checkbox{margin-top:50px;}
 ul.resumeLists li.fileResume .checkbox{margin-top:35px;}
 ul.resumeLists li .resumeShow{padding:10px;background:#fff; margin-left:30px;*width:632px;*float:left; *margin-left:15px;}
-ul.resumeLists li .resumeShow a.resumeImg{position:relative;width:90px;height:90px;float:left;}
+ul.resumeLists li .resumeShow a.resumeImg{position:relative;width:70px;height:70px;float:left;}
 ul.resumeLists li.fileResume .resumeShow a.resumeImg{position:relative;width:70px;height:70px;}
-ul.resumeLists li .resumeShow img{width:90px;height:90px;position:absolute;}
+ul.resumeLists li .resumeShow img{width:70px;height:70px;position:absolute;}
 ul.resumeLists li.fileResume .resumeShow img{width:70px;height:70px;position:absolute;float:left; }
 ul.resumeLists li.onlineResume .resumeIntro{margin-left:100px;}
 ul.resumeLists li.fileResume .resumeIntro{margin-left:80px;}
