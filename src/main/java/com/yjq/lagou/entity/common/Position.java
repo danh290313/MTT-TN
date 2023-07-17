@@ -13,86 +13,80 @@ import javax.persistence.Table;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import com.yjq.lagou.annotion.ValidateEntity;
-/**
- * 职位实体类
- *
- *
- */
+
 @Entity
 @Table(name="position")
-@EntityListeners(AuditingEntityListener.class)  //是用于监听实体类添加或者删除操作的。
+@EntityListeners(AuditingEntityListener.class)  
 public class Position extends BaseEntity{
 
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 	
-	private static final String DEFAULT_WORK_TYPE = "full"; //默认职位工作的性质
+	private static final String DEFAULT_WORK_TYPE = "full"; 
 	
-	private static final String DEFAULT_POSITION_STATE = "wait"; //默认职位的状态 wait:待审核  out:已下线   effective:有效
+	private static final String DEFAULT_POSITION_STATE = "wait"; 
 	
 	
 	@ManyToOne
 	@JoinColumn(name="company_id")
-	private Company company;//职位所属公司
+	private Company company;//Vị trí thuộc công ty
 	
-	@ValidateEntity(required=true,requiredMaxLength=true,requiredMinLength=true,minLength=1,maxLength=18,errorRequiredMsg="职位类别不能为空!",errorMinLengthMsg="职位类别长度需大于0!",errorMaxLengthMsg="职位类别长度不能大于18!")
+	@ValidateEntity(required=true,requiredMaxLength=true,requiredMinLength=true,minLength=1,maxLength=18,errorRequiredMsg="Thể loại công việc không thể trống!",errorMinLengthMsg="Độ dài danh mục công việc phải lớn hơn0!",errorMaxLengthMsg="Độ dài danh mục công việc không thể lớn hơn18!")
 	@Column(name="type",nullable=false,length=18)
-	private String type;//职位类别
+	private String type;//Danh mục Công việc
 	
-	@ValidateEntity(required=true,requiredMaxLength=true,requiredMinLength=true,minLength=1,maxLength=18,errorRequiredMsg="职位名称不能为空!",errorMinLengthMsg="职位名称长度需大于0!",errorMaxLengthMsg="职位名称长度不能大于18!")
+	@ValidateEntity(required=true,requiredMaxLength=true,requiredMinLength=true,minLength=1,maxLength=18,errorRequiredMsg="Tên của vị trí không thể trống!",errorMinLengthMsg="Độ dài của tên công việc cần phải lớn hơn 0!",errorMaxLengthMsg="Độ dài của tên công việc không thể lớn hơn 18!")
 	@Column(name="name",nullable=false,length=18)
-	private String name;//职位名称
+	private String name;//Tiêu đề công việc
 	
 	@ValidateEntity(required=false)
 	@Column(name="department")
-	private String department;//职位所属部门
+	private String department;//Bộ công việc
 
 	@ValidateEntity(required=false)
 	@Column(name="work_type",nullable=false)
-	private String workType = DEFAULT_WORK_TYPE;  //职位工作的性质
+	private String workType = DEFAULT_WORK_TYPE;  //Bản chất của công việc
 	
-	@ValidateEntity(required=true,requiredMaxValue=true,requiredMinValue=true,minValue=1,maxValue=1000,errorRequiredMsg="职位最低薪资不能为空!",errorMinValueMsg="职位最低薪资要大于0k!",errorMaxValueMsg="职位最低薪资不能大于1000k!")
+	@ValidateEntity(required=true,requiredMaxValue=true,requiredMinValue=true,minValue=1,maxValue=1000,errorRequiredMsg="Mức lương tối thiểu của vị trí Mức lương tối thiểu của vị trí lớn hơn 0K!ống!",errorMinValueMsg="Mức lương tối thiểu của vị trí lớn hơn 0K!",errorMaxValueMsg="Mức lương tối thiểu của vị trí không thể lớn hơn 1000k!")
 	@Column(name="min_money",nullable=false)
-	private int minMoney;  //职位最低薪资(以k为单位)
+	private int minMoney;  //Mức lương tối thiểu của vị trí (trong đơn vị)
 	
-	@ValidateEntity(required=true,requiredMaxValue=true,requiredMinValue=true,minValue=1,maxValue=1000,errorRequiredMsg="职位最高薪资不能为空!",errorMinValueMsg="职位最高薪资要大于0k!",errorMaxValueMsg="职位最高薪资不能大于1000k!")
+	@ValidateEntity(required=true,requiredMaxValue=true,requiredMinValue=true,minValue=1,maxValue=1000,errorRequiredMsg="Mức lương cao nhất của vị trí không thể trống!",errorMinValueMsg="Mức lương cao nhất của vị trí lớn hơn0k!",errorMaxValueMsg="Mức lương tối đa của vị trí không thể lớn hơn1000k!")
 	@Column(name="max_money",nullable=false)
-	private int maxMoney;  //职位最高薪资(以k为单位)
+	private int maxMoney;  //Mức lương cao nhất của vị trí (trong đơn vị)
 	
-	@ValidateEntity(required=true,errorRequiredMsg="职位工作城市不能为空!")
+	@ValidateEntity(required=true,errorRequiredMsg="Thành phố công việc không thể trống!")
 	@Column(name="city",nullable=false)
-	private String city;  //职位工作城市
+	private String city;  //Thành phố việc làm
 	
-	@ValidateEntity(required=true,errorRequiredMsg="职位工作经验要求不能为空!")
+	@ValidateEntity(required=true,errorRequiredMsg="Vị trí Yêu cầu kinh nghiệm làm việc không thể trống!")
 	@Column(name="work_experience",nullable=false)
-	private String workExperience;  //职位工作经验要求
+	private String workExperience;  //Yêu cầu kinh nghiệm làm việc
 	
-	@ValidateEntity(required=true,errorRequiredMsg="职位学历要求不能为空!")
+	@ValidateEntity(required=true,errorRequiredMsg="Yêu cầu giáo dục công việc không thể trống!")
 	@Column(name="degree",nullable=false)
-	private String degree;  //职位学历要求
+	private String degree;  //Yêu cầu giáo dục công việc
 	
 	@ValidateEntity(required=true,errorRequiredMsg="Sự cám dỗ của vị trí không thể trống rỗng!")
 	@Column(name="advantage",nullable=false)
-	private String advantage;  //职位诱惑
+	private String advantage;  //Sự cám dỗ
 	
 	@ValidateEntity(required=false)
 	@Column(name="state",nullable=false)
-	private String state = DEFAULT_POSITION_STATE;  //职位状态
+	private String state = DEFAULT_POSITION_STATE;  //Trạng thái vị trí
 	
-	@ValidateEntity(required=true,errorRequiredMsg="职位描述不能为空!")
+	@ValidateEntity(required=true,errorRequiredMsg="Mô tả công việc không thể trống!")
 	@Lob
-    @Basic(fetch = FetchType.LAZY)   //类型为longtext
-	private String description; //职位描述
+    @Basic(fetch = FetchType.LAZY)   //Loại là longtext
+	private String description; //mô tả công việc
 	
-	@ValidateEntity(required=true,errorRequiredMsg="职位工作地址不能为空!")
+	@ValidateEntity(required=true,errorRequiredMsg="Địa chỉ công việc của công việc không thể trống!")
 	@Column(name="address",nullable=false)
-	private String address;  //职位工作地址
+	private String address;  //Địa chỉ công việc
 	
 	@ValidateEntity(required=false)
 	@Column(name="number")
-	private int number = 0;  //职位接收工作简历的个数
+	private int number = 0;  //Số lượng công việc tiếp tục công việc
 
 	public String getType() {
 		return type;

@@ -10,15 +10,7 @@ import javax.mail.internet.MimeMessage;
 
 import org.springframework.beans.factory.annotation.Value;
 
-/**
- * 
- * @author gyf 2020-07-10
- * 
- * SMTP（Simple Mail Transfer Protocol）即简单邮件传输协议
- * 》SMTP 服务器就是遵循 SMTP 协议的发送邮件服务器
- * POP3是Post Office Protocol 3的简称，即邮局协议的第3个版本
- * 》POP3服务器则是遵循POP3协议的接收邮件服务器
- */
+
 public class SendJMailUtil {
 	
 		@Value("${yjq.sender.email.username}")
@@ -30,42 +22,42 @@ public class SendJMailUtil {
 	
 		public static boolean sendMail(String email, String emailMsg,String title) {
 		
-		String from = "15989566325@163.com"; 				// 邮件发送人的邮件地址
-		String to = email; 										// 邮件接收人的邮件地址
-	//	final String username = "15989566325@163.com";  	//发件人的邮件帐户
-	//	final String password = "gyfitedu";   					//发件人的邮件密码
+		String from = "danhtestotp@gmail.com"; 				// Địa chỉ email của người gửi email
+		String to = email; 										// Địa chỉ thư của người nhận thư
+	//	final String username = "15989566325@163.com";  	//Tài khoản email của nhà phát hành
+	//	final String password = "gyfitedu";   					//Mật khẩu email của người gửi
 
 
-		//定义Properties对象,设置环境信息
+		//Xác định đối tượng thuộc tính và đặt thông tin môi trường
 		Properties props = System.getProperties();
 
-		//设置邮件服务器的地址
-		props.setProperty("mail.smtp.host", "smtp.163.com"); // 指定的smtp服务器
+		//Đặt địa chỉ của máy chủ thư
+		props.setProperty("mail.smtp.host", "smtp.163.com"); // Chỉ định máy chủ SMTP
 		props.setProperty("mail.smtp.auth", "true");
-		props.setProperty("mail.transport.protocol", "smtp");//设置发送邮件使用的协议
-		//创建Session对象,session对象表示整个邮件的环境信息
+		props.setProperty("mail.transport.protocol", "smtp");//Đặt giao thức để gửi email
+		//Tạo đối tượng phiên, đối tượng phiên biểu thị thông tin môi trường của toàn bộ thư
 		Session session = Session.getInstance(props);
-		//设置输出调试信息
+		//Đặt thông tin gỡ lỗi đầu ra
 		session.setDebug(true);
 		try {
-			//Message的实例对象表示一封电子邮件
+			//MessageCác đối tượng ví dụ cho biết một email điện tử
 			MimeMessage message = new MimeMessage(session);
-			//设置发件人的地址
+			//Đặt địa chỉ của người gửi
 			message.setFrom(new InternetAddress(from));
-			//设置主题
+			//Đặt chủ đề
 			message.setSubject(title);
-			//设置邮件的文本内容
+			//Đặt nội dung văn bản của thư
 			//message.setText("Welcome to JavaMail World!");
 			message.setContent((emailMsg),"text/html;charset=utf-8");
 			
-			//设置附件
+			//Đặt phụ lục
 			//message.setDataHandler(dh);
 			
-			//从session的环境中获取发送邮件的对象
+			//Nhận đối tượng gửi email từ môi trường phiên
 			Transport transport=session.getTransport();
-			//连接邮件服务器
+			//Kết nối máy chủ email
 			transport.connect("smtp.163.com",25, username, password);
-			//设置收件人地址,并发送消息
+			//Đặt địa chỉ người nhận và gửi tin nhắn
 			transport.sendMessage(message,new Address[]{new InternetAddress(to)});
 			transport.close();
 			return true;

@@ -18,7 +18,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
  */
 @Entity
 @Table(name="company")
-@EntityListeners(AuditingEntityListener.class)  //是用于监听实体类添加或者删除操作的。
+@EntityListeners(AuditingEntityListener.class)  //Nó được sử dụng để theo dõi các hoạt động thêm hoặc xóa lớp vật lý.
 public class Company extends BaseEntity{
 
 	/**
@@ -26,70 +26,70 @@ public class Company extends BaseEntity{
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private static final String DEDAULT_STATE = "không công nhận, không chứng nhận"; //默认公司申请状态
-	private static final String DEDAULT_FINANCE = "Không thể tài trợ"; //默认公司融资阶段
-	private static final String DEDAULT_PHOTO = "common/logo_default.png"; //默认公司图片
-	private static final String DEDAULT_PRODUCT_PHOTO = "common/product_default.png"; //默认公司产品图片
-	private static final String DEFAULT_FOUNDER_PHOTO = "common/default_headpic.png";  //默认创始人头像
+	private static final String DEDAULT_STATE = "không công nhận, không chứng nhận"; 
+	private static final String DEDAULT_FINANCE = "Không thể tài trợ"; 
+	private static final String DEDAULT_PHOTO = "common/logo_default.png"; 
+	private static final String DEDAULT_PRODUCT_PHOTO = "common/product_default.png"; 
+	private static final String DEFAULT_FOUNDER_PHOTO = "common/default_headpic.png";  
 	
 	@Column(name="name",length=30)
-	private String name;//公司名称
+	private String name;//Tên công ty
 	
 	@ManyToOne
 	@JoinColumn(name="user_id")
-	private User user;//公司申请认证所属用户
+	private User user;//Công ty áp dụng cho người dùng chứng nhận
 	
 	@Column(name="value",length=50)
-	private String value;//公司价值观
+	private String value;//Giá trị của tình thần đoàn kết
 	
 	@Column(name="tags",length=30)
-	private String tags;//公司标签
+	private String tags;//Nhãn công ty
 	
 	@Column(name="state",length=10)
-	private String state = DEDAULT_STATE; //公司申请状态：待审核、未认证、已认证
+	private String state = DEDAULT_STATE; //Tình trạng ứng dụng của công ty: được xem xét, không thoải mái, được chứng nhận
 	
 	@Column(name="photo",length=128)
-	private String photo = DEDAULT_PHOTO;//公司图片
+	private String photo = DEDAULT_PHOTO;//Ảnh của công ty
 	
 	@Column(name="product_photo",length=128)
-	private String productPhoto = DEDAULT_PRODUCT_PHOTO;//公司产品图片
+	private String productPhoto = DEDAULT_PRODUCT_PHOTO;//Hình ảnh sản phẩm của công ty
 	
 	@Column(name="product_title",length=15)
-	private String productTitle;//公司产品标题
+	private String productTitle;//Tiêu đề sản phẩm của công ty
 	
 	@Lob
-    @Basic(fetch = FetchType.LAZY)   //类型为longtext
-	private String productContent; //产品简介
+    @Basic(fetch = FetchType.LAZY)   //Loại là longtext
+	private String productContent; //Giơi thiệu sản phẩm
 	
 	@Lob
-    @Basic(fetch = FetchType.LAZY)   //类型为longtext
-	private String introduction; //公司介绍
+    @Basic(fetch = FetchType.LAZY)   //Loại là longtext
+	private String introduction; //Hồ sơ công ty
 	
 	@Column(name="locale")
-	private String locale;//公司地点
+	private String locale;//Vị trí công ty
 	
 	@Column(name="territory")
-	private String territory;//公司领域
+	private String territory;//Lĩnh vực công ty
 	
 	@Column(name="scale")
-	private String scale;//公司规模
+	private String scale;//Quy mô công ty
 	
 	@Column(name="url")
-	private String url;//公司主页网址
+	private String url;//Trang web trang chủ của công ty
 	
 	@Column(name="finance")
-	private String finance = DEDAULT_FINANCE;//公司默认融资阶段
+	private String finance = DEDAULT_FINANCE;//Giai đoạn tài chính mặc định của công ty
 	
 	@Column(name="founder_name",length=10)
-	private String founderName;//公司创始人姓名
+	private String founderName;//Người sáng lập công ty
 	
 	@Column(name="founder_position",length=15)
-	private String founderPosition;//公司创始人职位
+	private String founderPosition;//Vị trí người sáng lập công ty
 	
 	
 	
 	@Column(name="founder_photo",length=128)
-	private String founderPhoto = DEFAULT_FOUNDER_PHOTO;//创始人头像
+	private String founderPhoto = DEFAULT_FOUNDER_PHOTO;//Người sáng lập Avatar
 
 	public String getName() {
 		return name;

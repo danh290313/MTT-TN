@@ -7,7 +7,7 @@
 <link rel="alternate" media="handheld"  />
 <!-- end 云适配 -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>登录-最专业的互联网招聘平台</title>
+<title>Đăng nhập-nền tảng tuyển dụng Internet chuyên nghiệp nhất</title>
 <meta property="qc:admins" content="23635710066417756375" />
 <meta content="" name="description">
 <meta content="" name="keywords">

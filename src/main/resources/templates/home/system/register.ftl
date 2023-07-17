@@ -101,19 +101,19 @@ var youdao_conv_id = 271546;
 			$("#type1").click();
  　　	}
 
-    //发送邮件验证码
+    //Gửi mã xác minh email
     function sendMailCpacha()
     {
     	var reg=/^\w+@[a-zA-Z0-9]{2,10}(?:\.[a-z]{2,4}){1,3}$/;
         if(!reg.test(document.getElementById("Email").value))
         { 
-       		//如果邮箱格式不正确
+       		//Nếu định dạng hộp thư không chính xác
         	$("#errorMsg").html("Việc gửi không thành công, định dạng của hộp thư không chính xác !!!");
             $.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
         }
         else{
-           var email =  $('#Email').val(); //取得用户输入的邮箱地址
-           var type = "user_register"; //邮件类型是用户注册验证
+           var email =  $('#Email').val(); //Nhận địa chỉ hộp thư được nhập bởi người dùng
+           var type = "user_register"; //Loại thư là xác minh đăng ký người dùng
            $.ajax({
 				url:'/common/cpacha/generate_emailCpacha',
 				dataType:'json',
@@ -132,7 +132,7 @@ var youdao_conv_id = 271546;
         } 
     }
     
-      //注册表单提交
+      //Đăng ký nộp đơn
       $("#submitLogin").click(function() {
          	var type =$('input[type="radio"]:checked',loginForm).val();
 			$('#error_type').css('display','none');
@@ -141,7 +141,7 @@ var youdao_conv_id = 271546;
 			$('#error_username').css('display','none');
 			$('#error_cpacha').css('display','none');
 			
-			//进行统一表单非空验证
+			//Một biểu mẫu thống nhất không phải là xác minh trống
 			if(!checkForm('loginForm'))
 			{
 				return;

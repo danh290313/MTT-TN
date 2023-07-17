@@ -12,14 +12,10 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import com.yjq.lagou.annotion.ValidateEntity;
 import com.yjq.lagou.entity.common.BaseEntity;
 import com.yjq.lagou.entity.common.User;
-/**
- * 工作经历实体类（每个用户只能添加一个工作经历）
- *
- *
- */
+
 @Entity
 @Table(name="work_experience")
-@EntityListeners(AuditingEntityListener.class)  //是用于监听实体类添加或者删除操作的。
+@EntityListeners(AuditingEntityListener.class)  //Nó được sử dụng để theo dõi các hoạt động thêm hoặc xóa lớp vật lý.
 public class WorkExperience extends BaseEntity{
 
 	/**
@@ -29,31 +25,31 @@ public class WorkExperience extends BaseEntity{
 
 	@ManyToOne
 	@JoinColumn(name="user_id")
-	private User user;//工作经历所属用户
+	private User user;//Kinh nghiệm làm việc
 	
-	@ValidateEntity(required=true,errorRequiredMsg="公司名称不能为空！")
+	@ValidateEntity(required=true,errorRequiredMsg="Tên của công ty không thể trống！")
 	@Column(name="name",nullable=false)
-	private String name;  //公司名称
+	private String name;  //Tên công ty
 	
-	@ValidateEntity(required=true,errorRequiredMsg="职位名称不能为空！")
+	@ValidateEntity(required=true,errorRequiredMsg="Tên của vị trí không thể trống!")
 	@Column(name="position",nullable=false)
-	private String position;  //所在公司职位
+	private String position;  //Vị trí của công ty
 	
-	@ValidateEntity(required=true,errorRequiredMsg="开始年份不能为空！")
+	@ValidateEntity(required=true,errorRequiredMsg="Không thể trống ngay từ đầu của đầu!")
 	@Column(name="start_year",nullable=false)
-	private String startYear;  //工作开始年份
+	private String startYear;  //Năm bắt đầu
 	
-	@ValidateEntity(required=true,errorRequiredMsg="结束年份不能为空！")
+	@ValidateEntity(required=true,errorRequiredMsg="Không thể trống cuối cùng！")
 	@Column(name="end_year",nullable=false)
-	private String endYear;  //工作结束年份
+	private String endYear;  //Kết thúc công việc
 	
-	@ValidateEntity(required=true,errorRequiredMsg="开始月份不能为空！")
+	@ValidateEntity(required=true,errorRequiredMsg="Không thể trống vào đầu tháng！")
 	@Column(name="start_month",nullable=false)
-	private String startMonth;  //工作开始月份
+	private String startMonth;  //Tháng làm việc
 	
-	@ValidateEntity(required=true,errorRequiredMsg="结束月份不能为空！")
+	@ValidateEntity(required=true,errorRequiredMsg="Không thể trống cuối cùng！")
 	@Column(name="end_month",nullable=false)
-	private String endMonth;  //工作结束月份
+	private String endMonth;  //Làm việc ở cuối công việc
 
 	public User getUser() {
 		return user;

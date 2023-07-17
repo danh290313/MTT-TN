@@ -13,13 +13,8 @@ import javax.persistence.MappedSuperclass;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-/**
- * 基础试题公共属性
- *
- *
- */
 
-@MappedSuperclass  //JPA中继承父类的声明
+@MappedSuperclass  //JPA thừa hưởng các lớp phụ huynh
 @EntityListeners(AuditingEntityListener.class)
 public class BaseEntity implements Serializable{
 
@@ -29,15 +24,15 @@ public class BaseEntity implements Serializable{
 	@Column(name="id",nullable=false,length=11)
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Id
-	private Long id;//唯一id
+	private Long id;//ID duy nhất
 	
 	@Column(name="create_time",nullable=false)
 	@CreatedDate
-	private Date createTime;//创建时间
+	private Date createTime;//Thời gian sáng tạo
 	
 	@Column(name="update_time",nullable=false)
 	@LastModifiedDate
-	private Date updateTime;//更新时间
+	private Date updateTime;//Cập nhật thời gian
 	
 	public Date getCreateTime() {
 		return createTime;

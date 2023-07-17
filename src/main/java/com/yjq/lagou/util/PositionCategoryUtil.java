@@ -7,11 +7,7 @@ import com.yjq.lagou.entity.common.PositionCategory;
 
 public class PositionCategoryUtil {
 
-	/**
-	 * 获取一级职位类别
-	 * @param allPositionCategories
-	 * @return
-	 */
+	
 	public static List<PositionCategory> getTopPositionCategory(List<PositionCategory> allPositionCategories){
 		List<PositionCategory> topList = new ArrayList<PositionCategory>();
 		for(PositionCategory positionCategory : allPositionCategories)
@@ -25,11 +21,7 @@ public class PositionCategoryUtil {
 		return topList;
 	}
 	
-	/**
-	 * 获取二级职位类别
-	 * @param allPositionCategories
-	 * @return
-	 */
+
 	public static List<PositionCategory> getSecondCategory(List<PositionCategory> allPositionCategories){
 		List<PositionCategory> secondList = new ArrayList<PositionCategory>();
 		for(PositionCategory positionCategory : allPositionCategories)
@@ -46,11 +38,7 @@ public class PositionCategoryUtil {
 		return secondList;
 	}
 	
-	/**
-	 * 获取三级职位类别
-	 * @param allPositionCategories
-	 * @return
-	 */
+	
 	public static List<PositionCategory> getThirdCategory(List<PositionCategory> allPositionCategories){
 		List<PositionCategory> thirdList = new ArrayList<PositionCategory>();
 		for(PositionCategory positionCategory : allPositionCategories)
@@ -70,17 +58,13 @@ public class PositionCategoryUtil {
 		return thirdList;
 	}
 	
-	/**
-	 * 获取顶级类别下的快捷索引职位（每个二级类别下各获取一个三级类别）
-	 * @param allPositionCategories
-	 * @return
-	 */
+
 	public static List<PositionCategory> getQuickIndexCategory(List<PositionCategory> allPositionCategories)
 	{
 		List<PositionCategory> quickIndexList = new ArrayList<PositionCategory>();
-		//获取二级类别
+		//Nhận danh mục thứ hai
 		List<PositionCategory> secondList = PositionCategoryUtil.getSecondCategory(allPositionCategories);
-		//获取三级类别
+		//Nhận ba loại
 		List<PositionCategory> thirdList = PositionCategoryUtil.getThirdCategory(allPositionCategories);
 		for(PositionCategory secondCategory : secondList)
 		{

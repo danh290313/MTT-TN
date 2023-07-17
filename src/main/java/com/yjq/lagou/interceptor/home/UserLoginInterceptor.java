@@ -16,11 +16,7 @@ import com.yjq.lagou.bean.CodeMsg;
 import com.yjq.lagou.constant.SessionConstant;
 import com.yjq.lagou.util.StringUtil;
 
-/**
- * 前端用户登录拦截器
- * @author Administrator
- *
- */
+
 @Component
 public class UserLoginInterceptor implements HandlerInterceptor{
 
@@ -28,17 +24,17 @@ public class UserLoginInterceptor implements HandlerInterceptor{
 	
 	@Override
 	public boolean  preHandle(HttpServletRequest request, HttpServletResponse response, Object handler){
-		String requestURI = request.getRequestURI();  //取得被拦截的链接，比如：requestURI=/home/index/index
+		String requestURI = request.getRequestURI();  //Nhận liên kết đến bị chặn, chẳng hạn như: requesturi =/home/index/index
 		HttpSession session = request.getSession();
 		Object attribute = session.getAttribute(SessionConstant.SESSION_USER_LOGIN_KEY);
 		if(attribute == null && requestURI.contains("/home/")){
-			log.info("用户还未登录或者session失效,重定向到登录页面,当前URL=" + requestURI);
-			//首先判断是否是ajax请求
+			log.info("Người dùng chưa đăng nhập hoặc phiên bị lỗi và chuyển hướng được chuyển sang trang đăng nhập, URL hiện tại=" + requestURI);
+			//Trước tiên hãy xác định xem đó có phải là yêu cầu Ajax hay không
 			if(StringUtil.isAjax(request)){
-				//表示是ajax请求
+				//Cho biết rằng đó là yêu cầu AJAX
 				try {
 					response.setCharacterEncoding("UTF-8");
-					//JSON.parseObject，是将Json字符串转化为相应的对象；JSON.toJSONString则是将对象转化为Json字符串。
+					//JSON.parseObject，Chuỗi JSON được chuyển đổi thành đối tượng tương ứng; json.tojsonstring được chuyển đổi thành chuỗi JSON.
 					response.getWriter().write(JSON.toJSONString(CodeMsg.SESSION_EXPIRED));
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
@@ -46,8 +42,8 @@ public class UserLoginInterceptor implements HandlerInterceptor{
 				}
 				return false;
 			}
-			//说明是普通的请求，可直接重定向到登录页面
-			//用户还未登录或者session失效,重定向到登录页面
+			//Giải thích rằng đó là một yêu cầu thông thường, bạn có thể trực tiếp chuyển hướng đến trang đăng nhập
+			//Người dùng chưa đăng nhập hoặc phiên bị lỗi và chuyển hướng được chuyển sang trang đăng nhập
 			try {
 				response.sendRedirect("/home/system/login");
 			} catch (IOException e) {
@@ -56,7 +52,7 @@ public class UserLoginInterceptor implements HandlerInterceptor{
 			}
 			return false;
 		}
-		log.info("该请求符合登录要求，放行" + requestURI);
+		log.info("Yêu cầu này đáp ứng các yêu cầu đăng nhập, buông tay" + requestURI);
 		return true;
 	}
 }

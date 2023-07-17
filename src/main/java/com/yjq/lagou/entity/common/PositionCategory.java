@@ -11,14 +11,10 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import com.yjq.lagou.annotion.ValidateEntity;
 
-/**
- * 职位类别实体类
- *
- *
- */
+
 @Entity
 @Table(name="position_category")
-@EntityListeners(AuditingEntityListener.class)  //是用于监听实体类添加或者删除操作的。
+@EntityListeners(AuditingEntityListener.class)  
 public class PositionCategory extends BaseEntity{
 
 	/**
@@ -26,19 +22,19 @@ public class PositionCategory extends BaseEntity{
 	 */
 	private static final long serialVersionUID = 1L;
 
-	@ManyToOne   //多个子类对应一个父类
+	@ManyToOne  //Nhiều lớp con tương ứng với một lớp cha mẹ
 	@JoinColumn(name="parent_id")
-	private PositionCategory parentId;//菜单父分类
+	private PositionCategory parentId;//Menu Phân loại cha
 	
 	private Long _parentId;
 	
-	@ValidateEntity(required=true,requiredMaxLength=true,requiredMinLength=true,minLength=1,maxLength=18,errorRequiredMsg="职位类别名称不能为空!",errorMinLengthMsg="职位类别名称长度需大于0!",errorMaxLengthMsg="职位类别名称长度不能大于18!")
+	@ValidateEntity(required=true,requiredMaxLength=true,requiredMinLength=true,minLength=1,maxLength=18,errorRequiredMsg="Tên danh mục công việc không thể trống!",errorMinLengthMsg="Độ dài tên loại công việc phải lớn hơn 0!",errorMaxLengthMsg="Độ dài tên loại công việc không thể lớn hơn 18!")
 	@Column(name="name",nullable=false,length=18)
-	private String name;//职位类别名称
+	private String name;//Tên loại công việc
 	
 	@ValidateEntity(required=false)
 	@Column(name="url",length=128)
-	private String url;//职位类别url
+	private String url;//URL loại công việc
 
 	
 

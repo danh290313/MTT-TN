@@ -17,14 +17,10 @@ import com.yjq.lagou.entity.common.Company;
 import com.yjq.lagou.entity.common.Position;
 import com.yjq.lagou.entity.common.User;
 
-/**
- * 投递简历实体类
- *
- *
- */
+
 @Entity
 @Table(name = "resume")
-@EntityListeners(AuditingEntityListener.class) // 是用于监听实体类添加或者删除操作的。
+@EntityListeners(AuditingEntityListener.class)
 public class Resume extends BaseEntity {
 
 	/**
@@ -32,23 +28,23 @@ public class Resume extends BaseEntity {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private static final String DEFAULT_POSITION_STATE = "wait"; // 默认职位的状态 wait:待处理 out:不合适 effective:通知面试
+	private static final String DEFAULT_POSITION_STATE = "wait"; // Tình trạng của vị trí mặc định Chờ
 
 	@ManyToOne
 	@JoinColumn(name = "user_id")
-	private User user;// 投递简历所属用户
+	private User user;// Người dùng gửi sơ yếu lý lịch để thuộc về
 
 	@ManyToOne
 	@JoinColumn(name = "position_id")
-	private Position position;// 投递简历所属职位
+	private Position position;// Gửi sơ yếu lý lịch của bạn đến vị trí của sơ yếu lý lịch
 
 	@ManyToOne
 	@JoinColumn(name = "company_id")
-	private Company company;// 投递简历所属公司
+	private Company company;// Công ty tiếp tục giao hàng
 
 	@ValidateEntity(required = false)
 	@Column(name = "state", nullable = false)
-	private String state = DEFAULT_POSITION_STATE; // 职位状态
+	private String state = DEFAULT_POSITION_STATE; //Trạng thái vị trí
 
 	@Column(name = "interview")
 	private Date interview;

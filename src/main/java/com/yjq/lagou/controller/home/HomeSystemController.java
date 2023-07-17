@@ -145,15 +145,15 @@ public class HomeSystemController {
 		// }
 		user.setMobile(null);//hồi phục
 		//Nếu người dùng không nhấp vào email
-		// if(request.getSession().getAttribute("user_register") == null)
-		// {
-		// 	return Result.error(CodeMsg.SYSTEM_CPACHA_EMPTY);
-		// }
+		if(request.getSession().getAttribute("user_register") == null)
+		{
+			return Result.error(CodeMsg.SYSTEM_CPACHA_EMPTY);
+		}
 		String correct_cpacha = (String) request.getSession().getAttribute("user_register");
 		//Nếu mã xác minh không chính xác
-		// if(!correct_cpacha.toUpperCase().equals(cpacha.toUpperCase())){
-		// 	return Result.error(CodeMsg.CPACHA_ERROR);
-		// }
+		if(!correct_cpacha.toUpperCase().equals(cpacha.toUpperCase())){
+			return Result.error(CodeMsg.CPACHA_ERROR);
+		}
 		//Kiểm tra xem hộp thư và biệt danh của người dùng có được lặp lại không
 		if(checkEmail(user,0l)){
 			request.getSession().setAttribute("user_register", null); //Nhập một cái mới vào hộp thư, bạn cần gửi mã xác minh để xác định

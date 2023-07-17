@@ -15,14 +15,10 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import com.yjq.lagou.annotion.ValidateEntity;
 import com.yjq.lagou.entity.common.BaseEntity;
 import com.yjq.lagou.entity.common.User;
-/**
- * 项目经验实体类(每个用户只能填一个项目经验)
- *
- *
- */
+
 @Entity
 @Table(name="project_experience")
-@EntityListeners(AuditingEntityListener.class)  //是用于监听实体类添加或者删除操作的。
+@EntityListeners(AuditingEntityListener.class) 
 public class ProjectExperience extends BaseEntity{
 
 	/**
@@ -32,35 +28,35 @@ public class ProjectExperience extends BaseEntity{
 
 	@ManyToOne
 	@JoinColumn(name="user_id")
-	private User user;//项目经验所属用户
+	private User user;//Kinh nghiệm dự án thuộc về người dùng
 	
-	@ValidateEntity(required=true,errorRequiredMsg="项目名称不能为空！")
+	@ValidateEntity(required=true,errorRequiredMsg="Tên dự án không thể trống！")
 	@Column(name="name",nullable=false)
-	private String name;  //项目名称
+	private String name;  //Tên dự án
 	
-	@ValidateEntity(required=true,errorRequiredMsg="担任职务不能为空！")
+	@ValidateEntity(required=true,errorRequiredMsg="Không thể trống như một công việc！")
 	@Column(name="position",nullable=false)
-	private String position;  //所在项目担任职务
+	private String position;  //Dự án nằm
 	
-	@ValidateEntity(required=true,errorRequiredMsg="开始年份不能为空！")
+	@ValidateEntity(required=true,errorRequiredMsg="Không thể trống ngay từ đầu！")
 	@Column(name="start_year",nullable=false)
-	private String startYear;  //项目经验开始年份
+	private String startYear;  //Kinh nghiệm dự án năm bắt đầu
 	
-	@ValidateEntity(required=true,errorRequiredMsg="结束年份不能为空！")
+	@ValidateEntity(required=true,errorRequiredMsg="Không thể trống cuối cùng！")
 	@Column(name="end_year",nullable=false)
-	private String endYear;  //项目经验结束年份
+	private String endYear;  //Kinh nghiệm dự án kết thúc năm
 	
-	@ValidateEntity(required=true,errorRequiredMsg="开始月份不能为空！")
+	@ValidateEntity(required=true,errorRequiredMsg="Không thể trống!")
 	@Column(name="start_month",nullable=false)
-	private String startMonth;  //项目经验开始月份
+	private String startMonth;  //Kinh nghiệm dự án bắt đầu tháng
 	
-	@ValidateEntity(required=true,errorRequiredMsg="结束月份不能为空！")
+	@ValidateEntity(required=true,errorRequiredMsg="Không thể trống cuối cùng！")
 	@Column(name="end_month",nullable=false)
-	private String endMonth;  //项目经验结束月份
+	private String endMonth;  //Sự kết thúc của trải nghiệm dự án
 	
 	@Lob
-    @Basic(fetch = FetchType.LAZY)   //类型为longtext
-	private String content; //项目描述
+    @Basic(fetch = FetchType.LAZY)   //Loại là longtext
+	private String content; //mô tả dự án
 
 	public User getUser() {
 		return user;

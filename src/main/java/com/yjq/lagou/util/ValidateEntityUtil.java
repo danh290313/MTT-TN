@@ -5,34 +5,30 @@ import java.lang.reflect.Field;
 import com.yjq.lagou.annotion.ValidateEntity;
 import com.yjq.lagou.bean.CodeMsg;
 
-/**
- * 验证实体工具类
- * @author Administrator
- *
- */
+
 public class ValidateEntityUtil {
 	
 	public static CodeMsg validate(Object object){
-		Field[] declaredFields = object.getClass().getDeclaredFields();  //取得对象里所有字段（不包括父字段）
-		//遍历所有字段
+		Field[] declaredFields = object.getClass().getDeclaredFields();  //Tất cả các trường trong các đối tượng (không bao gồm các trường cha)
+		//Đi qua tất cả các lĩnh vực
 		for(Field field : declaredFields){
-			ValidateEntity annotation = field.getAnnotation(ValidateEntity.class);   //获取字段上的ValidateEntity注释
+			ValidateEntity annotation = field.getAnnotation(ValidateEntity.class);   //Nhận bình luận Validatentity trên trường
 			if(annotation != null){
 				if(annotation.required()){
-					//表示该字段是必填字段
-					field.setAccessible(true);    //作用就是让我们在用反射时访问私有变量
+					//Nó có nghĩa là trường là một trường phải xảy ra
+					field.setAccessible(true);    //Chức năng là cho phép chúng tôi truy cập các biến riêng tư khi được phản ánh
 					try {
-						Object o = field.get(object);   //把每个字段的值取出来
-						//首先判断是否为空
+						Object o = field.get(object);   //Lấy ra giá trị của mỗi trường
+						//Đầu tiên xác định xem nó có trống không
 						if(o == null){
 							CodeMsg codeMsg = CodeMsg.VALIDATE_ENTITY_ERROR;
 							codeMsg.setMsg(annotation.errorRequiredMsg());
 							return codeMsg;
 						}
-						//到这，说明该变量的值不是null
-						//首先判断是不是String类型
+						//Đối với điều này, nó có nghĩa là giá trị của biến không phải là null
+						//Đánh giá đầu tiên xem đó là chuỗi
 						if(o instanceof String){
-							//若是字符串类型，则检查其长度
+							//Nếu đó là loại chuỗi, hãy kiểm tra độ dài của nó
 							if(annotation.requiredMaxLength()){
 								if(o.toString().length() < annotation.minLength()){
 									CodeMsg codeMsg = CodeMsg.VALIDATE_ENTITY_ERROR;
@@ -49,9 +45,9 @@ public class ValidateEntityUtil {
 								}
 							}
 						}
-						//其次来判断是否为数字
+						//Thứ hai, đánh giá xem đó có phải là một số
 						if(isNumberObject(o)){
-							//判断是否规定检查最小值
+							//Xác định xem có nên kiểm tra giá trị tối thiểu hay không
 							if(annotation.requiredMinValue()){
 								if(Double.valueOf(o.toString()) < annotation.minValue()){
 									CodeMsg codeMsg = CodeMsg.VALIDATE_ENTITY_ERROR;
@@ -59,7 +55,7 @@ public class ValidateEntityUtil {
 									return codeMsg;
 								}
 							}
-							//判断是否规定检查最大值
+							//Xác định xem có nên kiểm tra giá trị tối đa
 							if(annotation.requiredMaxValue()){
 								if(Double.valueOf(o.toString()) > annotation.maxValue()){
 									CodeMsg codeMsg = CodeMsg.VALIDATE_ENTITY_ERROR;
@@ -81,11 +77,7 @@ public class ValidateEntityUtil {
 		return CodeMsg.SUCCESS;
 	}
 	
-	/**
-	 * 检查对象是否是数字类型
-	 * @param object
-	 * @return
-	 */
+
 	public static boolean isNumberObject(Object object){
 		if(object instanceof Integer)return true;
 		if(object instanceof Long)return true;

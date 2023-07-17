@@ -15,14 +15,10 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import com.yjq.lagou.annotion.ValidateEntity;
 import com.yjq.lagou.entity.common.BaseEntity;
 import com.yjq.lagou.entity.common.User;
-/**
- * 作品展示实体类(每个用户只能填一个作品展示)
- *
- *
- */
+
 @Entity
 @Table(name="work_show")
-@EntityListeners(AuditingEntityListener.class)  //是用于监听实体类添加或者删除操作的。
+@EntityListeners(AuditingEntityListener.class)
 public class WorkShow extends BaseEntity{
 
 	/**
@@ -32,15 +28,15 @@ public class WorkShow extends BaseEntity{
 
 	@ManyToOne
 	@JoinColumn(name="user_id")
-	private User user;//作品展示所属用户
+	private User user;//Người dùng công việc được hiển thị
 	
 	@ValidateEntity(required=false)
 	@Column(name="url")
-	private String url;  //作品链接
+	private String url;  //Liên kết công việc
 	
 	@Lob
-    @Basic(fetch = FetchType.LAZY)   //类型为longtext
-	private String content; //作品描述
+    @Basic(fetch = FetchType.LAZY)   //Loại là longtext
+	private String content; //Sự miêu tả
 
 	public User getUser() {
 		return user;
