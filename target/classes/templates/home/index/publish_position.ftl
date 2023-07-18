@@ -1,10 +1,10 @@
-<!--发布新职位-->
+
 <!DOCTYPE HTML>
 <html xmlns:wb="http://open.weibo.com/wb"><head>
 </script><script type="text/javascript" async="" src="/home/style/js/conversion.js"></script><script src="/home/style/js/allmobilize.min.js" charset="utf-8" id="allmobilize"></script><style type="text/css"></style>
 <meta content="no-siteapp" http-equiv="Cache-Control">
 <link  media="handheld" rel="alternate">
-<!-- end 云适配 -->
+
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 <title>Phát hành dịch vụ nhận vị trí mới-nền tảng tuyển dụng Internet chuyên nghiệp nhất</title>
 <meta content="23635710066417756375" property="qc:admins">
@@ -115,13 +115,13 @@ var youdao_conv_id = 271546;
 				 												<#list secondPositionCategoryList as secondPositionCategory>
 				 													<#if secondPositionCategory._parentId == topPositionCategory.id>
 			                                                            <li>
-			                                                                <span>${secondPositionCategory.name!""}</span> <!--二级菜单 -->
+			                                                                <span>${secondPositionCategory.name!""}</span>
 			                                                                    <ul class="reset job_sub dn">
 			                                                                    
 				                                                                    <#if thirdPositionCategoryList?size gt 0>
 					 																	<#list thirdPositionCategoryList as thirdPositionCategory>
 			                                                                      			 <#if thirdPositionCategory._parentId == secondPositionCategory.id>
-			                                                                      				 <li>${thirdPositionCategory.name!""}</li>  <!--三级菜单 -->
+			                                                                      				 <li>${thirdPositionCategory.name!""}</li>  
 			                                                                       			 </#if>
 			                                                                        	</#list>
 			                                                                        </#if>
@@ -185,7 +185,7 @@ var youdao_conv_id = 271546;
                             	<tr>
                                 	<td><span class="redstar">*</span></td>
                                 	<td>Lương: </td>
-                                    <!--<h3><span>(最高月薪不能大于最低月薪的2倍)</span></h3> -->
+                                    <!--<h3><span>(Mức lương tối đa hàng tháng không thể lớn hơn 2 lần so với mức lương tối thiểu hàng tháng)</span></h3> -->
                                 	<td>
                                     	<div class="salary_range">
                                             <div>
@@ -288,7 +288,7 @@ var youdao_conv_id = 271546;
                                 	<td>mô tả công việc</td>
                                 	<td>
                                     	<span class="c9 f14">(Nên mô tả trách nhiệm làm việc trong việc tách.Không nhập hộp thư của công ty, số điện thoại liên hệ và các liên kết bên ngoài khác, nếu không nó sẽ được tự động xóa)</span>
-                                    	<textarea id="position_description" class="require"  tips="职位描述不能为空！"  attributes="error_position_description"></textarea>
+                                    	<textarea id="position_description" class="require"  tips="Mô tả công việc không thể trống！"  attributes="error_position_description"></textarea>
                                        	<span for="position_description" generated="true" class="error" id="error_position_description" style="display:none">Mô tả công việc không thể trống!</span>
                                     </td>
                                 </tr>
@@ -331,7 +331,7 @@ var youdao_conv_id = 271546;
 <script src="/home/style/js/jobs.min.js" type="text/javascript"></script>
 <script type="text/javascript">
 var workType = '';
-//获取工作性质的值
+//Nhận giá trị của công việc
  $(function () {
  	document.getElementById("work_type1").onclick = function(){
             workType = $("#work_type1").val();
@@ -344,12 +344,12 @@ var workType = '';
         }
  });
 window.onload = function(){
-	<!--还没认证公司，不让访问该页面-->
+	
 	<#if errorMsg??>
 		$("#errorMsg").html("!!!"+'${errorMsg}');
 		$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
 		setTimeout(function(){  
-				window.location.href = "/home/company/my_company";  //页面跳转
+				window.location.href = "/home/company/my_company";  
 		},3000);
 	</#if>
 	
@@ -367,7 +367,7 @@ window.onload = function(){
 		document.getElementById("position_advantage").value='${editPosition.advantage!""}';
 		document.getElementById("position_address").value='${editPosition.address!""}';
 		var html = '${editPosition.description!""}';
-		var description = html.replace(/<br\/>/g, "\n");  //文本框中回车换行处理
+		var description = html.replace(/<br\/>/g, "\n");  
 		document.getElementById("position_description").value = description;
 		document.getElementById("position_id").value = '${editPosition.id!""}';
 		<#if editPosition.workType == 'full'>
@@ -384,7 +384,7 @@ window.onload = function(){
 		</#if>
 		
 	<#else>
-		<!--是新增-->
+	
 		document.getElementById("positionName").value='';
 		workType = "full";
 		$("#work_type1").click();
@@ -392,7 +392,7 @@ window.onload = function(){
 }
 
 
-//保存职位信息
+
 function saveNewPosition(){
  var id = $("#position_id").val();
  var positionType = $("#select_category").val();
@@ -405,7 +405,7 @@ function saveNewPosition(){
  var degree = $("#select_education").val(); 
  var positionAdvantage = $("#position_advantage").val(); 
  var positionDescription = $("#position_description").val();
- positionDescription=positionDescription.replace(/\n/g,'<br/>');   //文本框中回车换行处理
+ positionDescription=positionDescription.replace(/\n/g,'<br/>');   
  var positionAddress = $("#position_address").val(); 
  
 
@@ -417,7 +417,7 @@ function saveNewPosition(){
 	$('#error_position_advantage').css('display','none');
 	$('#error_position_description').css('display','none');
 	$('#error_position_address').css('display','none');
-	//进行统一表单非空验证
+
 	if(!checkForm('jobForm'))
 	{
 		return;
@@ -435,16 +435,16 @@ function saveNewPosition(){
 				$("#successMsg").html("Được lưu thành công!Vui lòng đợi cho quản trị viên xem xét!");
 				$.colorbox({inline:true, href:$("#successTip"),title:"Thông báo"});
 				setTimeout(function(){  
-						window.location.href = "/home/position/my_publish_position?positionState=wait";  //跳转到待审核职位页面
+						window.location.href = "/home/position/my_publish_position?positionState=wait";  
 						},3000);
 			}else if(data.code == 2){
 				$("#successMsg").html("Được bảo tồn thành công!Vui lòng đợi cho quản trị viên xem xét!");
 				$.colorbox({inline:true, href:$("#successTip"),title:"Thông báo"});
 				setTimeout(function(){  
-						window.location.href = "/home/position/my_publish_position?positionState=out";  //跳转到已下线职位页面
+						window.location.href = "/home/position/my_publish_position?positionState=out";  
 						},3000);
 			}else{
-					$("#errorMsg").html("保存失败，"+data.msg+"!!!");
+					$("#errorMsg").html("Thất bại bảo quản，"+data.msg+"!!!");
 					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
 			}
 		}

@@ -1,11 +1,11 @@
-<!--职位详情ftl-->
+
 <!DOCTYPE HTML>
 <html xmlns:wb="http://open.weibo.com/wb">
 <head>
 <script id="allmobilize" charset="utf-8" src="/home/style/js/allmobilize.min.js"></script>
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 <link rel="alternate" media="handheld"  />
-<!-- end 云适配 -->
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Giới thiệu công ty-nền tảng tuyển dụng Internet chuyên nghiệp nhất</title>
 <meta property="qc:admins" content="23635710066417756375" />
@@ -120,7 +120,7 @@ var youdao_conv_id = 271546;
 		
 		<div id="tipOverlay" ></div>
 <#include "../common/alert.ftl"/>
-<!-------------------------------------弹窗lightbox  ----------------------------------------->
+<!-------------------------------------lightbox  ----------------------------------------->
 
    
 <!------------------------------------- end ----------------------------------------->

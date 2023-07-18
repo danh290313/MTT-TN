@@ -1,10 +1,10 @@
-<!--更改密码-->
+
 <!DOCTYPE HTML>
 <html xmlns:wb="http://open.weibo.com/wb"><head>
 </script><script type="text/javascript" async="" src="/home/style/js/conversion.js"></script><script src="/home/style/js/allmobilize.min.js" charset="utf-8" id="allmobilize"></script><style type="text/css"></style>
 <meta content="no-siteapp" http-equiv="Cache-Control">
 <link  media="handheld" rel="alternate">
-<!-- end 云适配 -->
+
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 <title>Sửa đổi mật khẩu-nền tảng tuyển dụng Internet chuyên nghiệp nhất</title>
 <meta content="23635710066417756375" property="qc:admins">
@@ -74,7 +74,7 @@ var youdao_conv_id = 271546;
 	        </dl>
 	    </div>
 <#include "../common/alert.ftl"/>
-<!------------------------------------- 弹窗lightbox ----------------------------------------->
+<!------------------------------------- lightbox ----------------------------------------->
 
 <!------------------------------------- end -----------------------------------------> 
 <script src="/home/style/js/setting.js"></script>

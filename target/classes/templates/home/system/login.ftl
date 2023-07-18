@@ -79,7 +79,6 @@ var youdao_conv_id = 271546;
 			$('#error_email').css('display','none');
 			$('#error_password').css('display','none');
 			$('#error_cpacha').css('display','none');
-			//进行统一表单验证
 			if(!checkForm('loginForm'))
 			{
 				return;

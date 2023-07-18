@@ -91,7 +91,7 @@ var youdao_conv_id = 271546;
     
 <script type="text/javascript">
 
-	//勾选目的为上次默认选择
+	//Mục đích của việc kiểm tra là lựa chọn mặc định của lần trước
 	window.onload = function(){
 		var type =$('input[type="radio"]:checked',loginForm).val();
 		if(type == 0)

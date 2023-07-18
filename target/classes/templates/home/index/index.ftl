@@ -150,13 +150,13 @@
 				<script type="text/javascript" src="/home/style/js/search.min.js"></script>
 				<dl class="hotSearch">
 					<dt>Từ khóa phổ biến:</dt>
-					<dd><a href="/home/position/list?search_value=lập trình java">Lập trình java</a></dd>
-					<dd><a href="/home/position/list?search_value=Android lập trình viên">Android lập trình viên</a></dd>
-					<dd><a href="/home/position/list?search_value=iOS lập trình viên">iOS lập trình viên</a></dd>
-					<dd><a href="/home/position/list?search_value=lập trình viên html5">lập trình viên html</a></dd>
-					<dd><a href="/home/position/list?search_value=Quản lý sản phẩm">Quản lý sản phẩm</a></dd>
-					<dd><a href="/home/position/list?search_value=Quản lý bán hàng">Quản lý bán hàng</a></dd>
-					<dd><a href="/home/position/list?search_value=Nhân sự/HR">Nhân sự</a></dd>
+					<dd><a href="/home/position/list?search_value=java">java</a></dd>
+					<dd><a href="/home/position/list?search_value=Android">Android</a></dd>
+					<dd><a href="/home/position/list?search_value=iOS">iOS</a></dd>
+					<dd><a href="/home/position/list?search_value=html">lhtml</a></dd>
+					<dd><a href="/home/position/list?search_value=sản phẩm">sản phẩm</a></dd>
+					<dd><a href="/home/position/list?search_value=bán hàng">bán hàng</a></dd>
+					<dd><a href="/home/position/list?search_value=Nhân sự">Nhân sự</a></dd>
 				</dl>
 				<div id="home_banner">
 					<ul class="banner_bg">
@@ -343,7 +343,7 @@
 			</div>
 			<input type="hidden" value="" name="userid" id="userid" />
 			<#include "../common/alert.ftl" />
-			<!-------------------------------------弹窗lightbox  ----------------------------------------->
+			<!-------------------------------------lightbox  ----------------------------------------->
 			<!------------------------------------- end ----------------------------------------->
 			<script type="text/javascript" src="/home/style/js/Chart.min.js"></script>
 			<script type="text/javascript" src="/home/style/js/home.min.js"></script>
@@ -352,7 +352,7 @@
 			<script type="text/javascript" src="/home/style/js/core.min.js"></script>
 			<script type="text/javascript" src="/home/style/js/popup.min.js"></script>
 			<script type="text/javascript">
-			var searchType = "position"; //默认是职位搜索
+			var searchType = "position"; //Mặc định là tìm kiếm công việc
 			document.getElementById("selected_position").onclick = function() {
 				searchType = "position";
 			}
@@ -367,11 +367,11 @@
 					$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
 					return;
 				}
-				//如果是职位搜索
+				//Nếu đó là tìm kiếm việc làm
 				if (searchType == "position") {
 					window.location.href = "/home/position/list?search_value=" + search_value;
 				}
-				//如果是公司搜索
+				//Nếu đó là một tìm kiếm của công ty
 				if (searchType == "company") {
 					window.location.href = "/home/index/company_list?search_value=" + search_value;
 				}

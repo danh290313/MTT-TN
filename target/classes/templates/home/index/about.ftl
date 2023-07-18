@@ -5,7 +5,7 @@
 <script id="allmobilize" charset="utf-8" src="/home/style/js/allmobilize.min.js"></script>
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 <link rel="alternate" media="handheld"  />
-<!-- end 云适配 -->
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Về chúng tôi - Nền tảng tuyển dụng Internet chuyên nghiệp nhất</title>
 <meta property="qc:admins" content="23635710066417756375" />

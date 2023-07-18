@@ -1,4 +1,4 @@
-<!--简历预览ftl-->
+
 <!DOCTYPE HTML>
 <html><head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -71,13 +71,13 @@ $(function(){
 	                  <ul class="wlist clearfix">
 	    				<li class="clear">
 	    					<#if WorkExperience??>
-		    					<span class="c9">${WorkExperience.startYear!""}Năm ${WorkExperience.startMonth!""}Tháng — ${WorkExperience.endYear!""}Năm ${WorkExperience.endMonth!""}月</span>
+		    					<span class="c9">${WorkExperience.startYear!""} Năm ${WorkExperience.startMonth!""} Tháng — ${WorkExperience.endYear!""} Năm ${WorkExperience.endMonth!""} Tháng</span>
 		       					<div>
 		       						<h3>Tiêu đề công việc: ${WorkExperience.position!""}</h3>
 		       						<h4>Tên công ty: ${WorkExperience.name!""}</h4>
 		       					</div>
 	    					<#else>
-	    						<span class="c9">&#160;Năm&#160;Tháng —&#160;Năm&#160;Tháng</span>
+	    						<span class="c9">&#160; Năm&#160; Tháng —&#160; Năm&#160; Tháng</span>
 		       					<div>
 		       						<h3>Tiêu đề công việc: </h3>
 		       						<h4>Tên công ty:</h4>
@@ -95,13 +95,13 @@ $(function(){
 	                  	<li class="noborder">
 	    					<div class="projectList">
 	    						<#if ProjectExperience??>
-	    							<div class="f16 mb10">Tên dự án: ${ProjectExperience.name!""} | Nhấn AS: ${ProjectExperience.position!""} | <span class="c9"> ${ProjectExperience.startYear!""}Năm ${ProjectExperience.startMonth!""}Tháng-- ${ProjectExperience.endYear!""} Năm ${ProjectExperience.endMonth!""} Tháng</span>
+	    							<div class="f16 mb10">Tên dự án: ${ProjectExperience.name!""} | Nhấn AS: ${ProjectExperience.position!""} | <span class="c9"> ${ProjectExperience.startYear!""} Năm ${ProjectExperience.startMonth!""} Tháng-- ${ProjectExperience.endYear!""} Năm ${ProjectExperience.endMonth!""} Tháng</span>
 		        					</div>
 		        					<div class="dl1">
 		        						mô tả dự án:${ProjectExperience.content!""}
 		        					</div>
 	    						<#else>
-	    							<div class="f16 mb10">Tên dự án: | Nhấn AS:  | <span class="c9">&#160;Năm&#160;tháng——&#160;Năm &#160;tháng</span>
+	    							<div class="f16 mb10">Tên dự án: | Nhấn AS:  | <span class="c9">&#160; Năm&#160; tháng——&#160; Năm &#160; tháng</span>
 		        					</div>
 		        					<div class="dl1">
 		        						mô tả dự án:
@@ -119,7 +119,7 @@ $(function(){
 	                  <ul class="elist clearfix">
         				<li class="clear">
         					<#if EducationBackground??>
-        						<span class="c9">&#160;${EducationBackground.startYear!""}Năm ——${EducationBackground.endYear!""}Năm</span>
+        						<span class="c9">&#160;${EducationBackground.startYear!""} Năm ——${EducationBackground.endYear!""} Năm</span>
 						 		<div>
 		    						<h3>Tên trường: ${EducationBackground.school_name!""}</h3>
 		    						<h4>${EducationBackground.major!""} · ${EducationBackground.studyRecord!""}</h4>
@@ -164,7 +164,7 @@ $(function(){
 			        </div><!--end .preview_content-->
   	</div><!--end #previewWrapper-->
 
-<!-------------------------------------弹窗lightbox ----------------------------------------->
+<!-------------------------------------lightbox ----------------------------------------->
 
 <!------------------------------------- end ----------------------------------------->  
 

@@ -1,4 +1,4 @@
-<!--招聘者收到的简历ftl-->
+
 <!DOCTYPE HTML>
 <html xmlns:wb="http://open.weibo.com/wb">
 
@@ -9,7 +9,7 @@
 	<style type="text/css"></style>
 	<meta content="no-siteapp" http-equiv="Cache-Control">
 	<link media="handheld" rel="alternate">
-	<!-- end 云适配 -->
+
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 	<title>Nền tảng tuyển dụng internet chuyên nghiệp nhất</title>
 	<meta content="23635710066417756375" property="qc:admins">
@@ -198,7 +198,7 @@
 				</dl><!-- end .company_center_content -->
 			</div><!-- end .content -->
 			<#include "../common/alert.ftl" />
-			<!------------------------------------- 弹窗lightbox ----------------------------------------->
+			<!------------------------------------- lightbox ----------------------------------------->
 			<!------------------------------------- end ----------------------------------------->
 			<script src="/home/style/js/jquery.ui.datetimepicker.min.js" type="text/javascript"></script>
 			<script src="/home/style/js/received_resumes.min.js" type="text/javascript"></script>
@@ -209,7 +209,7 @@
 			<script src="/home/style/js/popup.min.js" type="text/javascript"></script>
 			<!--  -->
 			<script type="text/javascript">
-					//通知面试
+					//Phỏng vấn thông báo
 					function interview(i) {
 						$.ajax({
 							url: '/home/resume/interview',
@@ -221,7 +221,7 @@
 									$("#successMsg").html("Cuộc phỏng vấn đã thành công!");
 									$.colorbox({inline:true, href:$("#successTip"),title:"Thông báo"});
 									setTimeout(function() {
-										window.location.reload(); //页面刷新
+										window.location.reload(); //Trang làm mới
 									}, 3000);
 								} else {
 									$("#errorMsg").html("Thông báo của cuộc phỏng vấn không thành công" + data.msg + "!!!");
@@ -230,7 +230,7 @@
 							}
 						});
 					}
-					//设为不合适
+					//Đặt thành không phù hợp
 					function unsuitable(i) {
 						$.ajax({
 							url: '/home/resume/unsuitable',
@@ -251,7 +251,7 @@
 							}
 						});
 					}
-					//删除简历
+					//Xóa sơ yếu lý lịch
 					function deleteResume(i) {
 						if (confirm("Bạn có chắc bạn muốn xóa sơ yếu lý lịch không？")) {
 							$.ajax({

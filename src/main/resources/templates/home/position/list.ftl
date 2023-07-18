@@ -1,10 +1,9 @@
-<!--职位列表ftl-->
+
 <!DOCTYPE HTML>
 <html xmlns:wb="http://open.weibo.com/wb"><head>
 </script><script type="text/javascript" async="" src="/home/style/js/conversion.js"></script><script src="/home/style/js/allmobilize.min.js" charset="utf-8" id="allmobilize"></script><style type="text/css"></style>
 <meta content="no-siteapp" http-equiv="Cache-Control">
 <link  media="handheld" rel="alternate">
-<!-- end 云适配 -->
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 <title>Nền tảng tuyển dụng internet chuyên nghiệp nhất</title>
 <meta content="23635710066417756375" property="qc:admins">
@@ -38,7 +37,7 @@ var youdao_conv_id = 271546;
         <div class="clearfix">
             <div class="content_l recommend_list">
             	<#if SearchValue??>
-            		<h2><font size="3">dựa theo <font color="red">${SearchValue!""}</font>Kết quả của truy vấn: </font></h2>
+            		<h2><font size="3">Dựa theo <font color="red">${SearchValue!""}</font> kết quả tìm kiếm: </font></h2>
             	<#else>
             		<h2></h2>
             	</#if>
@@ -97,7 +96,7 @@ var youdao_conv_id = 271546;
 	            
                     <div class="Pagination myself">
                     
-                    	<a title="首页" href="/home/position/list?page=1&rows=20&search_value=${SearchValue!""}">trang nhất</a>
+                    	<a title="trang nhất" href="/home/position/list?page=1&rows=20&search_value=${SearchValue!""}">trang nhất</a>
        					<#if currentPage == 1>
        					 	<a title="没有上一页"  href="javascript:void(0);">Không có trang trước</a>
  						<#else>
@@ -125,12 +124,12 @@ var youdao_conv_id = 271546;
        					
        					
        					<#if currentPage == totalPage>
-       					 	<a title="没有下一页"  href="javascript:void(0);">Không có trang tiếp theo</a>
+       					 	<a title="Không có trang tiếp theo"  href="javascript:void(0);">Không có trang tiếp theo</a>
  						<#else>
- 							<a title="下一页"  href="/home/position/list?page=${currentPage+1}&rows=20&search_value=${SearchValue!""}">下一页</a>
+ 							<a title="Trang tiếp theo"  href="/home/position/list?page=${currentPage+1}&rows=20&search_value=${SearchValue!""}">下一页</a>
  						</#if>
  						
-       					<a title="尾页" href="/home/position/list?page=${totalPage}&rows=20&search_value=${SearchValue!""}">trang cuối</a>
+       					<a title="trang cuối" href="/home/position/list?page=${totalPage}&rows=20&search_value=${SearchValue!""}">trang cuối</a>
        					
        					
                     </div>

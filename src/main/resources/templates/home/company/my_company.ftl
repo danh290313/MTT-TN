@@ -38,8 +38,8 @@ var youdao_conv_id = 271546;
             <div class="content_l">           
 	                <div class="c_detail">
 	                	<div style="background-color:#fff;" class="c_logo">
-		                	<a title="上传公司LOGO" id="logoShow" href="javascript:void(0);" onclick="uploadPhoto();">
-                			<img width="190" id="preview_company_photo" height="190" alt="公司logo" src="/home/style/images/logo_default.png">
+		                	<a title="Tải lên một công tyLOGO" id="logoShow" href="javascript:void(0);" onclick="uploadPhoto();">
+                			<img width="190" id="preview_company_photo" height="190" alt="công tylogo" src="/home/style/images/logo_default.png">
                         	<span>Thay thế hình ảnh của công ty<br>Chỉ tên công ty bên cạnh bút chì để lưu</span>
 	                        </a>
 		                </div>
@@ -482,7 +482,7 @@ var youdao_conv_id = 271546;
 				                        	</form>
 				                        </div>
 				                        
-				                        <!-- 显示创始人 -->
+				                        <!-- Người sáng lập hiển thị -->
 				                    	<div class="member_info" id="show_company_founder">
 	                    					<a title="Biên tập viên -người sáng lập" class="c_edit member_edit" href="javascript:void(0)"></a>
 				                        	<div class="m_portrait">
@@ -525,7 +525,7 @@ var youdao_conv_id = 271546;
         </div>
    	</div>
 <#include "../common/alert.ftl"/>
-<!-------------------------------------弹窗lightbox  ----------------------------------------->
+<!------------------------------------lightbox  ----------------------------------------->
 
 <!------------------------------------- end ----------------------------------------->
 
@@ -548,7 +548,7 @@ avatar.uploadComplate = function( data ){
 <!--  -->
 <script type="text/javascript">
 window.onload = function(){
-<!-----------修改时  公司名称和价值观的赋值---------------------->
+<!-----------Tại thời điểm sửa đổi, tên công ty và gán giá trị---------------------->
 	<#if Company??>
 		document.getElementById("companyShortName").value='${Company.name!""}';
 		document.getElementById("companyFeatures").value='${Company.value!""}';
@@ -558,13 +558,13 @@ window.onload = function(){
 		document.getElementById("companyShortName").value='';
 		document.getElementById("companyFeatures").value='';
 	</#if>
-<!-----------修改时  公司标签的赋值---------------------->
+<!-----------Việc chuyển nhượng nhãn công ty trong quá trình sửa đổi---------------------->
 	<#if Tags??>
 		document.getElementById("label").value='${Company.tags!""}';
 	<#else>
 		document.getElementById("label").value='';
 	</#if>
-<!-----------修改时  公司产品的赋值---------------------->
+<!-----------Khi sửa đổi các sản phẩm của công ty, sản phẩm của công ty được chỉ định---------------------->
 	<#if Company??>
 		document.getElementById("company_product_name").value='${Company.productTitle!""}';
 		document.getElementById("company_product_description").value='${Company.productContent!""}';
@@ -576,7 +576,7 @@ window.onload = function(){
 		document.getElementById("company_product_name").value='';
 		document.getElementById("company_product_description").value='';
 	</#if>
-<!-----------修改时  公司地点、领域、规模和网页信息的赋值---------------------->
+<!-----------Ý nghĩa của địa điểm, lĩnh vực, quy mô và thông tin web của công ty trong quá trình sửa đổi---------------------->
 	<#if Company??>
 		document.getElementById("company_locale").value='${Company.locale!""}';
 		document.getElementById("company_territory").value='${Company.territory!""}';
@@ -587,13 +587,13 @@ window.onload = function(){
 		document.getElementById("company_territory").value='';
 		document.getElementById("companyUrl").value='';
 	</#if>
-<!-----------修改时  公司融资阶段的赋值---------------------->
+<!-----------Trong quá trình sửa đổi, phân công giai đoạn tài chính của công ty---------------------->
 	<#if Company??>
 		document.getElementById("company_finance").value='${Company.finance!""}';
 	<#else>
 		document.getElementById("company_finance").value='';
 	</#if>
-<!-----------修改时  公司创始人的赋值---------------------->
+<!-----------Khi sửa đổi, người sáng lập của công ty được chỉ định---------------------->
 	<#if Company??>
 		document.getElementById("company_founder_name").value='${Company.founderName!""}';
 		document.getElementById("company_founder_position").value='${Company.founderPosition!""}';
