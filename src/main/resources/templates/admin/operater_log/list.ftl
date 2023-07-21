@@ -1,10 +1,10 @@
-<!--操作日志ftl-->
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="copyright" content="All Rights Reserved, Copyright (C) 2020, 杨杨吖, Ltd." />
-<title>后台管理主页</title>
+<meta name="copyright" content="All Rights Reserved, Copyright (C) 2020, Ltd." />
+<title> Trang chủ quản lý nền</title>
 <link rel="stylesheet" type="text/css" href="/admin/easyui/easyui/1.3.4/themes/default/easyui.css" />
 <link rel="stylesheet" type="text/css" href="/admin/easyui/css/wu.css" />
 <link rel="stylesheet" type="text/css" href="/admin/easyui/css/icon.css" />
@@ -31,14 +31,14 @@
 <!-- End of easyui-dialog -->
 <script type="text/javascript">
 
-	//删除操作日志
+	//Xóa nhật ký hoạt động
 	function remove(){
 		var item = $('#data-datagrid').datagrid('getSelections');
 		if(item == null || item.length <= 0){
-			$.messager.alert('信息提示','请至少选择一条您要删除的操作日志数据！','info');
+			$.messager.alert('Thông báo tin nhắn','Vui lòng chọn ít nhất một dữ liệu nhật ký hoạt động bạn muốn xóa！','info');
 			return;
 		}
-		$.messager.confirm('信息提示','确定要删除这些记录？', function(result){
+		$.messager.confirm('Thông báo tin nhắn','Bạn có chắc chắn xóa các hồ sơ này?', function(result){
 			if(result){
 			var ids = "";
 			for(var i=0;i<item.length;i++)
@@ -54,10 +54,10 @@
 					data:{ids:ids},
 					success:function(data){
 						if(data.code == 0){
-							$.messager.alert('信息提示','删除成功！','info');
+							$.messager.alert('Thông báo tin nhắn','đã xóa thành công！','info');
 							$('#data-datagrid').datagrid('reload');
 						}else{
-							$.messager.alert('信息提示',data.msg,'warning');
+							$.messager.alert('Thông báo tin nhắn',data.msg,'warning');
 						}
 						$("#data-datagrid").datagrid('clearSelections');
 					}
@@ -70,9 +70,7 @@
 
 
 
-	/** 
-	* 载入数据
-	*/
+
 	$('#data-datagrid').datagrid({
 		url:'/admin/operater_log/list',
 		rownumbers:true,

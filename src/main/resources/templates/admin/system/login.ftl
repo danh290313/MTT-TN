@@ -1,9 +1,9 @@
-<!--后端系统登录ftl-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>后台管理员登录</title>
+  <title> Đăng nhập quản trị viên nền</title>
   <meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
   <meta name="author" content="Vincent Garreau">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -60,7 +60,7 @@
 <script type="text/javascript">
 	function hasClass(elem, cls) {
 	  cls = cls || '';
-	  if (cls.replace(/\s/g, '').length == 0) return false; //当cls没有参数时，返回false
+	  if (cls.replace(/\s/g, '').length == 0) return false; //Khi CLS không có tham số, hãy trả về sai
 	  return new RegExp(' ' + cls + ' ').test(' ' + elem.className + ' ');
 	}
 	 
@@ -84,7 +84,7 @@
 		$("#cpacha-img").attr("src",'/common/cpacha/generate_cpacha??vl=4&fs=21&w=98&h=33&method=admin_login&t=' + new Date().getTime());
 	}
 		document.querySelector(".login-button").onclick = function(){
-				//进行统一表单非空验证
+				//Một biểu mẫu thống nhất không phải là xác minh trống
 				if(!checkForm('adminLoginForm'))
 				{
 					return;

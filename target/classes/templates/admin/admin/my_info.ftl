@@ -1,4 +1,4 @@
-<!--我的信息ftl-->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -64,15 +64,15 @@
         </table>
     </form>
 </div>
-<div id="process-dialog" class="easyui-dialog" data-options="closed:true,iconCls:'icon-upload',title:'正在上传图片'" style="width:450px; padding:10px;">
-<div id="p" class="easyui-progressbar" style="width:400px;" data-options="text:'正在上传中...'"></div>
+<div id="process-dialog" class="easyui-dialog" data-options="closed:true,iconCls:'icon-upload',title:'Tải lên hình ảnh'" style="width:450px; padding:10px;">
+<div id="p" class="easyui-progressbar" style="width:400px;" data-options="text:'Trong tải lên ...'"></div>
 </div>
 <input type="file" id="photo-file" style="display:none;" onchange="upload()">
 <#include "../common/footer.ftl"/>
 
 <!-- End of easyui-dialog -->
 <script type="text/javascript">
-	//进度条
+	//thanh tiến trình
 	function start(){
 			var value = $('#p').progressbar('getValue');
 			if (value < 100){
@@ -82,28 +82,28 @@
 				$('#p').progressbar('setValue',0)
 			}
 	};
-	//上传图片
+	//tải lên hình ảnh
 	function upload(){
 		if($("#photo-file").val() == '')return;
-		//new FormData():异步上传二进制文件。
+		//new FormData():Tải lên các tập tin nhị phân không đồng bộ.
 		var formData = new FormData();
-		//取出所选图片中的第一张
+		//Lấy ra cái đầu tiên trong hình ảnh đã chọn
 		formData.append('photo',document.getElementById('photo-file').files[0]);
-		//进度条会话框打开
+		//Hộp Phiên nhập tiến độ mở ra
 		$("#process-dialog").dialog('open');
-		//每隔0.2s执行一次start方法
+		//Thực hiện phương pháp bắt đầu cứ sau 0,2s
 		var interval = setInterval(start,200);
 		$.ajax({
 			url:'/upload/upload_photo',
 			type:'post',
 			data:formData,
-			//用ajax上传文件时候，必须设置contentType:false,processData:false
+			//Khi tải lên các tệp có AJAX, bạn phải đặt ContentType: False, ProcessData: Sai
 			contentType:false,
 			processData:false,
 			success:function(data){
-				//上传完把定时器清除
+				//Sau khi tải lên để tháo bộ hẹn giờ
 				clearInterval(interval);
-				//进度条会话框关闭
+				//Hộp phiên vào tiến độ đóng cửa
 				$("#process-dialog").dialog('close');
 				if(data.code == 0){
 					$("#edit-preview-photo").attr('src','/photo/view?filename=' + data.data);
@@ -127,7 +127,7 @@
 	
 	
 	
-	//修改记录
+	//Sửa đổi hồ sơ
 	function edit(){
 		var validate = $("#edit-form").form("validate");
 		if(!validate){
@@ -156,14 +156,12 @@
 	
 
 	
-	/**
-	* 打开修改窗口
-	*/
+	
 	function openEdit(){
 		//$('#edit-form').form('clear');
 		var item = $('#data-datagrid').datagrid('getSelections');
 		if(item == null || item.length == 0){
-			$.messager.alert('信息提示','请选择要修改的数据！','info');
+			$.messager.alert('Thông báo tin nhắn','Vui lòng chọn dữ liệu sẽ được sửa đổi！','info');
 			return;
 		}
 		if(item.length > 1){
@@ -200,9 +198,7 @@
 	}	
 	
 	
-	/** 
-	* 载入数据
-	*/
+
 	$('#data-datagrid').datagrid({
 		url:'/admin/admin/my_info_list',
 		rownumbers:true,

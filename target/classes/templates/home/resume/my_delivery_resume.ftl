@@ -1,12 +1,12 @@
-<!--我投递的简历ftl-->
+
 <!DOCTYPE HTML>
 <html xmlns:wb="http://open.weibo.com/wb"><head>
 </script><script type="text/javascript" async="" src="/home/style/js/conversion.js"></script><script src="/home/style/js/allmobilize.min.js" charset="utf-8" id="allmobilize"></script><style type="text/css"></style>
 <meta content="no-siteapp" http-equiv="Cache-Control">
 <link  media="handheld" rel="alternate">
-<!-- end 云适配 -->
+
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-<title>我的投递记录-招聘服务-最专业的互联网招聘平台</title>
+<title>Dịch vụ nhận hồ sơ giao hàng của tôi-nền tảng tuyển dụng Internet chuyên nghiệp nhất</title>
 <meta content="23635710066417756375" property="qc:admins">
 <meta name="description" content="">
 <meta name="keywords" content="">
@@ -147,12 +147,7 @@ var youdao_conv_id = 271546;
                     </dd>
                 </dl>
             </div>	
-            <#--  <div class="content_r">
-								<div class="greybg qrcode mt20">
-                	<img width="242" height="242" alt="微信公众号二维码" src="/home/style/images/qr_delivery.png">
-                    <span class="c7">Quét mã QR, tìm kiếm công việc dễ dàng trên WeChat</span>
-                </div>
-            </div>  -->
+  
        	</div>
       <input type="hidden" id="userid" name="userid" value="314873">
 

@@ -39,7 +39,7 @@ public class HomeUserController {
 		if(StringUtil.isEmpty(user.getMobile())) {
 			return Result.error(CodeMsg.USER_MOBILE_EMPTY);
 		}
-		if(user.getMobile().length() != 11) {
+		if(user.getMobile().length() != 10) {
 			return Result.error(CodeMsg.USER_MOBILE_NOT_CORRECT);
 		}
 		User session_user = (User) request.getSession().getAttribute("user");

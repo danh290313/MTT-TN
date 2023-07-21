@@ -1,9 +1,9 @@
-<!--职位类别ftl-->
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="copyright" content="All Rights Reserved, Copyright (C) 2020, 杨杨吖, Ltd." />
+<meta name="copyright" content="All Rights Reserved, Copyright (C) 2020, Ltd." />
 <title>Quản lý nền Trang chủ</title>
 <link rel="stylesheet" type="text/css" href="/admin/easyui/easyui/1.3.4/themes/default/easyui.css" />
 <link rel="stylesheet" type="text/css" href="/admin/easyui/css/wu.css" />
@@ -30,7 +30,6 @@
     <table id="data-datagrid" class="easyui-datagrid" toolbar="#wu-toolbar"></table>
 </div>
 <!-- Begin of easyui-dialog -->
-<!--添加一级和二级职业类别窗口 -->
 <div id="add-dialog" class="easyui-dialog" data-options="closed:true,iconCls:'icon-save'" style="width:450px; padding:10px;">
 	<form id="add-form" method="post">
         <table>
@@ -58,7 +57,6 @@
         </table>
     </form>
 </div>
-<!-- 修改窗口 -->
 <div id="edit-dialog" class="easyui-dialog" data-options="closed:true,iconCls:'icon-save'" style="width:450px; padding:10px;">
 	<form id="edit-form" method="post">
         <input type="hidden" name="id" id="edit-id">
@@ -80,7 +78,7 @@
         </table>
     </form>
 </div>
-<!-- 添加三级职业类别弹窗 -->
+<!-- Thêm một cửa sổ pop -up chuyên nghiệp thứ ba -->
 <div id="add-third-dialog" class="easyui-dialog" data-options="closed:true,iconCls:'icon-save'" style="width:450px; padding:10px;">
 	<form id="add-third-form" method="post">
         <table>
@@ -108,7 +106,7 @@
 <!-- End of easyui-dialog -->
 <script type="text/javascript">
 	
-	//删除职位类别
+	//Xóa danh mục công việc
 	function remove(){
 		var item = $('#data-datagrid').treegrid('getSelections');
 		if(item == null || item.length != 1){
@@ -138,7 +136,7 @@
 	
 	
 	
-	//打开增加一级和二级的窗口
+	//Mở một cửa sổ tăng cấp đầu tiên và thứ cấp
 	function openAdd(){
 		$('#add-dialog').dialog({
 			closed: false,
@@ -158,7 +156,7 @@
         });
 	}
 	
-	//添加记录
+	//Thêm hồ sơ
 	function add(){
 		var validate = $("#add-form").form("validate");
 		if(!validate){
@@ -189,7 +187,7 @@
 	
 	
 	
-	//修改记录
+	//Sửa đổi hồ sơ
 	function edit(){
 		var validate = $("#edit-form").form("validate");
 		if(!validate){
@@ -217,7 +215,7 @@
 	
 	
 	
-	//添加三级职位类别
+	//Thêm danh mục công việc thứ ba
 	function openThirdAdd(){
 		var item = $('#data-datagrid').treegrid('getSelections');
 		if(item == null || item.length != 1){
@@ -281,7 +279,7 @@
 	
 
 	
-	//打开修改窗口
+	//Mở cửa sổ sửa đổi
 	function openEdit(){
 		var item = $('#data-datagrid').datagrid('getSelections');
 		if(item == null || item.length == 0){
@@ -325,18 +323,18 @@
         });
 	}	
 	
-	//载入数据
+	//Tải dữ liệu
 	$('#data-datagrid').treegrid({
 		url:'/admin/position_category/list',
 		rownumbers:true,
 		singleSelect:true,
 		pageSize:300,           
 		pagination:true,
-		multiSort:true,  //定义是否启用多列排序
+		multiSort:true,  //Xác định có bật nhiều cột sắp xếp
 		fitColumns:true,
 		pageList:[300],
-		idField:'id',    //一般定义成主键就可以
-	    treeField:'name',  //是指定那列要展示成树形
+		idField:'id',    //Nó thường được định nghĩa là khóa chính
+	    treeField:'name',  //Nó được chỉ định rằng cột sẽ hiển thị nó thành một hình dạng cây
 		fit:true,
 		columns:[[
 			{ field:'name',title:'Tên loại công việc',width:100},

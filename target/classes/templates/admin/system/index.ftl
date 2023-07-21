@@ -1,4 +1,4 @@
-<!--后端系统首页ftl-->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +13,7 @@
 <script type="text/javascript" src="/admin/easyui/easyui/1.3.4/locale/easyui-lang-zh_CN.js"></script>
 <script>
     var pc; 
-    //不要放在$(function(){});中
+    
     $.parser.onComplete = function () {
         if (pc) clearTimeout(pc);
         pc = setTimeout(closes, 1000);
@@ -101,13 +101,7 @@
 		})
 		
 		
-		/**
-		* Name 添加菜单选项
-		* Param title 名称
-		* Param href 链接
-		* Param iconCls 图标样式
-		* Param iframe 链接跳转方式（true为iframe，false为href）
-		*/	
+		
 		function addTab(title, href, iconCls, iframe){
 			var tabPanel = $('#wu-tabs');
 			if(!tabPanel.tabs('exists',title)){
@@ -138,9 +132,7 @@
 				tabPanel.tabs('select',title);
 			}
 		}
-		/**
-		* Name 移除菜单选项
-		*/
+	
 		function removeTab(){
 			var tabPanel = $('#wu-tabs');
 			var tab = tabPanel.tabs('getSelected');

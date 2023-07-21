@@ -1,9 +1,9 @@
-<!--用户管理ftl-->
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="copyright" content="All Rights Reserved, Copyright (C) 2020, 杨杨吖, Ltd." />
+<meta name="copyright" content="All Rights Reserved, Copyright (C) 2020, Ltd." />
 <title>Quản lý nền Trang chủ</title>
 <link rel="stylesheet" type="text/css" href="/admin/easyui/easyui/1.3.4/themes/default/easyui.css" />
 <link rel="stylesheet" type="text/css" href="/admin/easyui/css/wu.css" />
@@ -33,7 +33,7 @@
 <!-- End of easyui-dialog -->
 <script type="text/javascript">
 	
-	//删除用户
+	//Xóa người dùng
 	function remove(){
 		var item = $('#data-datagrid').datagrid('getSelections');
 		if(item == null || item.length != 1){
@@ -64,7 +64,7 @@
 	
 	
 	
-	//载入数据
+	//Tải dữ liệu
 	$('#data-datagrid').datagrid({
 		url:'/admin/user/user_info_list',
 		rownumbers:true,

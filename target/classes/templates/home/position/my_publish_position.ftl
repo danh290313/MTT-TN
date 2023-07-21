@@ -1,4 +1,4 @@
-<!--招聘者发布的职位ftl-->
+
 <!DOCTYPE HTML>
 <html xmlns:wb="http://open.weibo.com/wb">
 
@@ -9,7 +9,7 @@
 	<style type="text/css"></style>
 	<meta content="no-siteapp" http-equiv="Cache-Control">
 	<link media="handheld" rel="alternate">
-	<!-- end 云适配 -->
+	
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 	<title>Dịch vụ sau khi nhận của tôi-nền tảng tuyển dụng Internet chuyên nghiệp nhất</title>
 	<meta content="23635710066417756375" property="qc:admins">
@@ -170,7 +170,7 @@
 			<script src="/home/style/js/analytics01.js" type="text/javascript"></script>
 			<script type="text/javascript" src="/home/style/js/h.js"></script>
 			<script type="text/javascript">
-			//删除职位
+			//Xóa vị trí
 			function deletePosition(i) {
 				if (confirm("Bạn có chắc chắn muốn xóa nó?Nếu bị xóa, Hồ sơ cho công việc cũng sẽ bị xóa")) {
 					$.ajax({
@@ -183,7 +183,7 @@
 								$("#successMsg").html("Công việc được xóa thành công! ");
 								$.colorbox({inline:true, href:$("#successTip"),title:"Gợi ý hệ thống"});
 								setTimeout(function() {
-									window.location.reload(); //页面刷新
+									window.location.reload(); //Trang làm mới
 								}, 3000);
 							} else {
 								$("#errorMsg").html("Xóa vị trí thất bại，" + data.msg);
@@ -193,7 +193,7 @@
 					});
 				}
 			}
-			//把职位状态改为下线
+			//Thay đổi trạng thái vị trí thành ngoại tuyến
 			function changeStateToOut(i) {
 				$.ajax({
 					url: '/home/position/changeStateToOut',
@@ -205,7 +205,7 @@
 							$("#successMsg").html("Việc ngoại tuyến là thành công!");
 							$.colorbox({inline:true, href:$("#successTip"),title:"Gợi ý hệ thống"});
 							setTimeout(function() {
-								window.location.reload(); //页面刷新
+								window.location.reload(); //Trang làm mới
 							}, 3000);
 						} else {
 							$("#errorMsg").html("Thất bại ngoại tuyến，" + data.msg + "!!!");
@@ -214,7 +214,7 @@
 					}
 				});
 			}
-			//把下线的职位状态更改为上线
+			//Thay đổi vị trí của vị trí ngoại tuyến thành trực tuyến
 			function changeStateToWait(i) {
 				$.ajax({
 					url: '/home/position/changeStateToWait',
@@ -226,7 +226,7 @@
 							$("#successMsg").html("Thành công đã lên mạng!Nhưng đợi cho quản trị viên xem xét nó!");
 							$.colorbox({inline:true, href:$("#successTip"),title:"Gợi ý hệ thống"});
 							setTimeout(function() {
-								window.location.reload(); //页面刷新
+								window.location.reload(); //Trang làm mới
 							}, 3000);
 						} else {
 							$("#errorMsg").html("Không lên mạng," + data.msg);

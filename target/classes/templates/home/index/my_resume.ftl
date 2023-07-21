@@ -544,7 +544,7 @@ var youdao_conv_id = 271546;
             		</div><!--end .experienceEdit-->
             		<div class="experienceAdd pAdd">
             			<#if WorkExperience??>
-            				Tên công ty: ${WorkExperience.name!""} | Tiêu đề công việc: ${WorkExperience.position!""} | Thời gian bắt đầu: ${WorkExperience.startYear!""} Năm ${WorkExperience.startMonth!""} Tháng | Thời gian kết thúc:  ${WorkExperience.endYear!""} Năm ${WorkExperience.endMonth!""} Tháng
+            				Tên công ty: ${WorkExperience.name!""} | Tiêu đề công việc: ${WorkExperience.position!""} | Thời gian bắt đầu: ${WorkExperience.startYear!""}Năm ${WorkExperience.startMonth!""}Tháng | Thời gian kết thúc:  ${WorkExperience.endYear!""}Năm ${WorkExperience.endMonth!""}Tháng
             			<#else>
             				Kinh nghiệm làm việc phản ánh tốt nhất khả năng làm việc của bạn!<br>
 							Sau khi nó là hoàn hảo, bạn có thể gửi sơ yếu lý lịch của bạn!
@@ -980,7 +980,7 @@ var youdao_conv_id = 271546;
             		<div class="educationalAdd pAdd">
             			
 						<#if EducationBackground??>
-							Tên trường： ${EducationBackground.school_name!""} | Bằng cấp học thuật： ${EducationBackground.studyRecord!""} | tiêu đề chuyên nghiệp： ${EducationBackground.major!""} | Thời gian bắt đầu： ${EducationBackground.startYear!""} Năm | Thời gian kết thúc：  ${EducationBackground.endYear!""} Năm
+							Tên trường： ${EducationBackground.school_name!""} | Bằng cấp học thuật： ${EducationBackground.studyRecord!""} | tiêu đề chuyên nghiệp： ${EducationBackground.major!""} | Thời gian bắt đầu： ${EducationBackground.startYear!""}Năm | Thời gian kết thúc：  ${EducationBackground.endYear!""}Năm
 						<#else>
 							Nền tảng giáo dục có thể phản ánh đầy đủ khả năng học tập và chuyên nghiệp của bạn！<br>
 								Sau khi nó là hoàn hảo, bạn có thể gửi sơ yếu lý lịch của mình！

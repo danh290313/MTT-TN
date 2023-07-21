@@ -60,7 +60,7 @@ public class User extends BaseEntity{
 	@Column(name="sex",length=1)
 	private int sex = USER_SEX_UNKONW;//Giới tính
 	
-	@ValidateEntity(required=true,requiredMaxLength=true,requiredMinLength=true,minLength=11,maxLength=11,errorMinLengthMsg="Vui lòng nhập chiều dài 11bit với số điện thoại di động chính xác!",errorMaxLengthMsg="Vui lòng nhập chiều dài 11bit với số điện thoại di động chính xác!")
+	@ValidateEntity(required=true,requiredMaxLength=true,requiredMinLength=true,minLength=11,maxLength=11,errorMinLengthMsg="Vui lòng nhập số điện thoại di động chính xác!",errorMaxLengthMsg="Vui lòng nhập chiều dài 11bit với số điện thoại di động chính xác!")
 	@Column(name="mobile",length=12)
 	private String mobile;//Số điện thoại di động của người dùng
 	

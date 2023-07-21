@@ -1,9 +1,9 @@
-<!--公司列表ftl-->
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="copyright" content="All Rights Reserved, Copyright (C) 2020, 杨杨吖, Ltd." />
+<meta name="copyright" content="All Rights Reserved, Copyright (C) 2020, Ltd." />
 <title>Quản lý nền Trang chủ</title>
 <link rel="stylesheet" type="text/css" href="/admin/easyui/easyui/1.3.4/themes/default/easyui.css" />
 <link rel="stylesheet" type="text/css" href="/admin/easyui/css/wu.css" />
@@ -61,7 +61,7 @@
 <!-- End of easyui-dialog -->
 <script type="text/javascript">
 
-	//打开改变职位状态窗口
+	//Mở vị trí của trạng thái vị trí
 	function changeState(){
 		var item = $('#data-datagrid').datagrid('getSelections');
 		if(item == null || item.length == 0){
@@ -97,7 +97,7 @@
 	}	
 	
 	
-	//删除公司
+	//Xóa công ty
 	function remove(){
 		var item = $('#data-datagrid').datagrid('getSelections');
 		if(item == null || item.length != 1){
@@ -127,7 +127,7 @@
 	
 	
 	
-	//执行改变职位状态操作
+	//Thực hiện hoạt động của trạng thái vị trí
 	function change(){
 		var data = $("#edit-form").serialize();
 		console.log('data', data);
@@ -149,7 +149,7 @@
 	}
 
 	
-	//搜索按钮监听
+	//Màn hình nút tìm kiếm
 	$("#search-btn").click(function(){
 	    var search_value = $('#search-state').combobox('getValues');
 	    var state = "";
@@ -170,7 +170,7 @@
 	
 	
 	
-	//载入数据
+	//Tải dữ liệu
 	$('#data-datagrid').datagrid({
 		url:'/admin/company/list',
 		rownumbers:true,
