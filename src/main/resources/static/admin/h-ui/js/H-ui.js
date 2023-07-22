@@ -1,4 +1,4 @@
-/*H-ui.js v2.3 date:9:53 2015-07-17 by:guojunhui*/
+
 if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
   var msViewportStyle = document.createElement("style")
   msViewportStyle.appendChild(
@@ -10,32 +10,26 @@ if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
 }
 
 
-/*添加收藏
-<a title="收藏本站" href="javascript:;" onClick="addFavoritepage('H-ui前端框架','http://www.h-ui.net/');">收藏本站</a>
-*/
-/*收藏主站*/
 function addFavorite(name,site){
 	try{window.external.addFavorite(site,name);}
 	catch(e){
 		try{window.sidebar.addPanel(name,site,"");}
-			catch(e){alert("加入收藏失败，请使用Ctrl+D进行添加");}
+			catch(e){alert("Không tham gia bộ sưu tập, vui lòng sử dụng CTRL+D để thêm");}
 	}
 }
-/*收藏页面
-<a title="收藏本页" href="javascript:addFavoritepage(0);">收藏本页</a>
-*/
+
 function addFavoritepage(){var sURL=window.location.href;var sTitle=document.title;try{window.external.addFavorite(sURL,sTitle);}catch(e){try{window.sidebar.addPanel(sTitle,sURL,"");}catch(e){alert("加入收藏失败，请使用Ctrl+D进行添加");}}}
 
-/*设为首页*/
+
 function setHome(obj){
   try{obj.style.behavior="url(#default#homepage)";obj.setHomePage(webSite);}
   catch(e){if(window.netscape){
 	  try {netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");}
-	  catch(e){alert("此操作被浏览器拒绝！\n请在浏览器地址栏输入\"about:config\"并回车\n然后将 [signed.applets.codebase_principal_support]的值设置为'true',双击即可。");}
+	  catch(e){alert("Hoạt động này bị từ chối bởi trình duyệt!\n Vui lòng nhập vào thanh địa chỉ trình duyệt\"about:config\"Trở lại xe\nSau đó[signed.applets.codebase_principal_support]Giá trị đặt'true',Nhấn đúp chuột。");}
 	  var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);
 	  prefs.setCharPref('browser.startup.homepage',url);}}
 }
-/*滚动*/
+
 function marquee(height,speed,delay){
 	var scrollT;
 	var pause = false;
@@ -63,7 +57,6 @@ function marquee(height,speed,delay){
 	setTimeout(start,delay);
 }
 
-/*隐藏显示密码*/
 (function ( $ ) {
     $.fn.togglePassword = function( options ) {
         var s = $.extend( $.fn.togglePassword.defaults, options ),
@@ -106,7 +99,6 @@ function marquee(height,speed,delay){
 	});
 }(window.jQuery);
 
-/*左侧菜单-隐藏显示*/
 function displaynavbar(obj){
 	if($(obj).hasClass("open")){
 		$(obj).removeClass("open");
@@ -118,7 +110,7 @@ function displaynavbar(obj){
 	}
 }
 
-/*模拟下拉菜单*/
+
 jQuery.Huiselect = function(divselectid,inputselectid) {
 	var inputselect = $(inputselectid);
 	$(divselectid+" cite").click(function(){
@@ -139,15 +131,15 @@ jQuery.Huiselect = function(divselectid,inputselectid) {
 jQuery.Huihover =function(obj) {
 	$(obj).hover(function(){$(this).addClass("hover");},function(){$(this).removeClass("hover");});
 };
-/*得到失去焦点*/
+
 jQuery.Huifocusblur = function(obj) {
 	$(obj).focus(function() {$(this).addClass("focus").removeClass("inputError");});
 	$(obj).blur(function() {$(this).removeClass("focus");});
 };
-/*tab选项卡*/
+
 jQuery.Huitab =function(tabBar,tabCon,class_name,tabEvent,i){
   	var $tab_menu=$(tabBar);
-	// 初始化操作
+
 	$tab_menu.removeClass(class_name);
 	$(tabBar).eq(i).addClass(class_name);
 	$(tabCon).hide();
@@ -162,7 +154,7 @@ jQuery.Huitab =function(tabBar,tabCon,class_name,tabEvent,i){
 	});
 }
 
-/*折叠*/
+
 jQuery.Huifold = function(obj,obj_c,speed,obj_type,Event){
 	if(obj_type == 2){
 		$(obj+":first").find("b").html("-");
@@ -199,19 +191,19 @@ jQuery.Huifold = function(obj,obj_c,speed,obj_type,Event){
 		}
 	});
 }
-/*返回顶部*/
-var $backToTopEle=$('<a href="javascript:void(0)" class="Hui-iconfont toTop" title="返回顶部" alt="返回顶部" style="display:none">&#xf0023;</a>').appendTo($("body")).click(function(){
+
+var $backToTopEle=$('<a href="javascript:void(0)" class="Hui-iconfont toTop" title="Trở lại đầu trang" alt=""Trở lại đầu trang"" style="display:none">&#xf0023;</a>').appendTo($("body")).click(function(){
 	$("html, body").animate({ scrollTop: 0 }, 120);
 });
 var $backToTopFun = function() {
 	var st = $(document).scrollTop(), winh = $(window).height();
 	(st > 0)? $backToTopEle.show(): $backToTopEle.hide();
-	/*IE6下的定位*/
+
 	if(!window.XMLHttpRequest){
 		$backToTopEle.css("top", st + winh - 166);
 	}
 };
-/*textarea 字数限制*/
+
 function textarealength(obj,maxlength){
 	var v = $(obj).val();
 	var l = v.length;
@@ -236,7 +228,7 @@ function Huimodal_alert_hide() {
 		$("#modal-alert").remove();
 	});
 }
-/*设置cookie*/
+
 function setCookie(name, value, Days){
 	if(Days == null || Days == ''){
 		Days = 300;
@@ -246,7 +238,7 @@ function setCookie(name, value, Days){
 	document.cookie = name + "="+ escape (value) + "; path=/;expires=" + exp.toGMTString();
 }
 
-/*获取cookie*/
+
 function getCookie(name) {
     var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
     if(arr=document.cookie.match(reg))
@@ -255,9 +247,9 @@ function getCookie(name) {
         return null; 
 }
 $(function(){
-	/*****表单*****/
+
     $.Huifocusblur(".input-text,.textarea");
-	/*按钮loading*/
+
 	$('.btn-loading').click(function () {
 		var $btn = $(this);
 		var btnval = $btn.val();
@@ -269,18 +261,18 @@ $(function(){
 	/**/
 	$.Huiselect("#divselect","#inputselect");
 
-	/*全选*/
+
 	$("table thead th input:checkbox").on("click" , function(){
 		$(this).closest("table").find("tr > td:first-child input:checkbox").prop("checked",$("table thead th input:checkbox").prop("checked"));
     });
 	
-    /*上传*/
+  
     $(document).on("change",".input-file",function(){
 		var uploadVal=$(this).val();
 		$(this).parent().find(".upload-url").val(uploadVal).focus().blur();
 	});
 	
-	/*下拉菜单*/
+
 	$(document).on("mouseenter",".dropDown",function(){
 		$(this).addClass("hover");
 	});
@@ -310,14 +302,14 @@ $(function(){
 		}
 	});
 
-	/*搜索框*/
+
 	$.Huifocusblur('.searchTxt');
 	$.Huihover('.ac_results li');
 	$(".ac_results li").click(function (event){
 		$(".searchTxt").addClass("focus").val($(this).find("p").text());
 		$(".ac_results").hide();
-		//$(".form-search").submit();/*提交表单*/
-		b_onclick();/*临时测试*/
+		//$(".form-search").submit();
+		b_onclick();
 		return false;
 	});
 	$(".searchTxt").focus(function(){$(".ac_results").show();return false;});
@@ -329,7 +321,7 @@ $(function(){
     	if(obj.keyCode == 13){searchBtn.click();obj.returnValue = false;}
 	}
 	
-	/*tag标签*/
+
 	var tags_a = $(".tags a");
 	tags_a.each(function(){
 		var x = 9;
@@ -338,7 +330,7 @@ $(function(){
 		$(this).addClass("tags"+rand);
 	});
 		
-	/*对联广告*/
+
 	var dual = $(".dual");
 	var dual_close = $("a.dual_close");	
 	var screen_w = screen.width;
@@ -352,10 +344,10 @@ $(function(){
 		return false;
 	});
 
-	/*顶部展开定时自动关闭广告*/ 
+
 	$("#banner").slideDown("slow");
 	
-	/*图片预览*/
+
 	$("a.preview").hover(
 		function(){
 			$(this).addClass("active");
@@ -382,9 +374,9 @@ $(function(){
 				$("body").append(tooltip_keleyi_com);
 				var midimgW = $(this).attr('data-width');
 				var midimgH = $(this).attr('data-height');
-				var imgTitle = this.myTitle ? "<br />" + this.myTitle + " 产品预览图" : "";
-				/*图片预加载*/
-				var image = new Image();/*创建一个Image对象*/
+				var imgTitle = this.myTitle ? "<br />" + this.myTitle + " Xem trước" : "";
+
+				var image = new Image();
 				image.onload = function () {
 					if($('a.preview.active').attr('data-preview') == midimg){
 						var midingW2 = this.width;
@@ -403,7 +395,7 @@ $(function(){
 		}
 	);
 	
-	/*Huialert*/
+
 	$.Huihover('.Huialert i');
 	$(".Huialert i").on("click",function(){
 		var Huialert = $(this).parents(".Huialert");
@@ -412,7 +404,7 @@ $(function(){
 		});
 	});
 
-	/*tag标签*/
+
 	var time1;
 	$(".Hui-tags-lable").show();
 	$(".Hui-tags-input").val("");
@@ -504,7 +496,7 @@ function displayimg(){
 	});
 }
 setTimeout("displayimg()",4000);
-/*placeholder兼容性处理*/
+
 (function(window, document, $) {
 	var isInputSupported = 'placeholder' in document.createElement('input');
 	var isTextareaSupported = 'placeholder' in document.createElement('textarea');

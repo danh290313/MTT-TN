@@ -47,7 +47,7 @@ $(function(){
                 <div class="basicShow">
                    <span>
                    	<#if currentUser??>
-	                 	  Tên: ${currentUser.username!""} | giới tính: <#if currentUser.sex == 0>LGBT<#elseif currentUser.sex == 1>nam<#else>nữ</#if> | Giáo dục: ${currentUser.degree!""} | 
+	                 	  Tên: ${currentUser.username!""} | giới tính: <#if currentUser.sex == 0>LGBT<#elseif currentUser.sex == 1>nam<#else>nữ</#if> | Giáo dục: ${currentUser.degree!""} <br>	
 	                  	 kinh nghiệm làm việc: ${currentUser.workExperience!""}<br>	
 	                  	 Điện thoại: ${currentUser.mobile!"Không có gì cho thời điểm hiện tại"}  |  Email: ${currentUser.email!"暂无"} <br>		  
 	            		</span>
@@ -60,18 +60,18 @@ $(function(){
 	                <h2>Công việc mong đợi</h2>
 	                <div class="expectShow">
 	                	<#if ExpectWork??>
-            					Thành phố hy vọng: ${ExpectWork.city!"vô giá trị"}   |  Tính chất công việc:${ExpectWork.type!"toàn thời gian"}  |  Vị trí mơ ước: ${ExpectWork.position!"vô giá trị"}  |  Hy vọng tiền lương hàng tháng:${ExpectWork.money!"vô giá trị"}
+            					Thành phố hy vọng: ${ExpectWork.city!"vô giá trị"}   |  Tính chất công việc: ${ExpectWork.type!"toàn thời gian"} </br>   Vị trí mong muốn: ${ExpectWork.position!"vô giá trị"}  |  Lương mong muốn: ${ExpectWork.money!"vô giá trị"}
 						</#if>
 	                </div><!--end .expectShow-->
 	            </div><!--end #expectJob-->
 						
 	            <div class="profile_box" id="workExperience">
-	                <h2>kinh nghiệm làm việc</h2>
+	                <h2>Kinh nghiệm làm việc</h2>
 	                <div class="experienceShow">
 	                  <ul class="wlist clearfix">
 	    				<li class="clear">
 	    					<#if WorkExperience??>
-		    					<span class="c9">${WorkExperience.startYear!""} Năm ${WorkExperience.startMonth!""} Tháng — ${WorkExperience.endYear!""} Năm ${WorkExperience.endMonth!""} Tháng</span>
+		    					<span class="c9"> Từ ${WorkExperience.startMonth!""}-${WorkExperience.startYear!""}  đến ${WorkExperience.endMonth!""}-${WorkExperience.endYear!""}</span>
 		       					<div>
 		       						<h3>Tiêu đề công việc: ${WorkExperience.position!""}</h3>
 		       						<h4>Tên công ty: ${WorkExperience.name!""}</h4>
@@ -95,13 +95,13 @@ $(function(){
 	                  	<li class="noborder">
 	    					<div class="projectList">
 	    						<#if ProjectExperience??>
-	    							<div class="f16 mb10">Tên dự án: ${ProjectExperience.name!""} | Nhấn AS: ${ProjectExperience.position!""} | <span class="c9"> ${ProjectExperience.startYear!""} Năm ${ProjectExperience.startMonth!""} Tháng-- ${ProjectExperience.endYear!""} Năm ${ProjectExperience.endMonth!""} Tháng</span>
+	    							<div class="f16 mb10">Tên dự án: ${ProjectExperience.name!""} | Vị trí: ${ProjectExperience.position!""} | <span class="c9"> ${ProjectExperience.startYear!""}-${ProjectExperience.startMonth!""} -- ${ProjectExperience.endYear!""}-${ProjectExperience.endMonth!""}</span>
 		        					</div>
 		        					<div class="dl1">
-		        						mô tả dự án:${ProjectExperience.content!""}
+		        						Mô tả dự án: ${ProjectExperience.content!""}
 		        					</div>
 	    						<#else>
-	    							<div class="f16 mb10">Tên dự án: | Nhấn AS:  | <span class="c9">&#160; Năm&#160; tháng——&#160; Năm &#160; tháng</span>
+	    							<div class="f16 mb10">Tên dự án: | Vị trí:  | <span class="c9">&#160; Năm&#160; tháng——&#160; Năm &#160; tháng</span>
 		        					</div>
 		        					<div class="dl1">
 		        						mô tả dự án:
@@ -119,7 +119,7 @@ $(function(){
 	                  <ul class="elist clearfix">
         				<li class="clear">
         					<#if EducationBackground??>
-        						<span class="c9">&#160;${EducationBackground.startYear!""} Năm ——${EducationBackground.endYear!""} Năm</span>
+        						<span class="c9">&#160; Năm ${EducationBackground.startYear!""} — Năm ${EducationBackground.endYear!""} </span>
 						 		<div>
 		    						<h3>Tên trường: ${EducationBackground.school_name!""}</h3>
 		    						<h4>${EducationBackground.major!""} · ${EducationBackground.studyRecord!""}</h4>

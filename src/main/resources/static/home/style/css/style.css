@@ -1,28 +1,13 @@
 ﻿@charset "utf-8";
-/*********************************************
-*
-* Start Time 2013-06-14
-* Author : Vee
-* Contect : vee@3wcoffee.com
-**********************************************
-* background:#0d9572;             绿 背景色
-* background:#0d9572;             绿 按钮
-* background:#00694e;             绿 按钮 current
-* color:#019875;                  绿字体
-* background:#fafafa;             灰 背景色
-* border:1px dashed #cfd0d2；     灰 边框
-* height:30px;                    list page btn
-* height:46px;                    login and register btn
-* height:60px;                    detail page btn .btn_big
-**********************************************/
+
 *{outline: none; }html,body{height:100%;}
 #body{min-height: 100%;height: auto !important; height: 100%; margin: 0 0 -37px;}
-body{margin:0;padding:0; font:14px/22px "微软雅黑","宋体",Arial; color:#333;word-wrap:break-word;}
+body{margin:0;padding:0; font:14px/22px "Microsoft Yahei","Phong cách bài hát",Arial; color:#333;word-wrap:break-word;}
 .clearfix:after{content: "";height: 0;clear: both;visibility: hidden;}
 .clearfix{display: inline-block;}  /* for IE/Mac */
 h1,h2,h3,h4,h5{font-weight:normal;}
 input[type="text"],input[type="password"]{border:2px solid #f1f1f1;outline:none;font:20px/32px "微软雅黑","宋体",Arial; width: 600px;height: 30px;  padding: 6px 10px; margin-top:20px;transition:border 0.2s ease-in 0s;}
-input[type="button"],input[type="submit"]{font-family:"微软雅黑","宋体",Arial;outline:none;cursor:pointer;border:none;}
+input[type="button"],input[type="submit"]{font-family:"Microsoft Yahei","Phong cách bài hát",Arial;outline:none;cursor:pointer;border:none;}
 input[type="text"]:focus,input[type="password"]:focus{border:2px solid #d4e2e4;}
 textarea{ border:2px solid #f1f1f1; width:600px; height:260px;outline:none; resize:none; font:20px/32px "微软雅黑","宋体",Arial; padding:6px 10px; margin-top:20px;transition:border 0.2s ease-in 0s;}
 textarea:focus{ border:2px solid #d4e2e4; }:focus {outline: 0;}.placeholder { color: #777; }img{border:none;}
@@ -37,12 +22,11 @@ span.error{display:block; margin:5px 0 10px 0; font-size:14px; color:#ff6a6a;tex
 ::-moz-selection{background: #019875; color: white; /* Firefox */ }
 .triangle{ height:0;width:0;overflow: hidden;font-size: 0;line-height: 0; border-width:6px 5px 0; border-style:solid dashed; border-color:#019875 transparent transparent;-webkit-transition:all 0.4s ease 0s;-moz-transition:all 0.4s ease 0s;-ms-transition:all 0.4s ease 0s;transition:all 0.4s ease 0s;}
 .triangle.transform{-webkit-transform:rotate(180deg);-moz-transform:rotate(180deg);-ms-transform:rotate(180deg);transform: rotate(180deg);-webkit-transition:all 0.4s ease 0s;-moz-transition:all 0.4s ease 0s;-ms-transition:all 0.4s ease 0s;transition:all 0.4s ease 0s;}
-/*end globel style*/
 
-/*weibo加关注 | 只首页*/
+
+
 #wbfocus{float:right;margin:5px 120px 0 0;height:24px;}
 
-/*首页激活提示*/
 #remindActive{height:104px;background:#fafafa;}
 #remindActive .remind{font-size:14px;width:741px;height:81px; background:url(img/remind.png) 70px 10px no-repeat;padding:23px 0 0 283px; margin:0 auto;}
 #remindActive .remind span{color:#019875;}
@@ -138,7 +122,7 @@ ul.hot_tags{margin-bottom:23px; overflow:hidden;}
 #home_banner .banner_control{float:right;width:121px;height:160px;position:relative;right:0;top:0}
 #home_banner .banner_control em{width:127px;height:50px;background:url(img/control_current.png) 0 0 no-repeat;position:absolute;z-index:21;top:0;left:-6px}
 #home_banner .thumbs{list-style:none;margin:0;padding:0}
-/*cursor:pointer; nancy 删掉*/
+
 #home_banner .thumbs li{width:113px;height:42px;border:4px solid #d3d3d3;position:relative}
 #home_banner .thumbs li i{background:url(img/thumb_cover.png) no-repeat;width:113px;height:42px;position:absolute}
 #home_banner .thumbs li.current i{background:0}
@@ -232,8 +216,7 @@ ul.hot_pos i{width: 12px;height: 14px;position:absolute;background:url(img/hot.p
 .hc_tag .searchlist_expectCity > span.bot{right:20px;top:-22px;}
 .hc_tag .searchlist_expectCity > span.top{right:20px; top:-19px;}
 .citymore_arrow{position:absolute;right:0;top:10px;}
-/* .wp_cl{margin-top:-33px !important;*margin:0 0 10px -10px !important;} */
-/*login.html*/
+
 #login_bg{ background:#019875 url(img/bgwall.png) center 100px no-repeat;overflow:hidden;}
 .login_wrapper{ width:640px; margin:0 auto;color:#777;font-size:16px;padding-top:110px;}
 .login_header{position:relative; margin-bottom:20px;}

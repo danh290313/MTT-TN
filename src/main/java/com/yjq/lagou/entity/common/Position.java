@@ -47,11 +47,11 @@ public class Position extends BaseEntity{
 	@Column(name="work_type",nullable=false)
 	private String workType = DEFAULT_WORK_TYPE;  //Bản chất của công việc
 	
-	@ValidateEntity(required=true,requiredMaxValue=true,requiredMinValue=true,minValue=1,maxValue=1000,errorRequiredMsg="Mức lương tối thiểu của vị trí Mức lương tối thiểu của vị trí lớn hơn 0K!ống!",errorMinValueMsg="Mức lương tối thiểu của vị trí lớn hơn 0K!",errorMaxValueMsg="Mức lương tối thiểu của vị trí không thể lớn hơn 1000k!")
+	@ValidateEntity(required=true,requiredMaxValue=true,requiredMinValue=true,minValue=1,maxValue=1000,errorRequiredMsg="Mức lương tối thiểu của vị trí lớn hơn 0K!",errorMinValueMsg="Mức lương tối thiểu của vị trí lớn hơn 0K!",errorMaxValueMsg="Mức lương tối thiểu của vị trí không thể nhỏ hơn 1k!")
 	@Column(name="min_money",nullable=false)
 	private int minMoney;  //Mức lương tối thiểu của vị trí (trong đơn vị)
 	
-	@ValidateEntity(required=true,requiredMaxValue=true,requiredMinValue=true,minValue=1,maxValue=1000,errorRequiredMsg="Mức lương cao nhất của vị trí không thể trống!",errorMinValueMsg="Mức lương cao nhất của vị trí lớn hơn0k!",errorMaxValueMsg="Mức lương tối đa của vị trí không thể lớn hơn1000k!")
+	@ValidateEntity(required=true,requiredMaxValue=true,requiredMinValue=true,minValue=1,maxValue=100000,errorRequiredMsg="Mức lương cao nhất của vị trí không thể trống!",errorMinValueMsg="Mức lương cao nhất của vị trí lớn hơn 0k!",errorMaxValueMsg="Mức lương tối đa của vị trí không thể lớn hơn 100000k!")
 	@Column(name="max_money",nullable=false)
 	private int maxMoney;  //Mức lương cao nhất của vị trí (trong đơn vị)
 	

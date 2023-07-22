@@ -1,5 +1,4 @@
-/*H-ui.admin.js v2.3.1 date:15:42 2015.08.19 by:guojunhui*/
-/*获取顶部选项卡总长度*/
+
 function tabNavallwidth(){
 	var taballwidth=0,
 		$tabNav = $(".acrossTab"),
@@ -18,7 +17,7 @@ function tabNavallwidth(){
 		$tabNav.css({left:0})}
 }
 
-/*左侧菜单响应式*/
+
 function Huiasidedisplay(){
 	if($(window).width()>=768){
 		$(".Hui-aside").show()
@@ -51,9 +50,9 @@ $(function(){
 			$(".Hui-aside").slideToggle();
 		}
 	});
-	/*左侧菜单*/
+
 	$.Huifold(".menu_dropdown dl dt",".menu_dropdown dl dd","fast",1,"click");
-	/*选项卡导航*/
+
 	
 	$(".Hui-aside").on("click",".menu_dropdown a",function(){
 		if($(this).attr('_href')){
@@ -148,22 +147,14 @@ $(function(){
 		oUl.stop().animate({'left':-num*100},100);
 	}
 	
-	/*换肤*/
+
 	$("#Hui-skin .dropDown-menu a").click(function(){
 		var v = $(this).attr("data-val");
 		setCookie("Huiskin", v);
 		$("#skin").attr("href","skin/"+v+"/skin.css");
 	});
 }); 
-/*弹出层*/
-/*
-	参数解释：
-	title	标题
-	url		请求的url
-	id		需要操作的数据id
-	w		弹出层宽度（缺省调默认值）
-	h		弹出层高度（缺省调默认值）
-*/
+
 function layer_show(title,url,w,h){
 	if (title == null || title == '') {
 		title=false;
@@ -180,14 +171,14 @@ function layer_show(title,url,w,h){
 	layer.open({
 		type: 2,
 		area: [w+'px', h +'px'],
-		fix: false, //不固定
+		fix: false, 
 		maxmin: true,
 		shade:0.4,
 		title: title,
 		content: url
 	});
 }
-/*关闭弹出框口*/
+
 function layer_close(){
 	var index = parent.layer.getFrameIndex(window.name);
 	parent.layer.close(index);

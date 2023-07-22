@@ -773,7 +773,7 @@ var youdao_conv_id = 271546;
             		</div><!--end .projectEdit-->
             		<div class="projectAdd pAdd">
             			<#if ProjectExperience??>
-            				Tên dự án: ${ProjectExperience.name!""} | Nhấn AS: ${ProjectExperience.position!""} | Thời gian bắt đầu: ${ProjectExperience.startYear!""}Năm ${ProjectExperience.startMonth!""}Tháng | Thời gian kết thúc:  ${ProjectExperience.endYear!""}Năm ${ProjectExperience.endMonth!""}Tháng
+            				Tên dự án: ${ProjectExperience.name!""} | Vị trí: ${ProjectExperience.position!""} | Thời gian bắt đầu: ${ProjectExperience.startYear!""}Năm ${ProjectExperience.startMonth!""}Tháng | Thời gian kết thúc:  ${ProjectExperience.endYear!""}Năm ${ProjectExperience.endMonth!""}Tháng
             				 | mô tả dự án:${ProjectExperience.content!""}
             			<#else>
             			Kinh nghiệm dự án là một chỉ số quan trọng <br>

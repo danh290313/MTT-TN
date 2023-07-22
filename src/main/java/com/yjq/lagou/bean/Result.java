@@ -43,6 +43,7 @@ public class Result<T> {
 		this.code = code;
 	}
 
+
 	public String getMsg() {
 		return msg;
 	}
