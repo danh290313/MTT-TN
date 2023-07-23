@@ -63,7 +63,7 @@ var youdao_conv_id = 271546;
             		<h2>Thông tin cơ bản  <span> （Phải được lấp đầy khi phân phối sơ yếu lý lịch）</span></h2>
             		<span class="c_edit"></span>
             		<div class="basicShow">
-        				<span>Tên: ${user.username!""} |  giới tính: <#if user.sex == 0>LGBT<#elseif user.sex == 1>nam<#else>nữ</#if> |Giáo dục: ${user.degree!""}  <br> 
+        				<span>Tên: ${user.username!""} |  giới tính: <#if user.sex == 0>LGBT<#elseif user.sex == 1>nam<#else>nữ</#if> |Giáo dục: ${user.degree!""}  |  
 								kinh nghiệm: ${user.workExperience!""}<br>
             				Điện thoại: ${user.mobile!"Không có gì cho thời điểm hiện tại"}  |  Thư: ${user.email!"Không có gì cho thời điểm hiện tại"} <br>
             			</span>
@@ -330,7 +330,7 @@ var youdao_conv_id = 271546;
             		</div><!--end .expectEdit-->
             		<div class="expectAdd pAdd">
             			<#if ExpectWork??>
-            					Thành phố mong đợi：${ExpectWork.city!"vô giá trị"}   |  Tính chất công việc: ${ExpectWork.type!"toàn thời gian"}  <br>  Vị trí mong muốn: ${ExpectWork.position!"vô giá trị"}  |  Hy vọng tiền lương hàng tháng: ${ExpectWork.money!"vô giá trị"}
+            					Thành phố mong đợi：${ExpectWork.city!"vô giá trị"}   |  Tính chất công việc:${ExpectWork.type!"toàn thời gian"}  |  Vị trí mơ ước:${ExpectWork.position!"空"}  |  Hy vọng tiền lương hàng tháng:${ExpectWork.money!"空"}
 						<#else>
 							Điền vào những kỳ vọng chính xác có thể cải thiện đáng kể tỷ lệ săn bắn thành công ...<br>
 							Hãy đến và thêm kỳ vọng của bạn!
@@ -544,7 +544,7 @@ var youdao_conv_id = 271546;
             		</div><!--end .experienceEdit-->
             		<div class="experienceAdd pAdd">
             			<#if WorkExperience??>
-            				Tên công ty: ${WorkExperience.name!""} | Tiêu đề công việc: ${WorkExperience.position!""} <br> Thời gian BD: Năm ${WorkExperience.startYear!""} Tháng ${WorkExperience.startMonth!""} | Thời gian KT: Năm ${WorkExperience.endYear!""} Tháng ${WorkExperience.endMonth!""}
+            				Tên công ty: ${WorkExperience.name!""} | Tiêu đề công việc: ${WorkExperience.position!""} | Thời gian bắt đầu: ${WorkExperience.startYear!""}Năm ${WorkExperience.startMonth!""}Tháng | Thời gian kết thúc:  ${WorkExperience.endYear!""}Năm ${WorkExperience.endMonth!""}Tháng
             			<#else>
             				Kinh nghiệm làm việc phản ánh tốt nhất khả năng làm việc của bạn!<br>
 							Sau khi nó là hoàn hảo, bạn có thể gửi sơ yếu lý lịch của bạn!
@@ -773,7 +773,7 @@ var youdao_conv_id = 271546;
             		</div><!--end .projectEdit-->
             		<div class="projectAdd pAdd">
             			<#if ProjectExperience??>
-            				Tên dự án: ${ProjectExperience.name!""} | Vị trí : ${ProjectExperience.position!""} <br> Thời gian BD: Năm ${WorkExperience.startYear!""} Tháng ${WorkExperience.startMonth!""} | Thời gian KT: Năm ${WorkExperience.endYear!""} Tháng ${WorkExperience.endMonth!""}
+            				Tên dự án: ${ProjectExperience.name!""} | Nhấn AS: ${ProjectExperience.position!""} | Thời gian bắt đầu: ${ProjectExperience.startYear!""}Năm ${ProjectExperience.startMonth!""}Tháng | Thời gian kết thúc:  ${ProjectExperience.endYear!""}Năm ${ProjectExperience.endMonth!""}Tháng
             				 | mô tả dự án:${ProjectExperience.content!""}
             			<#else>
             			Kinh nghiệm dự án là một chỉ số quan trọng <br>
@@ -980,7 +980,7 @@ var youdao_conv_id = 271546;
             		<div class="educationalAdd pAdd">
             			
 						<#if EducationBackground??>
-							Tên trường： ${EducationBackground.school_name!""} | Bằng cấp học thuật： ${EducationBackground.studyRecord!""} | Chuyên ngành： ${EducationBackground.major!""} | Thời gian bắt đầu： ${EducationBackground.startYear!""}Năm | Thời gian kết thúc：  ${EducationBackground.endYear!""}Năm
+							Tên trường： ${EducationBackground.school_name!""} | Bằng cấp học thuật： ${EducationBackground.studyRecord!""} | tiêu đề chuyên nghiệp： ${EducationBackground.major!""} | Thời gian bắt đầu： ${EducationBackground.startYear!""}Năm | Thời gian kết thúc：  ${EducationBackground.endYear!""}Năm
 						<#else>
 							Nền tảng giáo dục có thể phản ánh đầy đủ khả năng học tập và chuyên nghiệp của bạn！<br>
 								Sau khi nó là hoàn hảo, bạn có thể gửi sơ yếu lý lịch của mình！
@@ -1082,8 +1082,72 @@ var youdao_conv_id = 271546;
 		        			</#if>
 		        		</div><!--end .workAdd-->
             	</div><!--end #worksShow-->
+
+						<div id="Member">
+						<!--Có một đội ngũ sáng lập-->
+						<dl class="c_section c_member">
+							<dt>
+								<h2><em></em>Tải thông tin CV </h2>
+							</dt>
+							<dd>
+								<div class="member_wrap">
+									<!-- Biên tập viên -người sáng lập -->
+									<div class="member_info newMember dn" id="edit_company_founder">
+										<form class="memberForm" id="founderForm">
+											<input type="hidden" value="common/default_headpic.png" id="file_cv">
+											<div class="new_portrait">
+												<div class="portrait_upload dn portraitNo">
+													<span>Tải lên Avatar người sáng lập</span>
+												</div>
+												<div class="portraitShow">
+													<img width="320" height="120" id="edit_preview_founder_photo" src="/home/style/images/anh-pdf.jpg">
+													<span>Cập nhật CV</span>
+												</div>
+												<input type="file" title="ủng hộ jpg、jpeg、gif、png Định dạng，Tệp nhỏ hơn 1M" onchange="uploadCompanyFounderPhoto();" id="founder_photo_file">
+												<input type="hidden" value="7" name="type" class="type">
+												<input type="hidden" value="images/leader_default.png" name="photo" class="leaderInfos">
+												<em>
+													Kích thước CV: Dưới 1m
+												</em>
+											</div>
+											
+											<div class="clear"></div>
+											<input type="button" value="Lưu" class="btn_small" onclick="saveCompanyFounder();">
+											<a class="btn_cancel_s member_delete" href="javascript:void(0)">Hủy bỏ</a>
+											<input type="hidden" value="11493" class="leader_id">
+										</form>
+									</div>
+									<!-- Người sáng lập hiển thị -->
+									<div class="member_info" id="show_company_founder">
+										<a title="Biên tập viên -người sáng lập" class="c_edit member_edit" href="javascript:void(0)"></a>
+										<div class="m_portrait">
+											<div></div>
+											<img width="120" height="120" id="preview_founder_photo" alt="Mặt trời taiying" src="/home/style/images/anh-pdf.jpg">
+											
+										</div>
+										<div class="m_name">
+											<#if WorkShow??>
+												<#if WorkShow.fileCv??>
+														File CV: Đã có sẵn
+													<#else>
+														File CV: trống rỗng
+												</#if>
+												<#else>
+													File CV: trống rỗng
+											</#if>
+										</div>
+										<div class="m_intro"></div>
+									</div>
+								</div><!-- end .member_wrap -->
+							</dd>
+						</dl>
+					</div> <!-- end #Member -->
+
 				<input type="hidden" id="resumeId" value="268472">
             </div><!--end .content_l-->
+
+
+
             <div class="content_r">
             	
 
@@ -1108,6 +1172,8 @@ var youdao_conv_id = 271546;
    
 <!------------------------------------- end ----------------------------------------->  
 
+
+<script src="/home/style/js/company.min.js" type="text/javascript"></script>
 <script src="/home/style/js/Chart.min.js" type="text/javascript"></script>
 <script src="/home/style/js/profile.min.js" type="text/javascript"></script>
 <!-- <div id="profileOverlay"></div> -->
@@ -1121,6 +1187,70 @@ var youdao_conv_id = 271546;
 
 
 <script type="text/javascript">
+
+			//Tải lên hình ảnh người sáng lập công ty
+			function uploadCompanyFounderPhoto() {
+				if ($("#founder_photo_file").val() == '') return;
+				var formData = new FormData();
+				//Lấy ra cái đầu tiên trong hình ảnh đã chọn
+				formData.append('photo', document.getElementById('founder_photo_file').files[0]);
+				//Hộp Phiên nhập tiến độ mở ra
+				$.ajax({
+					url: '/upload/upload_photo',
+					type: 'post',
+					data: formData,
+					contentType: false,
+					processData: false,
+					success: function(data) {
+						if (data.code == 0) {
+							$("#successMsg").html("Tải lên thành công!");
+							$.colorbox({inline:true, href:$("#successTip"),title:"Thông báo"});
+							$("#edit_preview_founder_photo").attr('src', '/photo/view?filename=' + data.data);
+							$("#preview_founder_photo").attr('src', '/photo/view?filename=' + data.data);
+							$("#file_cv").val(data.data);
+						} else {
+							$("#errorMsg").html("Tải lên thất bại," + data.msg + "!!!");
+							$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
+						}
+					},
+					error: function(data) {
+						$("#errorMsg").html("Tải lên không thành công, vui lòng tải lên đúng định dạng hoặc tệp kích thước！!!!");
+						$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
+					}
+				});
+			}
+
+				//Lưu thông tin người sáng lập của công ty
+			function saveCompanyFounder() {
+				var fileCv = $("#file_cv").val();
+				//Một biểu mẫu thống nhất không phải là xác minh trống
+				if (!checkForm('founderForm')) {
+					return;
+				}
+				$.ajax({
+					url: '/home/resume/save_cv',
+					dataType: 'json',
+					type: 'post',
+					data: {fileCv:fileCv},
+					success: function(data) {
+						if (data.code == 0) {
+							$("#successMsg").html("File CV đã lưu thành công!");
+							$.colorbox({inline:true, href:$("#successTip"),title:"Thông báo"});
+							setTimeout(function() {
+								window.location.reload(); //Trang làm mới
+							}, 3000);
+						} else {
+		
+								
+								$("#errorMsg").html("Lưu không thành công," + data.msg + "!!!");
+								$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
+							
+						
+						}
+					}
+				});
+			}
+
 window.onload = function(){
 <!-----------修改时  期望工作部分赋值---------------------->
 	<#if ExpectWork??>

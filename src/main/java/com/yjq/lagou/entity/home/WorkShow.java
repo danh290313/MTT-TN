@@ -32,7 +32,20 @@ public class WorkShow extends BaseEntity{
 	
 	@ValidateEntity(required=false)
 	@Column(name="url")
-	private String url;  //Liên kết công việc
+	private String url; //Liên kết công việc
+	
+	@ValidateEntity(required=false)
+	@Column(name="file_cv")
+	private String fileCv;
+
+	public String getFileCv() {
+		return this.fileCv;
+	}
+
+	public void setFileCv(String fileCv) {
+		this.fileCv = fileCv;
+	}
+	 //Liên kết công việc
 	
 	@Lob
     @Basic(fetch = FetchType.LAZY)   //Loại là longtext

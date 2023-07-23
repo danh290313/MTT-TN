@@ -454,36 +454,78 @@ public class HomeResumeController {
 	@ResponseBody
 	public Result<Boolean> saveWorkShow(WorkShow workShow,HttpServletRequest request)
 	{
-		if(workShow == null) {
+		if (workShow == null) {
 			return Result.error(CodeMsg.DATA_ERROR);
 		}
 		User session_user = (User) request.getSession().getAttribute("user");
 		workShow.setUser(session_user);
-		
+
 		//Kiểm tra xem bạn có thêm một nền tảng giáo dục không
 		WorkShow findWorkShow = workShowService.findWorkShowByUserId(session_user.getId());
-		if(findWorkShow != null){
+		if (findWorkShow != null) {
 			//Sửa đổi hoạt động
-			BeanUtils.copyProperties(workShow, findWorkShow, "id","createTime","updateTime");
-			if(workShowService.save(findWorkShow) == null){
+			BeanUtils.copyProperties(workShow, findWorkShow, "id", "createTime", "updateTime");
+			if (workShowService.save(findWorkShow) == null) {
 				return Result.error(CodeMsg.RESUME_WORK_SHOW_SAVE_ERROR);
 			}
-		}else {
+		} else {
 			//Thêm hoạt động
-			if(workShowService.save(workShow) == null){
+			if (workShowService.save(workShow) == null) {
 				return Result.error(CodeMsg.RESUME_WORK_SHOW_SAVE_ERROR);
 			}
 		}
-		
+
 		//Cập nhật thời gian sửa đổi cuối cùng
 		session_user.setUpdateTime(new Date());
-		if(userService.save(session_user) == null){
+		if (userService.save(session_user) == null) {
 			return Result.error(CodeMsg.USER_UPDATE_TIME_ERROR);
 		}
 		//Cập nhật quyền của người dùng
 		User new_session_user = userService.find(session_user.getId());
 		request.getSession().setAttribute(SessionConstant.SESSION_USER_LOGIN_KEY, new_session_user);
+
+		return Result.success(true);
+	}
+	
+	@RequestMapping(value="/save_cv",method=RequestMethod.POST)
+	@ResponseBody
+	public Result<Boolean> saveCV(WorkShow workShow,HttpServletRequest request)
+	{
+		if (workShow == null) {
+			return Result.error(CodeMsg.DATA_ERROR);
+		}
+		User session_user = (User) request.getSession().getAttribute("user");
+		workShow.setUser(session_user);
+
+		//Kiểm tra xem bạn có thêm một nền tảng giáo dục không
+		WorkShow findWorkShow = workShowService.findWorkShowByUserId(session_user.getId());
+		if (findWorkShow != null) {
+			//Sửa đổi hoạt động
+			BeanUtils.copyProperties(workShow, findWorkShow, "id", "createTime", "updateTime");
+			if (workShowService.save(findWorkShow) == null) {
+				return Result.error(CodeMsg.RESUME_WORK_SHOW_SAVE_ERROR);
+			}
+		} else {
+			//Thêm hoạt động
+			if (workShowService.save(workShow) == null) {
+				return Result.error(CodeMsg.RESUME_WORK_SHOW_SAVE_ERROR);
+			}
+		}
 		
+		
+		
+		// Company findCompany = companyService.findByUserId(session_user.getId());
+		// if(findCompany == null) {
+		// 	//Để người dùng điền vào thông tin cơ bản của tên và giá trị trước tiên
+		// 	return Result.error(CodeMsg.COMPANY_NAME_AND_VALUE_PRIORITY);
+		// }else {
+		// 	//Sửa đổi hoạt động
+		// 	company.setState("Để được xem xét");
+		// 	BeanUtils.copyProperties(company, findCompany, "id","createTime","updateTime","user","name","tags","value","photo","productPhoto","productTitle","productContent","introduction","locale","territory","scale","url","finance");
+		// 	if(companyService.save(findCompany) == null){
+		// 		return Result.error(CodeMsg.COMPANY_FOUNDER_SAVE_ERROR);
+		// 	}
+		// }
 		return Result.success(true);
 	}
 }
