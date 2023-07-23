@@ -292,10 +292,10 @@ public class HomeCompanyController {
 		if(StringUtil.isEmpty(company.getFounderPosition())){
 			return Result.error(CodeMsg.COMPANY_FOUNDER_POSITION_EMPTY);
 		}
-		if(company.getFounderName().length() > 10){
+		if(company.getFounderName().length() > 50){
 			return Result.error(CodeMsg.COMPANY_FOUNDER_NAME_WORD_OVER);
 		}
-		if(company.getFounderPosition().length() > 15){
+		if(company.getFounderPosition().length() > 30){
 			return Result.error(CodeMsg.COMPANY_FOUNDER_POSITION_WORD_OVER);
 		}
 		User session_user = (User) request.getSession().getAttribute(SessionConstant.SESSION_USER_LOGIN_KEY);

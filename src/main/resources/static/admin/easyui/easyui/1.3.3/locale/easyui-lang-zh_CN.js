@@ -1,7 +1,7 @@
 if ($.fn.pagination){
 	$.fn.pagination.defaults.beforePageText = 'Đầu tiên';
-	$.fn.pagination.defaults.afterPageText = 'chung{pages}Trang';
-	$.fn.pagination.defaults.displayMsg = 'trình diễn{from}đến{to},chung{total}Ghi';
+	$.fn.pagination.defaults.afterPageText = 'Tổng {pages} trang';
+	$.fn.pagination.defaults.displayMsg = 'Đang {from} đến {to}, Tổng {total} dòng';
 }
 if ($.fn.datagrid){
 	$.fn.datagrid.defaults.loadMsg = 'Đối xử với nó, vui lòng đợi một chút。。。';
@@ -10,37 +10,37 @@ if ($.fn.treegrid && $.fn.datagrid){
 	$.fn.treegrid.defaults.loadMsg = $.fn.datagrid.defaults.loadMsg;
 }
 if ($.messager){
-	$.messager.defaults.ok = '确定';
-	$.messager.defaults.cancel = '取消';
+	$.messager.defaults.ok = 'Chắc chắn';
+	$.messager.defaults.cancel = 'Hủy bỏ';
 }
 if ($.fn.validatebox){
-	$.fn.validatebox.defaults.missingMessage = '该输入项为必输项';
-	$.fn.validatebox.defaults.rules.email.message = '请输入有效的电子邮件地址';
-	$.fn.validatebox.defaults.rules.url.message = '请输入有效的URL地址';
-	$.fn.validatebox.defaults.rules.length.message = '输入内容长度必须介于{0}和{1}之间';
-	$.fn.validatebox.defaults.rules.remote.message = '请修正该字段';
+	$.fn.validatebox.defaults.missingMessage = 'Mục đầu vào này là một truyền dịch cần thiết';
+	$.fn.validatebox.defaults.rules.email.message = 'Vui lòng nhập địa chỉ email hợp lệ';
+	$.fn.validatebox.defaults.rules.url.message = 'Vui lòng nhập địa chỉ URL hợp lệ';
+	$.fn.validatebox.defaults.rules.length.message = 'Độ dài của đầu vào phải ở{0}Và{1}giữa';
+	$.fn.validatebox.defaults.rules.remote.message = 'vui lòng sửa phạm vi này';
 }
 if ($.fn.numberbox){
-	$.fn.numberbox.defaults.missingMessage = '该输入项为必输项';
+	$.fn.numberbox.defaults.missingMessage = 'Mục đầu vào này là một truyền dịch cần thiết';
 }
 if ($.fn.combobox){
-	$.fn.combobox.defaults.missingMessage = '该输入项为必输项';
+	$.fn.combobox.defaults.missingMessage = 'Mục đầu vào này là một truyền dịch cần thiết';
 }
 if ($.fn.combotree){
-	$.fn.combotree.defaults.missingMessage = '该输入项为必输项';
+	$.fn.combotree.defaults.missingMessage = 'Mục đầu vào này là một truyền dịch cần thiết';
 }
 if ($.fn.combogrid){
-	$.fn.combogrid.defaults.missingMessage = '该输入项为必输项';
+	$.fn.combogrid.defaults.missingMessage = 'Mục đầu vào này là một truyền dịch cần thiết';
 }
 if ($.fn.calendar){
 	$.fn.calendar.defaults.weeks = ['日','一','二','三','四','五','六'];
 	$.fn.calendar.defaults.months = ['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月'];
 }
 if ($.fn.datebox){
-	$.fn.datebox.defaults.currentText = '今天';
-	$.fn.datebox.defaults.closeText = '关闭';
-	$.fn.datebox.defaults.okText = '确定';
-	$.fn.datebox.defaults.missingMessage = '该输入项为必输项';
+	$.fn.datebox.defaults.currentText = 'Hôm nay';
+	$.fn.datebox.defaults.closeText = 'Khép kín';
+	$.fn.datebox.defaults.okText = 'Chắc chắn';
+	$.fn.datebox.defaults.missingMessage = 'Mục đầu vào này là một truyền dịch cần thiết';
 	$.fn.datebox.defaults.formatter = function(date){
 		var y = date.getFullYear();
 		var m = date.getMonth()+1;

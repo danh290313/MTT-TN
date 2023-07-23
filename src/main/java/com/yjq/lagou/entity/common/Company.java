@@ -11,11 +11,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-/**
- * 公司实体类
- *
- *
- */
+
 @Entity
 @Table(name="company")
 @EntityListeners(AuditingEntityListener.class)  //Nó được sử dụng để theo dõi các hoạt động thêm hoặc xóa lớp vật lý.
@@ -80,10 +76,10 @@ public class Company extends BaseEntity{
 	@Column(name="finance")
 	private String finance = DEDAULT_FINANCE;//Giai đoạn tài chính mặc định của công ty
 	
-	@Column(name="founder_name",length=10)
+	@Column(name="founder_name",length=50)
 	private String founderName;//Người sáng lập công ty
 	
-	@Column(name="founder_position",length=15)
+	@Column(name="founder_position",length=30)
 	private String founderPosition;//Vị trí người sáng lập công ty
 	
 	

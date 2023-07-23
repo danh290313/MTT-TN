@@ -1,7 +1,7 @@
 ﻿if ($.fn.pagination){
 	$.fn.pagination.defaults.beforePageText = 'Đầu tiên';
-	$.fn.pagination.defaults.afterPageText = 'chung{pages}Trang';
-	$.fn.pagination.defaults.displayMsg = 'trình diễn{from}đến{to},chung{total}Ghi';
+	$.fn.pagination.defaults.afterPageText = 'Tổng {pages} trang';
+	$.fn.pagination.defaults.displayMsg = 'Đang {from} đến {to}, Tổng {total} dòng';
 }
 if ($.fn.datagrid){
 	$.fn.datagrid.defaults.loadMsg = 'Nó đang đối phó với nó, xin vui lòng đợi một chút.。。';

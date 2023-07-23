@@ -161,7 +161,7 @@ ul.hot_pos i{width: 12px;height: 14px;position:absolute;background:url(img/hot.p
 .hot_pos .recommend:hover span{display:block;}
 .hot_pos .recommend em{font-size:12px;color:#999;}
 .companyTags li{font-size:12px;float:left; padding:0 5px; background:#fff; border:1px solid #a9a9a9;color:#a9a9a9;margin:5px 15px 0 0; line-height:18px;}
-.btn{font-size:16px;color:#fff;background:#0d9572 url(img/arrow.png) 88px center no-repeat;padding:5px 40px 5px 15px;margin:10px 0 0 0;}
+.btn{font-size:16px;color:#fff;background:#0d9572 url(img/arrow.png) 99px center no-repeat;padding:5px 40px 5px 15px;margin:10px 0 0 0;}
 .btn:hover{background-color:#00694e; color:#fff;}
 #backtop{display:none;background:url(img/backtop.png) left top no-repeat;width:28px;height:64px;position:fixed;bottom:80px;margin-left:1060px; cursor:pointer;}
 #backtop:hover{background-position:right top !important;}

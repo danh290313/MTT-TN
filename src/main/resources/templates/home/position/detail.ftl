@@ -106,7 +106,7 @@ var youdao_conv_id = 271546;
                     </dd>
                 </dl>
                 	<a href="javascript:void(0);" class="eventAd">
-                  		<img src="/home/style/images/zhouyou.jpg" width="280" height="135" />
+                  		<img src="/home/style/images/tuyen-dung.jpg" width="280" height="135" />
             		</a>
             </div>
        	</div>                    

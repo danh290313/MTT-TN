@@ -466,7 +466,7 @@ var youdao_conv_id = 271546;
 							                    	<input type="hidden" value="images/leader_default.png" name="photo" class="leaderInfos">
 						                            <em>
 												                                Kích thước: 120*120px<br> 	
-												                               Kích thước: Dưới 1m
+												                               Kích thước: < 1m
 						                            </em>
 						                        </div>
 						                        <input type="text" placeholder="Vui lòng nhập tên của người sáng lập"  class="require" id="company_founder_name" name="name" tips="Tên người sáng lập của công ty không thể trống!"  attributes="error_company_founder_name">	
@@ -927,7 +927,7 @@ function saveCompanyFounder(){
 		data:{founderName:founderName,founderPosition:founderPosition,founderPhoto:founderPhoto},
 		success:function(data){
 			if(data.code == 0){
-				$("#successMsg").html("Thông tin của người sáng lập công ty đã được bảo tồn thành công!");
+				$("#successMsg").html("Thông tin của người sáng lập công ty đã được lưu thành công!");
 				$.colorbox({inline:true, href:$("#successTip"),title:"Thông báo"});
 				setTimeout(function(){  
 						window.location.reload();//Trang làm mới

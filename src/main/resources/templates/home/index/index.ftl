@@ -150,10 +150,10 @@
 				<script type="text/javascript" src="/home/style/js/search.min.js"></script>
 				<dl class="hotSearch">
 					<dt>Từ khóa phổ biến:</dt>
-					<dd><a href="/home/position/list?search_value=java">java</a></dd>
-					<dd><a href="/home/position/list?search_value=Android">Android</a></dd>
-					<dd><a href="/home/position/list?search_value=iOS">iOS</a></dd>
-					<dd><a href="/home/position/list?search_value=html">lhtml</a></dd>
+					<dd><a href="/home/position/list?search_value=java">JAVA</a></dd>
+					<dd><a href="/home/position/list?search_value=php">PHP</a></dd>
+					<dd><a href="/home/position/list?search_value=asp">ASP</a></dd>
+					<dd><a href="/home/position/list?search_value=html">HTML</a></dd>
 					<dd><a href="/home/position/list?search_value=sản phẩm">sản phẩm</a></dd>
 					<dd><a href="/home/position/list?search_value=bán hàng">bán hàng</a></dd>
 					<dd><a href="/home/position/list?search_value=Nhân sự">Nhân sự</a></dd>
