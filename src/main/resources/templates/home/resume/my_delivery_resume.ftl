@@ -12,7 +12,6 @@
 <meta name="keywords" content="">
 <meta content="QIQ6KC1oZ6" name="baidu-site-verification">
 
-<!-- <div class="web_root"  style="display:none">http://www.lagou.com</div> -->
 <script type="text/javascript">
 var ctx = "http://www.lagou.com";
 console.log(1);

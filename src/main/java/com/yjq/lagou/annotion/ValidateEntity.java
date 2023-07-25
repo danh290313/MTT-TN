@@ -22,25 +22,25 @@ public @interface ValidateEntity {
 	
 	
 	
-	public int maxLength() default -1;//最大长度
+	public int maxLength() default -1;//Chiều dài tối đa
 	
-	public int minLength() default -1;//最小长度
+	public int minLength() default -1;//Chiều dài tối thiểu
 	
-	public long maxValue() default -1;//大值
+	public long maxValue() default -1;//Giá trị cao
 	
-	public long minValue() default -1;//最小值
-	
-	
+	public long minValue() default -1;//Tối thiểu
 	
 	
 	
-	public String errorRequiredMsg() default "";//值为null时的错误提示信息
 	
-	public String errorMinLengthMsg() default "";//最小长度不满足时的提示信息
 	
-	public String errorMaxLengthMsg() default "";//最大长度不满足时的提示信息
+	public String errorRequiredMsg() default "";//Thông tin nhắc lỗi khi giá trị là null
 	
-	public String errorMinValueMsg() default "";//最小值不满足时的提示信息
+	public String errorMinLengthMsg() default "";//Thông tin nhanh chóng khi độ dài tối thiểu không được thỏa mãn
 	
-	public String errorMaxValueMsg() default "";//最大值不满足时的提示信息
+	public String errorMaxLengthMsg() default "";//Thông tin nhanh chóng khi độ dài tối đa không được thỏa mãn
+	
+	public String errorMinValueMsg() default "";//Không có gì thông tin khi giá trị tối thiểu không được thỏa mãn
+	
+	public String errorMaxValueMsg() default "";//Thông tin nhanh chóng khi giá trị tối đa không được thỏa mãn
 }
