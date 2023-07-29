@@ -75,7 +75,7 @@ public class IndexController {
 		model.addAttribute("secondPositionCategoryList",secondList);
 		model.addAttribute("thirdPositionCategoryList",thirdList);
 		model.addAttribute("quickIndexList",quickIndexList);
-		model.addAttribute("index", "index"); //top_menu显示
+		model.addAttribute("index", "index"); //top_menu
 		model.addAttribute("PositionList", positionService.findPositionList("effective", 0, 20));//获取20个职位列表
 		model.addAttribute("PositionTotal", positionService.getPositionTotal("effective"));
 		

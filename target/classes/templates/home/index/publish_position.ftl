@@ -205,7 +205,7 @@ var youdao_conv_id = 271546;
                                 	<td><span class="redstar">*</span></td>
                                 	<td>Thành phố: </td>
                                 	<td>
-                                    	<input type="text" id="position_city" placeholder="Vui lòng vào một thành phố làm việc, chẳng hạn như: Bắc Kinh"   class="require" tips="Thành phố nơi vị trí được đặt không thể trống!"  attributes="error_position_city">
+                                    	<input type="text" id="position_city" placeholder="Vui lòng vào một thành phố làm việc"   class="require" tips="Thành phố nơi vị trí được đặt không thể trống!"  attributes="error_position_city">
                                     	<span for="position_city" generated="true" class="error" id="error_position_city" style="display:none">Thành phố nơi vị trí được đặt không thể trống!</span>
                                     </td>
                                 </tr>
@@ -250,11 +250,11 @@ var youdao_conv_id = 271546;
                                 	<td>Yêu cầu học tập</td>
                                 	<td>
                                     	<input type="hidden" id="education" value="" name="education">
-                                        <input type="button" value="Vô hạn" id="select_education" class="selectr selectr_380">                                      
+                                        <input type="button" value="Không yêu cầu" id="select_education" class="selectr selectr_380">                                      
                                         <div class="boxUpDown boxUpDown_380 dn" id="box_education" style="display: none;">
                                             <ul>
                                                     <li>
-                                                       	 Vô hạn
+                                                       	 Không yêu cầu
                                                     </li>
                                                     <li>
                                                        	 Cao đẳng
@@ -279,15 +279,15 @@ var youdao_conv_id = 271546;
                                 	<td width="25"><span class="redstar">*</span></td>
                                 	<td width="85">Yêu cầu: </td>
                                 	<td>
-                                    	<input type="text" placeholder="30 từ mô tả sự hấp dẫn của vị trí này, chẳng hạn như: lợi ích, triển vọng phát triển, v.v."    class="input_520 require" id="position_advantage" tips="Sự cám dỗ của vị trí không thể trống rỗng!"  attributes="error_position_advantage">
-                                    	<span for="position_advantage" generated="true" class="error" id="error_position_advantage" style="display:none">Sự cám dỗ của vị trí không thể trống rỗng!</span>
+                                    	<input type="text" placeholder="Mô tả yêu cầu của vị trí"    class="input_520 require" id="position_advantage" tips="Sự yêu cầu của vị trí không thể trống rỗng!"  attributes="error_position_advantage">
+                                    	<span for="position_advantage" generated="true" class="error" id="error_position_advantage" style="display:none">Sự yêu cầu của vị trí không thể trống rỗng!</span>
                                     </td>
                                 </tr>
                             	<tr>
                                 	<td><span class="redstar">*</span></td>
                                 	<td>mô tả công việc</td>
                                 	<td>
-                                    	<span class="c9 f14">(Nên mô tả trách nhiệm làm việc trong việc tách.Không nhập hộp thư của công ty, số điện thoại liên hệ và các liên kết bên ngoài khác, nếu không nó sẽ được tự động xóa)</span>
+                                    	<span class="c9 f14">(Mô tả trách nhiệm làm việc trong việc)</span>
                                     	<textarea id="position_description" class="require"  tips="Mô tả công việc không thể trống！"  attributes="error_position_description"></textarea>
                                        	<span for="position_description" generated="true" class="error" id="error_position_description" style="display:none">Mô tả công việc không thể trống!</span>
                                     </td>

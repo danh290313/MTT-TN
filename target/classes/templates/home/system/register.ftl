@@ -6,7 +6,7 @@
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 <link rel="alternate" media="handheld"  />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Đăng ký-nền tảng tuyển dụng Internet chuyên nghiệp nhất</title>
+<title>nền tảng tuyển dụng</title>
 <meta property="qc:admins" content="23635710066417756375" />
 <meta content="" name="description">
 <meta content="" name="keywords">
@@ -71,7 +71,7 @@ var youdao_conv_id = 271546;
                 <input type="text" id="username" name="username" class="require" tabindex="3" placeholder="Hãy nhập một nickname"   tips="Biệt danh nên được điền！" attributes="error_username" />
                 <span for="username" generated="true" class="error" id="error_username" style="display:none">Hãy nhập một nickname</span>
                 
-            	<input type="text" id="cpacha" name="cpacha" class="require" tabindex="4" placeholder="vui lòng nhập mã xác nhận" /  tips="Mã xác minh phải được điền！" attributes="error_cpacha" >
+            	<input type="text" id="cpacha" name="cpacha" class="require" tabindex="4" placeholder="Nhập mã xác nhận" /  tips="Mã xác minh phải được điền！" attributes="error_cpacha" >
             	&nbsp;&nbsp;<a onclick="sendMailCpacha();" href="javascript:void(0);">Gửi mã xác minh</a>
             	<span for="cpacha" generated="true" class="error" id="error_cpacha" style="display:none">nhập mã xác nhận</span>
             	

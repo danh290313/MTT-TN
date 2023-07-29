@@ -12,9 +12,6 @@ import com.yjq.lagou.entity.home.Resume;
 @Repository
 public interface ResumeDao extends JpaRepository<Resume, Long>{
 
-	
-	
-
 	@Query("select r from Resume r where user_id = :user_id and position_id = :position_id")
 	public Resume findByPositionIdAndUserId(@Param("user_id")Long user_id,@Param("position_id")Long position_id);
 	

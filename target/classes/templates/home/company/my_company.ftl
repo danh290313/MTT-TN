@@ -6,7 +6,7 @@
 <link  media="handheld" rel="alternate">
 <!-- end Nhiều mây -->
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-<title>Công ty của tôi-nền tảng tuyển dụng Internet chuyên nghiệp nhất</title>
+<title>Nền tảng tuyển dụng</title>
 <meta content="23635710066417756375" property="qc:admins">
 
 <meta content="QIQ6KC1oZ6" name="baidu-site-verification">
@@ -224,7 +224,7 @@ var youdao_conv_id = 271546;
 					                    <dd>
 						                    <form id="companyDesForm">
 						                        <textarea placeholder="Vui lòng mô tả hồ sơ của công ty, văn hóa doanh nghiệp, v.v." name="companyProfile" id="companyProfile"></textarea>		                                        
-						                        <div class="word_count fr">Bạn cũng có thể nhập <span>1000</span> 字</div>
+						                        <div class="word_count fr">Bạn cũng có thể nhập <span>1000</span> Kí tự</div>
 						                        <div class="clear"></div>
 						                        <input type="button" value="Lưu" id="submitProfile" class="btn_small" onclick="saveCompanyIntroducation();">
 						                        <a id="delProfile" class="btn_cancel_s" href="javascript:void(0)">Hủy bỏ</a>

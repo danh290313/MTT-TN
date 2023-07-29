@@ -6,7 +6,7 @@
 <link  media="handheld" rel="alternate">
 
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-<title>Dịch vụ nhận hồ sơ giao hàng của tôi-nền tảng tuyển dụng Internet chuyên nghiệp nhất</title>
+<title>nền tảng tuyển dụng</title>
 <meta content="23635710066417756375" property="qc:admins">
 <meta name="description" content="">
 <meta name="keywords" content="">

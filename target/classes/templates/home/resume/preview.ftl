@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html><head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-<title>Tiếp tục xem trước của tôi về sơ yếu lý lịch-nền tảng tuyển dụng internet chuyên nghiệp nhất</title>
+<title>nền tảng tuyển dụng </title>
 <meta content="23635710066417756375" property="qc:admins">
 <meta name="description" content="">
 <meta name="keywords" content="">

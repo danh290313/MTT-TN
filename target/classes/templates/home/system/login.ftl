@@ -54,9 +54,9 @@ var youdao_conv_id = 271546;
 			  	<input type="password" id="Password" name="Password" tabindex="2" class="require" placeholder="Xin vui lòng nhập mật khẩu"  tips="Mật khẩu không thể trống!"  attributes="error_password" /  >
 			  	<span for="password" generated="true" class="error" id="error_password" style="display:none">Xin vui lòng nhập mật khẩu</span>
 			  	 
-			  	<input type="text" id="cpacha" name="cpacha" tabindex="3" class="require" placeholder="vui lòng nhập mã xác nhận"  tips="Mã xác minh phải được điền!"  attributes="error_cpacha" />
+			  	<input type="text" id="cpacha" name="cpacha" tabindex="3" class="require" placeholder="Nhập mã xác nhận"  tips="Mã xác minh phải được điền!"  attributes="error_cpacha" />
 			  	<img id="cpacha-img" title="Nhấp để chuyển đổi mã xác minh" style="cursor:pointer;margin-bottom: -13px;" src="/common/cpacha/generate_cpacha?vl=4&fs=21&w=98&h=33&method=user_login" width="110px" height="40px" onclick="changeCpacha()">
-			  	<span for="cpacha" generated="true" class="error" id="error_cpacha" style="display:none">vui lòng nhập mã xác nhận</span>
+			  	<span for="cpacha" generated="true" class="error" id="error_cpacha" style="display:none">Nhập mã xác nhận</span>
 			  	
 				<a style="color:#fff;" href="javascript:void(0);" onClick="submitLogin();" class="submitLogin" title="Đăng nhập"/>Đăng nhập </a>
 

@@ -47,7 +47,7 @@ public class Position extends BaseEntity{
 	@Column(name="work_type",nullable=false)
 	private String workType = DEFAULT_WORK_TYPE;  //Bản chất của công việc
 	
-	@ValidateEntity(required=true,requiredMaxValue=true,requiredMinValue=true,minValue=1,maxValue=1000,errorRequiredMsg="Mức lương tối thiểu của vị trí lớn hơn 0K!",errorMinValueMsg="Mức lương tối thiểu của vị trí lớn hơn 0K!",errorMaxValueMsg="Mức lương tối thiểu của vị trí không thể nhỏ hơn 1k!")
+	@ValidateEntity(required=true,requiredMaxValue=true,requiredMinValue=true,minValue=1,maxValue=5000,errorRequiredMsg="Mức lương tối thiểu của vị trí lớn hơn 0K!",errorMinValueMsg="Mức lương tối thiểu của vị trí lớn hơn 0K!",errorMaxValueMsg="Mức lương tối thiểu của vị trí không thể lớn hơn 5k!")
 	@Column(name="min_money",nullable=false)
 	private int minMoney;  //Mức lương tối thiểu của vị trí (trong đơn vị)
 	

@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title> Đăng nhập quản trị viên nền</title>
+  <title> Đăng nhập quản trị viên</title>
   <meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
   <meta name="author" content="Vincent Garreau">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -37,7 +37,7 @@
 				<div class="login-center clearfix">
 					<div class="login-center-img"><img src="/admin/login/images/cpacha.png"></div>
 					<div class="login-center-input">
-						<input style="width:50%;" type="text" class="required" name="cpacha" id="cpacha" value="" placeholder="vui lòng nhập mã xác nhận" onfocus="this.placeholder=&#39;&#39;" onblur="this.placeholder=&#39;vui lòng nhập mã xác nhận&#39;" tips="Mã xác minh phải được điền">
+						<input style="width:50%;" type="text" class="required" name="cpacha" id="cpacha" value="" placeholder="Nhập mã xác nhận" onfocus="this.placeholder=&#39;&#39;" onblur="this.placeholder=&#39;Nhập mã xác nhận&#39;" tips="Mã xác minh phải được điền">
 						<div class="login-center-input-text">Mã xác nhận</div>
 						<img id="cpacha-img" title="Nhấp để chuyển đổi mã xác minh" style="cursor:pointer;" src="/common/cpacha/generate_cpacha?vl=4&fs=21&w=98&h=33&method=admin_login" width="110px" height="30px" onclick="changeCpacha()">
 					</div>

@@ -16,7 +16,6 @@ import com.yjq.lagou.constant.SessionConstant;
 import com.yjq.lagou.entity.common.User;
 import com.yjq.lagou.service.common.UserService;
 import com.yjq.lagou.util.StringUtil;
-import com.yjq.lagou.util.ValidateEntityUtil;
 @RequestMapping("/home/system")
 @Controller
 public class HomeSystemController {

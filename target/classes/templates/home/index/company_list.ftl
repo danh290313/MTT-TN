@@ -7,7 +7,7 @@
 <link rel="alternate" media="handheld"  />
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Danh sách công ty - Nền tảng tuyển dụng Internet chuyên nghiệp nhất</title>
+<title>Nền tảng tuyển dụng</title>
 <meta property="qc:admins" content="23635710066417756375" />
 <meta name="baidu-site-verification" content="QIQ6KC1oZ6" />
 
@@ -157,7 +157,7 @@ var youdao_conv_id = 271546;
                     <span class="c7">Dễ dàng tìm kiếm công việc</span>
                 </div>
                	<a href="javascript:void(0);"  class="eventAd">
-               		<img src="https://i0.wp.com/www.iedunote.com/img/23559/what-is-a-company.jpg?w=1280&quality=100&ssl=1" width="280" height="135" />
+               		<img src="" width="280" height="135" />
                	</a>
                	<a href="javascript:void(0);" class="eventAd">
                		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTI8puGOJefwN2x3_e5N4oOOuqK2f9920tSwg&usqp=CAU" width="280" height="135" />

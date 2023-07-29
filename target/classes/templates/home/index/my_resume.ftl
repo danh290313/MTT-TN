@@ -6,7 +6,7 @@
 <link  media="handheld" rel="alternate">
 
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-<title>lý lịch của tôi-Nền tảng tuyển dụng internet chuyên nghiệp nhất</title>
+<title>Nền tảng tuyển dụng</title>
 <meta content="23635710066417756375" property="qc:admins">
 <meta name="description" content="">
 <meta name="keywords" content="">
@@ -39,7 +39,8 @@ var youdao_conv_id = 271546;
             <div class="content_l">
             	<div class="fl" id="resume_name">
 	            	<div class="nameShow fl">
-	            		<h1 title="${user.username!" "} Thông tin hồ sơ">${user.username!" "} Thông tin hồ sơ</h1>
+	            		<h1  title=" Thông tin hồ sơ ${user.username!" "} ">
+									Thông tin hồ sơ <span style="color: blue;  font-weight: bold;"> ${user.username!" "} </span>  </h1>
 	            		<a target="_blank" href="/home/resume/preview">Xem trước</a>
             		</div>
             	</div><!--end #resume_name-->
@@ -58,7 +59,7 @@ var youdao_conv_id = 271546;
             		</div>
             	</div><!--end #resumeScore-->
             	
-<!-----------------------------------------------------基本信息--------------------------------------------------->
+<!-----------------------------------------------------Thông tin cơ bản--------------------------------------------------->
      			<div class="profile_box" id="basicInfo">     <!--start basicinfo--> 
             		<h2>Thông tin cơ bản  <span> （Phải được lấp đầy khi phân phối sơ yếu lý lịch）</span></h2>
             		<span class="c_edit"></span>
@@ -175,7 +176,7 @@ var youdao_conv_id = 271546;
             		<input type="hidden" id="pageType" value="1"> 
             	</div><!--end #basicInfo-->
 
-<!-----------------------------------------------------期望工作--------------------------------------------------->
+<!-----------------------------------------------------Công việc mong đợi--------------------------------------------------->
             	<div class="profile_box" id="expectJob">
             		<h2>Công việc mong đợi</h2>
             		<span class="c_edit dn"></span>
@@ -203,82 +204,6 @@ var youdao_conv_id = 271546;
 								        			</dd>
 							        	  	</dl>
 							        		<dl>
-							        			<#--  <dt>ABCDEF</dt>
-								        			<dd>
-								        				<span>北京</span>
-								        				<span>长春</span>
-								        				<span>成都</span>
-								        				<span>重庆</span>
-								        				<span>长沙</span>
-								        				<span>常州</span>
-								        				<span>东莞</span>
-								        				<span>大连</span>
-								        				<span>佛山</span>
-								        				<span>福州</span>
-								        			</dd>
-							        	  	</dl>
-							        	  	<dl>
-							        			<dt>GHIJ</dt>
-								        			<dd>
-								        				<span>贵阳</span>
-								        				<span>广州</span>
-								        				<span>哈尔滨</span>
-								        				<span>合肥</span>
-								        				<span>海口</span>
-								        				<span>杭州</span>
-								        				<span>惠州</span>
-								        				<span>金华</span>
-								        				<span>济南</span>
-								        				<span>嘉兴</span>
-								        			</dd>
-							        	  	</dl>
-							        		<dl>
-							        			<dt>KLMN</dt>
-								        			<dd>
-								        				<span>昆明</span>
-								        				<span>廊坊</span>
-								        				<span>宁波</span>
-								        				<span>南昌</span>
-								        				<span>南京</span>
-								        				<span>南宁</span>
-								        				<span>南通</span>
-								        			</dd>
-							        	  	</dl>
-							        		<dl>
-						        				<dt>OPQR</dt>
-								        			<dd>
-								        				<span>青岛</span>
-								        				<span>泉州</span>
-								        			</dd>
-							        	  	</dl>
-							        		<dl>
-							        			<dt>STUV</dt>
-								        			<dd>
-								        				<span>上海</span>
-								        				<span>石家庄</span>
-								        				<span>绍兴</span>
-								        				<span>沈阳</span>
-								        				<span>深圳</span>
-								        				<span>苏州</span>
-								        				<span>天津</span>
-								        				<span>太原</span>
-								        				<span>台州</span>
-								        			</dd>
-							        	  	</dl>
-							        		<dl>
-					        					<dt>WXYZ</dt>
-								        			<dd>
-								        				<span>武汉</span>
-								        				<span>无锡</span>
-								        				<span>温州</span>
-								        				<span>西安</span>
-								        				<span>厦门</span>
-								        				<span>烟台</span>
-								        				<span>珠海</span>
-								        				<span>中山</span>
-								        				<span>郑州</span>
-								        			</dd>
-							        	  	</dl>  -->
 							        </div>  
             					</td>
             					<td>
@@ -305,16 +230,16 @@ var youdao_conv_id = 271546;
 									</td>
 	            					<td>
 	            						<input type="hidden" id="expectSalary" value="" name="expectSalary">
-	            						<input type="button" value="2k" id="select_expectSalary" class="profile_select_287 profile_select_normal">
+	            						<input type="button" value="2000k" id="select_expectSalary" class="profile_select_287 profile_select_normal">
 							        	<div class="boxUpDown boxUpDown_287 dn" id="box_expectSalary" style="display: none;">
 				          	  				<ul>
-							        			<li>2k</li>
-							        			<li>2k-5k</li>
-							        			<li>5k-10k</li>
-							        			<li>10k-15k</li>
-							        			<li>15k-25k</li>
-							        			<li>25k-50k</li>
-							        			<li>50k</li>
+							        			<li>2000k</li>
+							        			<li>2000k-5000k</li>
+							        			<li>5000k-10000k</li>
+							        			<li>10000k-15000k</li>
+							        			<li>15000k-25000k</li>
+							        			<li>25000k-50000k</li>
+							        			<li>50000k</li>
 						        	 	   </ul>
 								         </div>  
 	            					</td>
@@ -330,7 +255,7 @@ var youdao_conv_id = 271546;
             		</div><!--end .expectEdit-->
             		<div class="expectAdd pAdd">
             			<#if ExpectWork??>
-            					Thành phố mong đợi：${ExpectWork.city!"vô giá trị"}   |  Tính chất công việc:${ExpectWork.type!"toàn thời gian"}  |  Vị trí mơ ước:${ExpectWork.position!"空"}  |  Hy vọng tiền lương hàng tháng:${ExpectWork.money!"空"}
+            					Thành phố mong đợi：${ExpectWork.city!"vô giá trị"}   |  Tính chất công việc: ${ExpectWork.type!"toàn thời gian"}  <br>  Vị trí mong muốn: ${ExpectWork.position!""}  |  Hy vọng tiền lương hàng tháng: ${ExpectWork.money!""}
 						<#else>
 							Điền vào những kỳ vọng chính xác có thể cải thiện đáng kể tỷ lệ săn bắn thành công ...<br>
 							Hãy đến và thêm kỳ vọng của bạn!
@@ -345,7 +270,7 @@ var youdao_conv_id = 271546;
             		
             	</div><!--end #expectJob-->
             	
-<!-----------------------------------------------------工作经验--------------------------------------------------->
+<!-----------------------------------------------------kinh nghiệm làm việc--------------------------------------------------->
             	<div class="profile_box" id="workExperience">
             		<h2>kinh nghiệm làm việc  <span> （Phải được lấp đầy khi phân phối sơ yếu lý lịch）</span></h2>
             		<span class="c_add dn"></span>
@@ -544,7 +469,7 @@ var youdao_conv_id = 271546;
             		</div><!--end .experienceEdit-->
             		<div class="experienceAdd pAdd">
             			<#if WorkExperience??>
-            				Tên công ty: ${WorkExperience.name!""} | Tiêu đề công việc: ${WorkExperience.position!""} | Thời gian bắt đầu: ${WorkExperience.startYear!""}Năm ${WorkExperience.startMonth!""}Tháng | Thời gian kết thúc:  ${WorkExperience.endYear!""}Năm ${WorkExperience.endMonth!""}Tháng
+            				Tên công ty: ${WorkExperience.name!""} | Tiêu đề công việc: ${WorkExperience.position!""} <br> Thời gian bắt đầu: ${WorkExperience.startYear!""} - ${WorkExperience.startMonth!""} | Thời gian kết thúc:  ${WorkExperience.endYear!""} - ${WorkExperience.endMonth!""}
             			<#else>
             				Kinh nghiệm làm việc phản ánh tốt nhất khả năng làm việc của bạn!<br>
 							Sau khi nó là hoàn hảo, bạn có thể gửi sơ yếu lý lịch của bạn!
@@ -561,7 +486,7 @@ var youdao_conv_id = 271546;
 
 
 
-<!-----------------------------------------------------项目经验--------------------------------------------------->
+<!-----------------------------------------------------Kinh nghiệm dự án--------------------------------------------------->
 
 
 
@@ -757,7 +682,7 @@ var youdao_conv_id = 271546;
 	            					<td valign="top"></td> 
 									<td colspan="3">
 										<textarea class="s_textarea" name="projectDescription" placeholder="mô tả dự án"  id="pw_project_description"></textarea>
-										<div class="word_count">Bạn cũng có thể nhập <span>500</span> 字</div>
+										<div class="word_count">Bạn cũng có thể nhập <span>500</span> Kí tự</div>
 									</td>
 	            				</tr>
 	            				<tr>
@@ -773,8 +698,8 @@ var youdao_conv_id = 271546;
             		</div><!--end .projectEdit-->
             		<div class="projectAdd pAdd">
             			<#if ProjectExperience??>
-            				Tên dự án: ${ProjectExperience.name!""} | Nhấn AS: ${ProjectExperience.position!""} | Thời gian bắt đầu: ${ProjectExperience.startYear!""}Năm ${ProjectExperience.startMonth!""}Tháng | Thời gian kết thúc:  ${ProjectExperience.endYear!""}Năm ${ProjectExperience.endMonth!""}Tháng
-            				 | mô tả dự án:${ProjectExperience.content!""}
+            				Tên dự án: ${ProjectExperience.name!""} | Vị trí: ${ProjectExperience.position!""} <br> Thời gian bắt đầu: ${ProjectExperience.startYear!""} - ${ProjectExperience.startMonth!""} | Thời gian kết thúc:  ${ProjectExperience.endYear!""} ${ProjectExperience.endMonth!""}
+            				 <br> Mô tả dự án:${ProjectExperience.content!""}
             			<#else>
             			Kinh nghiệm dự án là một chỉ số quan trọng <br>
 						Hãy nói về dự án khó quên!
@@ -789,7 +714,7 @@ var youdao_conv_id = 271546;
             	</div><!--end #projectExperience-->
             	
             	
-<!-----------------------------------------------------教育背景--------------------------------------------------->
+<!-----------------------------------------------------Nền giáo dục--------------------------------------------------->
             	<div class="profile_box" id="educationalBackground">
             		<h2>Nền giáo dục<span>（Phải được lấp đầy khi phân phối sơ yếu lý lịch）</span></h2>
 					<span class="c_add dn"></span>
@@ -826,7 +751,7 @@ var youdao_conv_id = 271546;
 							        	<span class="redstar">*</span>
 							      	</td> 
 	            					<td>
-	            						<input type="text" placeholder="tiêu đề chuyên nghiệp" name="professionalName" class="require" id="eb_major" tips="Tên chuyên nghiệp không thể trống!"  attributes="error_eb_major">
+	            						<input type="text" placeholder="Chuyên ngành" name="professionalName" class="require" id="eb_major" tips="Tên chuyên nghiệp không thể trống!"  attributes="error_eb_major">
 	            						<span for="major" generated="true" class="error" id="error_eb_major" style="display:none">Tên chuyên nghiệp không thể trống!</span>
 	            					</td>
 	            					<td valign="top">
@@ -980,7 +905,7 @@ var youdao_conv_id = 271546;
             		<div class="educationalAdd pAdd">
             			
 						<#if EducationBackground??>
-							Tên trường： ${EducationBackground.school_name!""} | Bằng cấp học thuật： ${EducationBackground.studyRecord!""} | tiêu đề chuyên nghiệp： ${EducationBackground.major!""} | Thời gian bắt đầu： ${EducationBackground.startYear!""}Năm | Thời gian kết thúc：  ${EducationBackground.endYear!""}Năm
+							Tên trường： ${EducationBackground.school_name!""} | Bằng cấp học thuật： ${EducationBackground.studyRecord!""} <br> Chuyên nghành： ${EducationBackground.major!""} <br> Thời gian bắt đầu：Năm ${EducationBackground.startYear!""} | Thời gian kết thúc：Năm  ${EducationBackground.endYear!""}
 						<#else>
 							Nền tảng giáo dục có thể phản ánh đầy đủ khả năng học tập và chuyên nghiệp của bạn！<br>
 								Sau khi nó là hoàn hảo, bạn có thể gửi sơ yếu lý lịch của mình！
@@ -997,7 +922,7 @@ var youdao_conv_id = 271546;
             	
             	
             	
-<!-----------------------------------------------------自我描述--------------------------------------------------->
+<!-----------------------------------------------------Tự mô tả--------------------------------------------------->
             	<div class="profile_box" id="selfDescription">
             		<h2>Tự mô tả</h2>
             		<span class="c_edit dn"></span>
@@ -1009,7 +934,7 @@ var youdao_conv_id = 271546;
 	            				<tbody><tr>
 									<td colspan="2">
 										<textarea class="s_textarea" name="selfDescription" placeholder="Vui lòng nhập bản thân" id="user_selfDescription"></textarea>
-										<div class="word_count">Bạn cũng có thể nhập <span>500</span> 字</div>
+										<div class="word_count">Bạn cũng có thể nhập <span>500</span> Kí tự</div>
 									</td>
 	            				</tr>
 	            				<tr>
@@ -1036,7 +961,7 @@ var youdao_conv_id = 271546;
 		        			</#if>
 		        		</div><!--end .descriptionAdd-->
             	</div><!--end #selfDescription-->
-<!-----------------------------------------------------作品展示--------------------------------------------------->
+<!-----------------------------------------------------phòng trưng bày--------------------------------------------------->
             	<div class="profile_box" id="worksShow">
             		<h2>Trưng bày</h2>
             		<span class="c_add dn"></span>
@@ -1054,7 +979,7 @@ var youdao_conv_id = 271546;
 	            				<tr>
 									<td>
 										<textarea maxlength="100" class="s_textarea" name="workDescription" placeholder="Vui lòng nhập văn bản mô tả"  id="ws_description"></textarea>
-										<div class="word_count">Bạn cũng có thể nhập <span id="1">100</span> Tính cách</div>
+										<div class="word_count">Bạn cũng có thể nhập <span id="1">100</span> Kí tự</div>
 									</td>
 	            				</tr>
 	            				<tr>
@@ -1161,7 +1086,7 @@ var youdao_conv_id = 271546;
         
       <input type="hidden" id="userid" name="userid" value="314873">
 <#include "../common/alert.ftl"/>
-<!-------------------------------------弹窗lightbox ----------------------------------------->
+<!-------------------------------------lightbox ----------------------------------------->
 
 	
 	
@@ -1252,7 +1177,6 @@ var youdao_conv_id = 271546;
 			}
 
 window.onload = function(){
-<!-----------修改时  期望工作部分赋值---------------------->
 	<#if ExpectWork??>
 		document.getElementById("select_expectCity").value='${ExpectWork.city!""}';
 		var type = '${ExpectWork.type!"full"}';
@@ -1265,7 +1189,7 @@ window.onload = function(){
 		document.getElementById("select_expectSalary").value='${ExpectWork.money!""}';
 		document.getElementById("expectPosition").value='${ExpectWork.position!""}';
 	</#if>
-<!-----------修改时  工作经历部分赋值---------------------->
+
 	<#if WorkExperience??>
 		document.getElementById("we_company_name").value='${WorkExperience.name!""}';
 		document.getElementById("we_position_name").value='${WorkExperience.position!""}';
@@ -1274,7 +1198,7 @@ window.onload = function(){
 		document.getElementById("we_end_year").value='${WorkExperience.endYear!""}';
 		document.getElementById("we_end_month").value='${WorkExperience.endMonth!""}';
 	</#if>
-<!-----------修改时  项目经验部分赋值---------------------->
+
 	<#if ProjectExperience??>
 		document.getElementById("pw_project_name").value='${ProjectExperience.name!""}';
 		document.getElementById("pw_position_name").value='${ProjectExperience.position!""}';
@@ -1284,7 +1208,7 @@ window.onload = function(){
 		document.getElementById("pw_end_month").value='${ProjectExperience.endMonth!""}';
 		document.getElementById("pw_project_description").value='${ProjectExperience.content!""}';
 	</#if>
-<!-----------修改时  教育背景部分赋值---------------------->
+
 	<#if EducationBackground??>
 		document.getElementById("eb_school_name").value='${EducationBackground.school_name!""}';
 		document.getElementById("eb_degree").value='${EducationBackground.studyRecord!""}';
@@ -1292,11 +1216,11 @@ window.onload = function(){
 		document.getElementById("eb_end_year").value='${EducationBackground.endYear!""}';
 		document.getElementById("eb_major").value='${EducationBackground.major!""}';
 	</#if>
-<!-----------修改时  自我描述部分赋值---------------------->
+
 	<#if user.content??>
 		document.getElementById("user_selfDescription").value='${user.content!""}';
 	</#if>
-<!-----------修改时  作品展示部分赋值---------------------->
+
 	<#if WorkShow??>
 		document.getElementById("ws_href").value='${WorkShow.url!""}';
 		document.getElementById("ws_description").value='${WorkShow.content!""}';
@@ -1304,7 +1228,7 @@ window.onload = function(){
 	
 	
 }
-<!----------------期望工作中三个工作类别的取值------------------>
+
 document.getElementById("ew_type1").onclick = function(){
 		var type = $("#ew_type1").val();
         $("#work_type").val(type);
@@ -1318,18 +1242,17 @@ document.getElementById("ew_type3").onclick = function(){
         $("#work_type").val(type);
 }
 
-//上传图片
+//tải lên hình ảnh
 function upload(){
 	if($("#headPic").val() == '')return;
-	//new FormData():异步上传二进制文件。
+	//new FormData():Không đồng bộ tải lên các tệp nhị phân。
 	var formData = new FormData();
-	//取出所选图片中的第一张
+	//Lấy ra cái đầu tiên trong hình ảnh đã chọn
 	formData.append('photo',document.getElementById('headPic').files[0]);
 	$.ajax({
 		url:'/upload/upload_photo',
 		type:'post',
 		data:formData,
-		//用ajax上传文件时候，必须设置contentType:false,processData:false
 		contentType:false,
 		processData:false,
 		success:function(data){
@@ -1345,12 +1268,12 @@ function upload(){
 			}
 		},
 		error:function(data){
-			$("#errorMsg").html("上传失败，请上传正确格式或者大小的文件！!!!");
-			$.colorbox({inline:true, href:$("#errorTip"),title:"系统提示"});
+			$("#errorMsg").html("Tải lên không thành công, vui lòng tải lên đúng định dạng hoặc tệp kích thước！!!!");
+			$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
 		}
 	});
 }
-//保存基本个人信息
+//Lưu thông tin cá nhân cơ bản
 function saveBasicInfo()
 {
 	var username = $("#name").val();
@@ -1370,7 +1293,7 @@ function saveBasicInfo()
 	}
 	$('#error_username').css('display','none');
 	$('#error_mobile').css('display','none');
-	//进行统一表单非空验证
+	//Một biểu mẫu thống nhất không phải là xác minh trống
 	if(!checkForm('profileForm'))
 	{
 		return;
@@ -1387,7 +1310,7 @@ function saveBasicInfo()
 				$("#successMsg").html("Thông tin cá nhân là thành công!");
 				$.colorbox({inline:true, href:$("#successTip"),title:"Gợi ý hệ thống"});
 				setTimeout(function(){  
-						window.location.reload();//页面刷新
+						window.location.reload();//Trang làm mới
 						},3000);
 			}else{
 				switch(data.code){
@@ -1410,7 +1333,7 @@ function saveBasicInfo()
 		}
 	});
 }
-//保存期望工作
+//Lưu công việc dự kiến
 function saveExpectWork()
 {
 	var city = $("#select_expectCity").val();
@@ -1431,7 +1354,7 @@ function saveExpectWork()
 				$("#successMsg").html("Dự kiến ​​công việc này là thành công!");
 				$.colorbox({inline:true, href:$("#successTip"),title:"Gợi ý hệ thống"});
 				setTimeout(function(){  
-						window.location.reload();//页面刷新
+						window.location.reload();//Trang làm mới
 						},3000);
 			}else{
 					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
@@ -1441,7 +1364,7 @@ function saveExpectWork()
 	});
 }
 
-//保存工作经历
+//Tiết kiệm kinh nghiệm làm việc
 function saveWorkExperience()
 {
 	var name = $("#we_company_name").val();
@@ -1455,12 +1378,12 @@ function saveWorkExperience()
 	$('#error_position_name').css('display','none');
 	$('#error_startTime').css('display','none');
 	$('#error_endTime').css('display','none');
-	//进行统一表单非空验证
+	//Một biểu mẫu thống nhất không phải là xác minh trống
 	if(!checkForm('workExperienceForm'))
 	{
 		return;
 	}
-	//开始时间非空判断
+	//Thời gian bắt đầu không phải là phán đoán
 	if(startYear=="Năm bắt đầu" || startMonth == "Bắt đầu tháng")
 	{
 		$('#error_startTime').css('display','block');
@@ -1468,7 +1391,7 @@ function saveWorkExperience()
 		$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
 		return;
 	}
-	//结束时间非空判断
+	//Phán đoán không phải là
 	if(endYear=="Kết thúc" || endMonth == "Tháng kết thúc")
 	{
 		$('#error_endTime').css('display','block');
@@ -1476,7 +1399,7 @@ function saveWorkExperience()
 		$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
 		return;
 	}
-	//时间不符合规范
+	//Thời gian không đáp ứng các thông số kỹ thuật
 	if(endYear < startYear || (endYear == startYear && startMonth > endMonth))
 	{
 		$("#errorMsg").html("Thời gian bắt đầu không thể lớn hơn thời gian kết thúc!!!!");
@@ -1494,7 +1417,7 @@ function saveWorkExperience()
 				$("#successMsg").html("Kinh nghiệm làm việc thành công");
 				$.colorbox({inline:true, href:$("#successTip"),title:"Gợi ý hệ thống"});
 				setTimeout(function(){  
-						window.location.reload();//页面刷新
+						window.location.reload();//Trang làm mới
 						},3000);
 			}else{
 				switch(data.code){
@@ -1528,7 +1451,7 @@ function saveWorkExperience()
 	});
 	
 }
-//保存项目经验
+//Tiết kiệm kinh nghiệm dự án
 function saveProjectExperience()
 {
 	var project = $("#pw_project_name").val();
@@ -1544,13 +1467,13 @@ function saveProjectExperience()
 	$('#error_pw_startTime').css('display','none');
 	$('#error_pw_endTime').css('display','none');
 	
-	//进行统一表单非空验证
+	//Một biểu mẫu thống nhất không phải là xác minh trống
 	if(!checkForm('projectExperienceForm'))
 	{
 		return;
 	}
 	
-	//开始时间非空判断
+	//Thời gian bắt đầu không phải là phán đoán
 	if(startYear=="Năm bắt đầu" || startMonth == "Bắt đầu tháng")
 	{
 		$('#error_pw_startTime').css('display','block');
@@ -1558,7 +1481,7 @@ function saveProjectExperience()
 		$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
 		return;
 	}
-	//结束时间非空判断
+	//Phán đoán không phải là
 	if(endYear=="Kết thúc" || endMonth == "Tháng kết thúc")
 	{
 		$('#error_pw_endTime').css('display','block');
@@ -1566,7 +1489,7 @@ function saveProjectExperience()
 		$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
 		return;
 	}
-	//时间不符合规范
+	//Thời gian không đáp ứng các thông số kỹ thuật
 	if(endYear < startYear || (endYear == startYear && startMonth > endMonth))
 	{
 		$("#errorMsg").html("Thời gian bắt đầu không thể lớn hơn thời gian kết thúc!!!!");
@@ -1583,7 +1506,7 @@ function saveProjectExperience()
 				$("#successMsg").html("Kinh nghiệm dự án là thành công!");
 				$.colorbox({inline:true, href:$("#successTip"),title:"Gợi ý hệ thống"});
 				setTimeout(function(){  
-						window.location.reload();//页面刷新
+						window.location.reload();//Trang làm mới
 						},3000);
 			}else{
 				switch(data.code){
@@ -1617,7 +1540,7 @@ function saveProjectExperience()
 	});
 }
 
-//保存教育背景
+//Lưu nền giáo dục
 function saveEducationBackground()
 {
 	var school_name = $("#eb_school_name").val();
@@ -1631,12 +1554,12 @@ function saveEducationBackground()
 	$('#error_eb_startTime').css('display','none');
 	$('#error_eb_endTime').css('display','none');
 
-	//进行统一表单非空验证
+	//Một biểu mẫu thống nhất không phải là xác minh trống
 	if(!checkForm('educationBackgroundForm'))
 	{
 		return;
 	}
-	//开始年份非空判断
+	//Phán quyết không phải của đầu năm
 	if(startYear=="Năm bắt đầu")
 	{
 		$('#error_eb_startTime').css('display','block');
@@ -1644,7 +1567,7 @@ function saveEducationBackground()
 		$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
 		return;
 	}
-	//结束年份非空判断
+	//Phán quyết không phải là cuối năm
 	if(endYear=="Kết thúc")
 	{
 		$('#error_eb_endTime').css('display','block');
@@ -1652,7 +1575,7 @@ function saveEducationBackground()
 		$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
 		return;
 	}
-	//时间不符合规范
+	//Thời gian không đáp ứng các thông số kỹ thuật
 	if(endYear < startYear)
 	{
 		$("#errorMsg").html("Sự khởi đầu của sự khởi đầu không thể lớn hơn kết thúc!!!!");
@@ -1670,7 +1593,7 @@ function saveEducationBackground()
 				$("#successMsg").html("Nền giáo dục thành công！");
 				$.colorbox({inline:true, href:$("#successTip"),title:"Gợi ý hệ thống"});
 				setTimeout(function(){  
-						window.location.reload();//页面刷新
+						window.location.reload();//Trang làm mới
 						},3000);
 			}else{
 				switch(data.code){
@@ -1704,7 +1627,7 @@ function saveEducationBackground()
 	});
 	
 }
-//保存自我描述
+//Lưu bản thân
 function saveSelfDescription()
 {
 	var content = $("#user_selfDescription").val();
@@ -1718,7 +1641,7 @@ function saveSelfDescription()
 				$("#successMsg").html("Tự mô tả là thành công!");
 				$.colorbox({inline:true, href:$("#successTip"),title:"Gợi ý hệ thống"});
 				setTimeout(function(){  
-						window.location.reload();//页面刷新
+						window.location.reload();//Trang làm mới
 						},3000);
 			}else{
 					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
@@ -1729,7 +1652,7 @@ function saveSelfDescription()
 }
 
 
-//保存作品展示
+//Lưu màn hình công việc
 function saveWorkShow()
 {
 	var url = $("#ws_href").val();
@@ -1744,7 +1667,7 @@ function saveWorkShow()
 				$("#successMsg").html("Màn hình công việc được bảo tồn thành công！");
 				$.colorbox({inline:true, href:$("#successTip"),title:"Gợi ý hệ thống"});
 				setTimeout(function(){  
-						window.location.reload();//页面刷新
+						window.location.reload();//Trang làm mới
 						},3000);
 			}else{
 					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");

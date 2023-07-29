@@ -5,7 +5,7 @@
 <meta content="no-siteapp" http-equiv="Cache-Control">
 <link  media="handheld" rel="alternate">
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-<title>Nền tảng tuyển dụng internet chuyên nghiệp nhất</title>
+<title>Nền tảng tuyển dụng </title>
 <meta content="23635710066417756375" property="qc:admins">
 <meta name="description" content="">
 <meta name="keywords" content="">
@@ -58,6 +58,7 @@ var youdao_conv_id = 271546;
 				                        </div>
 				                        <span><em class="c7">Lương : </em>${position.minMoney!""}k-${position.maxMoney!""}k</span>
 				                        <span><em class="c7">kinh nghiệm:</em> ${position.workExperience!""}</span>
+																<br />
 				                        <span><em class="c7">Giáo dục tối thiểu: </em>${position.degree!""}</span>
 				                        <br />
 				                        <span><em class="c7">Yêu cầu:</em>${position.advantage!""}</span>
@@ -138,12 +139,12 @@ var youdao_conv_id = 271546;
                 </div>	
            <div class="content_r">
             	<div class="subscribe_side">
-	                    <div class="subpos"><span>Nộp</span> CV</div>
+	                    <div class="subpos"><span>Nộp CV</span></div>
 	                    <div class="c7">Cung cấp cho bạn rất nhiều vị trí mà bạn quan tâm
 	                    </div>
-	                    <div class="count">Hiện hữu
+	                    <div class="count">Đã có
 	                    		                    		<em>${resumeTotal!"0"}</em>
-	                    		                    	Giao hàng người
+	                    		                    	người nộp hồ sơ
 	                    </div>
 	            	
 	            </div> 

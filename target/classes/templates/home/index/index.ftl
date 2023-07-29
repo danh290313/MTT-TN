@@ -8,7 +8,7 @@
 	<link rel="alternate" media="handheld" />
 	<!-- kết thúc tương thích đám mây -->
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>Nền tảng tuyển dụng Internet chuyên nghiệp nhất</title>
+	<title>Nền tảng tuyển dụng</title>
 	<meta property="qc:admins" content="23635710066417756375" />
 	<meta content="" name="description">
 	<meta content="" name="keywords">
@@ -291,6 +291,7 @@
 											<span><em class="c7">kinh nghiệm：</em>
 												${position.workExperience!""}
 											</span>
+											<br />
 											<span><em class="c7">Giáo dục tối thiểu： </em>
 												${position.degree!""}
 											</span>
@@ -318,6 +319,7 @@
 										<span><em class="c7">kinh nghiệm:</em>
 											${position.workExperience!""}
 										</span>
+											<br />
 										<span><em class="c7">Giáo dục tối thiểu: </em>
 											${position.degree!""}
 										</span>
@@ -326,7 +328,7 @@
 											${position.advantage!""}
 										</span>
 										<br />
-										<span>Thời gian:${position.createTime!""}
+										<span>Thời gian: ${position.createTime!""}
 										</span>
 									</div>
 									</li>

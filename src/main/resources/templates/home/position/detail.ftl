@@ -7,7 +7,7 @@
 <link rel="alternate" media="handheld"  />
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Giới thiệu công ty-nền tảng tuyển dụng Internet chuyên nghiệp nhất</title>
+<title>nền tảng tuyển dụng</title>
 <meta property="qc:admins" content="23635710066417756375" />
 <meta name="baidu-site-verification" content="QIQ6KC1oZ6" />
 
