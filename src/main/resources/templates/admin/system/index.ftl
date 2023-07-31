@@ -33,7 +33,7 @@
 	<!-- begin of header -->
 	<div class="wu-header" data-options="region:'north',border:false,split:true">
     	<div class="wu-header-left">
-        	<h1>Hệ thống quản lý nền</h1>
+        	<h1>Hệ thống quản lý</h1>
         </div>
         <div class="wu-header-right">
         	<p><strong class="easyui-tooltip" title="${admin.adminName!""}">Người dùng thân mến:${admin.adminName!""}</strong>，Chào mừng!</p>
@@ -76,7 +76,7 @@
             <div title="trang nhất" data-options="closable:false,iconCls:'icon-tip',cls:'pd3'">
             <div title="Chào mừng" style="padding:20px;overflow:hidden; color:red; " >
 				<p style="font-size: 50px; line-height: 60px; height: 60px;"></p>
-				<p style="font-size: 25px; line-height: 30px; height: 30px;">Chào mừng bạn đến với hệ thống quản lý nền</p>
+				<p style="font-size: 75px; line-height: 30px; height: 30px;">Hệ thống quản lý, kiểm duyệt</p>
 
 			</div>
             

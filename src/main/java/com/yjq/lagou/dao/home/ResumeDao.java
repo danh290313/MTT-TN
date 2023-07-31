@@ -21,13 +21,13 @@ public interface ResumeDao extends JpaRepository<Resume, Long>{
 	
 
 
-	@Query("select r from Resume r where user_id = :user_id")
+	@Query("select r from Resume r where user_id = :user_id order by update_time desc")
 	public List<Resume> findByUserId(@Param("user_id")Long user_id);
 	
 	
 
 
-	@Query("select r from Resume r where user_id = :user_id and state = :state")
+	@Query("select r from Resume r where user_id = :user_id and state = :state order by update_time desc")
 	public List<Resume> findByUserIdAndState(@Param("user_id")Long user_id,@Param("state")String state);
 	
 	
@@ -41,8 +41,6 @@ public interface ResumeDao extends JpaRepository<Resume, Long>{
 
 	@Query("select r from Resume r where id = :id")
 	public Resume findByResumeId(@Param("id")Long id);
-	
-	
 
 	@Query(value="select count(*) from resume where state = :state and company_id = :id",nativeQuery=true)
 	int getPositionTotalByStateAndCompanyId(@Param("id")Long id,@Param("state")String state);

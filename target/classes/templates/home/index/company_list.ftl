@@ -156,9 +156,9 @@ var youdao_conv_id = 271546;
                 	<img src="https://media.monster.com.vn/career-advice/wp-content/uploads/2022/03/interview-question-and-answer-for-hr-recruiter.jpg" width="242" height="242" alt="Mã QR WeChat" />
                     <span class="c7">Dễ dàng tìm kiếm công việc</span>
                 </div>
-               	<a href="javascript:void(0);"  class="eventAd">
+               	<#--  <a href="javascript:void(0);"  class="eventAd">
                		<img src="" width="280" height="135" />
-               	</a>
+               	</a>  -->
                	<a href="javascript:void(0);" class="eventAd">
                		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTI8puGOJefwN2x3_e5N4oOOuqK2f9920tSwg&usqp=CAU" width="280" height="135" />
                	</a>

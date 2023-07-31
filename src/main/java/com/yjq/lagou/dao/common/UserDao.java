@@ -22,9 +22,10 @@ public interface UserDao extends JpaRepository<User, Long>{
 	public List<User> findAllUserList(@Param("offset")int offset,@Param("pageSize")int pageSize);
 	
 	
-
-	public User findByUsername(String username);
+	@Query(value="SELECT * FROM user JOIN resume ON user.id = resume.user_id WHERE resume.id = :resumeId", nativeQuery = true)
+	public User findUserByResumeId(@Param("resumeId") Long resumeId);
 	
+	public User findByUsername(String username);
 
 	@Query("select u from User u where id = :id")
 	public User find(@Param("id")Long id);

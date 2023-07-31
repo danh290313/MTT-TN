@@ -1,5 +1,6 @@
 package com.yjq.lagou.controller.home;
 
+import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
 import java.text.ParseException;
@@ -7,10 +8,16 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+import javax.mail.MessagingException;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -71,6 +78,9 @@ public class HomeResumeController {
 	
 	@Autowired
 	private CompanyService companyService;
+
+	@Autowired
+  private JavaMailSender mailSender;
 	
 
 	@RequestMapping(value="/preview",method=RequestMethod.GET)
@@ -150,26 +160,60 @@ public class HomeResumeController {
 	@RequestMapping(value="/interview2",method=RequestMethod.POST)
 	@ResponseBody
 	public Result<Boolean> interview2(@RequestParam(name = "id", required = true) Long id,
-	@RequestParam(name="interview",required=true)String interview)
+	@RequestParam(name="interview",required=true)String interview, HttpServletRequest request)
 	{
 
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
 		Date interviewDate = null;
 		try {
-				interviewDate = dateFormat.parse(interview);
-			} catch (ParseException e) {
-				e.printStackTrace();
-			}
-			System.out.println("interview=" + interviewDate);
-		
+			interviewDate = dateFormat.parse(interview);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		System.out.println("interview=" + interviewDate);
+
 		Resume findByResumeId = resumeService.findByResumeId(id);
 		findByResumeId.setState("effective");
 		findByResumeId.setInterview(interviewDate);
 		if (resumeService.save(findByResumeId) == null) {
 			return Result.error(CodeMsg.RESUME_STATE_SAVE_ERROR);
 		}
+		// User session_user = (User) request.getSession().getAttribute(SessionConstant.SESSION_USER_LOGIN_KEY);
+		// String mailUser = session_user.getEmail();
+		User receiveUser = userService.findUserByResumeId(id);
+		if (receiveUser != null) {
+				sendEmail(receiveUser.getEmail(), interviewDate.toString());
+		}
+
 		return Result.success(true);
-		
+
+	}
+	
+	private void sendEmail(String email, String interviewDate) {
+
+		 // tạo thông báo phỏng vấn
+    MimeMessage message = mailSender.createMimeMessage();
+    
+
+		try {
+				MimeMessageHelper helper = new MimeMessageHelper(message, true, "UTF-8");
+        helper.setFrom(new InternetAddress("your-email@gmail.com", "Company" ));
+        helper.setTo(email);
+        helper.setSubject("Thông báo phỏng vấn");
+
+        // Nội dung email dưới dạng HTML với định dạng và màu sắc
+        String content = "<html><body>"
+                + "<h2 style=\"color: #007BFF;\">Chúc mừng! Bạn đã được chọn để tham gia phỏng vấn.</h2>"
+                + "<p style=\"color: #FF0000;\">Phỏng vấn dự kiến diễn ra vào ngày " + interviewDate + ".</p>"
+                + "<p style=\"color: #212529;\">Chúng tôi mong đợi gặp bạn. Chúc may mắn!</p>"
+                + "</body></html>";
+
+        helper.setText(content, true);
+
+        mailSender.send(message);
+    } catch (MessagingException | UnsupportedEncodingException e) {
+        // Xử lý ngoại lệ nếu có
+    }
 	}
 	
 	// @RequestMapping(value="/change_state",method=RequestMethod.POST)

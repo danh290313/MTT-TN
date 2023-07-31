@@ -115,14 +115,19 @@ var youdao_conv_id = 271546;
 
 			                                    <span class="d_time">Ngày Nộp: ${resume.createTime!""}</span>
 																					</br>
-																					
+																					<div class="d_time">
+																							<span>Ngày thông báo: ${resume.updateTime!""}</span>
+																					</div>
 																					<#if resume.interview?? && resume.state == "effective" >
 																						
-																						<div class="d_resume">
+																						<div class="d_resume" style ="font-size: 17px;">
 																						Lịch phỏng vấn: 
 																						<span> ${resume.interview!""} </span>
+																						
 																						</div>
-																						<div class="d_resume">
+																						
+																						
+																						<div class="d_resume" style ="font-size: 20px;">
 			                                    	Mô tả:
 			                                    	<p>Chúc mừng! Bạn đã được nhận phỏng vấn!</p>
 			                                    </div>

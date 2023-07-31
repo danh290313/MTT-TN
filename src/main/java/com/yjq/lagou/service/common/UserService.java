@@ -52,4 +52,9 @@ public class UserService {
 	public void delete(Long id) {
 		userDao.deleteById(id);
 	}
+
+	public User findUserByResumeId(Long resumeId)
+	{
+			return userDao.findUserByResumeId(resumeId);
+	}
 }

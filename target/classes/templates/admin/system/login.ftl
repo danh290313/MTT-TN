@@ -17,7 +17,7 @@
 <div id="particles-js">
 		<div class="login" style="display: block;">
 			<div class="login-top">
-				Đăng nhập hệ thống quản lý nền
+				Đăng nhập hệ thống quản lý
 			</div>
 			<form id="adminLoginForm">
 				<div class="login-center clearfix">

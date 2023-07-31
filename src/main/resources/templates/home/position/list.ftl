@@ -152,12 +152,12 @@ var youdao_conv_id = 271546;
                 	<img src="https://media.monster.com.vn/career-advice/wp-content/uploads/2022/03/interview-question-and-answer-for-hr-recruiter.jpg" width="242" height="242" alt="微信公众号二维码" />
                     <span class="c7"></span>
                 </div>
-                <a href="javascript:void(0);"  class="eventAd">
+                <#--  <a href="javascript:void(0);"  class="eventAd">
                		<img src="/home/style/images/subject280.jpg" width="280" height="135" />
                	</a>
                	<a href="javascript:void(0);" class="eventAd">
                		<img src="/home/style/images/rising280.png" width="280" height="135" />
-               	</a>
+               	</a>  -->
             </div>
        	</div>
       <input type="hidden" id="userid" name="userid" value="314873">

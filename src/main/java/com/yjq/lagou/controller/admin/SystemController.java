@@ -94,7 +94,7 @@ public class SystemController {
 		//Thêm nhật ký hoạt động
 		OperaterLog operaterLog  = new OperaterLog();
 		operaterLog.setOperator("【"+findByAdminName.getAdminName()+"】：");
-		operaterLog.setContent("Đăng nhập vào hệ thống quản lý nền。");
+		operaterLog.setContent("Đăng nhập vào hệ thống quản lý。");
 		operaterLogService.save(operaterLog);
 		
 		return Result.success(true);

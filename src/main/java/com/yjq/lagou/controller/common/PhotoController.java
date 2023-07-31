@@ -1,7 +1,5 @@
 package com.yjq.lagou.controller.common;
-/**
- * 图片统一查看控制器
- */
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
