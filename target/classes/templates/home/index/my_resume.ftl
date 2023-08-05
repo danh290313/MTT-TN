@@ -13,8 +13,7 @@
 <meta content="QIQ6KC1oZ6" name="baidu-site-verification">
 
 <script type="text/javascript">
-var ctx = "h";
-console.log(1);
+
 </script>
 <link href="http://www.lagou.com/images/favicon.ico" rel="Shortcut Icon">
 <link href="/home/style/css/style.css" type="text/css" rel="stylesheet">
@@ -1047,13 +1046,13 @@ var youdao_conv_id = 271546;
 										<a title="Biên tập viên -người sáng lập" class="c_edit member_edit" href="javascript:void(0)"></a>
 										<div class="m_portrait">
 											<div></div>
-											<img width="120" height="120" id="preview_founder_photo" alt="Mặt trời taiying" src="/home/style/images/anh-pdf.jpg">
+											<img width="320" height="120" id="preview_founder_photo" alt="Mặt trời taiying" src="/home/style/images/anh-pdf.jpg">
 											
 										</div>
 										<div class="m_name">
 											<#if WorkShow??>
 												<#if WorkShow.fileCv??>
-														File CV: Đã có sẵn
+													<a href="/view-pdf?filename=${WorkShow.fileCv}" target="_blank">File CV: Đã có sẵn</a>
 													<#else>
 														File CV: trống rỗng
 												</#if>

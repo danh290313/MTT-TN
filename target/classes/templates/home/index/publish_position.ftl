@@ -14,8 +14,6 @@
 
 
 <script type="text/javascript">
-var ctx = "http://www.lagou.com";
-console.log(1);
 </script>
 <link href="http://www.lagou.com/images/favicon.ico" rel="Shortcut Icon">
 <link href="/home/style/css/style.css" type="text/css" rel="stylesheet">

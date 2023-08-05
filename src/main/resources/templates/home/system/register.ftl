@@ -15,8 +15,6 @@
 
 <!-- <div class="web_root"  style="display:none">h</div> -->
 <script type="text/javascript">
-var ctx = "h";
-console.log(1);
 </script>
 
 <link href="http://www.lagou.com/images/favicon.ico" rel="Shortcut Icon">

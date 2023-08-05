@@ -12,8 +12,7 @@
 <meta name="baidu-site-verification" content="QIQ6KC1oZ6" />
 
 <script type="text/javascript">
-var ctx = "h";
-console.log(1);
+
 </script>
 <link href="http://www.lagou.com/images/favicon.ico" rel="Shortcut Icon">
 <link rel="stylesheet" type="text/css" href="/home/style/css/style.css"/>

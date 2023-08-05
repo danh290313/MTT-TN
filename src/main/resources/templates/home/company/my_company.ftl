@@ -12,8 +12,7 @@
 <meta content="QIQ6KC1oZ6" name="baidu-site-verification">
 
 <script type="text/javascript">
-var ctx = "http://www.lagou.com";
-console.log(1);
+
 </script>
 <link href="http://www.lagou.com/images/favicon.ico" rel="Shortcut Icon">
 <link href="/home/style/css/style.css" type="text/css" rel="stylesheet">
@@ -207,7 +206,7 @@ var youdao_conv_id = 271546;
 					             <!--Không giới thiệu -->
 									<dl class="c_section dn">
 					                	<dt>
-					                    	<h2><em></em>Hồ sơ công ty</h2>
+					                    	<h2><em></em>Thông tin công ty</h2>
 					                    </dt>
 					                    <dd>
 					                    	<div class="addnew">
@@ -219,7 +218,7 @@ var youdao_conv_id = 271546;
 					            <!--Biên tập giới thiệu-->
 					                <dl class="c_section newIntro dn">
 					                    <dt>
-					                        <h2><em></em>Hồ sơ công ty</h2>
+					                        <h2><em></em>Thông tin công ty</h2>
 					                    </dt>
 					                    <dd>
 						                    <form id="companyDesForm">
@@ -235,7 +234,7 @@ var youdao_conv_id = 271546;
 					            <!--Giới thiệu-->
 					               <dl class="c_section">
 					               		<dt>
-					                   		<h2><em></em>Hồ sơ công ty</h2>
+					                   		<h2><em></em>Thông tin công ty</h2>
 					                   	</dt>
 					                   	<dd>
 					                   		<#if Company??>

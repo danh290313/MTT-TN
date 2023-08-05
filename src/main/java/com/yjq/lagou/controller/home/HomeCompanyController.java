@@ -41,7 +41,8 @@ public class HomeCompanyController {
 	
 	
 	@RequestMapping(value="/my_company",method=RequestMethod.GET)
-	public String myCompany(Model model,HttpServletRequest request){
+	public String myCompany(Model model, HttpServletRequest request) {
+		
 		User session_user = (User) request.getSession().getAttribute(SessionConstant.SESSION_USER_LOGIN_KEY);
 		Company company = companyService.findByUserId(session_user.getId());
 		model.addAttribute("Company", company);
