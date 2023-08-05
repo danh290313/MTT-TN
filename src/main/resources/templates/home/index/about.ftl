@@ -43,8 +43,10 @@ var youdao_conv_id = 271546;
                 <dd class="aboutus"> 
                 	<img alt="Nhóm tuyển dụng" src="https://lh5.googleusercontent.com/Aoz_S-vxofCPZtykmciUbuJ-rLSRk59PoEqWEhY9ouAe0wbgeDnzYDFspl9JIg_5yANZIC926gGEETZ1LLBR6BiYL3WnVKOlyvPklKshKppSDcCHERGDaIH3wxtjaE1cKa4FgfXz" width="186" height="186" />
                 	<div>
-                		<span>Chúng tôi cung cấp dịch vụ thông tin nhân văn, cá nhân hóa và chuyên nghiệp cho người tìm việc, và cam kết kết nối nhân tài chất lượng cao và các doanh nghiệp xuất sắc một cách đúng thời điểm.</span>
-						<span>Chúng tôi là một đội ngũ trẻ tuổi đam mê Internet, chúng tôi đảm nhận trách nhiệm và cam kết xây dựng nền tảng tuyển dụng Internet chuyên nghiệp nhất.</span>
+									<span>Kính gửi Thầy Cô,</span>
+                		<span>
+Em xin phép báo cáo thực tập tốt nghiệp đề tài "XÂY DỰNG ỨNG DỤNG WEB TRỢ GIÚP TUYỂN DỤNG NHÂN SỰ". Dưới đây là tiến độ công việc:</span>
+						<span>Em rất mong nhận được những đánh giá và hướng dẫn từ Thầy, Cô để hoàn thiện đề tài một cách tốt nhất.</span>
                 	</div>
                 	<ul class="reset contact_box">
 	                	<li class="cli1">
@@ -57,7 +59,7 @@ var youdao_conv_id = 271546;
 							<br />
                 		</li>
                 		<li class="cli3">
-                			Email hỗ trợ khách hàng: xxx@xxx.com<br />
+                			Email hỗ trợ khách hàng: danh290313@gmail.com<br />
 							<br />
                 		</li>
                 	</ul>

@@ -10,7 +10,7 @@ if ($.fn.treegrid && $.fn.datagrid){
 	$.fn.treegrid.defaults.loadMsg = $.fn.datagrid.defaults.loadMsg;
 }
 if ($.messager){
-	$.messager.defaults.ok = 'Chắc chắn';
+	$.messager.defaults.ok = 'OK';
 	$.messager.defaults.cancel = 'Hủy bỏ';
 }
 $.map(['validatebox','textbox','filebox','searchbox',

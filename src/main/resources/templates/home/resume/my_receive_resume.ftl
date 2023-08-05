@@ -88,7 +88,7 @@
 				<dl class="company_center_aside">
 					<dt>Công việc tôi đã đăng</dt>
 					<dd>
-						<a href="/home/position/my_publish_position?positionState=effective">Vị trí hiệu quả</a>
+						<a href="/home/position/my_publish_position?positionState=effective">Vị trí đang trực tuyến</a>
 					</dd>
 					<dd>
 						<a href="/home/position/my_publish_position?positionState=wait">Để được xem xét</a>
@@ -283,7 +283,7 @@
 							modal: true,
 							title: "Thay đổi trạng thái vị trí",
 							buttons: [{
-								text: 'Chắc chắn',
+								text: 'OK',
 								iconCls: 'icon-ok',
 								handler: change
 							}, {

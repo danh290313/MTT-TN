@@ -143,7 +143,7 @@
 			modal:true,
             title: "Thêm thông tin danh mục công việc thứ nhất và thứ hai",
             buttons: [{
-                text: 'Chắc chắn',
+                text: 'OK',
                 iconCls: 'icon-ok',
                 handler: add
             }, {
@@ -236,7 +236,7 @@
 			modal:true,
             title: "Thêm thông tin danh mục công việc thứ ba",
             buttons: [{
-                text: 'Chắc chắn',
+                text: 'OK',
                 iconCls: 'icon-ok',
                 handler: function(){
                 	var validate = $("#add-third-form").form("validate");
@@ -304,7 +304,7 @@
 			modal:true,
             title: "Sửa đổi thông tin danh mục công việc",
             buttons: [{
-                text: 'Chắc chắn',
+                text: 'OK',
                 iconCls: 'icon-ok',
                 handler: edit
             }, {

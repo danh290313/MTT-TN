@@ -144,23 +144,42 @@ $(function(){
 						
 	            <div class="profile_box" id="worksShow">
 	                <h2>Trưng bày</h2>
-	                <div class="workShow">
-	                  <ul class="slist clearfix">
-        				<li class="noborder">
-        					<div class="workList c7">
-        						<#if WorkShow??>
-	        						<div class="f16">URL làm việc:<a target="_blank" href="${WorkShow.url!""}">${WorkShow.url!""}</a></div>
-	            					<p>Mô tả công việc: ${WorkShow.content!""}</p>
-            					<#else>
-            						<div class="f16">URL làm việc:</div>
-	            					<p>Mô tả công việc: </p>
-            					</#if>
-            				</div>
-        				</li>
-             		  </ul>
-	                </div><!--end .workShow-->
+										<div class="workShow">
+												<ul class="slist clearfix">
+													<li class="noborder">
+															<div class="workList c7">
+																<#if WorkShow??>
+																<div class="f16">URL làm việc:<a target="_blank" href="${WorkShow.url!""}">${WorkShow.url!""}</a></div>
+																	<p>Mô tả công việc: ${WorkShow.content!""}</p>
+																<#else>
+																	<div class="f16">URL làm việc:</div>
+																	<p>Mô tả công việc: </p>
+																</#if>
+															</div>
+													</li>
+												</ul>
+										</div><!--end .workShow-->
 	            </div><!--end #worksShow-->
-			        </div><!--end .preview_content-->
+
+							 <div class="profile_box" id="worksShow">
+	                <h2>Thông tin CV</h2>
+										<div class="workShow">
+												<ul class="slist clearfix">
+													<li class="noborder">
+															<div class="workList c7">
+																<#if WorkShow??>
+																<div class="f16">Link CV: <a target="_blank" href="/view-pdf?filename=${WorkShow.fileCv}">Tải CV của ứng viên</a> </div>
+																<#else>
+																	<div class="f16">Link CV: Chưa có thông tin CV</div>
+																</#if>
+															</div>
+													</li>
+												</ul>
+										</div><!--end .workShow-->
+	            </div><!--end #worksShow-->
+
+
+			      </div><!--end .preview_content-->
   	</div><!--end #previewWrapper-->
 
 <!-------------------------------------lightbox ----------------------------------------->

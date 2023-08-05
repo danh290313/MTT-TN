@@ -38,7 +38,7 @@
 			$.messager.alert('Thông báo tin nhắn','Vui lòng chọn ít nhất một dữ liệu nhật ký hoạt động bạn muốn xóa！','info');
 			return;
 		}
-		$.messager.confirm('Thông báo tin nhắn','Bạn có chắc chắn xóa các hồ sơ này?', function(result){
+		$.messager.confirm('Thông báo tin nhắn','Bạn có OK xóa các hồ sơ này?', function(result){
 			if(result){
 			var ids = "";
 			for(var i=0;i<item.length;i++)

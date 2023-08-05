@@ -174,7 +174,7 @@
 			modal:true,
             title: "Sửa đổi thông tin quản trị viên",
             buttons: [{
-                text: 'Chắc chắn',
+                text: 'OK',
                 iconCls: 'icon-ok',
                 handler: edit
             }, {

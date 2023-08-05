@@ -78,7 +78,7 @@
 			modal:true,
             title: "Thay đổi trạng thái vị trí",
             buttons: [{
-                text: 'Chắc chắn',
+                text: 'OK',
                 iconCls: 'icon-ok',
                 handler: change
             }, {

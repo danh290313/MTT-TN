@@ -58,11 +58,11 @@
 					<#if positionState??>
 						<#if positionState=="effective">
 							<dd class="current">
-								<a href="/home/position/my_publish_position?positionState=effective">Vị trí hiệu quả</a>
+								<a href="/home/position/my_publish_position?positionState=effective">Vị trí đang trực tuyến</a>
 							</dd>
 							<#else>
 								<dd>
-									<a href="/home/position/my_publish_position?positionState=effective">Vị trí hiệu quả</a>
+									<a href="/home/position/my_publish_position?positionState=effective">Vị trí đang trực tuyến</a>
 								</dd>
 						</#if>
 						<#if positionState=="wait">
@@ -85,7 +85,7 @@
 						</#if>
 						<#else>
 							<dd class="current">
-								<a href="/home/position/my_publish_position?positionState=effective">Vị trí hiệu quả</a>
+								<a href="/home/position/my_publish_position?positionState=effective">Vị trí đang trực tuyến</a>
 							</dd>
 							<dd>
 								<a href="/home/position/my_publish_position?positionState=wait">Để được xem xét</a>
@@ -103,7 +103,7 @@
 							<em></em>
 							<#if positionState??>
 								<#if positionState=="effective">
-									Vị trí hiệu quả
+									Vị trí đang trực tuyến
 								</#if>
 								<#if positionState=="wait">
 									Để được xem xét
@@ -112,7 +112,7 @@
 									Có vị trí ngoại tuyến
 								</#if>
 								<#else>
-									Vị trí hiệu quả
+									Vị trí đang trực tuyến
 							</#if>
 							<span>（Gồm: <i style="color:#fff;font-style:normal" id="positionNumber">
 									${positionTotal!""}
@@ -170,7 +170,7 @@
 			<script type="text/javascript">
 			//Xóa vị trí
 			function deletePosition(i) {
-				if (confirm("Bạn có chắc chắn muốn xóa nó?Nếu bị xóa, Hồ sơ cho công việc cũng sẽ bị xóa")) {
+				if (confirm("Bạn có OK muốn xóa nó?Nếu bị xóa, Hồ sơ cho công việc cũng sẽ bị xóa")) {
 					$.ajax({
 						url: '/home/position/delete',
 						dataType: 'json',
