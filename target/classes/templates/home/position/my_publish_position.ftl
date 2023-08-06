@@ -18,7 +18,7 @@
 	<meta content="QIQ6KC1oZ6" name="baidu-site-verification">
 	<script type="text/javascript">
 	</script>
-	<link href="http://www.lagou.com/images/favicon.ico" rel="Shortcut Icon">
+	<link href="THUCTAPTOTNGHIEP_N19DCCN028" rel="Shortcut Icon">
 	<link href="/home/style/css/style.css" type="text/css" rel="stylesheet">
 	<link href="/home/style/css/external.min.css" type="text/css" rel="stylesheet">
 	<link href="/home/style/css/popup.css" type="text/css" rel="stylesheet">
@@ -135,7 +135,7 @@
 											</h3>
 											<span class="receivedResumeNo">Sơ yếu lý lịch áp dụng cho vị trí này (${position.number!""}）</span>
 											<div>
-												${position.workType!""}/ ${position.minMoney!""}k-${position.maxMoney!""}k / ${position.workExperience!""} / ${position.degree!""}
+												${position.workType!""}/ ${position.minMoney!""}triệu-${position.maxMoney!""}triệu / ${position.workExperience!""} / ${position.degree!""}
 											</div>
 											<div class="c9">Thời gian phát hành： ${position.createTime!""}
 											</div>

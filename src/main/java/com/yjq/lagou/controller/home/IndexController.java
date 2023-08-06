@@ -171,7 +171,7 @@ public class IndexController {
 		User user = (User) request.getSession().getAttribute(SessionConstant.SESSION_USER_LOGIN_KEY);
 		Company findCompanyByUserId = companyService.findByUserId(user.getId());
 		if(findCompanyByUserId == null || !"đã xác minh".equals(findCompanyByUserId.getState())) {
-			model.addAttribute("errorMsg", "Công ty của bạn chưa thông qua nó, vui lòng điền thông tin của công ty hoặc chờ chứng nhận!!!");
+			model.addAttribute("errorMsg", "Công ty của bạn chưa được xác thực, vui lòng điền thông tin của công ty hoặc chờ xác thực");
 		}
 		
 		//Xác định xem đó có phải là hoạt động biên tập hay không

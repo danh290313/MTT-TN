@@ -1,6 +1,6 @@
 $(function(){
 	/***************************
-	 * 注册激活页: 重新发送验证邮件
+	 * Đăng ký Trang Kích hoạt: Email xác minh lại
 	 */
 	$('#thirdBind_resend').click(function(){
 		var recordCode = $('#recordCode').val(); 
@@ -10,7 +10,7 @@ $(function(){
         	url:ctx+'/user/resendActive.json'
         }).done(function(result) {
         	if(result.success){
-        		$.colorbox({inline:true, href:$("#resend_success"),title:"验证邮件发送成功"});
+        		$.colorbox({inline:true, href:$("#resend_success"),title:"Xác minh email gửi thành công"});
         	}else{
         		alert(result.msg);
         	}
@@ -18,20 +18,20 @@ $(function(){
 	});
 	
 	/*bindEmail*/
-	/**没有进行帐号绑定的时候，如果点击logo离开，出现弹窗**/
+	/**Khi không có ràng buộc tài khoản, nếu bạn nhấp vào logo để rời đi, sẽ có các cửa sổ pop -up**/
 	var isLeave=true;
 	window.onbeforeunload = function(){
 		if(isLeave){
 			return;
 		}else{
-			return "内容还未保存，确认离开该页面吗？ ";	
+			return "Nội dung chưa được bảo tồn，Bạn có xác nhận rằng bạn rời khỏi trang này không ？ ";	
 		}
 	 }
 	$('#confirmLeave').click(function(){
 		isLeave = false;
 	})
 	
-	/*判断是否有帐号*/
+	/*Xác định xem có tài khoản nào không*/
 	$('.user_firstMainContent').css({"padding-bottom":"10px"});
 	$('#user_selectAccount label').not('.agreeNotice').click(function(){		
 		$(this).addClass('checked').parent('form').siblings('form').children('label').removeClass('checked');		
@@ -43,7 +43,7 @@ $(function(){
 			$('.user_warn').show();
 		}
 	});	
-	/*解决placeholder和value的颜色问题（默认为一致，需求为不一致）*/
+	/*Giải quyết vấn đề màu sắc của trình giữ chỗ và giá trị (mặc định là nhất quán và nhu cầu không nhất quán)*/
 	function placeholderSupportUserBind() {
 	    return 'placeholder' in document.createElement('input');
 	}
@@ -68,27 +68,27 @@ $(function(){
 		    }).blur();
 		}
 		
-		 //样式初始化
+		 //Phong cách khởi tạo
 	    if ($('[placeholder]').value === "") {
 	    	$('[placeholder]').value = $('[placeholder]').attr('placeholder'); 
 	    }
 	}
 	placeholderFnUserBindFn();
-	/*单选按钮 选择用户类型  招人还是找工作*/
+	/*Nút radio chọn người người dùng tuyển dụng người hoặc tìm một công việc*/
 	$('.register_radio li').click(function(){		
 		$(this).children('input').attr('checked',true);			
 		$(this).siblings().children('input').removeAttr('checked');	
 		$(this).addClass('current').append('<em></em>').siblings().removeClass('current').find('em').remove();	
 		$("#user_regBindForm").validate().element($(this).find('input'));		
 	});
-	/*解决同时出现两个错误提示*/
+	/*Giải quyết hai lời nhắc lỗi cùng một lúc*/
 	$('#user_LoginEmail,#user_hasLoginEmail,#user_hasLoginPassword,#user_LoginPassword').focus(function(){
 		$('#noLagouAccount_beError').hide();
 		$('#hasLagouAccount_EmailBeError').hide();
 		$('#hasLagouAccount_beError').hide();
 		$('#hasNoAccount_beError').hide();
 	});	
-	/*验证绑定帐号表单  已有帐号*/
+	/*Xác minh biểu mẫu tài khoản ràng buộc đã có tài khoản*/
 	$('#user_bindForm').validate({
 		/*onkeyup: false,
     	focusCleanup:true,*/
@@ -104,12 +104,12 @@ $(function(){
     	},
     	messages: {
     	   	email: {
-    	    	required: "请输入登录邮箱地址",
-    	    	email: "请输入有效的邮箱地址，如：vivi@lagou.com"
+    	    	required: "Vui lòng nhập địa chỉ email đăng nhập",
+    	    	email: "Vui lòng nhập địa chỉ email hợp lệ"
     	   	},
     	   	password: {
-    	    	required: "请输入密码",
-    	    	rangelength: "请输入6-16位密码，字母区分大小写"
+    	    	required: "Xin vui lòng nhập mật khẩu",
+    	    	rangelength: "Vui lòng nhập mật khẩu 6-16 bit, để các chữ cái phân biệt trường hợp"
     	   	}
     	},
     	errorPlacement:function(label, element){
@@ -126,7 +126,7 @@ $(function(){
     		isLeave = true;
     		var email = $('#user_hasLoginEmail').val();    		 
     		var password = $('#user_hasLoginPassword').val();
-    		var type=$('#user_HasAccount').attr('value');//默认  0新帐号   1 已有帐号 null当做0	
+    		var type=$('#user_HasAccount').attr('value');
     		var resubmitToken = $('#resubmitToken').val();
     		var idCode = $('#idCode').val();   
     		$(form).find(":submit").attr("disabled", true);
@@ -145,24 +145,24 @@ $(function(){
     						window.location.href = ctx+'/user/bindAccountActive.html?recordCode=' + result.content;	
     					}  					
     				}else if(result.success == false && result.code ==0 ){
-    					/*密码错误和页面超时的提示信息*/
+    					/*Lỗi mật khẩu và thời gian chờ trang thông tin nhanh chóng*/
 						$('#hasLagouAccount_beError').html(result.msg).show();   					
     				}else if(result.success == false && result.code ==100){
-    					//邮箱未注册提示的错误
+    					//Lỗi của dấu nhắc không đăng ký hộp thư
     					$('#hasLagouAccount_EmailBeError').html(result.msg).show(); 
     				}else if(result.success == false && result.code ==1){
-    					$('#accountBindType').html('邮箱');
+    					$('#accountBindType').html('Thư');
     					$('#user_hasBindAccount').html(result.msg);
     					$('#user_loginCurrentAccount').html(result.content);
-    					$('#user_confirmBindTips').html('换个邮箱绑定');
-    					$.colorbox({inline:true, href:$("#bindTips"),title:"帐号绑定"});
+    					$('#user_confirmBindTips').html('Thay đổi hộp thư');
+    					$.colorbox({inline:true, href:$("#bindTips"),title:"Tài khoản ràng buộc"});
     					$('#user_confirmBindTips').on('click',function(){
     						isLeave = true;
     						$.colorbox.close();
     						parent.jQuery.colorbox.close();
     					});	    					
     				}else if(result.success == false && result.code == 2){
-    					$.colorbox({inline:true, href:$("#bindReplace"),title:"帐号绑定"});
+    					$.colorbox({inline:true, href:$("#bindReplace"),title:"Tài khoản ràng buộc"});
     					$('#user_oldAccount').html(result.content[1]);
     					$('#user_typeAccount').html(result.content[2]);    					
     					$('#user_replaceAccount').html(result.content[3]);
@@ -188,44 +188,39 @@ $(function(){
 	var userChoose = $('.chooseAccount label');
 	var choseUser = $('.chooseAccount label.current').find('span.c3').attr('value');
 	
-	/*选择保留帐号的确定按钮*/
+	/*Chọn nút OK để giữ lại tài khoản*/
 	$('#user_confirmReplace').on('click' , function(){
 		var isOldChecked = $('#user_HasAccount').attr('class') == 'checked';
 		if(userChoose.hasClass('current')){  							
-			$('#chooseRemainError').html('请选择需要保留的帐号').hide();    							
+			$('#chooseRemainError').html('Vui lòng chọn một tài khoản bạn cần giữ').hide();    							
 			$('#user_confirmReplace').attr("disabled", false); 		
-			/*if($('#hasSidebar').val() == 1){
-				$.colorbox({inline:true, href:$("#confirmBind2"),title:"帐号绑定"});
-			}else{
-				$.colorbox({inline:true, href:$("#confirmBind1"),title:"帐号绑定"});
-			}*/
 			if($('#hasSidebar').val() == 1){
-				$.colorbox({inline:true, href:$("#confirmBind2"),title:"帐号绑定"});
+				$.colorbox({inline:true, href:$("#confirmBind2"),title:"Tài khoản ràng buộc"});
 			}else if(isOldChecked){
-				$.colorbox({inline:true, href:$("#confirmBind1"),title:"帐号绑定"});	
+				$.colorbox({inline:true, href:$("#confirmBind1"),title:"Tài khoản ràng buộc"});	
 			}else{
-				$.colorbox({inline:true, href:$("#confirmBind3"),title:"帐号绑定"});	
+				$.colorbox({inline:true, href:$("#confirmBind3"),title:"Tài khoản ràng buộc"});	
 			}
 		}else{
-			$('#chooseRemainError').html('请选择需要保留的帐号').show();    							
+			$('#chooseRemainError').html('Vui lòng chọn một tài khoản bạn cần giữ').show();    							
 		}					
 	} );	
-	/*选择保留帐号*/
+	/*Chọn giữ tài khoản*/
 	$('.chooseAccount label em,.chooseAccount .c7').click(function(){
-		$('#chooseRemainError').html('请选择需要保留的帐号').hide(); 
+		$('#chooseRemainError').html('Vui lòng chọn một tài khoản bạn cần giữ').hide(); 
 		$(this).parents('label').addClass('current').siblings('label').removeClass('current'); 
 	})
 	
-	/*返回修改按钮*/
+	/*Quay lại nút sửa đổi*/
 	$('.user_backReplace').on('click',function(){					
-		$.colorbox({inline:true, href:$("#bindReplace"),title:"帐号绑定"});
+		$.colorbox({inline:true, href:$("#bindReplace"),title:"Tài khoản ràng buộc"});
 	});	
-	/*确认绑定按钮的ajax*/
+	/*Xác nhận nút Binding ajax*/
 	$('#user_confirmBind1').on('click',function(){
 		var email = $('#user_hasLoginEmail').val();    		 
 		var password = $('#user_hasLoginPassword').val();
-		var type=$('#user_HasAccount').attr('value');//默认  0新帐号   1 已有帐号 null当做0	
-		var userType = $('.register_radio li.current input').val();//0-个人用户 1-企业用户  null-未选择
+		var type=$('#user_HasAccount').attr('value');//Mặc định 0 tài khoản mới 1 tài khoản hiện có null là 0 là 0
+		var userType = $('.register_radio li.current input').val();//Người dùng 0 cá nhân
 		var idCode = $('#idCode').val();   
 		var resubmitToken = $('#resubmitToken').val();
 		var choseUser = $('.chooseAccount label.current').find('span.c3').attr('value');
@@ -243,22 +238,22 @@ $(function(){
 						window.location.href = ctx+'/user/bindAccountActive.html?recordCode=' + result.content;
 					} 				    					
 				}else{	
-					if(result.msg == undefined){//重复提交
+					if(result.msg == undefined){
 						result = eval('(' + result + ')');
 					}
 					if(result.msg == '' || result.msg == undefined || result.msg == null ){
-						alert('绑定失败');
-					}else if(result.msg =='页面超时，请刷新页面重新操作'){
-						alert('你已成功点击“确认绑定”，不要重复点击哦');
+						alert('Sự thất bại ràng buộc');
+					}else if(result.msg =='Thời gian chờ trang，Vui lòng làm mới trang để tái sử dụng'){
+						alert('Bạn đã nhấp thành công "để xác nhận ràng buộc”，Đừng lặp lại nhấp chuột');
 					}else{
-						errorTips("绑定失败：" + result.msg,"帐号绑定");
+						errorTips("Sự thất bại ràng buộc：" + result.msg,"Tài khoản ràng buộc");
 					}					
 				}    									
 			}
 		});
 	});	
 	
-	/*注册帐号的表单验证  新帐号*/
+
 	$("#user_regBindForm").validate({  
 		/*onkeyup: false,
     	focusCleanup:true,*/
@@ -278,18 +273,18 @@ $(function(){
     	},
     	messages: {
     		type:{
-        		required:"请选择使用的目的"
+        		required:"Vui lòng chọn mục đích sử dụng"
         	},
     	 	email: {
-    	    	required: "请输入常用邮箱地址",
-    	    	email: "请输入有效的邮箱地址，如：vivi@lagou.com"
+    	    	required: "Vui lòng nhập địa chỉ hộp thư thường được sử dụng",
+    	    	email: "Vui lòng nhập địa chỉ email hợp lệ"
     	   	},
     	   	password: {
-    	    	required: "请输入密码",
-    	    	rangelength: "请输入6-16位密码，字母区分大小写"
+    	    	required: "Xin vui lòng nhập mật khẩu",
+    	    	rangelength: "Vui lòng nhập mật khẩu 6-16 bit, để các chữ cái phân biệt trường hợp"
     	   	},
     	   	checkbox: {
-    	    	required: "请接受用户协议"
+    	    	required: "Vui lòng chấp nhận giao thức người dùng"
     	   	}
     	},
     	errorPlacement:function(label, element){
@@ -307,9 +302,9 @@ $(function(){
     	submitHandler:function(form){    
     		var email = $('#user_LoginEmail').val();    		 
     		var password = $('#user_LoginPassword').val();
-    		var type=$('#user_NoAccount').attr('value');//默认  0新帐号   1 已有帐号 null当做0	
+    		var type=$('#user_NoAccount').attr('value');
     		var resubmitToken = $('#resubmitToken').val();
-    		var userType = $('.register_radio li.current input').val();//0-个人用户 1-企业用户  null-未选择
+    		var userType = $('.register_radio li.current input').val();
     		var idCode = $('#idCode').val();   
     		$(form).find(":submit").attr("disabled", true);
     		$.ajax({
@@ -327,25 +322,25 @@ $(function(){
     						window.location.href = ctx+'/user/bindAccountActive.html?recordCode=' + result.content;	
     					}  					
     				}else if(result.success == false && result.code ==0 ){
-    					/*密码错误和页面超时的提示信息*/
+    					/*Lỗi mật khẩu và thời gian chờ trang thông tin nhanh chóng*/
 						//$('#hasNoAccount_beError').html(result.msg).show();
     					$('#noLagouAccount_beError').html(result.msg).show();
     				}else if(result.success == false && result.code ==100){
-    					//邮箱未注册提示的错误
+    					//Lỗi của dấu nhắc không đăng ký hộp thư
     					//$('#noLagouAccount_beError').html(result.msg).show(); 
     				}else if(result.success == false && result.code ==1){
-    					$('#accountBindType').html('邮箱');
+    					$('#accountBindType').html('Thư');
     					$('#user_hasBindAccount').html(result.msg);
     					$('#user_loginCurrentAccount').html(result.content);
-    					$('#user_confirmBindTips').html('换个邮箱绑定');
-    					$.colorbox({inline:true, href:$("#bindTips"),title:"帐号绑定"});
+    					$('#user_confirmBindTips').html('Thay đổi hộp thư');
+    					$.colorbox({inline:true, href:$("#bindTips"),title:"Tài khoản ràng buộc"});
     					$('#user_confirmBindTips').on('click',function(){
     						isLeave = true;
     						$.colorbox.close();
     						parent.jQuery.colorbox.close();
     					});	    					
     				}else if(result.success == false && result.code == 2){
-    					$.colorbox({inline:true, href:$("#bindReplace"),title:"帐号绑定"});
+    					$.colorbox({inline:true, href:$("#bindReplace"),title:"Tài khoản ràng buộc"});
     					$('#user_oldAccount').html(result.content[1]);
     					$('#user_typeAccount').html(result.content[2]);    					
     					$('#user_replaceAccount').html(result.content[3]);
@@ -369,12 +364,12 @@ $(function(){
 	});
 
 	
-	/**新帐号时的二次确认按钮**/
+	/**Nút xác nhận thứ hai trong tài khoản mới**/
 	$('#newAccount_confirmBind1').click(function(){
 		var email = $('#user_LoginEmail').val();    		 
 		var password = $('#user_LoginPassword').val();
-		var type=$('#user_NoAccount').attr('value');//默认  0新帐号   1 已有帐号 null当做0	
-		var userType = $('.register_radio li.current input').val();//0-个人用户 1-企业用户  null-未选择
+		var type=$('#user_NoAccount').attr('value');
+		var userType = $('.register_radio li.current input').val();
 		var idCode = $('#idCode').val();   
 		var resubmitToken = $('#resubmitToken').val();
 		var choseUser = $('.chooseAccount label.current').find('span.c3').attr('value');
@@ -392,53 +387,53 @@ $(function(){
 						window.location.href = ctx+'/user/bindAccountActive.html?recordCode=' + result.content;
 					} 				    					
 				}else{	
-					if(result.msg == undefined){//重复提交
+					if(result.msg == undefined){
 						result = eval('(' + result + ')');
 					}
 					if(result.msg == '' || result.msg == undefined || result.msg == null ){
-						alert('绑定失败');
-					}else if(result.msg =='页面超时，请刷新页面重新操作'){
-						alert('你已成功点击“确认绑定”，不要重复点击哦');
+						alert('Sự thất bại ràng buộc');
+					}else if(result.msg =='Thời gian chờ trang，Vui lòng làm mới trang để tái sử dụng'){
+						alert('Bạn đã nhấp thành công "để xác nhận ràng buộc”，Đừng lặp lại nhấp chuột');
 					}else{
-						errorTips("绑定失败：" + result.msg,"帐号绑定");
+						errorTips("Sự thất bại ràng buộc：" + result.msg,"Tài khoản ràng buộc");
 					}					
 				}    									
 			}
 		});
 	})
 	/*** accountBind.html | wrote by vee ***/
-	/*弹出确认取消绑定弹窗 */
+	/*Xác nhận dân số để hủy cửa sổ Pop -up ràng buộc */
 	$('#cancelBind').click(function(){
-		$.colorbox({inline:true, href:$("#confirmUnbind"),title:"帐号绑定"});		
+		$.colorbox({inline:true, href:$("#confirmUnbind"),title:"Tài khoản ràng buộc"});		
 	});
 	
 	$('#cancleSina').click(function(){
-		$.colorbox({inline:true, href:$("#confirmUnbindSina"),title:"帐号绑定"});
+		$.colorbox({inline:true, href:$("#confirmUnbindSina"),title:"Tài khoản ràng buộc"});
 	});
 	
 	
 	
-	/*弹出确认取消绑定qq弹窗后的确定按钮*/
+	/*Xác nhận để hủy nút được xác định sau khi ràng buộc cửa sổ QQ Pop -up*/
 	$('#user_confirmUnbind').click(function(){
 		$.colorbox.close();
 		parent.jQuery.colorbox.close();
 	})
-	/*弹出确认取消绑定微博弹窗后的确定按钮*/
+	/*Xác nhận hủy nút xác định sau cửa sổ Pop -up Weibo ràng buộc*/
 	$('#user_confirmUnbindSina').click(function(){
 		$.colorbox.close();
 		parent.jQuery.colorbox.close();
 	})
-	/*将右键发送成功会话框关闭*/
+	/*Đúng -Plick gửi một hộp phiên thành công để tắt*/
 	$('#confirmSuccess').click(function(){
 		$.colorbox.close();
 		parent.jQuery.colorbox.close();
 	})
-	/*将邮件格式不正确会话框关闭*/
+	/*Tắt định dạng email không chính xác*/
 	$('#confirmError').click(function(){
 		$.colorbox.close();
 		parent.jQuery.colorbox.close();
 	})
-	/*确认取消绑定的取消按钮，无刷新，直接关闭弹窗*/
+	/*Xác nhận rằng nút hủy bỏ bị hủy, không làm mới, đóng cửa sổ pop -up trực tiếp*/
 	$('#confirmUnbind .cancel,#confirmUnbindSina .cancel , #confirm_unbindService .cancel').click(function(){
 		$.colorbox.close();
 		parent.jQuery.colorbox.close();
@@ -449,7 +444,7 @@ $(function(){
 		parent.jQuery.colorbox.close();
 	});
 	$('#bindReplace .cancel').bind('click',function(){
-		$('#chooseRemainError').html('请选择需要保留的帐号').hide();    
+		$('#chooseRemainError').html('Vui lòng chọn một tài khoản bạn cần giữ').hide();    
 		$.colorbox.close();
 		parent.jQuery.colorbox.close();
 	})
@@ -463,7 +458,7 @@ $(function(){
 		}
 	});*/
 
-	//修改密码页面
+	//Sửa đổi trang mật khẩu
 	$('#oldpassword').focus(function(){
 		$('#updatePwd_beError').hide();
 	})
@@ -486,16 +481,16 @@ $(function(){
     	},
     	messages: {
         	oldpassword: {
-        		required:"请输入当前密码",
-    	    	rangelength: "请输入6-16位密码，字母区分大小写"
+        		required:"Vui lòng nhập mật khẩu hiện tại",
+    	    	rangelength: "Vui lòng nhập mật khẩu 6-16 bit, để các chữ cái phân biệt trường hợp"
     	   	}, 
     	   	newpassword: {
-    	   		required: "请输入新密码",
-    	    	rangelength: "请输入6-16位密码，字母区分大小写"
+    	   		required: "Vui lòng nhập mật khẩu mới",
+    	    	rangelength: "Vui lòng nhập mật khẩu 6-16 bit, để các chữ cái phân biệt trường hợp"
     	   	},
     	   	comfirmpassword: {
-    	   		required: "请再次输入新密码",
-    	    	equalTo: "两次输入的密码不一致，请重新输入"
+    	   		required: "Vui lòng nhập lại mật khẩu mới",
+    	    	equalTo: "Mật khẩu trong hai đầu vào không nhất quán, vui lòng nhập lại"
     	   	}
     	},
     	submitHandler:function(form){
@@ -516,8 +511,8 @@ $(function(){
     		}).done(function(result){
 				$('#resubmitToken').val(result.resubmitToken);
     			if(result.success){
-    				$.colorbox({inline:true, href:$("#updatePassword"),title:"修改密码成功"});
-    				setCountdown(4,'updatePassword h4 span',ctx+"/user/logout.html");	//调用倒计时
+    				$.colorbox({inline:true, href:$("#updatePassword"),title:"mật khẩu đã được cập nhật"});
+    				setCountdown(4,'updatePassword h4 span',ctx+"/user/logout.html");	
     			}else{
     				$('#updatePwd_beError').html(result.msg).show();
     			}
@@ -525,23 +520,9 @@ $(function(){
         }  
     });
 	
-	//解除招聘服务页面
-	/*$('.user_confirmDel').click(function(){
-		$.ajax({
-			url:ctx+'/user/closeService.json',
-			type:'POST',
-			dataType:'json'
-		}).done(function(result){
-			if(result.success){
-				$.colorbox({inline:true, href:$("#unbindService"),title:"确定解除招聘服务"});
-				//setCountdown(4,'unbindService h4 span',ctx+"/corpCenter/bindStep1.html");	//调用倒计时
-			}else{
-				alert(result.msg);
-			}
-		});
-	});*/
+
 	$('.user_confirmDel').click(function(){
-		$.colorbox({inline:true, href:$("#confirm_unbindService"),title:"解除招聘服务"});
+		$.colorbox({inline:true, href:$("#confirm_unbindService"),title:"Nâng dịch vụ tuyển dụng"});
 	});
 	$('#confirm_unbind').click(function(){
 		$.ajax({
@@ -550,8 +531,8 @@ $(function(){
 			dataType:'json'
 		}).done(function(result){
 			if(result.success){
-				$.colorbox({inline:true, href:$("#unbindService"),title:"解除招聘服务"});
-				setCountdown(4,'unbindService h4 span',ctx+"/corpCenter/bindStep1.html");	//调用倒计时
+				$.colorbox({inline:true, href:$("#unbindService"),title:"Nâng dịch vụ tuyển dụng"});
+				setCountdown(4,'unbindService h4 span',ctx+"/corpCenter/bindStep1.html");	
 			}else{
 				alert(result.msg);
 			}

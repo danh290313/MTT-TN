@@ -111,7 +111,6 @@ public class CpachaController {
 				String generatorVCode = cpachaUtil.generatorVCode(); //Giá trị của mã xác minh
 				request.getSession().setAttribute(type, generatorVCode);
 
-				String otpCode = generateOTP();
 				sendEmail(receiver, generatorVCode);
 
 				log.info("Mã xác minh hộp thư được tạo thành công，method=" + type + ",value=" + generatorVCode);
@@ -143,11 +142,11 @@ public class CpachaController {
 
 		// create email message
 		SimpleMailMessage message = new SimpleMailMessage();
-		message.setFrom("your-email@gmail.com");
-		message.setTo(email);
-		message.setSubject("Password reset OTP code");
-		message.setText("Your OTP code for resetting your password is: " + otpCode);
-		mailSender.send(message);
+    message.setFrom("your-email@gmail.com");
+    message.setTo(email);
+    message.setSubject("Mã xác thực cho việc đăng ký");
+    message.setText("Mã xác thực của bạn cho việc đăng ký là: " + otpCode);
+    mailSender.send(message);
 	}
 	
 	private String generateOTP() {

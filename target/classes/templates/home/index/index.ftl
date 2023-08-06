@@ -16,7 +16,7 @@
 	<script type="text/javascript">
 
 	</script>
-	<link href="http://www.lagou.com/images/favicon.ico" rel="Shortcut Icon">
+	<link href="THUCTAPTOTNGHIEP_N19DCCN028" rel="Shortcut Icon">
 	<link rel="stylesheet" type="text/css" href="/home/style/css/style.css" />
 	<link rel="stylesheet" type="text/css" href="/home/style/css/external.min.css" />
 	<link rel="stylesheet" type="text/css" href="/home/style/css/popup.css" />
@@ -286,7 +286,7 @@
 												</span>
 											</div>
 											<span><em class="c7">Lương： </em>
-												${position.minMoney!""}k-${position.maxMoney!""}k</span>
+												${position.minMoney!" "} triệu-${position.maxMoney!" "} triệu</span>
 											<span><em class="c7">kinh nghiệm：</em>
 												${position.workExperience!""}
 											</span>
@@ -314,7 +314,7 @@
 											</span>
 										</div>
 										<span><em class="c7">Lương: </em>
-											${position.minMoney!""}k-${position.maxMoney!""}k</span>
+											${position.minMoney!" "} triệu-${position.maxMoney!" "} triệu</span>
 										<span><em class="c7">kinh nghiệm:</em>
 											${position.workExperience!""}
 										</span>

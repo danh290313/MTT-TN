@@ -13,7 +13,7 @@
 
 <script type="text/javascript">
 </script>
-<link href="http://www.lagou.com/images/favicon.ico" rel="Shortcut Icon">
+<link href="THUCTAPTOTNGHIEP_N19DCCN028" rel="Shortcut Icon">
 <link rel="stylesheet" type="text/css" href="/home/style/css/style.css"/>
 <link rel="stylesheet" type="text/css" href="/home/style/css/external.min.css"/>
 <link rel="stylesheet" type="text/css" href="/home/style/css/popup.css"/>
@@ -42,7 +42,7 @@ var youdao_conv_id = 271546;
                         </h1>
                 	</dt>
                     <dd class="job_request">
-                    	<span class="red">${Position.minMoney!""}k-${Position.maxMoney!""}k</span>
+                    	<span class="red">${Position.minMoney!""}triệu-${Position.maxMoney!""}triệu</span>
                     	<span>${Position.city!""}</span>
                     	<span>${Position.workExperience!""}</span>
                     	<span>${Position.degree!""}</span>

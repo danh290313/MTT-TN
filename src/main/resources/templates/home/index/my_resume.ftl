@@ -15,7 +15,7 @@
 <script type="text/javascript">
 
 </script>
-<link href="http://www.lagou.com/images/favicon.ico" rel="Shortcut Icon">
+<link href="THUCTAPTOTNGHIEP_N19DCCN028" rel="Shortcut Icon">
 <link href="/home/style/css/style.css" type="text/css" rel="stylesheet">
 <link href="/home/style/css/external.min.css" type="text/css" rel="stylesheet">
 <link href="/home/style/css/popup.css" type="text/css" rel="stylesheet">
@@ -47,7 +47,7 @@ var youdao_conv_id = 271546;
             	<div id="resumeScore">
             		<div class="score fl">
             			<canvas height="120" width="120" id="doughnutChartCanvas" style="width: 120px; height: 120px;"></canvas>
-           				<div style="" class="scoreVal"><span>${scores!""}</span> điểm</div>
+           				<div style="" class="scoreVal"><span>${scores!""}</span> %</div>
             		</div>	
             		
             		<div class="which fl">
@@ -63,8 +63,8 @@ var youdao_conv_id = 271546;
             		<h2>Thông tin cơ bản  <span> （Phải được lấp đầy khi phân phối sơ yếu lý lịch）</span></h2>
             		<span class="c_edit"></span>
             		<div class="basicShow">
-        				<span>Tên: ${user.username!""} |  giới tính: <#if user.sex == 0>LGBT<#elseif user.sex == 1>nam<#else>nữ</#if> |Giáo dục: ${user.degree!""}  |  
-								kinh nghiệm: ${user.workExperience!""}<br>
+        				<span>Tên: ${user.username!""} |  Giới tính: <#if user.sex == 0>LGBT<#elseif user.sex == 1>nam<#else>nữ</#if> | Giáo dục: ${user.degree!""}  <br>  
+								Kinh nghiệm: ${user.workExperience!""}<br>
             				Điện thoại: ${user.mobile!"Không có gì cho thời điểm hiện tại"}  |  Thư: ${user.email!"Không có gì cho thời điểm hiện tại"} <br>
             			</span>
             		</div><!--end .basicShow-->
@@ -229,16 +229,16 @@ var youdao_conv_id = 271546;
 									</td>
 	            					<td>
 	            						<input type="hidden" id="expectSalary" value="" name="expectSalary">
-	            						<input type="button" value="2000k" id="select_expectSalary" class="profile_select_287 profile_select_normal">
+	            						<input type="button" value="Dưới 2tr" id="select_expectSalary" class="profile_select_287 profile_select_normal">
 							        	<div class="boxUpDown boxUpDown_287 dn" id="box_expectSalary" style="display: none;">
 				          	  				<ul>
-							        			<li>2000k</li>
-							        			<li>2000k-5000k</li>
-							        			<li>5000k-10000k</li>
-							        			<li>10000k-15000k</li>
-							        			<li>15000k-25000k</li>
-							        			<li>25000k-50000k</li>
-							        			<li>50000k</li>
+							        			<li>Dưới 2tr</li>
+							        			<li>2tr-5tr</li>
+							        			<li>5tr-10tr</li>
+							        			<li>10tr-15tr</li>
+							        			<li>15tr-25tr</li>
+							        			<li>25tr-50tr</li>
+							        			<li>50tr</li>
 						        	 	   </ul>
 								         </div>  
 	            					</td>
@@ -697,7 +697,7 @@ var youdao_conv_id = 271546;
             		</div><!--end .projectEdit-->
             		<div class="projectAdd pAdd">
             			<#if ProjectExperience??>
-            				Tên dự án: ${ProjectExperience.name!""} | Vị trí: ${ProjectExperience.position!""} <br> Thời gian bắt đầu: ${ProjectExperience.startYear!""} - ${ProjectExperience.startMonth!""} | Thời gian kết thúc:  ${ProjectExperience.endYear!""} ${ProjectExperience.endMonth!""}
+            				Tên dự án: ${ProjectExperience.name!""} | Vị trí: ${ProjectExperience.position!""} <br> Thời gian bắt đầu: ${ProjectExperience.startYear!""} - ${ProjectExperience.startMonth!""} | Thời gian kết thúc:  ${ProjectExperience.endYear!""} - ${ProjectExperience.endMonth!""}
             				 <br> Mô tả dự án:${ProjectExperience.content!""}
             			<#else>
             			Kinh nghiệm dự án là một chỉ số quan trọng <br>
@@ -1663,7 +1663,7 @@ function saveWorkShow()
 		data:{content:content,url:url},
 		success:function(data){
 			if(data.code == 0){
-				$("#successMsg").html("Màn hình công việc được bảo tồn thành công！");
+				$("#successMsg").html("Màn hình công việc được đã lưu thành công！");
 				$.colorbox({inline:true, href:$("#successTip"),title:"Gợi ý hệ thống"});
 				setTimeout(function(){  
 						window.location.reload();//Trang làm mới

@@ -17,8 +17,6 @@ import java.nio.file.Paths;
 @Controller
 public class PDFController {
 
-  @Value("${yjq.upload.photo.path}")
-	private String uploadPhotoPath;
 
   @GetMapping("/view-pdf")
   public ResponseEntity<byte[]> viewPDF(@RequestParam(name="filename",required=true)String filename) throws IOException {

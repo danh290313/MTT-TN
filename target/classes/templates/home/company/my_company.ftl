@@ -14,7 +14,7 @@
 <script type="text/javascript">
 
 </script>
-<link href="http://www.lagou.com/images/favicon.ico" rel="Shortcut Icon">
+<link href="THUCTAPTOTNGHIEP_N19DCCN028" rel="Shortcut Icon">
 <link href="/home/style/css/style.css" type="text/css" rel="stylesheet">
 <link href="/home/style/css/external.min.css" type="text/css" rel="stylesheet">
 <link href="/home/style/css/popup.css" type="text/css" rel="stylesheet">
@@ -784,7 +784,7 @@ function saveCompanyIntroducation(){
 		data:{introduction:introduction},
 		success:function(data){
 			if(data.code == 0){
-				$("#successMsg").html("Công ty giới thiệu thành công bảo tồn!");
+				$("#successMsg").html("Công ty giới thiệu đã lưu thành công !");
 				$.colorbox({inline:true, href:$("#successTip"),title:"Gợi ý hệ thống"});
 				setTimeout(function(){  
 						window.location.reload();//Trang làm mới
@@ -845,7 +845,7 @@ function saveCompanyBasic(){
 		data:{locale:locale,territory:territory,scale:scale,url:url},
 		success:function(data){
 			if(data.code == 0){
-				$("#successMsg").html("Thông tin vị trí, trường, quy mô và trang web của công ty được bảo tồn thành công!");
+				$("#successMsg").html("Thông tin vị trí, trường, quy mô và trang web của công ty được đã lưu thành công!");
 				$.colorbox({inline:true, href:$("#successTip"),title:"Gợi ý hệ thống"});
 				setTimeout(function(){  
 						window.location.reload();//Trang làm mới

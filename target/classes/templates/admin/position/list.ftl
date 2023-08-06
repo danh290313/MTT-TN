@@ -168,9 +168,9 @@
 			{ field:'minMoney',title:'Mức lương công việc',width:60,formatter:function(value,row,index){
 				var money_range = "";
 				money_range += row.minMoney;
-				money_range += "k-";
+				money_range += "triệu-";
 				money_range += row.maxMoney;
-				money_range += "k";
+				money_range += "triệu";
 				return money_range;
 			}},
 			{ field:'state',title:'Trạng thái vị trí',width:50,formatter:function(value,row,index){

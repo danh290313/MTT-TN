@@ -14,22 +14,22 @@ $(function(){
 		}else{ 
 			return false; 
 		} 
-	}, "请输入正确的手机号");
+	}, "Xin vui lòng nhập một số điện thoại hợp lệ");
 	
-	/*** check特殊字符 ***********************/
+	/*** check Ký tự đặc biệt ***********************/
 	jQuery.validator.addMethod("specialchar", function(value, element) {
 		var reg = /^([`~!@$^&':;,?~！……&；：。，、？=])/;
 		return this.optional(element) || !reg.test(value);
-		}, "请输入有效的公司简称");
+		}, "Vui lòng nhập chữ viết tắt của công ty hợp lệ");
 	
-	/*** 不能全部输入数字**********************/
+	/*** Không thể nhập số**********************/
 	jQuery.validator.addMethod("checkNum",function(value, element) {
-		var reg = /^[0-9]*$/;//只能输入数字
+		var reg = /^[0-9]*$/;//Chỉ có thể nhập số
 		return this.optional(element) || !reg.test(value);
-		}, "请输入有效的一句话介绍"); 
+		}, "Vui lòng nhập giới thiệu câu hợp lệ"); 
 	
 	/************************
-	 * 编辑标签
+	 * Chỉnh sửa nhãn
 	 */
 	$('#hasLabels').on('click','.link',function(){
 		
@@ -49,7 +49,7 @@ $(function(){
 	
 	
 	/************************
-	 * 删标签
+	 * Nhãn
 	 */
 	$('#hasLabels').on('click','li i',function(){
 		var labelVal = $(this).prev('span').text();
@@ -69,9 +69,7 @@ $(function(){
 		});
 	});
 
-	/************************
-	 * 贴标签
-	 */
+
 	$('#add').bind('click',function(){
 		var _label = $('#label');
 		var labelVal = $.trim(_label.val());
@@ -98,24 +96,22 @@ $(function(){
 				});
 				
 			}else{
-				alert('此标签已存在，请从新输入');
+				alert('Nhãn này đã tồn tại，Vui lòng nhập từ đầu vào mới');
 			}
 			_label.val('');
 		}else{
-			alert("请输入1-6字的自定义标签");
+			alert("Vui lòng nhập thẻ tùy chỉnh 1-6 từ");
 		}
 	});
 
-	/************************
-	 * enter键贴标签
-	 */
+
 	$('#label').keydown(function(e){
 		if(e.which == 13){
 			$('#add').trigger('click');
 		}
 	});
 	
-	//投递简历设置2013/9/27
+	//2013/9/27
 	$('#resumeSetForm a.reUpload').bind('click',function(){
 		$('#resumeSetForm span.error').hide();
 		$('#reUploadResume1').click();
@@ -126,7 +122,7 @@ $(function(){
 		$('#reUploadResume2').click();
 	});
 	
-	//更改简历form提交
+	//Thay đổi bản gửi biểu mẫu sơ yếu lý lịch
 	$('#resumeSetForm').validate({
         rules: {
         	resumeName: {
@@ -135,7 +131,7 @@ $(function(){
         },
     	messages: {
     		resumeName: {
-        		required: "请选择默认投递的简历"
+        		required: "Vui lòng chọn sơ yếu lý lịch giao hàng mặc định"
     	   	}
     	},
     	errorPlacement:function(label, element){
@@ -167,7 +163,6 @@ $(function(){
 		}
 	});
 	
-	//投递简历form提交
 	$('#resumeSendForm').validate({
         rules: {
         	resumeName: {
@@ -176,7 +171,7 @@ $(function(){
         },
     	messages: {
     		resumeName: {
-        		required: "请选择默认投递的简历"
+        		required: "Vui lòng chọn sơ yếu lý lịch giao hàng mặc định"
     	   	}
     	},
     	errorPlacement:function(label, element){
@@ -211,24 +206,24 @@ $(function(){
 	        			$("#deliverResumesSuccess p.share").removeClass('dn');
 	        			$("#deliverResumesSuccess .drawGGJ").siblings('tr.drawQD').hide();
 	        		}
-	        		$.colorbox({inline:true, href:$("#deliverResumesSuccess"),title:"投个简历"});
+	        		$.colorbox({inline:true, href:$("#deliverResumesSuccess"),title:"Bản tóm tắt"});
 	        	}else{
-	        		if(r.code ==7){//投递失败
-						errorTipsSet("投递失败：" + r.msg,"投个简历");
-					}else if(r.code ==20){//需要二次确认 - 投递的是附件简历 - type=0
+	        		if(r.code ==7){
+						errorTipsSet("giao hàng thất bại：" + r.msg,"Bản tóm tắt");
+					}else if(r.code ==20){
 						$('#deliverResumeConfirm input[name="type"]').val(0);
 						$('#deliverResumeConfirm .msg').html(r.msg);
-						$.colorbox({inline:true, href:$("#deliverResumeConfirm"),title:"投递简历确认"});
-					}else if(r.code ==21){//需要二次确认 - 投递的是在线简历 - type=1
+						$.colorbox({inline:true, href:$("#deliverResumeConfirm"),title:"Gửi xác nhận sơ yếu lý lịch của bạn"});
+					}else if(r.code ==21){
 						$('#deliverResumeConfirm input[name="type"]').val(1);
 						$('#deliverResumeConfirm .msg').html(r.msg);
-						$.colorbox({inline:true, href:$("#deliverResumeConfirm"),title:"投递简历确认"});
-					}else if(r.code ==22){//需要弹出信息确认框 - 投递的是附件简历 - type=0
+						$.colorbox({inline:true, href:$("#deliverResumeConfirm"),title:"Gửi xác nhận sơ yếu lý lịch của bạn"});
+					}else if(r.code ==22){//Cần bật lên hộp xác nhận thông tin -đã đưa ra sơ yếu lý lịch - type=0
 						openProfileBox(0);
-					}else if(r.code ==23){//需要弹出信息确认框 - 投递的是在线简历 - type=1
+					}else if(r.code ==23){//Cần bật lên Hộp xác nhận thông tin -Sơ yếu lý lịch trực tuyến được cung cấp - type=1
 						openProfileBox(1);
 					}else{
-						errorTips("投递失败：" + r.msg,"投个简历");
+						errorTips("giao hàng thất bại：" + r.msg,"Bản tóm tắt");
 					}
 	        	}
 	        	$(form).find(":submit").attr("disabled", false);
@@ -252,7 +247,6 @@ $(function(){
 		}
 	});
 	
-	//有两份简历的情况，设置默认投递简历
 	$('.resumeShowAll .setDefault').bind('click',function(){
 		var type= $(this).attr('rel');
 		$.ajax({
@@ -269,7 +263,6 @@ $(function(){
 		});
 	});
 	
-	/*投递职位前填写基本信息*/
 	$(document).click(function(){
 		$('.boxUpDown').hide().prev('input').removeClass('select_focus');
 	});
@@ -359,29 +352,29 @@ $(function(){
         },
     	messages: {
     		name: {
-        		required: "请输入你的真实姓名",
-        		specialchar:"请输入你的真实姓名",
-        		checkNum:"请输入你的真实姓名",
-        		rangelength:"请输入你的真实姓名"
+        		required: "Vui lòng nhập tên thật của bạn",
+        		specialchar:"Vui lòng nhập tên thật của bạn",
+        		checkNum:"Vui lòng nhập tên thật của bạn",
+        		rangelength:"Vui lòng nhập tên thật của bạn"
     	   	},
     	   	degree: {
-        		required: "请选择最高学历"
+        		required: "Vui lòng chọn mức độ cao nhất"
     	   	},
     	   	workyear: {
-        		required: "请选择工作年限"
+        		required: "Vui lòng chọn thời gian làm việc"
     	   	},
     	   	expectCity: {
-        		required: "请选择期望工作城市"
+        		required: "Vui lòng chọn thành phố làm việc dự kiến"
     	   	},
     	   	tel: {
-    	   		required: "请输入手机号码",
-        		isMobile:"请输入有效的手机号码",
-    	    	maxlength:"请输入有效的手机号码"
+    	   		required: "Vui lòng nhập số điện thoại",
+        		isMobile:"Xin vui lòng nhập một số điện thoại hợp lệ",
+    	    	maxlength:"Xin vui lòng nhập một số điện thoại hợp lệ"
     	   	},
     	   	email: {
-        		required: "请输入接收面试通知邮箱",
-        		email:"请输入有效的常用邮箱",
-    	    	maxlength:"请输入有效的常用邮箱"
+        		required: "Vui lòng nhập hộp thư thông báo phỏng vấn nhận",
+        		email:"Vui lòng nhập các hộp thư thường được sử dụng hợp lệ",
+    	    	maxlength:"Vui lòng nhập các hộp thư thường được sử dụng hợp lệ"
     	   	}
     	},
     	errorPlacement:function(label, element){
@@ -426,24 +419,24 @@ $(function(){
 	        			$("#deliverResumesSuccess p.share").removeClass('dn');
 	        			$("#deliverResumesSuccess .drawGGJ").siblings('tr.drawQD').hide();
 	        		}
-					$.colorbox({inline:true, href:$("div#deliverResumesSuccess"),title:"投个简历"});
+					$.colorbox({inline:true, href:$("div#deliverResumesSuccess"),title:"Bản tóm tắt"});
 	        	}else{
-	        		if(r.code ==7){//投递失败
-						errorTipsSet("投递失败：" + r.msg,"投个简历");
-					}else if(r.code ==20){//需要二次确认 - 投递的是附件简历 - type=0
+	        		if(r.code ==7){
+						errorTipsSet("giao hàng thất bại：" + r.msg,"Bản tóm tắt");
+					}else if(r.code ==20){
 						$('#deliverResumeConfirm input[name="type"]').val(0);
 						$('#deliverResumeConfirm .msg').html(r.msg);
-						$.colorbox({inline:true, href:$("#deliverResumeConfirm"),title:"投递简历确认"});
-					}else if(r.code ==21){//需要二次确认 - 投递的是在线简历 - type=1
+						$.colorbox({inline:true, href:$("#deliverResumeConfirm"),title:"Gửi xác nhận sơ yếu lý lịch của bạn"});
+					}else if(r.code ==21){
 						$('#deliverResumeConfirm input[name="type"]').val(1);
 						$('#deliverResumeConfirm .msg').html(r.msg);
-						$.colorbox({inline:true, href:$("#deliverResumeConfirm"),title:"投递简历确认"});
-					}else if(r.code ==22){//需要弹出信息确认框 - 投递的是附件简历 - type=0
+						$.colorbox({inline:true, href:$("#deliverResumeConfirm"),title:"Gửi xác nhận sơ yếu lý lịch của bạn"});
+					}else if(r.code ==22){
 						openProfileBox(0);
-					}else if(r.code ==23){//需要弹出信息确认框 - 投递的是在线简历 - type=1
+					}else if(r.code ==23){
 						openProfileBox(1);
 					}else{
-						errorTips("投递失败：" + r.msg,"投个简历");
+						errorTips("giao hàng thất bại：" + r.msg,"Bản tóm tắt");
 					}
 	        	}
 	        	$(form).find(":submit").attr("disabled", false);
@@ -451,20 +444,20 @@ $(function(){
     	}
 	});
 	
-	//二次确认的时候返回修改信息 2013-12-19
+	
 	$('#deliverResumeConfirm .edit_field').bind('click',function(){
 		var type = $('#deliverResumeConfirm input[name="type"]').val();
 		 openProfileBox(type);
 	})
 	
-	//微信扫码
+
 	$('.saoma').hover(function(){
 		$(this).addClass('open');
 	},function(){
 		$(this).removeClass('open');
 	});
 	
-	//有用
+
 	$('.like_record').click(function(){
 		var _this = $(this);
 		var id = _this.attr('data-id');
@@ -484,16 +477,16 @@ $(function(){
 		});
 	});
 	
-	//评价更多
+
 	$('.remarkMore').click(function(){
 		if($(this).hasClass('toggle_expand')){
-			$(this).text('更多').removeClass('toggle_expand').siblings('.remark_content').addClass('dn').siblings('.remark_content_short').removeClass('dn');
+			$(this).text('Hơn').removeClass('toggle_expand').siblings('.remark_content').addClass('dn').siblings('.remark_content_short').removeClass('dn');
 		}else{
-			$(this).text('收起').addClass('toggle_expand').siblings('.remark_content_short').addClass('dn').siblings('.remark_content').removeClass('dn');
+			$(this).text('Cất đi').addClass('toggle_expand').siblings('.remark_content_short').addClass('dn').siblings('.remark_content').removeClass('dn');
 		}
 	});
 	
-	//收藏
+
 	var jobCollection = false;
 	$('#jobCollection').click(function(e){
 		if(e.target == this){
@@ -555,9 +548,7 @@ function popQR(){
 	});	
 }
 
-/************************
- * 申请职位
- */
+
  function sendResume(userId,jobId,force,typeDefault){
 	 var resubmitToken = $('#resubmitToken').val();
 	 var type = null;
@@ -584,24 +575,24 @@ function popQR(){
         			$("#deliverResumesSuccess p.share").removeClass('dn');
         			$("#deliverResumesSuccess .drawGGJ").siblings('tr.drawQD').hide();
         		}
-				$.colorbox({inline:true, href:$("#deliverResumesSuccess"),title:"投个简历"});
+				$.colorbox({inline:true, href:$("#deliverResumesSuccess"),title:"Bản tóm tắt"});
 			}else{
-				if(r.code ==7){//投递失败
-					errorTipsSet("投递失败：" + r.msg,"投个简历");
-				}else if(r.code ==20){//需要二次确认 - 投递的是附件简历 - type=0
+				if(r.code ==7){
+					errorTipsSet("giao hàng thất bại：" + r.msg,"Bản tóm tắt");
+				}else if(r.code ==20){
 					$('#deliverResumeConfirm input[name="type"]').val(0);
 					$('#deliverResumeConfirm .msg').html(r.msg);
-					$.colorbox({inline:true, href:$("#deliverResumeConfirm"),title:"投递简历确认"});
-				}else if(r.code ==21){//需要二次确认 - 投递的是在线简历 - type=1
+					$.colorbox({inline:true, href:$("#deliverResumeConfirm"),title:"Gửi xác nhận sơ yếu lý lịch của bạn"});
+				}else if(r.code ==21){
 					$('#deliverResumeConfirm input[name="type"]').val(1);
 					$('#deliverResumeConfirm .msg').html(r.msg);
-					$.colorbox({inline:true, href:$("#deliverResumeConfirm"),title:"投递简历确认"});
-				}else if(r.code ==22){//需要弹出信息确认框 - 投递的是附件简历 - type=0
+					$.colorbox({inline:true, href:$("#deliverResumeConfirm"),title:"Gửi xác nhận sơ yếu lý lịch của bạn"});
+				}else if(r.code ==22){
 					openProfileBox(0);
-				}else if(r.code ==23){//需要弹出信息确认框 - 投递的是在线简历 - type=1
+				}else if(r.code ==23){
 					openProfileBox(1);
 				}else{
-					errorTips("投递失败：" + r.msg,"投个简历");
+					errorTips("giao hàng thất bại：" + r.msg,"Bản tóm tắt");
 				}
 			}
 		});
@@ -615,7 +606,6 @@ function openProfileBox(type){
 		dataType: 'json'
 	}).done(function (data) {
 		if(data.success){
-			//弹出个人信息确认 前 补充信息
 			$('#basicInfoForm input[name="name"]').val(data.content.name);
 			if(data.content.highestEducation){
 				$('#basicInfoForm input[name="degree"]').val(data.content.highestEducation);
@@ -632,14 +622,14 @@ function openProfileBox(type){
 			$('#basicInfoForm input[name="tel"]').val(data.content.phone);
 			$('#basicInfoForm input[name="email"]').val(data.content.email);
 			$('#basicInfoForm input[name="type"]').val(data.content.type);
-			//工作年限列表
+
 			var workTimes = '<ul>';
 			for(var i=0; i<data.content.workTimes.length; i++){
 				workTimes += '<li>'+data.content.workTimes[i]+'</li>';
 			}
 			workTimes += '</ul>';
 			$('#basicInfoForm #box_workyear').html(workTimes);
-			//工作城市列表
+		
 			var citys = '';
 			for(var i=0; i<data.content.citys.length; i++){
 				citys += '<dl><dt>'+data.content.citys[i].nameStr+'</dt><dd>';
@@ -649,7 +639,7 @@ function openProfileBox(type){
 				citys += '</dd></dl>';      			
 			}
 			$('#basicInfoForm #box_expectCity').html(citys);
-			//最高学历列表
+	
 			var degreeList = '<ul>';
 			for(var i=0; i<data.content.degrees.length; i++){
 				degreeList += '<li>'+data.content.degrees[i]+'</li>';
@@ -659,15 +649,15 @@ function openProfileBox(type){
 			
 			$("#basicInfoForm").find('span.error').hide(); 
 			
-			//弹出个人信息确认框
-			$.colorbox({inline:true, href:$("#infoBeforeDeliverResume"),title:"个人信息确认"});	 
+
+			$.colorbox({inline:true, href:$("#infoBeforeDeliverResume"),title:"Xác nhận thông tin cá nhân"});	 
 		}else{
 			alert(data.msg);
 		}
 	});
  }
  
- //设置了在线简历，但是在线简历不完善 提示
+ //Đặt sơ yếu lý lịch trực tuyến, nhưng sơ yếu lý lịch trực tuyến là các mẹo không đầy đủ
 function errorTipsSet(msg){
 	$.colorbox({
 		html:'<div class="popup" style="width:460px;">'+
@@ -676,18 +666,16 @@ function errorTipsSet(msg){
 						'<td align="center"><h4 class="error_msg" style="width:400px;">'+msg+'</h4></td>'+
 					'</tr>'+
 					'<tr>'+
-						'<td align="center"><a href="'+ctx+'/resume/myresume.html" target="_blank" class="btn_s">马上去投递</a></td>'+
+						'<td align="center"><a href="'+ctx+'/resume/myresume.html" target="_blank" class="btn_s">Gửi nó ngay lập tức</a></td>'+
 					'</tr>'+
 				'</table>'+
 			'</div>',
-		title:'错误提示'
+		title:'Thông báo lỗi'
 	});
 
 }
  
- /************************
-  * 简历上传功能 （文件）
-  */
+
 function file_check(obj,action_url,id)
 {
 	$('#loadingImg').css("visibility","visible");
@@ -704,7 +692,7 @@ function file_check(obj,action_url,id)
 		}else if(id == 'reUploadResume2'){
 			$('#setResumeApply span.error').show();
 		}else{
-			errorTips("只支持word、pdf、ppt、txt、wps格式文件，请重新上传");
+			errorTips("Chỉ hỗ trợ word、pdf、ppt、txt、wpsTệp định dạng，Vui lòng tải lên");
 			$('#loadingImg').css("visibility","hidden");
 		}
 	}else if(this.FileExt == ''){
@@ -732,28 +720,28 @@ function file_check(obj,action_url,id)
 					if(id == 'reUploadResume1'){
 						$('#setResume .uploadedResume').text(nearbyName).attr('title',json.content.nearbyName).removeClass('red');
 						$('#setResume .downloadResume').removeClass('dn').siblings('span').removeClass('dn');
-						$('#setResume .reUpload').text('重新上传');
+						$('#setResume .reUpload').text('Tải lại lại');
 					}else if(id == 'reUploadResume2'){
 						$('#setResumeApply .uploadedResume').text(nearbyName).attr('title',json.content.nearbyName).removeClass('red');
 						$('#setResumeApply .downloadResume').removeClass('dn').siblings('span').removeClass('dn');
-						$('#setResumeApply .reUpload').text('重新上传');
+						$('#setResumeApply .reUpload').text('Tải lại lại');
 					}else{
-						$.colorbox({inline:true, href:$("div#uploadFileSuccess"),title:"上传附件简历"});
+						$.colorbox({inline:true, href:$("div#uploadFileSuccess"),title:"Tải lên sơ yếu lý lịch"});
 					}
 				}else{
-					//issac 加判断 
+
 					
 					if(json.code==-1){
-						$.colorbox({inline:true, href:$("div#fileResumeUpload"),title:"附件简历上传失败"});
+						$.colorbox({inline:true, href:$("div#fileResumeUpload"),title:"Tải lên sơ yếu lý lịch tải lên không thành công"});
 					}else if(json.code==-2){
-						$.colorbox({inline:true, href:$("div#fileResumeUploadSize"),title:"附件简历上传失败"});
+						$.colorbox({inline:true, href:$("div#fileResumeUploadSize"),title:"Tải lên sơ yếu lý lịch tải lên không thành công"});
 					}else{
-						errorTips("简历上传失败，请重新上传");
+						errorTips("Tiếp tục tải lên không thành công，Vui lòng tải lên");
 					}				
 				} 
 			},
 			error:function(err){
-				errorTips("简历上传失败，请重新上传");
+				errorTips("Tiếp tục tải lên không thành công，Vui lòng tải lên");
 			}
 		})//end of ajax
 		

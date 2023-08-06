@@ -15,7 +15,7 @@
 
 <script type="text/javascript">
 </script>
-<link href="http://www.lagou.com/images/favicon.ico" rel="Shortcut Icon">
+<link href="THUCTAPTOTNGHIEP_N19DCCN028" rel="Shortcut Icon">
 <link href="/home/style/css/style.css" type="text/css" rel="stylesheet">
 <link href="/home/style/css/external.min.css" type="text/css" rel="stylesheet">
 <link href="/home/style/css/popup.css" type="text/css" rel="stylesheet">
@@ -188,11 +188,11 @@ var youdao_conv_id = 271546;
                                     	<div class="salary_range">
                                             <div>
                                                 <input type="text" placeholder="Mức lương tối thiểu hàng tháng"   class="require" id="position_min_money"  oninput = "value=value.replace(/[^\d]/g,'')" tips="Mức lương công việc không thể trống!"  attributes="error_position_money"> 
-                                                <span>k</span>
+                                                <span>triệu</span>
                                             </div>
                                             <div>
                                                 <input type="text" placeholder="Mức lương tối đa hàng tháng"  class="require" id="position_max_money" oninput = "value=value.replace(/[^\d]/g,'')" tips="Mức lương công việc không thể trống!"  attributes="error_position_money"> 
-                                                <span>k</span>
+                                                <span>triệu</span>
                                             </div>
                                             <span>Chỉ nhập số</span>
                                         </div>
@@ -351,9 +351,8 @@ window.onload = function(){
 		},3000);
 	</#if>
 	
-	<!--判断是编辑职位还是新增职位-->
+
 	<#if editPosition??>
-		<!--是编辑-->
 		document.getElementById("select_category").value='${editPosition.type!""}';
 		document.getElementById("positionName").value='${editPosition.name!""}';
 		document.getElementById("department").value='${editPosition.department!""}';
@@ -436,7 +435,7 @@ function saveNewPosition(){
 						window.location.href = "/home/position/my_publish_position?positionState=wait";  
 						},3000);
 			}else if(data.code == 2){
-				$("#successMsg").html("Được bảo tồn thành công!Vui lòng đợi cho quản trị viên xem xét!");
+				$("#successMsg").html("Đã lưu thành công! Vui lòng đợi cho quản trị viên xem xét!");
 				$.colorbox({inline:true, href:$("#successTip"),title:"Thông báo"});
 				setTimeout(function(){  
 						window.location.href = "/home/position/my_publish_position?positionState=out";  

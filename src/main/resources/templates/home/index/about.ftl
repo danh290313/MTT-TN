@@ -16,7 +16,7 @@
 <script type="text/javascript">
 
 </script>
-<link rel="Shortcut Icon" href="http://www.lagou.com/images/favicon.ico">
+<link rel="Shortcut Icon" href="THUCTAPTOTNGHIEP_N19DCCN028">
 <link rel="stylesheet" type="text/css" href="/home/style/css/style.css"/>
 <link rel="stylesheet" type="text/css" href="/home/style/css/external.min.css"/>
 <link rel="stylesheet" type="text/css" href="/home/style/css/popup.css"/>

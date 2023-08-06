@@ -15,7 +15,7 @@
 <script type="text/javascript">
 
 </script>
-<link href="http://www.lagou.com/images/favicon.ico" rel="Shortcut Icon">
+<link href="THUCTAPTOTNGHIEP_N19DCCN028" rel="Shortcut Icon">
 <link href="/home/style/css/style.css" type="text/css" rel="stylesheet">
 <link href="/home/style/css/external.min.css" type="text/css" rel="stylesheet">
 <link href="/home/style/css/popup.css" type="text/css" rel="stylesheet">
@@ -104,7 +104,7 @@ var youdao_conv_id = 271546;
 																							Công việc: 
 			                                        <a href="/home/position/detail?id=${resume.position.id!""}">
 			                                        	<em>${resume.position.name!""}</em> 
-			                                        	<span>（${resume.position.minMoney!""}k-${resume.position.maxMoney!""}k）</span>
+			                                        	<span>（${resume.position.minMoney!""}triệu-${resume.position.maxMoney!""}triệu）</span>
 			                                    	</a>
 			                                    </h2>
 		                            			<div class="clear">Tên Công ty: </div>

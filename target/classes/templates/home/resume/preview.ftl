@@ -12,7 +12,7 @@
 </script><script type="text/javascript">
 
 </script>
-<link href="http://www.lagou.com/images/favicon.ico" rel="Shortcut Icon">
+<link href="THUCTAPTOTNGHIEP_N19DCCN028" rel="Shortcut Icon">
 <link href="/home/style/css/style.css" type="text/css" rel="stylesheet">
 <link href="/home/style/css/colorbox.min.css" type="text/css" rel="stylesheet">
 <link href="/home/style/css/popup.css" type="text/css" rel="stylesheet">
@@ -46,8 +46,8 @@ $(function(){
                 <div class="basicShow">
                    <span>
                    	<#if currentUser??>
-	                 	  Tên: ${currentUser.username!""} | giới tính: <#if currentUser.sex == 0>LGBT<#elseif currentUser.sex == 1>nam<#else>nữ</#if> | Giáo dục: ${currentUser.degree!""} <br>	
-	                  	 kinh nghiệm làm việc: ${currentUser.workExperience!""}<br>	
+	                 	  Tên: ${currentUser.username!""} | Giới tính: <#if currentUser.sex == 0>LGBT<#elseif currentUser.sex == 1>nam<#else>nữ</#if> | Giáo dục: ${currentUser.degree!""} <br>	
+	                  	 Kinh nghiệm làm việc: ${currentUser.workExperience!""}<br>	
 	                  	 Điện thoại: ${currentUser.mobile!"Không có gì cho thời điểm hiện tại"}  |  Email: ${currentUser.email!"暂无"} <br>		  
 	            		</span>
 
@@ -100,7 +100,7 @@ $(function(){
 		        						Mô tả dự án: ${ProjectExperience.content!""}
 		        					</div>
 	    						<#else>
-	    							<div class="f16 mb10">Tên dự án: | Vị trí:  | <span class="c9">&#160; Năm&#160; tháng——&#160; Năm &#160; tháng</span>
+	    							<div class="f16 mb10">Tên dự án: | Vị trí:  | <span class="c9">&#160; Năm&#160; tháng —— &#160; Năm &#160; tháng</span>
 		        					</div>
 		        					<div class="dl1">
 		        						mô tả dự án:
@@ -121,7 +121,7 @@ $(function(){
         						<span class="c9">&#160; Năm ${EducationBackground.startYear!""} — Năm ${EducationBackground.endYear!""} </span>
 						 		<div>
 		    						<h3>Tên trường: ${EducationBackground.school_name!""}</h3>
-		    						<h4>${EducationBackground.major!""} · ${EducationBackground.studyRecord!""}</h4>
+		    						<h4>Chuyên ngành: ${EducationBackground.major!""}  Trình độ: ${EducationBackground.studyRecord!""}</h4>
 					     		</div>
         					<#else>
         						<span class="c9"></span>

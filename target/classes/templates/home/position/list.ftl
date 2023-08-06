@@ -13,7 +13,7 @@
 
 <script type="text/javascript">
 </script>
-<link href="http://www.lagou.com/images/favicon.ico" rel="Shortcut Icon">
+<link href="THUCTAPTOTNGHIEP_N19DCCN028" rel="Shortcut Icon">
 <link href="/home/style/css/style.css" type="text/css" rel="stylesheet">
 <link href="/home/style/css/external.min.css" type="text/css" rel="stylesheet">
 <link href="/home/style/css/popup.css" type="text/css" rel="stylesheet">
@@ -54,7 +54,7 @@ var youdao_conv_id = 271546;
 				                            &nbsp;
 				                            <span class="c9">[${position.city!""}]</span>
 				                        </div>
-				                        <span><em class="c7">Lương : </em>${position.minMoney!""}k-${position.maxMoney!""}k</span>
+				                        <span><em class="c7">Lương : </em>${position.minMoney!""}triệu-${position.maxMoney!""}triệu</span>
 				                        <span><em class="c7">kinh nghiệm:</em> ${position.workExperience!""}</span>
 																<br />
 				                        <span><em class="c7">Giáo dục tối thiểu: </em>${position.degree!""}</span>
@@ -71,7 +71,7 @@ var youdao_conv_id = 271546;
 				                            &nbsp;
 				                            <span class="c9">[${position.city!""}]</span>
 				                        </div>
-				                        <span><em class="c7">Lương : </em>${position.minMoney!""}k-${position.maxMoney!""}k</span>
+				                        <span><em class="c7">Lương : </em>${position.minMoney!""}triệu-${position.maxMoney!""}triệu</span>
 				                        <span><em class="c7">kinh nghiệm:</em> ${position.workExperience!""}</span>
 				                        <span><em class="c7">Giáo dục tối thiểu: </em>${position.degree!""}</span>
 				                        <br />

@@ -1,10 +1,10 @@
 $(function(){
-	//刷新
+	//Làm cho khỏe lại
 	$('.d_refresh').click(function(){
 		top.location.reload();
 	});
 	
-	//所投递职位的进程状态 ： 折叠菜单打开
+	//Trạng thái quy trình của vị trí giao hàng ： Menu gập mở
 	$('#deliveryForm').on('click','.btn_showprogress',function(e){
 		e.preventDefault();
 		var _this = $(this);
@@ -19,7 +19,7 @@ $(function(){
 			_this.parents('li').addClass('open').children('.progress_status').show();
 		}
 	});
-	//所投递职位的进程状态 ： 折叠菜单关闭
+	//Trạng thái quy trình của vị trí giao hàng ： Menu gấp gần
 	$('#deliveryForm').on('click','.btn_closeprogress',function(e){
 		e.preventDefault();
 		var _this = $(this);
@@ -27,7 +27,7 @@ $(function(){
 		_this.parents('li').removeClass('open').children('.progress_status').hide();
 	});
 	
-	//面试体验-弹窗弹出
+	//Phỏng vấn kinh nghiệm pop cửa sổ pop
 	$('.my_delivery .btn_record').click(function(){	
     	$.ajax({
 		url:ctx+'/options/simpleRemarkList.json',
@@ -67,11 +67,11 @@ $(function(){
 		if($(this).attr('rel')=='hasInEx'){
 			id = $(this).attr('data-id'); 
 			score = $(this).attr('data-score'); 
-			inRe = $(this).attr('data-inRe'); //面试结果：1-已发offer 2-不合适
+			inRe = $(this).attr('data-inRe'); //Kết quả phỏng vấn: 1-Sending cung cấp 2 không phù hợp
 			remark = $(this).attr('data-remark'); 
 			inDesc = $(this).attr('data-inDesc');
 			inDesc = inDesc.replace(/<br\s\/>/g,'');
-			showname = $(this).attr('data-showname'); //是否匿名 1-匿名 2-不匿名
+			showname = $(this).attr('data-showname'); //Cho dù nặc danh 1-nompnous 2-not Ẩn danh
 		}
 		senduid = $(this).attr('data-senduid');
 		poid = $(this).attr('data-poid');
@@ -81,7 +81,6 @@ $(function(){
 		$('#interviewResult li').removeClass('current').find('em').remove();
 		$('#interviewResult li input').removeAttr("checked");
 		if(inRe){
-			/**nancy  prop()原来为attr()**/
 			$('#interviewResult li input[value='+inRe+']').prop("checked",true).parent('li').addClass('current').append('<em></em>');
 		}
 		$('#recordStarSelect li').removeClass('choosed');
@@ -113,47 +112,47 @@ $(function(){
 		$('#recordForm span.error').hide();
 		$('#recordForm').find('input.error').removeClass('error');
 		recordPopBox.fadeIn(200);
-//		已收到面试后 弹出窗口的内容 ****elen****
+//		Tôi đã nhận được nội dung của cửa sổ Pop -up cửa sổ sau cuộc phỏng vấn****elen****
 		if(inRe == 1){
 			$('#interviewResult li').css('display','none');
-			$("<p>我已经收到offer啦O(∩_∩)O~</p>").appendTo($('#interviewResult'));
+			$("<p>Tôi đã nhận được lời đề nghị o (∩_∩) o ~</p>").appendTo($('#interviewResult'));
 			$('#interviewResult li:eq(0)').addClass('current');
 			$('#interviewResult li.current input').val(1);
 		}
 		else {
 			$('#interviewResult').find('li').css('display','block');
 		}
-//  	IE 78 input内容兼容
+//  	IE 78 inputKhả năng tương thích
 		 if(navigator.appName == "Microsoft Internet Explorer" && navigator.appVersion.match(/7./i)=="7.")
 		 {
 			 if($('#select_record').val() == ''){
-					$('#select_record').val('15字以内对面试的简单描述哦');
+					$('#select_record').val('15 Mô tả đơn giản về cuộc phỏng vấn trong từ');
 				}
 			 if($('#interviewDesc').val() == ''){
-					$('#interviewDesc').val('记录下自己的面试经历');
+					$('#interviewDesc').val('Ghi lại kinh nghiệm phỏng vấn của bạn');
 				}
 		 }
 		 else if(navigator.appName == "Microsoft Internet Explorer" && navigator.appVersion.match(/8./i)=="8.")
 		 {
 			 if($('#select_record').val() == ''){
-					$('#select_record').val('15字以内对面试的简单描述哦');
+					$('#select_record').val('15 Mô tả đơn giản về cuộc phỏng vấn trong từ');
 				}
 			 if($('#interviewDesc').val() == ''){
-					$('#interviewDesc').val('记录下自己的面试经历');
+					$('#interviewDesc').val('Ghi lại kinh nghiệm phỏng vấn của bạn');
 				}
 		 }
 		 else if(navigator.appName == "Microsoft Internet Explorer" && navigator.appVersion.match(/9./i)=="9.")
 		 {
 			 if($('#select_record').val() == ''){
-					$('#select_record').val('15字以内对面试的简单描述哦');
+					$('#select_record').val('15 Mô tả đơn giản về cuộc phỏng vấn trong từ');
 				}
 			 if($('#interviewDesc').val() == ''){
-					$('#interviewDesc').val('记录下自己的面试经历');
+					$('#interviewDesc').val('Ghi lại kinh nghiệm phỏng vấn của bạn');
 				}
 		 }
 	});
 
-	//面试体验-弹窗-提交
+	//Phỏng vấn kinh nghiệm-pop-up cửa sổ
 	$('#recordForm').validate({		
 		onkeyup: false,
     	focusCleanup:true,
@@ -175,13 +174,13 @@ $(function(){
     	},
     	messages: {
     		type: {
-        		required:"请选择面试结果"
+        		required:"Vui lòng chọn kết quả phỏng vấn"
     	   	}, 
     	   	recordStar: {
-    	   		required: "请给出评分"
+    	   		required: "Vui lòng cho điểm số"
     	   	},
     	   	record: {
-    	   		required: "请填写短评"
+    	   		required: "Vui lòng điền vào các đánh giá ngắn"
     	   	}
     	},
     	errorPlacement:function(label, element){
@@ -197,7 +196,7 @@ $(function(){
     		var score = $('#recordStar').val();
     		var simpleRemark = $('#select_record_hidden').val();
     		var interviewDesc = $.trim($('#interviewDesc').val());
-    		if( interviewDesc == '记录下自己的面试经历'){
+    		if( interviewDesc == 'Ghi lại kinh nghiệm phỏng vấn của bạn'){
     			interviewDesc='';
     		}
     		var isShowName = $('#isShowName').val();
@@ -242,7 +241,7 @@ $(function(){
 		 }
 	});
 	
-	//弹窗关闭
+	//Pop -up
 	$('#recordPopBox .boxclose').click(function(){
 		$('#select_record').removeClass('select_340_focus');
 		$('#box_record').hide();
@@ -252,14 +251,14 @@ $(function(){
 		$('#select_record').val('');
 	});
 	
-	//弹窗 : 单选面试结果
+	//Popca: Kết quả phỏng vấn vững chắc
 	$('.record_radio li input').click(function(e){
 		$(this).attr("checked",true).parent('li').addClass('current').append('<em></em>').siblings().removeClass('current').find('em').remove();
 	});
 	
-	//弹窗 : 选短评
+	//Cửa sổ phổ biến: Chọn đánh giá ngắn
 
-	//点击其他位置短评框消失
+	//Nhấp vào hộp đánh giá ngắn vị trí khác để biến mất
 	$('body').click(function(){
 		if($('#select_record').hasClass('select_340_focus')){
 			$('#select_record').removeClass('select_340_focus');
@@ -268,12 +267,12 @@ $(function(){
 		var recordText = $('#select_record').val();
 		$('#select_record_hidden').val(recordText);
 	})
-	// 长评
+	//Đánh giá dài
 //	$('#interviewDesc').click(function(e){e.stopPropagation();
 //	$('#box_record').hide()})
 	
 
-	//输入文本时短评框消失，为空时出现。
+	//Khi nhập văn bản, hộp đánh giá ngắn sẽ biến mất, xuất hiện khi nó trống.
 	$('#select_record').bind('keyup',function(e){
 		e.stopPropagation();
 		if($(this).val() == ''){
@@ -293,7 +292,7 @@ $(function(){
 //			}
 	});
 	
-	//点击短评将短评加入文本框
+	//Nhấp vào đánh giá ngắn để thêm đánh giá ngắn vào hộp văn bản
 	$('#box_record').on('click','ul li',function(e){
 		e.stopPropagation();
 		var recordText = $(this).text();
@@ -317,7 +316,7 @@ $(function(){
 		$('#recordStarSelect').siblings('span').hide();
 	});
 	
-	//选框hover
+	//Lựa chọn hover
 	$('.checkbox').hover(function(){
 		if(!$(this).children('input').attr('checked')){
 			$(this).addClass('checkhover');
@@ -328,7 +327,7 @@ $(function(){
 		}
 	});
 	
-	//匿名提交
+	//Đệ trình ẩn danh
 	$('#recordPopBox .checkbox input').bind('click',function(){
 		if($(this).attr('checked')){
 			$(this).removeAttr('checked');
@@ -342,10 +341,10 @@ $(function(){
 		$(this).parent().removeClass('checkhover');
 		return false;
 	});
-	//点击文本框短评框出现和消失
+	//Nhấp vào hộp đánh giá ngắn của hộp văn bản để xuất hiện và biến mất
 	$('#select_record').bind('click',function(e){
 		e.stopPropagation();
-		if($('#select_record').val() == '' || $('#select_record').val() == "15字以内对面试的简单描述哦"){
+		if($('#select_record').val() == '' || $('#select_record').val() == "15 Mô tả đơn giản về cuộc phỏng vấn trong từ"){
 			$('#select_record').val('');
 			if($(this).hasClass('select_340_focus')){
 				$(this).removeClass('select_340_focus');

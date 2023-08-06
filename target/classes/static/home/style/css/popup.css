@@ -1,4 +1,4 @@
-﻿@charset "utf-8";.popup{font:14px/22px "Microsoft YaHei","微软雅黑","宋体",Arail;color:#555;padding:30px;width:442px;overflow:hidden}.popup h4{font-size:24px;font-weight:normal;text-align:center;margin:0 0 25px}.popup p{margin:0 0 25px}.popup p.mid{text-align:center}.popup a{color:#019875;text-decoration:none}.popup .color_green{color:#019875}.popup .font_18{font-size:18px}.popup .font_16{font-size:16px}.popup .btn_s,.popup .btn{font-size:20px;background:#019875;padding:0 25px;text-decoration:none;display:inline-block;text-align:center;height:37px;color:#fff;border:0;line-height:37px;transition:background 0.2s ease-in 0s;}.popup .btn_s:hover,.popup .btn:hover{background:#00694e}.popup .enter_msg{width:280px;margin:0 auto;overflow:hidden;font-size:18px}.popup .reset_password{color:#555;font-size:16px;margin-left:25px;line-height:37px}.popup .error_msg{background:url(img/lb_error.png) 0 5px no-repeat;padding-left:45px;width:380px;margin:0 auto 25px;text-align:left;min-height:29px;line-height:36px}.popup .btn_addPic{display:inline-block;position:relative;padding:0 12px;height:37px;overflow:hidden;background:#019875;color:#fff;font-size:20px;margin-bottom:25px;text-align:center;cursor:pointer}.popup .btn_addPic_hover{background:#00694e;}.popup .btn_addPic span{display:block;line-height:37px;}.popup .filePrew{display:block;position:absolute;top:0;left:0;width:145px;height:37px;font-size:100px;opacity:0;filter:alpha(opacity=0);cursor:pointer}#loginPop{width:540px}#loginPop div.form_bg{background:#f3f3f3}.popup input[type="text"],.popup input[type="password"]{background:#f3f3f3}#deliverResumesSuccess i,.error_msg i{color:#ff6a6a;font-style:normal}#telTip input[type="text"]{width:360px;font-size:16px;color:#777;}#telTip input[type="text"]:focus{border:2px solid #fff;-webkit-box-shadow: 0px 0px 4px #b5f0e7;-moz-box-shadow: 0px 0px 4px #b5f0e7;box-shadow: 0px 0px 4px #b5f0e7;}#telTip .btn{margin:15px 0px 0 0;}#telTip .btn_s{margin:15px 0 0 0;background:none;color:#333;}#telTip span.error{width:370px;margin:3px 0 -10px 20px;text-align:left;}#sendNoResume form{float:left; margin:20px 0px 0 50px;}#sendNoResume .btn{ margin:20px 0 0 0;}
+﻿@charset "utf-8";.popup{font:14px/22px "Microsoft YaHei","Microsoft Yahei","Phong cách bài hát",Arail;color:#555;padding:30px;width:442px;overflow:hidden}.popup h4{font-size:24px;font-weight:normal;text-align:center;margin:0 0 25px}.popup p{margin:0 0 25px}.popup p.mid{text-align:center}.popup a{color:#019875;text-decoration:none}.popup .color_green{color:#019875}.popup .font_18{font-size:18px}.popup .font_16{font-size:16px}.popup .btn_s,.popup .btn{font-size:20px;background:#019875;padding:0 25px;text-decoration:none;display:inline-block;text-align:center;height:37px;color:#fff;border:0;line-height:37px;transition:background 0.2s ease-in 0s;}.popup .btn_s:hover,.popup .btn:hover{background:#00694e}.popup .enter_msg{width:280px;margin:0 auto;overflow:hidden;font-size:18px}.popup .reset_password{color:#555;font-size:16px;margin-left:25px;line-height:37px}.popup .error_msg{background:url(img/lb_error.png) 0 5px no-repeat;padding-left:45px;width:380px;margin:0 auto 25px;text-align:left;min-height:29px;line-height:36px}.popup .btn_addPic{display:inline-block;position:relative;padding:0 12px;height:37px;overflow:hidden;background:#019875;color:#fff;font-size:20px;margin-bottom:25px;text-align:center;cursor:pointer}.popup .btn_addPic_hover{background:#00694e;}.popup .btn_addPic span{display:block;line-height:37px;}.popup .filePrew{display:block;position:absolute;top:0;left:0;width:145px;height:37px;font-size:100px;opacity:0;filter:alpha(opacity=0);cursor:pointer}#loginPop{width:540px}#loginPop div.form_bg{background:#f3f3f3}.popup input[type="text"],.popup input[type="password"]{background:#f3f3f3}#deliverResumesSuccess i,.error_msg i{color:#ff6a6a;font-style:normal}#telTip input[type="text"]{width:360px;font-size:16px;color:#777;}#telTip input[type="text"]:focus{border:2px solid #fff;-webkit-box-shadow: 0px 0px 4px #b5f0e7;-moz-box-shadow: 0px 0px 4px #b5f0e7;box-shadow: 0px 0px 4px #b5f0e7;}#telTip .btn{margin:15px 0px 0 0;}#telTip .btn_s{margin:15px 0 0 0;background:none;color:#333;}#telTip span.error{width:370px;margin:3px 0 -10px 20px;text-align:left;}#sendNoResume form{float:left; margin:20px 0px 0 50px;}#sendNoResume .btn{ margin:20px 0 0 0;}
 #bindTips h3,#bindReplace h3{
 	font-size:24px;
 	margin:0 0 20px;
@@ -71,7 +71,8 @@
 	width:190px;
 }
 #bindReplace .chooseAccount i{ font-style:normal;}
-/*帐号绑定确认*/
+
+/*Xác nhận kế toán*/
 .user_bindSuccecc{font-size:20px;color:#555;padding-top:0px;line-height:30px; }
 .user_bindSuccecc span{ color:#019875}
 .user_confirmBind{font-size:20px;color:#f63f27;padding-top:28px;}
@@ -83,19 +84,21 @@
 .noRecoverInfosContent{ color:#f63f27; font-weight:bold;;line-height:40px;text-align:center;}
 
 
-/*确认取消绑定*/
+/*Xác nhận ràng buộc hủy bỏ*/
 .user_confirmUnbind{ font-size: 24px; color: #555}
 .user_confirmNo{ font-size: 20px; color: #f63f27; padding-top: 26px;}
 
-/*修改密码成功 vee*/
+/*mật khẩu đã được cập nhật*/
 #updatePassword{text-align:center;}
 #updatePassword h3{font-size:22px;color:#555555;margin:0 0 20px 0;}
 #updatePassword h4{font-size:16px;color:#555555;margin:0 0 10px 0;}
-/*解除招聘服务 vee*/
+
+/*Nâng dịch vụ tuyển dụng */
 #unbindService{text-align:center;}
 #unbindService h3{font-size:22px;color:#555555;margin:0 0 20px 0;}
 #unbindService h4{font-size:16px;color:#555555;margin:0 0 10px 0;}
-/*二次确认解除招聘服务*/
+
+/*Hai xác nhận dịch vụ tuyển dụng loại bỏ*/
 #confirm_unbindService h3{ font-size:24px; color:#555;margin:0 0 20px 0;}
 #confirm_unbindService h4{ font-size:18px; color:#f63f27;margin:0 0 20px 0;line-height:30px; text-align:left}
 #confirm_unbindService .confirm_unbindSeerviceBtn{ text-align:center;}
