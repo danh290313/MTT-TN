@@ -187,12 +187,12 @@ var youdao_conv_id = 271546;
                                 	<td>
                                     	<div class="salary_range">
                                             <div>
-                                                <input type="text" placeholder="Mức lương tối thiểu hàng tháng"   class="require" id="position_min_money"  oninput = "value=value.replace(/[^\d]/g,'')" tips="Mức lương công việc không thể trống!"  attributes="error_position_money"> 
-                                                <span>triệu</span>
+                                                <input type="text" placeholder="Lương tối thiểu"   class="require" id="position_min_money"  oninput = "value=value.replace(/[^\d]/g,'')" tips="Mức lương công việc không thể trống!"  attributes="error_position_money"> 
+                                                <span>tr</span>
                                             </div>
                                             <div>
-                                                <input type="text" placeholder="Mức lương tối đa hàng tháng"  class="require" id="position_max_money" oninput = "value=value.replace(/[^\d]/g,'')" tips="Mức lương công việc không thể trống!"  attributes="error_position_money"> 
-                                                <span>triệu</span>
+                                                <input type="text" placeholder="Lương tối đa"  class="require" id="position_max_money" oninput = "value=value.replace(/[^\d]/g,'')" tips="Mức lương công việc không thể trống!"  attributes="error_position_money"> 
+                                                <span>tr</span>
                                             </div>
                                             <span>Chỉ nhập số</span>
                                         </div>
