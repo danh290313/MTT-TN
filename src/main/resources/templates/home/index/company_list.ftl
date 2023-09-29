@@ -7,9 +7,9 @@
 <link rel="alternate" media="handheld"  />
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Nền tảng tuyển dụng</title>
-<meta property="qc:admins" content="23635710066417756375" />
-<meta name="baidu-site-verification" content="QIQ6KC1oZ6" />
+<title>Web tuyển dụng</title>
+
+
 
 <script type="text/javascript">
 
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="/home/style/js/excanvas.js"></script>
 <![endif]-->
 <script type="text/javascript">
-var youdao_conv_id = 271546; 
+
 </script> 
 <script type="text/javascript" src="/home/style/js/conv.js"></script>
 </head>
@@ -37,7 +37,7 @@ var youdao_conv_id = 271546;
         <div class="clearfix">
             <div class="content_l">
             	<form id="companyListForm" name="companyListForm" method="get" action="h/c/companylist.html">
-	                <input type="hidden" id="city" name="city" value="全国" />
+	                <input type="hidden" id="city" name="city" value="Toàn quốc" />
 	                <input type="hidden" id="fs" name="fs" value="" />
 	                <input type="hidden" id="ifs" name="ifs" value="" />
 	                <input type="hidden" id="ol" name="ol" value="" />
@@ -142,24 +142,22 @@ var youdao_conv_id = 271546;
             </div>	
             <div class="content_r">
             	<div class="subscribe_side">
-	                    <div class="subpos"><span>Gửi</span> hồ sơ</div>
+	                    <#--  <div class="subpos"><span>Gửi</span> hồ sơ</div>
 	                    <div class="c7">Sẽ cung cấp cho bạn hàng ngàn công việc bạn quan tâm
-	                    </div>
-	                    <div class="count">Đã có
-	                    		                    		<em>${resumeTotal!"0"}</em>
-	                    		                    	người nộp hồ sơ
-	                    </div>
+	                    </div>  -->
+	                    <#--  <div class="count">Đã có<em>${resumeTotal!"0"}</em>người nộp hồ sơ
+	                    </div>  -->
 	            	
 	            </div> 
                 <div class="greybg qrcode mt20">
                 	<img src="https://media.monster.com.vn/career-advice/wp-content/uploads/2022/03/interview-question-and-answer-for-hr-recruiter.jpg" width="242" height="242" alt="Mã QR WeChat" />
-                    <span class="c7">Dễ dàng tìm kiếm công việc</span>
+                    <#--  <span class="c7">Dễ dàng tìm kiếm công việc</span>  -->
                 </div>
                	<#--  <a href="javascript:void(0);"  class="eventAd">
                		<img src="" width="280" height="135" />
                	</a>  -->
                	<a href="javascript:void(0);" class="eventAd">
-               		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTI8puGOJefwN2x3_e5N4oOOuqK2f9920tSwg&usqp=CAU" width="280" height="135" />
+               		<#--  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTI8puGOJefwN2x3_e5N4oOOuqK2f9920tSwg&usqp=CAU" width="280" height="135" />  -->
                	</a>
             </div>
        	</div>

@@ -2122,7 +2122,7 @@ a.s-btn-plain-active {
   right: 1px;
 }
 .validatebox-invalid {
-  background-image: url('images/validatebox_warning.png');
+
   background-repeat: no-repeat;
   background-position: right center;
   border-color: #ffa8a8;

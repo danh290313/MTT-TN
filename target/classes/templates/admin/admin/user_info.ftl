@@ -3,8 +3,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="copyright" content="All Rights Reserved, Copyright (C) 2020, Ltd." />
-<title>Quản lý Trang chủ</title>
+
+<title>Trang chủ</title>
 <link rel="stylesheet" type="text/css" href="/admin/easyui/easyui/1.3.4/themes/default/easyui.css" />
 <link rel="stylesheet" type="text/css" href="/admin/easyui/css/wu.css" />
 <link rel="stylesheet" type="text/css" href="/admin/easyui/css/icon.css" />
@@ -12,7 +12,6 @@
 <script type="text/javascript" src="/admin/easyui/easyui/1.3.4/jquery.easyui.min.js"></script>
 <script type="text/javascript" src="/admin/easyui/easyui/1.3.4/locale/easyui-lang-zh_CN.js"></script>
 <style>
-
 .dialog-button { padding: 5px; text-align: center; };
 </style>
 
@@ -61,9 +60,7 @@
 		});
 	}
 	
-	
-	
-	
+
 	//Tải dữ liệu
 	$('#data-datagrid').datagrid({
 		url:'/admin/user/user_info_list',
@@ -80,7 +77,7 @@
 
 			{ field:'username',title:'tên tài khoản',width:100,sortable:true},
 			{ field:'email',title:'Thư',width:100},
-			{ field:'password',title:'mật khẩu',width:100},
+			//{ field:'password',title:'mật khẩu',width:100},
 			{ field:'sex',title:'giới tính',width:100,formatter:function(value,row,index){
 				switch(value){
 					case 0:{

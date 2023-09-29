@@ -1,16 +1,16 @@
 
 <!DOCTYPE HTML>
 <html xmlns:wb="http://open.weibo.com/wb"><head>
-</script><script type="text/javascript" async="" src="/home/style/js/conversion.js"></script><script src="/home/style/js/allmobilize.min.js" charset="utf-8" id="allmobilize"></script><style type="text/css"></style>
+</script><script src="/home/style/js/allmobilize.min.js" charset="utf-8" id="allmobilize"></script><style type="text/css"></style>
 <meta content="no-siteapp" http-equiv="Cache-Control">
 <link  media="handheld" rel="alternate">
 
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-<title>nền tảng tuyển dụng</title>
-<meta content="23635710066417756375" property="qc:admins">
+<title>Web tuyển dụng</title>
+
 <meta name="description" content="">
 <meta name="keywords" content="">
-<meta content="QIQ6KC1oZ6" name="baidu-site-verification">
+
 
 <script type="text/javascript">
 
@@ -24,7 +24,7 @@
 <script src="/home/style/js/additional-methods.js" type="text/javascript"></script>
 
 <script type="text/javascript">
-var youdao_conv_id = 271546; 
+
 </script> 
 <script src="/home/style/js/conv.js" type="text/javascript"></script>
 <script src="/home/style/js/ajaxCross.json" charset="UTF-8"></script></head>
@@ -104,7 +104,7 @@ var youdao_conv_id = 271546;
 																							Công việc: 
 			                                        <a href="/home/position/detail?id=${resume.position.id!""}">
 			                                        	<em>${resume.position.name!""}</em> 
-			                                        	<span>（${resume.position.minMoney!""}triệu-${resume.position.maxMoney!""}triệu）</span>
+			                                        	<span>（${resume.position.minMoney!""} triệu-${resume.position.maxMoney!""} triệu）</span>
 			                                    	</a>
 			                                    </h2>
 		                            			<div class="clear">Tên Công ty: </div>

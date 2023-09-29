@@ -3,9 +3,7 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title> Đăng nhập quản trị viên</title>
-  <meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
-  <meta name="author" content="Vincent Garreau">
+  <title> Đăng nhập hệ thống</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="stylesheet" type="text/css" href="/admin/easyui/easyui/1.3.4/themes/default/easyui.css" />
   <link rel="stylesheet" type="text/css" href="/admin/easyui/css/wu.css" />
@@ -35,7 +33,7 @@
 					</div>
 				</div>
 				<div class="login-center clearfix">
-					<div class="login-center-img"><img src="/admin/login/images/cpacha.png"></div>
+					<#--  <div class="login-center-img"><img src="capcha-admin"></div>  -->
 					<div class="login-center-input">
 						<input style="width:50%;" type="text" class="required" name="cpacha" id="cpacha" value="" placeholder="Nhập mã xác nhận" onfocus="this.placeholder=&#39;&#39;" onblur="this.placeholder=&#39;Nhập mã xác nhận&#39;" tips="Mã xác minh phải được điền">
 						<div class="login-center-input-text">Mã xác nhận</div>

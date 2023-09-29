@@ -2,8 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="copyright" content="All Rights Reserved, Copyright (C) 2020, Ltd." />
-<title>Quản lý Trang chủ</title>
+<title>Trang chủ</title>
 <link rel="stylesheet" type="text/css" href="/admin/easyui/easyui/1.3.4/themes/default/easyui.css" />
 <link rel="stylesheet" type="text/css" href="/admin/easyui/css/wu.css" />
 <link rel="stylesheet" type="text/css" href="/admin/easyui/css/icon.css" />
@@ -11,7 +10,6 @@
 <script type="text/javascript" src="/admin/easyui/easyui/1.3.4/jquery.easyui.min.js"></script>
 <script type="text/javascript" src="/admin/easyui/easyui/1.3.4/locale/easyui-lang-zh_CN.js"></script>
 <style>
-
 .dialog-button { padding: 5px; text-align: center; };
 </style>
 
@@ -22,9 +20,9 @@
         	Truy vấn trạng thái công việc:
 	  		<select id="search-state" name="search-state" class="easyui-combobox" panelHeight="auto" data-options="editable:false" style="width:150px">
 	                <option value="0">xin vui lòng chọn</option>
-	    			<option value="1">có hiệu quả</option>
-	    			<option value="2">Để được xem xét</option>
-	    			<option value="3">Đã được ngoại tuyến</option>
+	    			<option value="1">Trực tuyến</option>
+	    			<option value="2">Đang xem xét</option>
+	    			<option value="3">Ngoại tuyến</option>
 	        </select>
 	         <a href="javascript:void(0);" id="search-btn" class="easyui-linkbutton" iconCls="icon-search" plain="true">tìm kiếm</a>&nbsp;&nbsp;
 	         <a href="javascript:void(0);" id="update-state-btn" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="changeState();">Thay đổi trạng thái</a>
@@ -50,9 +48,9 @@
                 <td width="60" align="right">Trạng thái vị trí:</td>
                 <td>
                 	<select id="edit-state" name="state" class="easyui-combobox" data-options="editable:false" panelHeight="auto" style="width:268px">
-		    			 <option value="effective">có hiệu quả</option>
-		    			 <option value="wait">Để được xem xét</option>
-		    			 <option value="out">Đã được ngoại tuyến</option>
+		    			 <option value="effective">Trực tuyến</option>
+		    			 <option value="wait">Đang xem xét</option>
+		    			 <option value="out">Ngoại tuyến</option>
 		            </select>
                 </td>
             </tr>
@@ -157,35 +155,35 @@
 		columns:[[
 			{ field:'chk',checkbox:true},
 
-			{ field:'company.name',title:'Tên công ty',width:150,formatter:function(value,row,index){
+			{ field:'company.name',title:'Tên công ty',width:100,formatter:function(value,row,index){
 				return row.company.name;
 			}},
 			{ field:'name',title:'Tiêu đề',width:100},
 			{ field:'type',title:'Công việc',width:100},
-			{ field:'workType',title:'Loại hình công việc',width:50},
-			{ field:'address',title:'địa chỉ làm việc',width:230},
-			{ field:'degree',title:'Yêu cầu học tập',width:50},
-			{ field:'minMoney',title:'Mức lương công việc',width:60,formatter:function(value,row,index){
+			{ field:'workType',title:'Loại hình',width:50},
+			{ field:'address',title:'địa chỉ làm việc',width:150},
+			{ field:'degree',title:'Yêu cầu trình độ',width:70},
+			{ field:'minMoney',title:'Mức lương công việc',width:80,formatter:function(value,row,index){
 				var money_range = "";
 				money_range += row.minMoney;
-				money_range += "triệu-";
+				money_range += " triệu-";
 				money_range += row.maxMoney;
-				money_range += "triệu";
+				money_range += " triệu";
 				return money_range;
 			}},
-			{ field:'state',title:'Trạng thái vị trí',width:50,formatter:function(value,row,index){
+			{ field:'state',title:'Trạng thái vị trí',width:80,formatter:function(value,row,index){
 				if(value == 'wait'){
-					return 'Để được xem xét';
+					return 'Đang xem xét';
 				}
 				if(value == 'out'){
-					return 'Đã được ngoại tuyến';
+					return 'Ngoại tuyến';
 				}
 				if(value == 'effective'){
-					return 'có hiệu quả';
+					return 'Trực tuyến';
 				}
 				return value;
 			}},
-			{ field:'updateTime',title:'Lần cuối cùng vị trí được cập nhật',width:100}
+			{ field:'updateTime',title:'Lần cuối cập nhật',width:100}
 		]]
 	});
 </script>

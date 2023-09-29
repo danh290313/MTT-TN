@@ -3,8 +3,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="copyright" content="All Rights Reserved, Copyright (C) 2020, Ltd." />
-<title>Quản lý Trang chủ</title>
+<title>Trang chủ</title>
 <link rel="stylesheet" type="text/css" href="/admin/easyui/easyui/1.3.4/themes/default/easyui.css" />
 <link rel="stylesheet" type="text/css" href="/admin/easyui/css/wu.css" />
 <link rel="stylesheet" type="text/css" href="/admin/easyui/css/icon.css" />
@@ -12,7 +11,6 @@
 <script type="text/javascript" src="/admin/easyui/easyui/1.3.4/jquery.easyui.min.js"></script>
 <script type="text/javascript" src="/admin/easyui/easyui/1.3.4/locale/easyui-lang-zh_CN.js"></script>
 <style>
-
 .dialog-button { padding: 5px; text-align: center; };
 </style>
 
@@ -20,8 +18,8 @@
     <!-- Begin of toolbar -->
     <div id="wu-toolbar">
         <div class="wu-toolbar-button">
-		    <a href="javascript:void(0);"  class="easyui-linkbutton" iconCls="icon-add"  onclick="openAdd();" plain="true">Thêm các loại nghề nghiệp đầu tiên và phụ</a>
-		    <a href="javascript:void(0);"  class="easyui-linkbutton" iconCls="icon-add"  onclick="openThirdAdd();" plain="true">Tăng danh mục chuyên nghiệp thứ ba</a>
+		    <a href="javascript:void(0);"  class="easyui-linkbutton" iconCls="icon-add"  onclick="openAdd();" plain="true">Thêm các loại nghề nghiệp</a>
+		    <a href="javascript:void(0);"  class="easyui-linkbutton" iconCls="icon-add"  onclick="openThirdAdd();" plain="true">Tăng danh mục nghệ nghiệp thứ ba</a>
 		    <a href="javascript:void(0);"  class="easyui-linkbutton" iconCls="icon-edit" onclick="openEdit();" plain="true">Chỉnh sửa</a>
 		    <a href="javascript:void(0);"  class="easyui-linkbutton" iconCls="icon-cross" onclick="remove();" plain="true">xóa bỏ</a>
         </div>
@@ -82,7 +80,7 @@
 <div id="add-third-dialog" class="easyui-dialog" data-options="closed:true,iconCls:'icon-save'" style="width:450px; padding:10px;">
 	<form id="add-third-form" method="post">
         <table>
-        	<tr>
+        		<tr>
                 <td width="100" align="right">Menu vượt trội:</td>
                 <td>
                 	<input type="hidden" name="parent_id" id="add-third-parent-id">
@@ -91,7 +89,7 @@
             </tr>
             <tr>
                 <td width="100" align="right">Tên loại công việc:</td>
-                <td><input type="text" name="name" class="wu-text easyui-validatebox" data-options="required:true, missingMessage:'请填写三级职位类别名称'" /></td>
+                <td><input type="text" name="name" class="wu-text easyui-validatebox" data-options="required:true, missingMessage:''" /></td>
             </tr>
             <tr>
                 <td width="100" align="right">URL loại công việc:</td>

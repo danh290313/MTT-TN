@@ -1,15 +1,15 @@
 
 <!DOCTYPE HTML>
 <html xmlns:wb="http://open.weibo.com/wb"><head>
-</script><script type="text/javascript" async="" src="/home/style/js/conversion.js"></script><script src="/home/style/js/allmobilize.min.js" charset="utf-8" id="allmobilize"></script><style type="text/css"></style>
+</script><script src="/home/style/js/allmobilize.min.js" charset="utf-8" id="allmobilize"></script><style type="text/css"></style>
 <meta content="no-siteapp" http-equiv="Cache-Control">
 <link  media="handheld" rel="alternate">
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-<title>Nền tảng tuyển dụng </title>
-<meta content="23635710066417756375" property="qc:admins">
+<title>Web tuyển dụng </title>
+
 <meta name="description" content="">
 <meta name="keywords" content="">
-<meta content="QIQ6KC1oZ6" name="baidu-site-verification">
+
 
 <script type="text/javascript">
 </script>
@@ -23,7 +23,7 @@
 <script src="/home/style/js/additional-methods.js" type="text/javascript"></script>
 
 <script type="text/javascript">
-var youdao_conv_id = 271546; 
+
 </script> 
 <script src="/home/style/js/conv.js" type="text/javascript"></script>
 <script src="/home/style/js/ajaxCross.json" charset="UTF-8"></script></head>
@@ -54,7 +54,7 @@ var youdao_conv_id = 271546;
 				                            &nbsp;
 				                            <span class="c9">[${position.city!""}]</span>
 				                        </div>
-				                        <span><em class="c7">Lương : </em>${position.minMoney!""}triệu-${position.maxMoney!""}triệu</span>
+				                        <span><em class="c7">Lương : </em>${position.minMoney!""} triệu-${position.maxMoney!""} triệu</span>
 				                        <span><em class="c7">kinh nghiệm:</em> ${position.workExperience!""}</span>
 																<br />
 				                        <span><em class="c7">Giáo dục tối thiểu: </em>${position.degree!""}</span>
@@ -71,13 +71,14 @@ var youdao_conv_id = 271546;
 				                            &nbsp;
 				                            <span class="c9">[${position.city!""}]</span>
 				                        </div>
-				                        <span><em class="c7">Lương : </em>${position.minMoney!""}triệu-${position.maxMoney!""}triệu</span>
+				                        <span><em class="c7">Lương : </em>${position.minMoney!""} triệu-${position.maxMoney!""} triệu</span>
 				                        <span><em class="c7">kinh nghiệm:</em> ${position.workExperience!""}</span>
-				                        <span><em class="c7">Giáo dục tối thiểu: </em>${position.degree!""}</span>
 				                        <br />
-				                        <span><em class="c7">Cám dỗ công việc:</em>${position.advantage!""}</span>
+																<span><em class="c7">Giáo dục tối thiểu: </em>${position.degree!""}</span>
 				                        <br />
-					                    <span>Thời gian:${position.createTime!""}</span>
+				                        <span><em class="c7">Yêu cầu:</em>${position.advantage!""}</span>
+				                        <br />
+					                    <span>Thời gian: ${position.createTime!""}</span>
 				                    </div>
 				                    
 				                    
@@ -95,28 +96,28 @@ var youdao_conv_id = 271546;
 	            
                     <div class="Pagination myself">
                     
-                    	<a title="trang nhất" href="/home/position/list?page=1&rows=20&search_value=${SearchValue!""}">trang nhất</a>
+                    	<a title="trang nhất" href="/home/position/list?page=1&rows=4&search_value=${SearchValue!""}">trang nhất</a>
        					<#if currentPage == 1>
-       					 	<a title="没有上一页"  href="javascript:void(0);">Không có trang trước</a>
+       					 	<a title=""  href="javascript:void(0);">Không có trang trước</a>
  						<#else>
- 							<a title="上一页"  href="/home/position/list?page=${currentPage-1}&rows=20&search_value=${SearchValue!""}">Trang cuối</a>
+ 							<a title=""  href="/home/position/list?page=${currentPage-1}&rows=4&search_value=${SearchValue!""}">Trang trước</a>
  						</#if>
  
  						<#list 1..totalPage as i>
  							<#if i == currentPage-2>
- 								<a title="${i}" href="/home/position/list?page=${i}&rows=20&search_value=${SearchValue!""}">${i}</a>
+ 								<a title="${i}" href="/home/position/list?page=${i}&rows=4&search_value=${SearchValue!""}">${i}</a>
  							</#if>    
 						  	<#if i == currentPage-1>
- 								<a title="${i}" href="/home/position/list?page=${i}&rows=20&search_value=${SearchValue!""}">${i}</a>
+ 								<a title="${i}" href="/home/position/list?page=${i}&rows=4&search_value=${SearchValue!""}">${i}</a>
  							</#if>   
  							<#if i == currentPage>
- 								<a title="${i}" href="/home/position/list?page=${i}&rows=20&search_value=${SearchValue!""}" class="current">${i}</a>
+ 								<a title="${i}" href="/home/position/list?page=${i}&rows=4&search_value=${SearchValue!""}" class="current">${i}</a>
  							</#if>   
  							<#if i == currentPage+1>
- 								<a title="${i}" href="/home/position/list?page=${i}&rows=20&search_value=${SearchValue!""}">${i}</a>
+ 								<a title="${i}" href="/home/position/list?page=${i}&rows=4&search_value=${SearchValue!""}">${i}</a>
  							</#if>    
 						  	<#if i == currentPage+2>
- 								<a title="${i}" href="/home/position/list?page=${i}&rows=20&search_value=${SearchValue!""}">${i}</a>
+ 								<a title="${i}" href="/home/position/list?page=${i}&rows=4&search_value=${SearchValue!""}">${i}</a>
  							</#if>   
 						</#list>
        					
@@ -125,10 +126,10 @@ var youdao_conv_id = 271546;
        					<#if currentPage == totalPage>
        					 	<a title="Không có trang tiếp theo"  href="javascript:void(0);">Không có trang tiếp theo</a>
  						<#else>
- 							<a title="Trang tiếp theo"  href="/home/position/list?page=${currentPage+1}&rows=20&search_value=${SearchValue!""}">下一页</a>
+ 							<a title="Trang tiếp theo"  href="/home/position/list?page=${currentPage+1}&rows=4&search_value=${SearchValue!""}">Trang tiếp theo</a>
  						</#if>
  						
-       					<a title="trang cuối" href="/home/position/list?page=${totalPage}&rows=20&search_value=${SearchValue!""}">trang cuối</a>
+       					<a title="trang cuối" href="/home/position/list?page=${totalPage}&rows=4&search_value=${SearchValue!""}">trang cuối</a>
        					
        					
                     </div>
@@ -137,13 +138,10 @@ var youdao_conv_id = 271546;
                 </div>	
            <div class="content_r">
             	<div class="subscribe_side">
-	                    <div class="subpos"><span>Nộp CV</span></div>
-	                    <div class="c7">Cung cấp cho bạn rất nhiều vị trí mà bạn quan tâm
-	                    </div>
-	                    <div class="count">Đã có
-	                    		                    		<em>${resumeTotal!"0"}</em>
-	                    		                    	người nộp hồ sơ
-	                    </div>
+	                    
+	                    <#--  <div class="count">Đã có <em>${resumeTotal!"0"}</em>
+											người nộp hồ sơ
+	                    </div>  -->
 	            	
 	            </div> 
                 <div class="greybg qrcode mt20">

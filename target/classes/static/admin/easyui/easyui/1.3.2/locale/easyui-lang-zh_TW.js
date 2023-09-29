@@ -33,8 +33,8 @@ if ($.fn.combogrid){
 	$.fn.combogrid.defaults.missingMessage = '該輸入項為必輸項';
 }
 if ($.fn.calendar){
-	$.fn.calendar.defaults.weeks = ['日','一','二','三','四','五','六'];
-	$.fn.calendar.defaults.months = ['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月'];
+	$.fn.calendar.defaults.weeks = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+	$.fn.calendar.defaults.months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 }
 if ($.fn.datebox){
 	$.fn.datebox.defaults.currentText = '今天';

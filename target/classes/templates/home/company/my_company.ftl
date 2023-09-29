@@ -6,10 +6,10 @@
 <link  media="handheld" rel="alternate">
 <!-- end Nhiều mây -->
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-<title>Nền tảng tuyển dụng</title>
-<meta content="23635710066417756375" property="qc:admins">
+<title>Web tuyển dụng</title>
 
-<meta content="QIQ6KC1oZ6" name="baidu-site-verification">
+
+
 
 <script type="text/javascript">
 
@@ -23,7 +23,7 @@
 <script src="/home/style/js/additional-methods.js" type="text/javascript"></script>
 
 <script type="text/javascript">
-var youdao_conv_id = 271546; 
+
 </script> 
 <script src="/home/style/js/conv.js" type="text/javascript"></script>
 <script src="/home/style/js/setting.js"></script>
@@ -51,12 +51,12 @@ var youdao_conv_id = 271546;
                     			<h2 title="${Company.name}">${Company.name}</h2>
 		                    	
 		                		
-		                    	<#if Company.state == "không công nhận, không chứng nhận">
+		                    	<#if Company.state == "Chưa Xác Minh">
 		                    		<em class="unvalid"></em>
 		                			<span class="va dn">Không thể phát hiện được</span>
 		                    		<a  class="applyC" href="javascript:void(0);" onclick="applyConfirm('${Company.id}')">Áp dụng cho chứng nhận</a>
 		                    	</#if>
-	                    		<#if Company.state == "Để được xem xét">
+	                    		<#if Company.state == "Đang xem xét">
 	                    			<em class="unvalid"></em>
 		                			<span class="va dn">Không thể phát hiện được</span>
 		                    		<a  class="applyC" href="javascript:void(0);">xem xét</a>
@@ -223,7 +223,7 @@ var youdao_conv_id = 271546;
 					                    <dd>
 						                    <form id="companyDesForm">
 						                        <textarea placeholder="Vui lòng mô tả hồ sơ của công ty, văn hóa doanh nghiệp, v.v." name="companyProfile" id="companyProfile"></textarea>		                                        
-						                        <div class="word_count fr">Bạn cũng có thể nhập <span>1000</span> Kí tự</div>
+						                        <#--  <div class="word_count fr">Bạn cũng có thể nhập <span>1000</span> Kí tự</div>  -->
 						                        <div class="clear"></div>
 						                        <input type="button" value="Lưu" id="submitProfile" class="btn_small" onclick="saveCompanyIntroducation();">
 						                        <a id="delProfile" class="btn_cancel_s" href="javascript:void(0)">Hủy bỏ</a>
@@ -337,7 +337,7 @@ var youdao_conv_id = 271546;
 	                            <td>
                             	 	<#if Company??>
 		                            	<#if Company.territory??>
-		                            		<a rel="nofollow" title="${Company.url!""}" href="javascript:void(0);">${Company.url!""}</a>
+		                            		<a rel="nofollow" title="${Company.url!""}" href="${Company.url!""}" target="_blank">${Company.url!""}</a>
 		                            	<#else>
 		                            		Hãy đến và điền vào trang web của công ty
 		                            	</#if>
@@ -401,8 +401,8 @@ var youdao_conv_id = 271546;
        			
        			<dl class="c_section c_stages">
                 	<dt>
-                    	<h2><em></em>Giai đoạn tài chính</h2>
-                    	<a title="Chỉnh sửa giai đoạn tài chính" class="c_edit" href="javascript:void(0)"></a>
+                    	<h2><em></em>Loại hình</h2>
+                    	<a title="Chỉnh sửa loại hình công ty" class="c_edit" href="javascript:void(0)"></a>
                     </dt>
                     <dd>
                     	<ul class="reset stageshow">
@@ -415,7 +415,7 @@ var youdao_conv_id = 271546;
                     	<form class="dn" id="stageform">
 	                    	<ul id="stagesList" class="reset">
        		                    <li>
-		                    		<label>Giai đoạn hiện nay</label>
+		                    		<label>Loại hình hiện nay</label>
 		                    		<input type="hidden" class="select_invest_hidden" name="select_invest_hidden">
 				                    <input type="button" value="Không thể tài trợ"  class="select_tags_short select_invest" id="company_finance">
 				                    <div class="selectBoxShort dn" style="display: none;">
@@ -423,7 +423,6 @@ var youdao_conv_id = 271546;
 		                        				<li>niêm yết </li>
 		                           			<li>tư nhân</li>
 		                           			<li>nhà nước</li>
-		                           			<li>niêm yết</li>
 				                        </ul>
 				                    </div>
 		                    	</li>
@@ -586,7 +585,7 @@ window.onload = function(){
 		document.getElementById("company_territory").value='';
 		document.getElementById("companyUrl").value='';
 	</#if>
-<!-----------Trong quá trình sửa đổi, phân công giai đoạn tài chính của công ty---------------------->
+<!-----------Trong quá trình sửa đổi, phân công loại hình công ty của công ty---------------------->
 	<#if Company??>
 		document.getElementById("company_finance").value='${Company.finance!""}';
 	<#else>
@@ -634,7 +633,7 @@ function uploadCompanyFounderPhoto(){
 				}
 			},
 			error:function(data){
-				$("#errorMsg").html("Tải lên không thành công, vui lòng tải lên đúng định dạng hoặc tệp kích thước！!!!");
+				$("#errorMsg").html("Tải lên không thành công, vui lòng tải lên đúng định dạng hoặc tệp kích thước!!!");
 				$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
 			}
 		});
@@ -665,7 +664,7 @@ function uploadCompanyProductPhoto(){
 				}
 			},
 			error:function(data){
-				$("#errorMsg").html("Tải lên thất bại, vui lòng tải lên đúng định dạng hoặc tệp kích thước!!!!");
+				$("#errorMsg").html("Tải lên thất bại, vui lòng tải lên đúng định dạng hoặc tệp kích thước!!!");
 				$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
 			}
 		});
@@ -695,7 +694,7 @@ function uploadCompanyPhoto(){
 				}
 			},
 			error:function(data){
-				$("#errorMsg").html("Tải lên thất bại, vui lòng tải lên đúng định dạng hoặc tệp kích thước!!!!");
+				$("#errorMsg").html("Tải lên thất bại, vui lòng tải lên đúng định dạng hoặc tệp kích thước!!!");
 				$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
 			}
 		});
@@ -725,7 +724,7 @@ function saveCompanyDetailForm()
 		success:function(data){
 			if(data.code == 0){
 				$("#successMsg").html("Tiêu đề và hồ sơ của công ty được lưu thành công!");
-				$.colorbox({inline:true, href:$("#successTip"),title:"Gợi ý hệ thống"});
+				$.colorbox({inline:true, href:$("#successTip"),title:"Thông báo"});
 				setTimeout(function(){  
 						window.location.reload();//Trang làm mới
 						},3000);
@@ -734,7 +733,7 @@ function saveCompanyDetailForm()
 					case -5000:
     					$('#error_company_name').css('display','block');
     					$("#errorMsg").html("Lưu không thành công,"+data.msg);
-    					$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
+    					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
     					break;
 					case -5001:
     					$('#error_company_value').css('display','block');
@@ -769,7 +768,7 @@ function saveCompanyTags()
 						},3000);
 			}else{
 					$("#errorMsg").html("Lưu không thành công,"+data.msg);
-					$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
+					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
 				}
 		}
 	});
@@ -785,13 +784,13 @@ function saveCompanyIntroducation(){
 		success:function(data){
 			if(data.code == 0){
 				$("#successMsg").html("Công ty giới thiệu đã lưu thành công !");
-				$.colorbox({inline:true, href:$("#successTip"),title:"Gợi ý hệ thống"});
+				$.colorbox({inline:true, href:$("#successTip"),title:"Thông báo"});
 				setTimeout(function(){  
 						window.location.reload();//Trang làm mới
 						},3000);
 			}else{
 					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
-					$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
+					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
 				}
 		}
 	});
@@ -811,13 +810,13 @@ function saveCompanyProduct(){
 		success:function(data){
 			if(data.code == 0){
 				$("#successMsg").html("Các sản phẩm của công ty được lưu trữ thành công!");
-				$.colorbox({inline:true, href:$("#successTip"),title:"Gợi ý hệ thống"});
+				$.colorbox({inline:true, href:$("#successTip"),title:"Thông báo"});
 				setTimeout(function(){  
 						window.location.reload();//Trang làm mới
 						},3000);
 			}else{
 					$("#errorMsg").html("Thất bại lưu，"+data.msg);
-					$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
+					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
 				}
 		}
 	});
@@ -846,7 +845,7 @@ function saveCompanyBasic(){
 		success:function(data){
 			if(data.code == 0){
 				$("#successMsg").html("Thông tin vị trí, trường, quy mô và trang web của công ty được đã lưu thành công!");
-				$.colorbox({inline:true, href:$("#successTip"),title:"Gợi ý hệ thống"});
+				$.colorbox({inline:true, href:$("#successTip"),title:"Thông báo"});
 				setTimeout(function(){  
 						window.location.reload();//Trang làm mới
 						},3000);
@@ -882,7 +881,7 @@ function saveCompanyBasic(){
 	});
 	
 }
-//Lưu thông tin giai đoạn tài chính của công ty
+//Lưu thông tin loại hình công ty của công ty
 function saveCompanyFinance()
 {
 	var finance = $("#company_finance").val();
@@ -893,7 +892,7 @@ function saveCompanyFinance()
 		data:{finance:finance},
 		success:function(data){
 			if(data.code == 0){
-				$("#successMsg").html("Thông tin giai đoạn tài chính của công ty được lưu thành công!");
+				$("#successMsg").html("Thông tin loại hình công ty của công ty được lưu thành công!");
 				$.colorbox({inline:true, href:$("#successTip"),title:"Thông báo"});
 				setTimeout(function(){  
 						window.location.reload();//Trang làm mới

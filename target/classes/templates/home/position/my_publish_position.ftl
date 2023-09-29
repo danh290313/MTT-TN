@@ -4,18 +4,18 @@
 
 <head>
 	<script async="" src="/home/style/js/analytics.js"></script>
-	<script type="text/javascript" async="" src="/home/style/js/conversion.js"></script>
+	
 	<script src="/home/style/js/allmobilize.min.js" charset="utf-8" id="allmobilize"></script>
 	<style type="text/css"></style>
 	<meta content="no-siteapp" http-equiv="Cache-Control">
 	<link media="handheld" rel="alternate">
 	
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-	<title>Dịch vụ sau khi nhận của tôi-nền tảng tuyển dụng Internet chuyên nghiệp nhất</title>
-	<meta content="23635710066417756375" property="qc:admins">
+	<title>Dịch vụ sau khi nhận của tôi-Web tuyển dụng Internet chuyên nghiệp nhất</title>
+	
 	<meta name="description" content="">
 	<meta name="keywords" content="">
-	<meta content="QIQ6KC1oZ6" name="baidu-site-verification">
+	
 	<script type="text/javascript">
 	</script>
 	<link href="THUCTAPTOTNGHIEP_N19DCCN028" rel="Shortcut Icon">
@@ -29,7 +29,7 @@
 	<script src="/home/style/js/setting.js"></script>
 	<script src="/home/common/confirm_null.js"></script>
 	<script type="text/javascript">
-	var youdao_conv_id = 271546;
+	
 	</script>
 	<script src="/home/style/js/conv.js" type="text/javascript"></script>
 	<script src="/home/style/js/ajaxCross.json" charset="UTF-8"></script>
@@ -67,11 +67,11 @@
 						</#if>
 						<#if positionState=="wait">
 							<dd class="current">
-								<a href="/home/position/my_publish_position?positionState=wait">Để được xem xét</a>
+								<a href="/home/position/my_publish_position?positionState=wait">Đang xem xét</a>
 							</dd>
 							<#else>
 								<dd>
-									<a href="/home/position/my_publish_position?positionState=wait">Để được xem xét</a>
+									<a href="/home/position/my_publish_position?positionState=wait">Đang xem xét</a>
 								</dd>
 						</#if>
 						<#if positionState=="out">
@@ -88,7 +88,7 @@
 								<a href="/home/position/my_publish_position?positionState=effective">Vị trí đang trực tuyến</a>
 							</dd>
 							<dd>
-								<a href="/home/position/my_publish_position?positionState=wait">Để được xem xét</a>
+								<a href="/home/position/my_publish_position?positionState=wait">Đang xem xét</a>
 							</dd>
 							<dd>
 								<a href="/home/position/my_publish_position?positionState=out">Có vị trí ngoại tuyến</a>
@@ -106,7 +106,7 @@
 									Vị trí đang trực tuyến
 								</#if>
 								<#if positionState=="wait">
-									Để được xem xét
+									Đang xem xét
 								</#if>
 								<#if positionState=="out">
 									Có vị trí ngoại tuyến
@@ -135,7 +135,7 @@
 											</h3>
 											<span class="receivedResumeNo">Sơ yếu lý lịch áp dụng cho vị trí này (${position.number!""}）</span>
 											<div>
-												${position.workType!""}/ ${position.minMoney!""}triệu-${position.maxMoney!""}triệu / ${position.workExperience!""} / ${position.degree!""}
+												${position.workType!""}/ ${position.minMoney!""} triệu-${position.maxMoney!""} triệu / ${position.workExperience!""} / ${position.degree!""}
 											</div>
 											<div class="c9">Thời gian phát hành： ${position.createTime!""}
 											</div>
@@ -179,13 +179,13 @@
 						success: function(data) {
 							if (data.code == 0) {
 								$("#successMsg").html("Công việc được xóa thành công! ");
-								$.colorbox({inline:true, href:$("#successTip"),title:"Gợi ý hệ thống"});
+								$.colorbox({inline:true, href:$("#successTip"),title:"Thông báo"});
 								setTimeout(function() {
 									window.location.reload(); //Trang làm mới
 								}, 3000);
 							} else {
 								$("#errorMsg").html("Xóa vị trí thất bại，" + data.msg);
-								$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
+								$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
 							}
 						}
 					});
@@ -201,13 +201,13 @@
 					success: function(data) {
 						if (data.code == 0) {
 							$("#successMsg").html("Việc ngoại tuyến là thành công!");
-							$.colorbox({inline:true, href:$("#successTip"),title:"Gợi ý hệ thống"});
+							$.colorbox({inline:true, href:$("#successTip"),title:"Thông báo"});
 							setTimeout(function() {
 								window.location.reload(); //Trang làm mới
 							}, 3000);
 						} else {
 							$("#errorMsg").html("Thất bại ngoại tuyến，" + data.msg + "!!!");
-							$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
+							$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
 						}
 					}
 				});
@@ -222,13 +222,13 @@
 					success: function(data) {
 						if (data.code == 0) {
 							$("#successMsg").html("Thành công đã lên mạng!Nhưng đợi cho quản trị viên xem xét nó!");
-							$.colorbox({inline:true, href:$("#successTip"),title:"Gợi ý hệ thống"});
+							$.colorbox({inline:true, href:$("#successTip"),title:"Thông báo"});
 							setTimeout(function() {
 								window.location.reload(); //Trang làm mới
 							}, 3000);
 						} else {
 							$("#errorMsg").html("Không lên mạng," + data.msg);
-							$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
+							$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
 						}
 					}
 				});

@@ -7,9 +7,9 @@
 <link rel="alternate" media="handheld"  />
 <!-- end Ước lượng đám mây -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Nền tảng tuyển dụng</title>
-<meta property="qc:admins" content="23635710066417756375" />
-<meta name="baidu-site-verification" content="QIQ6KC1oZ6" />
+<title>Web tuyển dụng</title>
+
+
 
 <script type="text/javascript">
 
@@ -24,7 +24,7 @@
 <script src="/home/style/js/jquery-hbzx.js" type="text/javascript"></script>
 
 <script type="text/javascript">
-var youdao_conv_id = 271546; 
+
 </script> 
 <script type="text/javascript" src="/home/style/js/conv.js"></script>
 </head>
@@ -93,7 +93,7 @@ var youdao_conv_id = 271546;
                         	<li><span>Quy mô</span>${Company.scale!""}</li>
                         	<li>
                         		<span>Trang chủ</span> 
-       							<a href="javascript:void(0);" title="${Company.url!""}" rel="nofollow">${Company.url!""}</a>
+       										<a href="${Company.url!""}" title="${Company.url!""}" rel="nofollow" target="_blank">${Company.url!""}</a>
                         	</li>
                         </ul>
                         
@@ -116,7 +116,7 @@ var youdao_conv_id = 271546;
                     </dd>
                 </dl>
                 	<a href="javascript:void(0);" class="eventAd">
-                  		<img src="/home/style/images/tuyen-dung.jpg" width="280" height="135" />
+                  		<#--  <img src="/home/style/images/tuyen-dung.jpg" width="280" height="135" />  -->
             		</a>
             </div>
        	</div>                    

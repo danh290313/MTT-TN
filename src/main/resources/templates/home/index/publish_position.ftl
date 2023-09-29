@@ -1,16 +1,16 @@
 
 <!DOCTYPE HTML>
 <html xmlns:wb="http://open.weibo.com/wb"><head>
-</script><script type="text/javascript" async="" src="/home/style/js/conversion.js"></script><script src="/home/style/js/allmobilize.min.js" charset="utf-8" id="allmobilize"></script><style type="text/css"></style>
+</script><script src="/home/style/js/allmobilize.min.js" charset="utf-8" id="allmobilize"></script><style type="text/css"></style>
 <meta content="no-siteapp" http-equiv="Cache-Control">
 <link  media="handheld" rel="alternate">
 
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-<title>Phát hành dịch vụ nhận vị trí mới-nền tảng tuyển dụng Internet chuyên nghiệp nhất</title>
-<meta content="23635710066417756375" property="qc:admins">
+<title>Phát hành dịch vụ nhận vị trí mới-Web tuyển dụng Internet chuyên nghiệp nhất</title>
+
 <meta name="description" content="">
 <meta name="keywords" content="">
-<meta content="QIQ6KC1oZ6" name="baidu-site-verification">
+
 
 
 <script type="text/javascript">
@@ -25,7 +25,7 @@
 <script src="/home/style/js/setting.js"></script>
 <script src="/home/common/confirm_null.js"></script>
 <script type="text/javascript">
-var youdao_conv_id = 271546; 
+
 </script> 
 <script src="/home/style/js/conv.js" type="text/javascript"></script>
 <body>
@@ -54,26 +54,20 @@ var youdao_conv_id = 271546;
 		<a href="/home/position/my_publish_position?positionState=effective">Vị trí đang trực tuyến</a>
 	</dd>
 	<dd>
-		<a href="/home/position/my_publish_position?positionState=wait">Để được xem xét</a>
+		<a href="/home/position/my_publish_position?positionState=wait">Đang xem xét</a>
 	</dd>
 	<dd>
 		<a href="/home/position/my_publish_position?positionState=out">Có vị trí ngoại tuyến</a>
 	</dd>
 </dl>
 <div class="subscribe_side mt20">
-   <div class="f14">Bạn muốn nhận được nhiều hơn và tiếp tục tốt hơn?</div>
-   <div class="f18 mb10">Thông tin cần </div>
-   <div>LH:
-	 </br>
+   <#--  <div class="f14"></div>
+   <div class="f18 mb10">Thông tin cần LH: </div>
+   <div>
 	 <a class="f16" href="mailto:danh290313@gmail.com">danh290313@gmail.com</a></div>
-   <div class="f18 ti2em">SDT: 0961144072</div>
+   <div class="f18 ti2em">SDT: 0961144072</div>  -->
 </div>
 
-<#--  <div class="subscribe_side mt20">
-   <div class="f14">Tham gia nhóm trao đổi nhân sự Internet</div>
-   <div class="f18 mb10">Nói chuyện với đồng nghiệp của họ</div>
-   <div class="f24">338167634</div>
-</div>             -->
 
  </div><!-- end .sidebar -->
             <div class="content">
@@ -105,7 +99,7 @@ var youdao_conv_id = 271546;
 				 							<#list topPositionCategoryList as topPositionCategory>
                                         
                                                 <dl>
-                                                    <dt>${topPositionCategory.name!""}</dt>  <!--一级菜单-->
+                                                    <dt>${topPositionCategory.name!""}</dt>
                                                     <dd>
                                                         <ul class="reset job_main">
                                                         
@@ -219,7 +213,7 @@ var youdao_conv_id = 271546;
                                         <div class="boxUpDown boxUpDown_380 dn" id="box_experience" style="display: none;">
                                             <ul>
                                                     <li>
-                                    					Không yêu cầu
+                                    								Không yêu cầu
                                                     </li>
                                                     <li>
                                                 		Tốt nghiệp
@@ -261,7 +255,7 @@ var youdao_conv_id = 271546;
                                                     	Đại học
                                                     </li>
                                                     <li>
-                                                    	bậc thầy
+                                                    	Thạc sĩ
                                                     </li>
                                                     <li>
                                                        	 Bằng tiến sĩ
@@ -316,7 +310,6 @@ var youdao_conv_id = 271546;
                 </dl>
             </div><!-- end .content -->
 <#include "../common/alert.ftl"/>
-<!------------------------------------- 弹窗lightbox ----------------------------------------->
 
 <!------------------------------------- end ----------------------------------------->
 <!-- <script type="text/javascript" src="/home/style/js/tinymce.min.js"></script>
@@ -344,7 +337,7 @@ var workType = '';
 window.onload = function(){
 	
 	<#if errorMsg??>
-		$("#errorMsg").html("!!!"+'${errorMsg}');
+		$("#errorMsg").html('${errorMsg}');
 		$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
 		setTimeout(function(){  
 				window.location.href = "/home/company/my_company";  
@@ -441,7 +434,7 @@ function saveNewPosition(){
 						window.location.href = "/home/position/my_publish_position?positionState=out";  
 						},3000);
 			}else{
-					$("#errorMsg").html("Thất bại bảo quản，"+data.msg+"!!!");
+					$("#errorMsg").html("Lưu thất bại，"+data.msg+"!!!");
 					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
 			}
 		}

@@ -7,12 +7,12 @@
 <link rel="alternate" media="handheld"  />
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Đăng nhập-nền tảng tuyển dụng Internet chuyên nghiệp nhất</title>
-<meta property="qc:admins" content="23635710066417756375" />
+<title>Đăng nhập-Web tuyển dụng Internet chuyên nghiệp nhất</title>
+
 <meta content="" name="description">
 <meta content="" name="keywords">
 
-<meta name="baidu-site-verification" content="QIQ6KC1oZ6" />
+
 
 <!-- <div class="web_root"  style="display:none">h</div> -->
 <script type="text/javascript">
@@ -31,7 +31,7 @@
 
 
 <script type="text/javascript">
-var youdao_conv_id = 271546; 
+
 </script> 
 <script type="text/javascript" src="/home/style/js/conv.js"></script>
 <script src="/home/common/confirm_null.js"></script>
@@ -40,8 +40,8 @@ var youdao_conv_id = 271546;
 <body id="login_bg">
 	<div class="login_wrapper">
 		<div class="login_header">
-            <div id="cloud_s"><img src="/home/style/images/cloud_s.png" width="81" height="52" alt="cloud" /></div>
-            <div id="cloud_m"><img src="/home/style/images/cloud_m.png" width="136" height="95"  alt="cloud" /></div>
+            <#--  <div id="cloud_s"><img src="/home/style/images/cloud_s.png" width="81" height="52" alt="cloud" /></div>
+            <div id="cloud_m"><img src="/home/style/images/cloud_m.png" width="136" height="95"  alt="cloud" /></div>  -->
         </div>
         
 		 <div class="login_box">

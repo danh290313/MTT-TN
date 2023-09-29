@@ -4,18 +4,18 @@
 
 <head>
 </script>
-	<script type="text/javascript" async="" src="/home/style/js/conversion.js"></script>
+	
 	<script src="/home/style/js/allmobilize.min.js" charset="utf-8" id="allmobilize"></script>
 	<style type="text/css"></style>
 	<meta content="no-siteapp" http-equiv="Cache-Control">
 	<link media="handheld" rel="alternate">
 
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-	<title>Nền tảng tuyển dụng internet chuyên nghiệp nhất</title>
-	<meta content="23635710066417756375" property="qc:admins">
+	<title>Web tuyển dụng internet chuyên nghiệp nhất</title>
+	
 	<meta name="description" content="">
 	<meta name="keywords" content="">
-	<meta content="QIQ6KC1oZ6" name="baidu-site-verification">
+	
 	<script type="text/javascript">
 
 	</script>
@@ -29,7 +29,7 @@
 	<script src="/home/style/js/setting.js"></script>
 	<script src="/home/common/confirm_null.js"></script>
 	<script type="text/javascript">
-	var youdao_conv_id = 271546;
+	
 	</script>
 	<script src="/home/style/js/conv.js" type="text/javascript"></script>
 	<script src="/home/style/js/ajaxCross.json" charset="UTF-8"></script>
@@ -91,7 +91,7 @@
 						<a href="/home/position/my_publish_position?positionState=effective">Vị trí đang trực tuyến</a>
 					</dd>
 					<dd>
-						<a href="/home/position/my_publish_position?positionState=wait">Để được xem xét</a>
+						<a href="/home/position/my_publish_position?positionState=wait">Đang xem xét</a>
 					</dd>
 					<dd>
 						<a href="/home/position/my_publish_position?positionState=out">Có vị trí ngoại tuyến</a>
@@ -102,7 +102,7 @@
 				<dl class="company_center_content">
 					<dt>
 						<h1>
-							<em></em>
+							<em> </em>
 							<#if resumeState??>
 								<#if resumeState=='effective'>
 									Hồ sơ phỏng vấn<span>（Gồm: ${resumeTotal!""} hồ sơ）</span>

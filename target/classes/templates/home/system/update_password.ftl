@@ -1,16 +1,16 @@
 
 <!DOCTYPE HTML>
 <html xmlns:wb="http://open.weibo.com/wb"><head>
-</script><script type="text/javascript" async="" src="/home/style/js/conversion.js"></script><script src="/home/style/js/allmobilize.min.js" charset="utf-8" id="allmobilize"></script><style type="text/css"></style>
+</script><script src="/home/style/js/allmobilize.min.js" charset="utf-8" id="allmobilize"></script><style type="text/css"></style>
 <meta content="no-siteapp" http-equiv="Cache-Control">
 <link  media="handheld" rel="alternate">
 
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-<title>Sửa đổi mật khẩu-nền tảng tuyển dụng Internet chuyên nghiệp nhất</title>
-<meta content="23635710066417756375" property="qc:admins">
+<title>Sửa đổi mật khẩu-Web tuyển dụng Internet chuyên nghiệp nhất</title>
+
 <meta name="description" content="">
 <meta name="keywords" content="">
-<meta content="QIQ6KC1oZ6" name="baidu-site-verification">
+
 
 <script type="text/javascript">
 
@@ -24,7 +24,7 @@
 <script src="/home/style/js/additional-methods.js" type="text/javascript"></script>
 <script src="/home/style/js/setting.js"></script>
 <script type="text/javascript">
-var youdao_conv_id = 271546; 
+
 </script> 
 <script src="/home/style/js/conv.js" type="text/javascript"></script>
 
@@ -97,6 +97,9 @@ var youdao_conv_id = 271546;
 					if(data.code == 0){
 						$("#successMsg").html("Mật khẩu được sửa đổi thành công ");
 						$.colorbox({inline:true, href:$("#successTip"),title:"Thông báo"});
+						setTimeout(function(){  
+						window.location.reload();//Trang làm mới
+						},3000);
 					}else{
     					$("#errorMsg").html("Sửa đổi mật khẩu không thành công，"+data.msg+"!!!");
     					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});

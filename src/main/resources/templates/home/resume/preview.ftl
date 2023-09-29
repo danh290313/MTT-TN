@@ -2,12 +2,12 @@
 <!DOCTYPE HTML>
 <html><head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-<title>nền tảng tuyển dụng </title>
-<meta content="23635710066417756375" property="qc:admins">
+<title>Web tuyển dụng </title>
+
 <meta name="description" content="">
 <meta name="keywords" content="">
 
-<meta content="QIQ6KC1oZ6" name="baidu-site-verification">
+
 
 </script><script type="text/javascript">
 
@@ -59,7 +59,7 @@ $(function(){
 	                <h2>Công việc mong đợi</h2>
 	                <div class="expectShow">
 	                	<#if ExpectWork??>
-            					Thành phố hy vọng: ${ExpectWork.city!"vô giá trị"}   |  Tính chất công việc: ${ExpectWork.type!"toàn thời gian"} </br>   Vị trí mong muốn: ${ExpectWork.position!"vô giá trị"}  |  Lương mong muốn: ${ExpectWork.money!"vô giá trị"}
+            					Thành phố hy vọng: ${ExpectWork.city!"Chưa cập nhật"}   |  Tính chất công việc: ${ExpectWork.type!"toàn thời gian"} </br>   Vị trí mong muốn: ${ExpectWork.position!"Chưa cập nhật"}  |  Lương mong muốn: ${ExpectWork.money!"Chưa cập nhật"}
 						</#if>
 	                </div><!--end .expectShow-->
 	            </div><!--end #expectJob-->

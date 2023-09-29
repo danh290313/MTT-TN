@@ -1,16 +1,16 @@
 
 <!DOCTYPE HTML>
 <html xmlns:wb="http://open.weibo.com/wb"><head>
-</script><script type="text/javascript" async="" src="/home/style/js/conversion.js"></script><script src="/home/style/js/allmobilize.min.js" charset="utf-8" id="allmobilize"></script><style type="text/css"></style>
+</script><script src="/home/style/js/allmobilize.min.js" charset="utf-8" id="allmobilize"></script><style type="text/css"></style>
 <meta content="no-siteapp" http-equiv="Cache-Control">
 <link  media="handheld" rel="alternate">
 
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-<title>Nền tảng tuyển dụng</title>
-<meta content="23635710066417756375" property="qc:admins">
+<title>Web tuyển dụng</title>
+
 <meta name="description" content="">
 <meta name="keywords" content="">
-<meta content="QIQ6KC1oZ6" name="baidu-site-verification">
+
 
 <script type="text/javascript">
 
@@ -25,7 +25,7 @@
 <script src="/home/style/js/additional-methods.js" type="text/javascript"></script>
 
 <script type="text/javascript">
-var youdao_conv_id = 271546; 
+
 </script> 
 <script src="/home/style/js/conv.js" type="text/javascript"></script>
 <script src="/home/common/confirm_null.js"></script>
@@ -51,16 +51,16 @@ var youdao_conv_id = 271546;
             		</div>	
             		
             		<div class="which fl">
-        				<div>Thông tin cá nhân, kinh nghiệm làm việc, kinh nghiệm dự án và nền tảng giáo dục.</div>
+        				<div></div>
 							<#if isOK == 1>
-								<span><a href="javascript:void(0);">Gửi nó ngay lập tức</a></span>
+								<span><a href="javascript:void(0);"></a></span>
 							</#if>
             		</div>
             	</div><!--end #resumeScore-->
             	
 <!-----------------------------------------------------Thông tin cơ bản--------------------------------------------------->
      			<div class="profile_box" id="basicInfo">     <!--start basicinfo--> 
-            		<h2>Thông tin cơ bản  <span> （Phải được lấp đầy khi phân phối sơ yếu lý lịch）</span></h2>
+            		<h2>Thông tin cơ bản  <span> </span></h2>
             		<span class="c_edit"></span>
             		<div class="basicShow">
         				<span>Tên: ${user.username!""} |  Giới tính: <#if user.sex == 0>LGBT<#elseif user.sex == 1>nam<#else>nữ</#if> | Giáo dục: ${user.degree!""}  <br>  
@@ -108,7 +108,7 @@ var youdao_conv_id = 271546;
 						        	<ul>
 					        			<li>Cao đẳng</li>
 					        			<li>Đại học</li>
-					        			<li>bậc thầy</li>
+					        			<li>Thạc sĩ</li>
 					        			<li>Bằng tiến sĩ</li>
 					        			<li>khác</li>
 					        		</ul>
@@ -254,7 +254,7 @@ var youdao_conv_id = 271546;
             		</div><!--end .expectEdit-->
             		<div class="expectAdd pAdd">
             			<#if ExpectWork??>
-            					Thành phố mong đợi：${ExpectWork.city!"vô giá trị"}   |  Tính chất công việc: ${ExpectWork.type!"toàn thời gian"}  <br>  Vị trí mong muốn: ${ExpectWork.position!""}  |  Hy vọng tiền lương hàng tháng: ${ExpectWork.money!""}
+            					Thành phố mong đợi：${ExpectWork.city!"Chưa cập nhật"}   |  Tính chất công việc: ${ExpectWork.type!"toàn thời gian"}  <br>  Vị trí mong muốn: ${ExpectWork.position!""}  |  Hy vọng tiền lương hàng tháng: ${ExpectWork.money!""}
 						<#else>
 							Điền vào những kỳ vọng chính xác có thể cải thiện đáng kể tỷ lệ săn bắn thành công ...<br>
 							Hãy đến và thêm kỳ vọng của bạn!
@@ -271,7 +271,7 @@ var youdao_conv_id = 271546;
             	
 <!-----------------------------------------------------kinh nghiệm làm việc--------------------------------------------------->
             	<div class="profile_box" id="workExperience">
-            		<h2>kinh nghiệm làm việc  <span> （Phải được lấp đầy khi phân phối sơ yếu lý lịch）</span></h2>
+            		<h2>kinh nghiệm làm việc  <span> </span></h2>
             		<span class="c_add dn"></span>
             		
             		<div class="experienceEdit dn">
@@ -304,8 +304,6 @@ var youdao_conv_id = 271546;
 								        	<span for="startTime" generated="true" class="error" id="error_startTime" style="display:none">Thời gian bắt đầu không thể trống!</span>
 											<div class="box_companyYearStart boxUpDown boxUpDown_139 dn" style="display: none;">
 									            <ul>
-									            	<li>2025</li>
-									            	<li>2024</li>
 									            	<li>2023</li>
 									            	<li>2022</li>
 									           		<li>2021</li>
@@ -315,51 +313,11 @@ var youdao_conv_id = 271546;
 									            	<li>2017</li>
 									            	<li>2016</li>
 									            	<li>2015</li>
-								        			<li>2014</li>
-								        			<li>2013</li>
-								        			<li>2012</li>
-								        			<li>2011</li>
-								        			<li>2010</li>
-								        			<li>2009</li>
-								        			<li>2008</li>
-								        			<li>2007</li>
-								        			<li>2006</li>
-								        			<li>2005</li>
-								        			<li>2004</li>
-								        			<li>2003</li>
-								        			<li>2002</li>
-								        			<li>2001</li>
-								        			<li>2000</li>
-								        			<li>1999</li>
-								        			<li>1998</li>
-								        			<li>1997</li>
-								        			<li>1996</li>
-								        			<li>1995</li>
-								        			<li>1994</li>
-								        			<li>1993</li>
-								        			<li>1992</li>
-								        			<li>1991</li>
-								        			<li>1990</li>
-								        			<li>1989</li>
-								        			<li>1988</li>
-								        			<li>1987</li>
-								        			<li>1986</li>
-								        			<li>1985</li>
-								        			<li>1984</li>
-								        			<li>1983</li>
-								        			<li>1982</li>
-								        			<li>1981</li>
-								        			<li>1980</li>
-								        			<li>1979</li>
-								        			<li>1978</li>
-								        			<li>1977</li>
-								        			<li>1976</li>
-								        			<li>1975</li>
-								        			<li>1974</li>
-								        			<li>1973</li>
-								        			<li>1972</li>
-								        			<li>1971</li>
-								        			<li>1970</li>
+																<li>2014</li>
+																<li>2013</li>
+																<li>2012</li>
+																<li>2011</li>
+																<li>2010</li>
 								        		</ul>
 									        </div>
 										</div>
@@ -384,8 +342,6 @@ var youdao_conv_id = 271546;
 											<span for="endTime" generated="true" class="error" id="error_endTime" style="display:none">Thời gian kết thúc không thể trống!</span>
 											<div class="box_companyYearEnd  boxUpDown boxUpDown_139 dn" style="display: none;">
 									            <ul>
-									            	<li>2025</li>
-									            	<li>2024</li>
 									            	<li>2023</li>
 									            	<li>2022</li>
 									           		<li>2021</li>
@@ -395,51 +351,11 @@ var youdao_conv_id = 271546;
 									            	<li>2017</li>
 									            	<li>2016</li>
 									            	<li>2015</li>
-								        			<li>2014</li>
-								        			<li>2013</li>
-								        			<li>2012</li>
-								        			<li>2011</li>
-								        			<li>2010</li>
-								        			<li>2009</li>
-								        			<li>2008</li>
-								        			<li>2007</li>
-								        			<li>2006</li>
-								        			<li>2005</li>
-								        			<li>2004</li>
-								        			<li>2003</li>
-								        			<li>2002</li>
-								        			<li>2001</li>
-								        			<li>2000</li>
-								        			<li>1999</li>
-								        			<li>1998</li>
-								        			<li>1997</li>
-								        			<li>1996</li>
-								        			<li>1995</li>
-								        			<li>1994</li>
-								        			<li>1993</li>
-								        			<li>1992</li>
-								        			<li>1991</li>
-								        			<li>1990</li>
-								        			<li>1989</li>
-								        			<li>1988</li>
-								        			<li>1987</li>
-								        			<li>1986</li>
-								        			<li>1985</li>
-								        			<li>1984</li>
-								        			<li>1983</li>
-								        			<li>1982</li>
-								        			<li>1981</li>
-								        			<li>1980</li>
-								        			<li>1979</li>
-								        			<li>1978</li>
-								        			<li>1977</li>
-								        			<li>1976</li>
-								        			<li>1975</li>
-								        			<li>1974</li>
-								        			<li>1973</li>
-								        			<li>1972</li>
-								        			<li>1971</li>
-								        			<li>1970</li>
+																<li>2014</li>
+																<li>2013</li>
+																<li>2012</li>
+																<li>2011</li>
+																<li>2010</li>
 									        	</ul>
 									        </div>
 										</div>
@@ -490,7 +406,7 @@ var youdao_conv_id = 271546;
 
 
             	<div class="profile_box" id="projectExperience">
-            		<h2>Kinh nghiệm dự án<span> （Phải được lấp đầy khi phân phối sơ yếu lý lịch）</span></h2>
+            		<h2>Kinh nghiệm dự án<span> </span></h2>
             		            		<span class="c_add dn"></span>
             		<div class="projectShow dn">
     				<ul class="plist clearfix"></ul>
@@ -526,8 +442,6 @@ var youdao_conv_id = 271546;
 								        	<span for="startTime" generated="true" class="error" id="error_pw_startTime" style="display:none">Thời gian bắt đầu không thể trống！</span>
 											<div class="box_projectYearStart  boxUpDown boxUpDown_139 dn" style="display: none;">
 									            <ul>
-									            	<li>2025</li>
-									            	<li>2024</li>
 									            	<li>2023</li>
 									            	<li>2022</li>
 									           		<li>2021</li>
@@ -537,51 +451,11 @@ var youdao_conv_id = 271546;
 									            	<li>2017</li>
 									            	<li>2016</li>
 									            	<li>2015</li>
-								        			<li>2014</li>
-								        			<li>2013</li>
-								        			<li>2012</li>
-								        			<li>2011</li>
-								        			<li>2010</li>
-								        			<li>2009</li>
-								        			<li>2008</li>
-								        			<li>2007</li>
-								        			<li>2006</li>
-								        			<li>2005</li>
-								        			<li>2004</li>
-								        			<li>2003</li>
-								        			<li>2002</li>
-								        			<li>2001</li>
-								        			<li>2000</li>
-								        			<li>1999</li>
-								        			<li>1998</li>
-								        			<li>1997</li>
-								        			<li>1996</li>
-								        			<li>1995</li>
-								        			<li>1994</li>
-								        			<li>1993</li>
-								        			<li>1992</li>
-								        			<li>1991</li>
-								        			<li>1990</li>
-								        			<li>1989</li>
-								        			<li>1988</li>
-								        			<li>1987</li>
-								        			<li>1986</li>
-								        			<li>1985</li>
-								        			<li>1984</li>
-								        			<li>1983</li>
-								        			<li>1982</li>
-								        			<li>1981</li>
-								        			<li>1980</li>
-								        			<li>1979</li>
-								        			<li>1978</li>
-								        			<li>1977</li>
-								        			<li>1976</li>
-								        			<li>1975</li>
-								        			<li>1974</li>
-								        			<li>1973</li>
-								        			<li>1972</li>
-								        			<li>1971</li>
-								        			<li>1970</li>
+																<li>2014</li>
+																<li>2013</li>
+																<li>2012</li>
+																<li>2011</li>
+																<li>2010</li>
 									        	</ul>
 									        </div>
 										</div>
@@ -606,8 +480,6 @@ var youdao_conv_id = 271546;
 											<span for="endTime" generated="true" class="error" id="error_pw_endTime" style="display:none">Thời gian kết thúc không thể trống！</span>
 											<div class="box_projectYearEnd  boxUpDown boxUpDown_139 dn" style="display: none;">
 									            <ul>
-									            	<li>2025</li>
-									            	<li>2024</li>
 									            	<li>2023</li>
 									            	<li>2022</li>
 									           		<li>2021</li>
@@ -617,51 +489,11 @@ var youdao_conv_id = 271546;
 									            	<li>2017</li>
 									            	<li>2016</li>
 									            	<li>2015</li>
-								        			<li>2014</li>
-								        			<li>2013</li>
-								        			<li>2012</li>
-								        			<li>2011</li>
-								        			<li>2010</li>
-								        			<li>2009</li>
-								        			<li>2008</li>
-								        			<li>2007</li>
-								        			<li>2006</li>
-								        			<li>2005</li>
-								        			<li>2004</li>
-								        			<li>2003</li>
-								        			<li>2002</li>
-								        			<li>2001</li>
-								        			<li>2000</li>
-								        			<li>1999</li>
-								        			<li>1998</li>
-								        			<li>1997</li>
-								        			<li>1996</li>
-								        			<li>1995</li>
-								        			<li>1994</li>
-								        			<li>1993</li>
-								        			<li>1992</li>
-								        			<li>1991</li>
-								        			<li>1990</li>
-								        			<li>1989</li>
-								        			<li>1988</li>
-								        			<li>1987</li>
-								        			<li>1986</li>
-								        			<li>1985</li>
-								        			<li>1984</li>
-								        			<li>1983</li>
-								        			<li>1982</li>
-								        			<li>1981</li>
-								        			<li>1980</li>
-								        			<li>1979</li>
-								        			<li>1978</li>
-								        			<li>1977</li>
-								        			<li>1976</li>
-								        			<li>1975</li>
-								        			<li>1974</li>
-								        			<li>1973</li>
-								        			<li>1972</li>
-								        			<li>1971</li>
-								        			<li>1970</li>
+																<li>2014</li>
+																<li>2013</li>
+																<li>2012</li>
+																<li>2011</li>
+																<li>2010</li>
 								        		</ul>
 									        </div>
 										</div>
@@ -681,7 +513,7 @@ var youdao_conv_id = 271546;
 	            					<td valign="top"></td> 
 									<td colspan="3">
 										<textarea class="s_textarea" name="projectDescription" placeholder="mô tả dự án"  id="pw_project_description"></textarea>
-										<div class="word_count">Bạn cũng có thể nhập <span>500</span> Kí tự</div>
+										<#--  <div class="word_count">Bạn cũng có thể nhập <span>500</span> Kí tự</div>  -->
 									</td>
 	            				</tr>
 	            				<tr>
@@ -715,7 +547,7 @@ var youdao_conv_id = 271546;
             	
 <!-----------------------------------------------------Nền giáo dục--------------------------------------------------->
             	<div class="profile_box" id="educationalBackground">
-            		<h2>Nền giáo dục<span>（Phải được lấp đầy khi phân phối sơ yếu lý lịch）</span></h2>
+            		<h2>Nền giáo dục<span></span></h2>
 					<span class="c_add dn"></span>
             		<div class="educationalEdit dn">
             			<form class="educationalForm" id="educationBackgroundForm">
@@ -738,7 +570,7 @@ var youdao_conv_id = 271546;
 								            <ul>
 							        			<li>Cao đẳng</li>
 							        			<li>Đại học</li>
-							        			<li>bậc thầy</li>
+							        			<li>Thạc sĩ</li>
 							        			<li>Bằng tiến sĩ</li>
 							        			<li>khác</li>
 								        	</ul>
@@ -763,8 +595,6 @@ var youdao_conv_id = 271546;
 											<span for="startTime" generated="true" class="error" id="error_eb_startTime" style="display:none">Không thể trống ngay từ đầu của đầu!</span>
 											<div class="box_schoolYearStart boxUpDown boxUpDown_139 dn" style="display: none;">
 									            <ul>
-									            	<li>2025</li>
-									            	<li>2024</li>
 									            	<li>2023</li>
 									            	<li>2022</li>
 									           		<li>2021</li>
@@ -774,51 +604,21 @@ var youdao_conv_id = 271546;
 									            	<li>2017</li>
 									            	<li>2016</li>
 									            	<li>2015</li>
-								        			<li>2014</li>
-								        			<li>2013</li>
-								        			<li>2012</li>
-								        			<li>2011</li>
-								        			<li>2010</li>
-								        			<li>2009</li>
-								        			<li>2008</li>
-								        			<li>2007</li>
-								        			<li>2006</li>
-								        			<li>2005</li>
-								        			<li>2004</li>
-								        			<li>2003</li>
-								        			<li>2002</li>
-								        			<li>2001</li>
-								        			<li>2000</li>
-								        			<li>1999</li>
-								        			<li>1998</li>
-								        			<li>1997</li>
-								        			<li>1996</li>
-								        			<li>1995</li>
-								        			<li>1994</li>
-								        			<li>1993</li>
-								        			<li>1992</li>
-								        			<li>1991</li>
-								        			<li>1990</li>
-								        			<li>1989</li>
-								        			<li>1988</li>
-								        			<li>1987</li>
-								        			<li>1986</li>
-								        			<li>1985</li>
-								        			<li>1984</li>
-								        			<li>1983</li>
-								        			<li>1982</li>
-								        			<li>1981</li>
-								        			<li>1980</li>
-								        			<li>1979</li>
-								        			<li>1978</li>
-								        			<li>1977</li>
-								        			<li>1976</li>
-								        			<li>1975</li>
-								        			<li>1974</li>
-								        			<li>1973</li>
-								        			<li>1972</li>
-								        			<li>1971</li>
-								        			<li>1970</li>
+																<li>2014</li>
+																<li>2013</li>
+																<li>2012</li>
+																<li>2011</li>
+																<li>2010</li>
+																<li>2009</li>
+																<li>2008</li>
+																<li>2007</li>
+																<li>2006</li>
+																<li>2005</li>
+																<li>2004</li>
+																<li>2003</li>
+																<li>2002</li>
+																<li>2001</li>
+																<li>2000</li>
 									        	</ul>
 									        </div>
 										</div>
@@ -828,8 +628,6 @@ var youdao_conv_id = 271546;
 								        	<span for="endTime" generated="true" class="error" id="error_eb_endTime" style="display:none">Cuối cùng không thể trống!</span>
 											<div class="box_schoolYearEnd  boxUpDown boxUpDown_139 dn" style="display: none;">
 									            <ul>
-									            	<li>2025</li>
-									            	<li>2024</li>
 									            	<li>2023</li>
 									            	<li>2022</li>
 									           		<li>2021</li>
@@ -839,51 +637,21 @@ var youdao_conv_id = 271546;
 									            	<li>2017</li>
 									            	<li>2016</li>
 									            	<li>2015</li>
-								        			<li>2014</li>
-								        			<li>2013</li>
-								        			<li>2012</li>
-								        			<li>2011</li>
-								        			<li>2010</li>
-								        			<li>2009</li>
-								        			<li>2008</li>
-								        			<li>2007</li>
-								        			<li>2006</li>
-								        			<li>2005</li>
-								        			<li>2004</li>
-								        			<li>2003</li>
-								        			<li>2002</li>
-								        			<li>2001</li>
-								        			<li>2000</li>
-								        			<li>1999</li>
-								        			<li>1998</li>
-								        			<li>1997</li>
-								        			<li>1996</li>
-								        			<li>1995</li>
-								        			<li>1994</li>
-								        			<li>1993</li>
-								        			<li>1992</li>
-								        			<li>1991</li>
-								        			<li>1990</li>
-								        			<li>1989</li>
-								        			<li>1988</li>
-								        			<li>1987</li>
-								        			<li>1986</li>
-								        			<li>1985</li>
-								        			<li>1984</li>
-								        			<li>1983</li>
-								        			<li>1982</li>
-								        			<li>1981</li>
-								        			<li>1980</li>
-								        			<li>1979</li>
-								        			<li>1978</li>
-								        			<li>1977</li>
-								        			<li>1976</li>
-								        			<li>1975</li>
-								        			<li>1974</li>
-								        			<li>1973</li>
-								        			<li>1972</li>
-								        			<li>1971</li>
-								        			<li>1970</li>
+																<li>2014</li>
+																<li>2013</li>
+																<li>2012</li>
+																<li>2011</li>
+																<li>2010</li>
+																<li>2009</li>
+																<li>2008</li>
+																<li>2007</li>
+																<li>2006</li>
+																<li>2005</li>
+																<li>2004</li>
+																<li>2003</li>
+																<li>2002</li>
+																<li>2001</li>
+																<li>2000</li>
 									        	</ul>
 									        </div>
 	            						</div>
@@ -933,7 +701,7 @@ var youdao_conv_id = 271546;
 	            				<tbody><tr>
 									<td colspan="2">
 										<textarea class="s_textarea" name="selfDescription" placeholder="Vui lòng nhập bản thân" id="user_selfDescription"></textarea>
-										<div class="word_count">Bạn cũng có thể nhập <span>500</span> Kí tự</div>
+										<#--  <div class="word_count">Bạn cũng có thể nhập <span>500</span> Kí tự</div>  -->
 									</td>
 	            				</tr>
 	            				<tr>
@@ -978,7 +746,7 @@ var youdao_conv_id = 271546;
 	            				<tr>
 									<td>
 										<textarea maxlength="100" class="s_textarea" name="workDescription" placeholder="Vui lòng nhập văn bản mô tả"  id="ws_description"></textarea>
-										<div class="word_count">Bạn cũng có thể nhập <span id="1">100</span> Kí tự</div>
+										<#--  <div class="word_count">Bạn cũng có thể nhập <span id="1">100</span> Kí tự</div>  -->
 									</td>
 	            				</tr>
 	            				<tr>
@@ -1077,8 +845,8 @@ var youdao_conv_id = 271546;
 
 				
 				<div class="greybg qrcode mt20">
-                	<img width="242" height="242" alt="" src="https://hcmussh.edu.vn/img/news/42304545.jpg?t=42304548">
-                    <span class="c7">Tìm một công việc dễ dàng</span>
+                	<#--  <img width="242" height="242" alt="" src="https://hcmussh.edu.vn/img/news/42304545.jpg?t=42304548">  -->
+                    <#--  <span class="c7">Tìm một công việc dễ dàng</span>  -->
                 </div>
             </div><!--end .content_r-->
         </div>
@@ -1138,7 +906,7 @@ var youdao_conv_id = 271546;
 						}
 					},
 					error: function(data) {
-						$("#errorMsg").html("Tải lên không thành công, vui lòng tải lên đúng định dạng hoặc tệp kích thước！!!!");
+						$("#errorMsg").html("Tải lên không thành công, vui lòng tải lên đúng định dạng hoặc tệp kích thước!!!");
 						$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
 					}
 				});
@@ -1257,18 +1025,18 @@ function upload(){
 		success:function(data){
 			if(data.code == 0){
 				$("#successMsg").html("Tải lên thành công!");
-				$.colorbox({inline:true, href:$("#successTip"),title:"Gợi ý hệ thống"});
+				$.colorbox({inline:true, href:$("#successTip"),title:"Thông báo"});
 				$("#preview-user-photo").attr('src','/photo/view?filename=' + data.data);
 				$("#edit-preview-user-photo").attr('src','/photo/view?filename=' + data.data);
 				$("#user_headPic").val(data.data);
 			}else{
 				$("#errorMsg").html("Tải lên thất bại,"+data.msg+"!!!");
-				$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
+				$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
 			}
 		},
 		error:function(data){
-			$("#errorMsg").html("Tải lên không thành công, vui lòng tải lên đúng định dạng hoặc tệp kích thước！!!!");
-			$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
+			$("#errorMsg").html("Tải lên không thành công, vui lòng tải lên đúng định dạng hoặc tệp kích thước!!!");
+			$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
 		}
 	});
 }
@@ -1307,7 +1075,7 @@ function saveBasicInfo()
 		success:function(data){
 			if(data.code == 0){
 				$("#successMsg").html("Thông tin cá nhân là thành công!");
-				$.colorbox({inline:true, href:$("#successTip"),title:"Gợi ý hệ thống"});
+				$.colorbox({inline:true, href:$("#successTip"),title:"Thông báo"});
 				setTimeout(function(){  
 						window.location.reload();//Trang làm mới
 						},3000);
@@ -1315,17 +1083,17 @@ function saveBasicInfo()
 				switch(data.code){
             				case -1000:
             					$('#error_username').css('display','block');
-            					$("#errorMsg").html("Thất bại bảo quản，"+data.msg+"!!!");
-            					$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
+            					$("#errorMsg").html("Lưu thất bại，"+data.msg+"!!!");
+            					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
             					break;
             				case -1014:
             					$('#error_mobile').css('display','block');
             					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
-            					$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
+            					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
             					break;
             				default:
             					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
-            					$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
+            					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
             					break;
 							}
 				}		
@@ -1350,14 +1118,14 @@ function saveExpectWork()
 		data:{city:city,type:type,money:money,position:position},
 		success:function(data){
 			if(data.code == 0){
-				$("#successMsg").html("Dự kiến ​​công việc này là thành công!");
-				$.colorbox({inline:true, href:$("#successTip"),title:"Gợi ý hệ thống"});
+				$("#successMsg").html("​​công việc mong đợi cập nhật thành công");
+				$.colorbox({inline:true, href:$("#successTip"),title:"Thông báo"});
 				setTimeout(function(){  
 						window.location.reload();//Trang làm mới
 						},3000);
 			}else{
 					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
-					$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
+					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
 				}
 		}
 	});
@@ -1386,23 +1154,23 @@ function saveWorkExperience()
 	if(startYear=="Năm bắt đầu" || startMonth == "Bắt đầu tháng")
 	{
 		$('#error_startTime').css('display','block');
-		$("#errorMsg").html("Thời gian bắt đầu không thể trống!!!!");
-		$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
+		$("#errorMsg").html("Thời gian bắt đầu không thể trống!!!");
+		$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
 		return;
 	}
 	//Phán đoán không phải là
 	if(endYear=="Kết thúc" || endMonth == "Tháng kết thúc")
 	{
 		$('#error_endTime').css('display','block');
-		$("#errorMsg").html("Thời gian kết thúc không thể trống!!!!");
-		$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
+		$("#errorMsg").html("Thời gian kết thúc không thể trống!!!");
+		$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
 		return;
 	}
 	//Thời gian không đáp ứng các thông số kỹ thuật
 	if(endYear < startYear || (endYear == startYear && startMonth > endMonth))
 	{
-		$("#errorMsg").html("Thời gian bắt đầu không thể lớn hơn thời gian kết thúc!!!!");
-		$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
+		$("#errorMsg").html("Thời gian bắt đầu không thể lớn hơn thời gian kết thúc!!!");
+		$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
 		return;
 	}
 	
@@ -1414,7 +1182,7 @@ function saveWorkExperience()
 		success:function(data){
 			if(data.code == 0){
 				$("#successMsg").html("Kinh nghiệm làm việc thành công");
-				$.colorbox({inline:true, href:$("#successTip"),title:"Gợi ý hệ thống"});
+				$.colorbox({inline:true, href:$("#successTip"),title:"Thông báo"});
 				setTimeout(function(){  
 						window.location.reload();//Trang làm mới
 						},3000);
@@ -1423,26 +1191,26 @@ function saveWorkExperience()
             				case -4002:
             					$('#error_company_name').css('display','block');
             					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
-            					$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
+            					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
             					break;
             				case -4003:
             					$('#error_position_name').css('display','block');
             					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
-            					$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
+            					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
             					break;
         					case -4004:
             					$('#error_startTime').css('display','block');
             					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
-            					$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
+            					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
             					break;
         					case -4005:
             					$('#error_endTime').css('display','block');
             					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
-            					$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
+            					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
             					break;
             				default:
             					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
-            					$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
+            					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
             					break;
 							}
 				}		
@@ -1476,23 +1244,23 @@ function saveProjectExperience()
 	if(startYear=="Năm bắt đầu" || startMonth == "Bắt đầu tháng")
 	{
 		$('#error_pw_startTime').css('display','block');
-		$("#errorMsg").html("Thời gian bắt đầu không thể trống!!!!");
-		$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
+		$("#errorMsg").html("Thời gian bắt đầu không thể trống!!!");
+		$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
 		return;
 	}
 	//Phán đoán không phải là
 	if(endYear=="Kết thúc" || endMonth == "Tháng kết thúc")
 	{
 		$('#error_pw_endTime').css('display','block');
-		$("#errorMsg").html("Thời gian kết thúc không thể trống!!!!");
-		$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
+		$("#errorMsg").html("Thời gian kết thúc không thể trống!!!");
+		$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
 		return;
 	}
 	//Thời gian không đáp ứng các thông số kỹ thuật
 	if(endYear < startYear || (endYear == startYear && startMonth > endMonth))
 	{
-		$("#errorMsg").html("Thời gian bắt đầu không thể lớn hơn thời gian kết thúc!!!!");
-		$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
+		$("#errorMsg").html("Thời gian bắt đầu không thể lớn hơn thời gian kết thúc!!!");
+		$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
 		return;
 	}
 	$.ajax({
@@ -1503,7 +1271,7 @@ function saveProjectExperience()
 		success:function(data){
 			if(data.code == 0){
 				$("#successMsg").html("Kinh nghiệm dự án là thành công!");
-				$.colorbox({inline:true, href:$("#successTip"),title:"Gợi ý hệ thống"});
+				$.colorbox({inline:true, href:$("#successTip"),title:"Thông báo"});
 				setTimeout(function(){  
 						window.location.reload();//Trang làm mới
 						},3000);
@@ -1512,26 +1280,26 @@ function saveProjectExperience()
             				case -4010:
             					$('#error_pw_project_name').css('display','block');
             					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
-            					$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
+            					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
             					break;
             				case -4011:
             					$('#error_pw_position_name').css('display','block');
             					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
-            					$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
+            					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
             					break;
         					case -4007:
             					$('#error_pw_startTime').css('display','block');
             					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
-            					$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
+            					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
             					break;
         					case -4008:
             					$('#error_pw_endTime').css('display','block');
             					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
-            					$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
+            					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
             					break;
             				default:
             					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
-            					$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
+            					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
             					break;
 							}
 				}		
@@ -1562,23 +1330,23 @@ function saveEducationBackground()
 	if(startYear=="Năm bắt đầu")
 	{
 		$('#error_eb_startTime').css('display','block');
-		$("#errorMsg").html("Không thể trống ngay từ đầu của đầu!!!!");
-		$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
+		$("#errorMsg").html("Không thể trống ngay từ đầu của đầu!!!");
+		$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
 		return;
 	}
 	//Phán quyết không phải là cuối năm
 	if(endYear=="Kết thúc")
 	{
 		$('#error_eb_endTime').css('display','block');
-		$("#errorMsg").html("Cuối cùng không thể trống!!!!");
-		$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
+		$("#errorMsg").html("Cuối cùng không thể trống!!!");
+		$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
 		return;
 	}
 	//Thời gian không đáp ứng các thông số kỹ thuật
 	if(endYear < startYear)
 	{
-		$("#errorMsg").html("Sự khởi đầu của sự khởi đầu không thể lớn hơn kết thúc!!!!");
-		$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
+		$("#errorMsg").html("Sự khởi đầu của sự khởi đầu không thể lớn hơn kết thúc!!!");
+		$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
 		return;
 	}
 	
@@ -1590,7 +1358,7 @@ function saveEducationBackground()
 		success:function(data){
 			if(data.code == 0){
 				$("#successMsg").html("Nền giáo dục thành công！");
-				$.colorbox({inline:true, href:$("#successTip"),title:"Gợi ý hệ thống"});
+				$.colorbox({inline:true, href:$("#successTip"),title:"Thông báo"});
 				setTimeout(function(){  
 						window.location.reload();//Trang làm mới
 						},3000);
@@ -1599,26 +1367,26 @@ function saveEducationBackground()
             				case -4015:
             					$('#error_eb_school_name').css('display','block');
             					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
-            					$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
+            					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
             					break;
             				case -4016:
             					$('#error_eb_major').css('display','block');
             					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
-            					$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
+            					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
             					break;
         					case -4013:
             					$('#error_eb_startTime').css('display','block');
             					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
-            					$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
+            					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
             					break;
         					case -4014:
             					$('#error_eb_endTime').css('display','block');
             					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
-            					$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
+            					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
             					break;
             				default:
             					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
-            					$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
+            					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
             					break;
 							}
 				}		
@@ -1638,13 +1406,13 @@ function saveSelfDescription()
 		success:function(data){
 			if(data.code == 0){
 				$("#successMsg").html("Tự mô tả là thành công!");
-				$.colorbox({inline:true, href:$("#successTip"),title:"Gợi ý hệ thống"});
+				$.colorbox({inline:true, href:$("#successTip"),title:"Thông báo"});
 				setTimeout(function(){  
 						window.location.reload();//Trang làm mới
 						},3000);
 			}else{
 					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
-					$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
+					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
 				}
 		}
 	});
@@ -1664,13 +1432,13 @@ function saveWorkShow()
 		success:function(data){
 			if(data.code == 0){
 				$("#successMsg").html("Màn hình công việc được đã lưu thành công！");
-				$.colorbox({inline:true, href:$("#successTip"),title:"Gợi ý hệ thống"});
+				$.colorbox({inline:true, href:$("#successTip"),title:"Thông báo"});
 				setTimeout(function(){  
 						window.location.reload();//Trang làm mới
 						},3000);
 			}else{
 					$("#errorMsg").html("Lưu không thành công,"+data.msg+"!!!");
-					$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
+					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
 				}
 		}
 	});

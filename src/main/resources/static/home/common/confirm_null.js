@@ -2,7 +2,7 @@
 function showErrorMsg(msg,field)
 {
 	$('#'+field).css('display','block');
-	$("#errorMsg").html(msg+"!!!");
+	$("#errorMsg").html(msg);
 	$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
 }
 

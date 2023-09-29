@@ -6,12 +6,12 @@
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 <link rel="alternate" media="handheld"  />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>nền tảng tuyển dụng</title>
-<meta property="qc:admins" content="23635710066417756375" />
+<title>Web tuyển dụng</title>
+
 <meta content="" name="description">
 <meta content="" name="keywords">
 
-<meta name="baidu-site-verification" content="QIQ6KC1oZ6" />
+
 
 <!-- <div class="web_root"  style="display:none">h</div> -->
 <script type="text/javascript">
@@ -33,7 +33,7 @@
 <script src="/home/style/js/popup.min.js" type="text/javascript"></script>
 
 <script type="text/javascript">
-var youdao_conv_id = 271546; 
+
 </script> 
 <script type="text/javascript" src="/home/style/js/conv.js"></script>
 <script src="/home/common/confirm_null.js"></script>
@@ -42,8 +42,8 @@ var youdao_conv_id = 271546;
 <body id="login_bg">
 	<div class="login_wrapper">
 		<div class="login_header">
-            <div id="cloud_s"><img src="/home/style/images/cloud_s.png" width="81" height="52" alt="cloud" /></div>
-            <div id="cloud_m"><img src="/home/style/images/cloud_m.png" width="136" height="95"  alt="cloud" /></div>
+            <#--  <div id="cloud_s"><img src="/home/style/images/cloud_s.png" width="81" height="52" alt="cloud" /></div>
+            <div id="cloud_m"><img src="/home/style/images/cloud_m.png" width="136" height="95"  alt="cloud" /></div>  -->
         </div>
         
     	<input type="hidden" id="resubmitToken" value="9b207beb1e014a93bc852b7ba450db27" />		
@@ -66,8 +66,8 @@ var youdao_conv_id = 271546;
                 <input type="password" id="Password" name="Password" class="require" tabindex="2" placeholder="Xin vui lòng nhập mật khẩu"  tips="Mật khẩu không thể trống！" attributes="error_password"  />
                 <span for="password" generated="true" class="error" id="error_password" style="display:none">Xin vui lòng nhập mật khẩu</span>
                 
-                <input type="text" id="username" name="username" class="require" tabindex="3" placeholder="Hãy nhập một nickname"   tips="Biệt danh nên được điền！" attributes="error_username" />
-                <span for="username" generated="true" class="error" id="error_username" style="display:none">Hãy nhập một nickname</span>
+                <input type="text" id="username" name="username" class="require" tabindex="3" placeholder="Hãy nhập tên"   tips="tên nên được điền！" attributes="error_username" />
+                <span for="username" generated="true" class="error" id="error_username" style="display:none">Hãy nhập tên</span>
                 
             	<input type="text" id="cpacha" name="cpacha" class="require" tabindex="4" placeholder="Nhập mã xác nhận" /  tips="Mã xác minh phải được điền！" attributes="error_cpacha" >
             	&nbsp;&nbsp;<a onclick="sendMailCpacha();" href="javascript:void(0);">Gửi mã xác minh</a>
@@ -156,9 +156,9 @@ var youdao_conv_id = 271546;
 						$.colorbox({inline:true, href:$("#successTip"),title:"Thông báo"});
 					}else{
 						switch(data.code){
-							case -1010:
-								$('#error_type').css('display','block');
-								$("#errorMsg").html("Đăng ký không thành công，"+data.msg+"!!!");
+										case -1010:
+											$('#error_type').css('display','block');
+											$("#errorMsg").html("Đăng ký không thành công，"+data.msg+"!!!");
             					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
             					break;
             				case -3:

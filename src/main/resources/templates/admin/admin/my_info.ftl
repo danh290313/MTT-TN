@@ -3,8 +3,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="copyright" content="All Rights Reserved, Copyright (C) 2020, 杨杨吖, Ltd." />
-<title>Quản lý nền Trang chủ</title>
+<title>Web tuyển dụng</title>
 <link rel="stylesheet" type="text/css" href="/admin/easyui/easyui/1.3.4/themes/default/easyui.css" />
 <link rel="stylesheet" type="text/css" href="/admin/easyui/css/wu.css" />
 <link rel="stylesheet" type="text/css" href="/admin/easyui/css/icon.css" />
@@ -27,7 +26,6 @@
     <table id="data-datagrid" class="easyui-datagrid" toolbar="#wu-toolbar"></table>
 </div>
 <!-- Begin of easyui-dialog -->
-<!-- 修改窗口 -->
 <div id="edit-dialog" class="easyui-dialog" data-options="closed:true,iconCls:'icon-save'" style="width:450px; padding:10px;">
 	<form id="edit-form" method="post">
         <input type="hidden" name="id" id="edit-id">
@@ -36,11 +34,11 @@
 
             <tr>
                 <td width="60" align="right">tên tài khoản:</td>
-                <td><input type="text" id="edit-adminName" name="adminName" class="wu-text easyui-validatebox" data-options="required:true, missingMessage:'请填写用户名'" /></td>
+                <td><input type="text" id="edit-adminName" name="adminName" class="wu-text easyui-validatebox" data-options="required:true" /></td>
             </tr>
               <tr>
                 <td width="60" align="right">mật khẩu:</td>
-                <td><input type="text" id="edit-password" name="password" class="wu-text easyui-validatebox" data-options="required:true, missingMessage:'请填写密码'" /></td>
+                <td><input type="password" id="edit-password" name="password" class="wu-text easyui-validatebox" data-options="required:true" /></td>
             </tr>
            
             <tr>
@@ -213,7 +211,7 @@
 			{ field:'chk',checkbox:true},
 
 			{ field:'adminName',title:'tên tài khoản',width:100,sortable:true},
-			{ field:'password',title:'mật khẩu',width:100},
+			//{ field:'password',title:'mật khẩu',width:100},
 			{ field:'sex',title:'giới tính',width:100,formatter:function(value,row,index){
 				switch(value){
 					case 0:{

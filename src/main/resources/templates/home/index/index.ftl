@@ -6,13 +6,12 @@
 	<script id="allmobilize" charset="utf-8" src="/home/style/js/allmobilize.min.js"></script>
 	<meta http-equiv="Cache-Control" content="no-siteapp" />
 	<link rel="alternate" media="handheld" />
-	<!-- kết thúc tương thích đám mây -->
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>Nền tảng tuyển dụng</title>
-	<meta property="qc:admins" content="23635710066417756375" />
+	<title>Web tuyển dụng</title>
+	
 	<meta content="" name="description">
 	<meta content="" name="keywords">
-	<meta name="baidu-site-verification" content="QIQ6KC1oZ6" />
+	
 	<script type="text/javascript">
 
 	</script>
@@ -26,7 +25,7 @@
 	<script type="text/javascript" src="/home/style/js/additional-methods.js"></script>
 	<script src="/home/style/js/setting.js"></script>
 	<script type="text/javascript">
-	var youdao_conv_id = 271546;
+	
 	</script>
 	<script type="text/javascript" src="/home/style/js/conv.js"></script>
 </head>
@@ -95,7 +94,7 @@
 						<li data-searchtype="4" id="selected_company">Công ty</li>
 					</ul>
 					<div class="searchtype_arrow"></div>
-					<input type="text" id="search_input" name="kd" tabindex="1" value="" placeholder="Vui lòng nhập tên vị trí, ví dụ: Quản lý sản phẩm" />
+					<input type="text" id="search_input" name="kd" tabindex="1" value="" placeholder="Vui lòng nhập tên vị trí" />
 					<input type="hidden" name="spc" id="spcInput" value="" />
 					<input type="hidden" name="pl" id="plInput" value="" />
 					<input type="hidden" name="gj" id="gjInput" value="" />
@@ -148,19 +147,16 @@
 				</style>
 				<script type="text/javascript" src="/home/style/js/search.min.js"></script>
 				<dl class="hotSearch">
-					<dt>Từ khóa phổ biến:</dt>
+					<dt>Từ khóa:</dt>
 					<dd><a href="/home/position/list?search_value=java">JAVA</a></dd>
 					<dd><a href="/home/position/list?search_value=php">PHP</a></dd>
 					<dd><a href="/home/position/list?search_value=asp">ASP</a></dd>
 					<dd><a href="/home/position/list?search_value=html">HTML</a></dd>
-					<dd><a href="/home/position/list?search_value=sản phẩm">sản phẩm</a></dd>
-					<dd><a href="/home/position/list?search_value=bán hàng">bán hàng</a></dd>
-					<dd><a href="/home/position/list?search_value=Nhân sự">Nhân sự</a></dd>
 				</dl>
 				<div id="home_banner">
 					<ul class="banner_bg">
 						<li class="banner_bg_1 current">
-							<img src="https://s3.amazonaws.com/media.the-next-tech.com/wp-content/uploads/2019/01/19141852/it_compaines_logos2.jpg" width="612" height="160" alt="Quỹ mua tốt -Give 1 triệu khi bạn đến" />
+							<img src="https://s3.amazonaws.com/media.the-next-tech.com/wp-content/uploads/2019/01/19141852/it_compaines_logos2.jpg" width="612" height="160" alt="Quỹ mua tốt -Give 1  triệu khi bạn đến" />
 						</li>
 						<li class="banner_bg_2">
 							<img src="https://s3.amazonaws.com/media.the-next-tech.com/wp-content/uploads/2019/01/19141839/it_compaines_logos4.jpg" width="612" height="160" alt="Xem bóng trong kỳ nghỉ ở World Cup, tôi cũng muốn ông chủ!" />
@@ -188,87 +184,8 @@
 					</div>
 				</div>
 
-
-				<!--/#main_banner-->
-				<#--  <ul id="da-thumbs" class="da-thumbs">
-					<li>
-						<a href="/home/company/detail?id=12" target="_blank">
-							<img src="/home/style/images/a254b11ecead45bda166afa8aaa9c8bc.jpg" width="113" height="113" alt="联想" />
-							<div class="hot_info">
-								<h2 title="联想">联想</h2>
-								<em></em>
-								<p title="Thế giới tốt hơn">
-									Thế giới tốt đẹp hơn nhờ Lenovo
-								</p>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a href="/home/company/detail?id=9" target="_blank">
-							<img src="/home/style/images/c75654bc2ab141df8218983cfe5c89f9.jpg" width="113" height="113" alt="淘米" />
-							<div class="hot_info">
-								<h2 title="淘米">Gạo nếp</h2>
-								<em></em>
-								<p title="将心注入 追求极致">
-									Đặt trái tim vào và theo đuổi sự tuyệt vời
-								</p>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a href="/home/company/detail?id=14" target="_blank">
-							<img src="/home/style/images/2bba2b71d0b0443eaea1774f7ee17c9f.png" width="113" height="113" alt="优酷土豆" />
-							<div class="hot_info">
-								<h2 title="优酷土豆">优酷土豆</h2>
-								<em></em>
-								<p title="专注于视频领域，是中国网络视频行业领军企业">
-									Tập trung vào lĩnh vực video, là công ty dẫn đầu trong ngành video trực tuyến của Trung Quốc
-								</p>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a href="/home/company/detail?id=10" target="_blank">
-							<img src="/home/style/images/f4822a445a8b495ebad81fcfad3e40e2.jpg" width="113" height="113" alt="思特沃克" />
-							<div class="hot_info">
-								<h2 title="思特沃克">思特沃克</h2>
-								<em></em>
-								<p title="一家全球信息技术服务公司">
-									一家全球信息技术服务公司
-								</p>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a href="/home/company/detail?id=15" target="_blank">
-							<img src="/home/style/images/5caf8f9631114bf990f87bb11360653e.png" width="113" height="113" alt="奇猫" />
-							<div class="hot_info">
-								<h2 title="奇猫">奇猫</h2>
-								<em></em>
-								<p title="专注于移动互联网、互联网产品研发">
-									专注于移动互联网、互联网产品研发
-								</p>
-							</div>
-						</a>
-					</li>
-					<li class="last">
-						<a href="/home/company/detail?id=11" target="_blank">
-							<img src="/home/style/images/c0052c69ef4546c3b7d08366d0744974.jpg" width="113" height="113" alt="堆糖网" />
-							<div class="hot_info">
-								<h2 title="堆糖网">堆糖网</h2>
-								<em></em>
-								<p title="分享收集生活中的美好，遇见世界上的另外一个你">
-									分享收集生活中的美好，遇见世界上的另外一个你
-								</p>
-							</div>
-						</a>
-					</li>
-				</ul>  -->
-
-
-
 				<ul class="reset hotabbing">
-					<li class="current">Công việc gần đây</li>
+					<li class="current">Công việc</li>
 				</ul>
 				<div id="hotList">
 					<ul class="hot_pos reset">
@@ -286,7 +203,7 @@
 												</span>
 											</div>
 											<span><em class="c7">Lương： </em>
-												${position.minMoney!" "} triệu-${position.maxMoney!" "} triệu</span>
+												${position.minMoney!" "}  triệu-${position.maxMoney!" "}  triệu</span>
 											<span><em class="c7">kinh nghiệm：</em>
 												${position.workExperience!""}
 											</span>
@@ -314,7 +231,7 @@
 											</span>
 										</div>
 										<span><em class="c7">Lương: </em>
-											${position.minMoney!" "} triệu-${position.maxMoney!" "} triệu</span>
+											${position.minMoney!" "}  triệu-${position.maxMoney!" "}  triệu</span>
 										<span><em class="c7">kinh nghiệm:</em>
 											${position.workExperience!""}
 										</span>
@@ -364,8 +281,8 @@
 			function search() {
 				var search_value = $("#search_input").val();
 				if (search_value == null || search_value == "") {
-					$("#errorMsg").html("Thông tin tìm kiếm không thể trống!!!!");
-					$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
+					$("#errorMsg").html("Thông tin tìm kiếm không thể trống!!!");
+					$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
 					return;
 				}
 				//Nếu đó là tìm kiếm việc làm

@@ -19,7 +19,7 @@ body {
 body {
     margin: 0;
     padding: 0;
-    font: 14px/22px "Microsoft Yahei", "Phong cách bài hát", Arial;
+    font: 14px/22px "Microsoft Yahei", "Times New Roman", Arial;
     color: #333;
     word-wrap: break-word;
 }
@@ -48,7 +48,7 @@ input[type="text"],
 input[type="password"] {
     border: 2px solid #f1f1f1;
     outline: none;
-    font: 20px/32px "Microsoft Yahei", "Phong cách bài hát", Arial;
+    font: 20px/32px "Microsoft Yahei", "Times New Roman", Arial;
     width: 600px;
     height: 30px;
     padding: 6px 10px;
@@ -58,7 +58,7 @@ input[type="password"] {
 
 input[type="button"],
 input[type="submit"] {
-    font-family: "Microsoft Yahei", "Phong cách bài hát", Arial;
+    font-family: "Microsoft Yahei", "Times New Roman", Arial;
     outline: none;
     cursor: pointer;
     border: none;
@@ -75,7 +75,7 @@ textarea {
     height: 260px;
     outline: none;
     resize: none;
-    font: 20px/32px "Microsoft Yahei", "Phong cách bài hát", Arial;
+    font: 20px/32px "Microsoft Yahei", "Times New Roman", Arial;
     padding: 6px 10px;
     margin-top: 20px;
     transition: border 0.2s ease-in 0s;
@@ -1158,7 +1158,7 @@ ul.hot_pos i {
     float: right;
     width: 200px;
     text-align: center;
-    font: 14px Phong cách bài hát;
+    font: 14px Times New Roman;
     color: #777;
     border: 2px solid #e1e1e1;
     background: #fff;
@@ -2732,7 +2732,7 @@ ul.hot_pos i {
 .like_record i {
     text-align: center;
     width: 140px;
-    font: 14px Phong cách bài hát;
+    font: 14px Times New Roman;
     color: #777;
     border: 2px solid #f2f2f2;
     background: #fff;
@@ -5521,9 +5521,9 @@ a.greylink {
 }
 
 .contact_box li {
-    height: 92px;
+    height: max-content;
     margin-top: 10px;
-    padding: 5px 0 5px 7px;
+    padding: 5px 5px 5px 7px;
     float: left;
     background: #019875;
     color: #fff;
@@ -5533,7 +5533,7 @@ a.greylink {
     color: #fff;
 }
 
-.contact_box li.cli1 {
+/* .contact_box li.cli1 {
     width: 180px;
     margin-right: 10px;
 }
@@ -5541,10 +5541,10 @@ a.greylink {
 .contact_box li.cli2 {
     width: 156px;
     margin-right: 10px;
-}
+} */
 
 .contact_box li.cli3 {
-    width: 252px;
+    width: 600px;
 }
 
 .contact_box li.cli3 span {
@@ -7344,7 +7344,7 @@ ul.my_delivery {
 }
 
 .selectr_340 {
-    font: 16px/26px "Microsoft Yahei", "Phong cách bài hát", Arial !important;
+    font: 16px/26px "Microsoft Yahei", "Times New Roman", Arial !important;
     color: #333;
     width: 332px !important;
     text-align: left;

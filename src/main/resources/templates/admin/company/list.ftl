@@ -3,8 +3,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="copyright" content="All Rights Reserved, Copyright (C) 2020, Ltd." />
-<title>Quản lý Trang chủ</title>
+<title>Trang chủ</title>
 <link rel="stylesheet" type="text/css" href="/admin/easyui/easyui/1.3.4/themes/default/easyui.css" />
 <link rel="stylesheet" type="text/css" href="/admin/easyui/css/wu.css" />
 <link rel="stylesheet" type="text/css" href="/admin/easyui/css/icon.css" />
@@ -12,7 +11,6 @@
 <script type="text/javascript" src="/admin/easyui/easyui/1.3.4/jquery.easyui.min.js"></script>
 <script type="text/javascript" src="/admin/easyui/easyui/1.3.4/locale/easyui-lang-zh_CN.js"></script>
 <style>
-
 .dialog-button { padding: 5px; text-align: center; };
 </style>
 
@@ -24,8 +22,8 @@
 	  		<select id="search-state" name="search-state" class="easyui-combobox" panelHeight="auto" data-options="editable:false" style="width:150px">
 	                <option value="0">xin vui lòng chọn</option>
 	    			<option value="1">đã xác minh</option>
-	    			<option value="2">Để được xem xét</option>
-	    			<option value="3">không công nhận, không chứng nhận</option>
+	    			<option value="2">Đang xem xét</option>
+	    			<option value="3">Chưa Xác Minh</option>
 	        </select>
 	         <a href="javascript:void(0);" id="search-btn" class="easyui-linkbutton" iconCls="icon-search" plain="true">tìm kiếm</a>&nbsp;&nbsp;
 	         <a href="javascript:void(0);" id="update-state-btn" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="changeState();">Thay đổi trạng thái vị trí</a>&nbsp;&nbsp;
@@ -49,8 +47,8 @@
                 <td>
                 	<select id="edit-state" name="state" class="easyui-combobox" data-options="editable:false" panelHeight="auto" style="width:268px">
 			    		  <option value="đã xác minh">đã xác minh</option>
-			    		  <option value="Để được xem xét">Để được xem xét</option>
-			    		  <option value="không công nhận, không chứng nhận">không công nhận, không chứng nhận</option>
+			    		  <option value="Đang xem xét">Đang xem xét</option>
+			    		  <option value="Chưa Xác Minh">Chưa Xác Minh</option>
 		            </select>
                 </td>
             </tr>
@@ -157,10 +155,10 @@
 			state = "đã xác minh";
 		}
 		if(search_value == "2"){
-			state = "Để được xem xét";
+			state = "Đang xem xét";
 		}
 		if(search_value == "3"){
-			state = "không công nhận, không chứng nhận";
+			state = "Chưa Xác Minh";
 		}
 		$('#data-datagrid').datagrid('reload',{
 			state:state
@@ -188,7 +186,7 @@
 			{ field:'locale',title:'Vị trí công ty',width:150},
 			{ field:'territory',title:'Lĩnh vực công ty',width:100},
 			{ field:'scale',title:'Quy mô công ty',width:50},
-			{ field:'finance',title:'Giai đoạn tài chính',width:50},
+			{ field:'finance',title:'Loại hình',width:50},
 			{ field:'founderName',title:'Tên của người sáng lập',width:50},
 
 			{ field:'state',title:'Tình trạng công ty',width:60},

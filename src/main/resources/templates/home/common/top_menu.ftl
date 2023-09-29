@@ -18,9 +18,9 @@
             </#if>
 
             <#if about??>
-                <li class="current"><a href="/home/index/about" >Về chúng tôi</a></li>
+                <li class="current"><a href="/home/index/about" >Điều khoản</a></li>
             <#else>
-                <li><a href="/home/index/about" >Về chúng tôi</a></li>
+                <li><a href="/home/index/about" >Điều khoản</a></li>
             </#if>
 
 

@@ -7,9 +7,9 @@
 <link rel="alternate" media="handheld"  />
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>nền tảng tuyển dụng</title>
-<meta property="qc:admins" content="23635710066417756375" />
-<meta name="baidu-site-verification" content="QIQ6KC1oZ6" />
+<title>Web tuyển dụng</title>
+
+
 
 <script type="text/javascript">
 </script>
@@ -24,7 +24,7 @@
 <script src="/home/style/js/setting.js"></script>
 <script src="/home/common/confirm_null.js"></script>
 <script type="text/javascript">
-var youdao_conv_id = 271546; 
+
 </script> 
 <script type="text/javascript" src="/home/style/js/conv.js"></script>
 </head>
@@ -42,13 +42,16 @@ var youdao_conv_id = 271546;
                         </h1>
                 	</dt>
                     <dd class="job_request">
-                    	<span class="red">${Position.minMoney!""}triệu-${Position.maxMoney!""}triệu</span>
-                    	<span>${Position.city!""}</span>
-                    	<span>${Position.workExperience!""}</span>
-                    	<span>${Position.degree!""}</span>
-                    	<span>${Position.workType!""}</span><br>
+                    	<span class="red">${Position.minMoney!""} triệu-${Position.maxMoney!""} triệu</span>
+											<br>
+                    	<span>Địa chỉ: ${Position.city!""}</span>
+											<br>
+                    	<span>Kinh nghiệm: ${Position.workExperience!""}</span>
+                    	<span>Bằng cấp: ${Position.degree!""}</span>
+											<br>
+                    	<span>Loại hình: ${Position.workType!""}</span><br>
                     	Yêu cầu : ${Position.advantage!""}
-                      	<div>Thời gian： ${Position.createTime!""}</div>
+                      	<div>Thời gian tạo： ${Position.createTime!""}</div>
                     </dd>
                   	<dd class="job_bt">
                         <h3 class="description">Mô tả công ty</h3>
@@ -85,13 +88,13 @@ var youdao_conv_id = 271546;
                         	<li><span>Số lượng: </span>${Company.scale!""}</li>
                         	<li>
                         		<span>Trang chủ</span> 
-       							<a href="javascript:void(0);" title="${Company.url!""}" rel="nofollow">${Company.url!""}</a>
+       											<a href="${Company.url!""}" title="${Company.url!""}" rel="nofollow" target="_blank">${Company.url!""}</a>
                         	</li>
                         </ul>
                         
-                        <h4>Giai đoạn tài chính</h4>
+                        <h4>Loại hình</h4>
                         <ul class="c_feature reset">
-                        	<li><span>Giai đoạn hiện nay</span>${Company.finance!""}</li>
+                        	<li><span>Loại hình hiện nay</span>${Company.finance!""}</li>
                         </ul>
                        	<h4>địa chỉ làm việc</h4>
                        	<div>${Company.locale!""}</div>
@@ -104,7 +107,7 @@ var youdao_conv_id = 271546;
                     </dd>
                 </dl>
                 	<a href="javascript:void(0);" class="eventAd">
-                  		<img src="/home/style/images/tuyen-dung.jpg" width="280" height="135" />
+                  		<#--  <img src="/home/style/images/tuyen-dung.jpg" width="280" height="135" />  -->
             		</a>
             </div>
        	</div>                    
@@ -141,10 +144,10 @@ var youdao_conv_id = 271546;
 			success:function(data){
 				if(data.code == 0){
 					$("#successMsg").html("Gửi thành công！");
-					$.colorbox({inline:true, href:$("#successTip"),title:"Gợi ý hệ thống"});
+					$.colorbox({inline:true, href:$("#successTip"),title:"Thông báo"});
 				}else{
 						$("#errorMsg").html("Gửi thất bại,"+data.msg+"!!!");
-						$.colorbox({inline:true, href:$("#errorTip"),title:"Gợi ý hệ thống"});
+						$.colorbox({inline:true, href:$("#errorTip"),title:"Thông báo"});
 					}
 			}
 		});
